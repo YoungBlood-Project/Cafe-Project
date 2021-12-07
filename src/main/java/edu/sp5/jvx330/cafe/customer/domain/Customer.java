@@ -1,9 +1,12 @@
 package edu.sp5.jvx330.cafe.customer.domain;
 
+import java.util.Date;
+
 public class Customer {
 	private Long cid;
 	private String name;
 	private String phone;
+	private Date regDate;
 	
 	public Customer() {
 		
@@ -38,9 +41,17 @@ public class Customer {
 	public void setPhone(String phone) {
 		this.phone = phone;
 	}
+	
+	public Date getRegDate() {
+		return regDate;
+	}
+
+	public void setRegDate(Date regDate) {
+		this.regDate = regDate;
+	}
 
 	@Override
 	public String toString() {
-		return "Customer [cid=" + cid + ", name=" + name + ", phone=" + phone + "]";
-	}
+		return "Customer [cid=" + cid + ", name=" + name + ", phone=" + phone + ", regDate=" + regDate + "]";
+	}	
 }

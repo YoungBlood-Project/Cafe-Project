@@ -23,10 +23,10 @@ public class MileageTest {
 		mileageService = context.getBean("mileageServiceImpl", MileageServiceImpl.class);
 		customerService = context.getBean("customerServiceImpl", CustomerServiceImpl.class);
 
-//		addMileage();
-//		 findMileageByUserInfo();
-//		 setMileage();
-//		 deleteMileage();
+		//addMileage();
+		//findMileageByUserInfo();
+		//setMileage();
+		//deleteMileage();
 
 		context.close();
 	}

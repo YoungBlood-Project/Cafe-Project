@@ -35,14 +35,14 @@ public class CustomerDaoImpl implements CustomerDao {
 	//2-1. 입력받은 정보로 고객 조회
 	@Override
 	public Customer findCustomerByUserInfo(String name, String phone) {
-		String sql = "SELECT cid, name, phone FROM Customer"
+		String sql = "SELECT cid, name, phone, regDate FROM Customer"
 				+ " WHERE name = ? AND phone = ?";
 		return jdbcTemplate.queryForObject(sql, new CustomerRowMapper(), name, phone);
 	}
 	//2-2. 고객 전체 조회
 	@Override
 	public List<Customer> findAllCustomers() {
-		String sql = "SELECT cid, name, phone FROM Customer";
+		String sql = "SELECT cid, name, phone, regDate FROM Customer";
 		
 		return jdbcTemplate.query(sql, new CustomerRowMapper());
 	}
@@ -56,5 +56,4 @@ public class CustomerDaoImpl implements CustomerDao {
 		
 		jdbcTemplate.update(sql, customer.getCid());
 	}
-
 }
