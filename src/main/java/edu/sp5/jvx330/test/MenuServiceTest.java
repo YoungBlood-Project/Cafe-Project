@@ -34,9 +34,9 @@ public class MenuServiceTest {
 	
 	//1-1. 메뉴 추가 테스트
 	public static void addMenu() {
-		Menu menu = new Menu("delete", 0, "deletedMenu");
-		//Menu menu = new Menu("바닐라Dao", 5000, "라떼Dao");
-		//Menu menu = new Menu("초코Dao", 6000, "라떼Dao");
+		Menu menu = new Menu("deletedMenu", "delete", 0);
+		//Menu menu = new Menu("바닐라Dao", "라떼Dao", 5000);
+		//Menu menu = new Menu("초코Dao", "라떼Dao", 6000);
 		//System.out.println(menu.getCustomer().getCid());
 		service.addMenu(menu);
 		System.out.println("MenuServiceTest : 저장 완료");
