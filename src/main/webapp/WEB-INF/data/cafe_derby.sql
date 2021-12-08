@@ -5,7 +5,7 @@ SELECT * FROM TotalMileage;
 SELECT * FROM Menu;
 SELECT * FROM SalesHistory;
 
---TABLE 삭제
+--TABLE 삭제 --
 DROP TABLE Customer;
 DROP TABLE Mileage;
 DROP TABLE TotalMileage;
@@ -15,7 +15,7 @@ DROP TABLE SalesHistory;
 CREATE TABLE Customer(
    cid      BIGINT			PRIMARY KEY GENERATED ALWAYS AS IDENTITY,							--고객 PK
    name   	VARCHAR(30) 	NOT NULL,															--이름
-   phone   	VARCHAR(20)		NOT NULL,                                                           	--휴대폰번호
+   phone   	VARCHAR(20)		NOT NULL,                                                           --휴대폰번호
    regDate	TIMESTAMP		NOT	NULL	DEFAULT	CURRENT_TIMESTAMP								--등록 날짜
 );
 
@@ -39,7 +39,7 @@ CREATE TABLE Menu(
    mid      	BIGINT		PRIMARY KEY GENERATED ALWAYS AS IDENTITY,							--메뉴 PK
    category		VARCHAR(30)	NOT	NULL,															--메뉴 종류
    menuName		VARCHAR(30) NOT NULL,															--메뉴 이름
-   menuPrice	INT			NOT NULL													--메뉴 가격
+   menuPrice	INT			NOT NULL															--메뉴 가격
 );
 
 CREATE TABLE SalesHistory (

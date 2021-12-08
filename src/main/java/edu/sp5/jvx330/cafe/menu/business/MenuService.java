@@ -12,10 +12,10 @@ public interface MenuService {
 	public void addMenu(Menu menu);
 	
 	//1-2. 메뉴 수정
-	//메뉴 이름 수정
+	//1-2-1. 메뉴 이름 수정
 	public Menu setMenuName(Menu menu, String menuName);
 	
-	//메뉴 가격 수정
+	//1-2-2. 메뉴 가격 수정
 	public Menu setMenuSales(Menu menu, Integer menuPrice);
 	
 	//1-3. 메뉴 삭제

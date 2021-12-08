@@ -23,8 +23,8 @@ public interface SalesHistoryDao {
 	public List<SalesHistory> findSalesHistoryByOrderDate(Date orderDate);
 	//2-3. 해당 메뉴로 판매내역 조회(menuId 사용할 것)
 	public List<SalesHistory> findSalesHistoryByMenu(Long menuId);
-	//2-4. 주문번호로 판매내역 조회
-	public List<SalesHistory> findSalesHistoryByOrderNum(Integer orderNum);
+	//2-4. 주문번호로 판매내역 조회 (Integer orderNum -> Long orderNum)
+	public List<SalesHistory> findSalesHistoryByOrderNum(Long orderNum);
 	
 	/**
 	 * 3. 판매내역 삭제

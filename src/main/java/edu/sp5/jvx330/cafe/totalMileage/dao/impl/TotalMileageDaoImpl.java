@@ -40,4 +40,18 @@ public class TotalMileageDaoImpl implements TotalMileageDao {
 		String sql = "DELETE FROM TotalMileage WHERE customerId = ?";
 		jdbcTemplate.update(sql, customerId);
 	}
+	
+	/**
+	 * 0. 제약조건 변경 - 정혜윤.
+	 */
+	//0-1. 제약조건 삭제
+	public void disableConstraintFromSH() {
+		String sql = "ALTER TABLE TotalMileage DROP CONSTRAINT TotalMileage_customerId_FK";
+		jdbcTemplate.update(sql);
+	}
+	//0-2. 제약조건 추가
+	public void enableConstraintFromSH() {
+		String sql = "ALTER TABLE TotalMileage ADD CONSTRAINT TotalMileage_customerId_FK FOREIGN KEY(menuId) REFERENCES Menu(mid)";
+		jdbcTemplate.update(sql);
+	}
 }
