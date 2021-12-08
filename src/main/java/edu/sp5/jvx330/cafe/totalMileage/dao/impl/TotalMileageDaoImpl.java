@@ -27,9 +27,14 @@ public class TotalMileageDaoImpl implements TotalMileageDao {
 	}
 
 	//3. Total Mileage Á¶È¸
+	/**
+	 * ¼öÁ¤ - Á¤ÇýÀ±
+	 * SELECT tmid, customerId, mileageTotal WHERE customerId = ?
+	 * -> SELECE tmid, customerId, mileageTotal FROM TotalMileage WHERE customerId = ?
+	 */
 	@Override
 	public Integer findTotalMileage(Long customerId) {
-		String sql = "SELECT tmId, customerId, mileageTotal WHERE customerId = ?";
+		String sql = "SELECT tmId, customerId, mileageTotal FROM TotalMileage WHERE customerId = ?";
 		TotalMileage totalMileage = jdbcTemplate.queryForObject(sql, new TotalMileageRowMapper(), customerId);
 		return totalMileage.getMileageTotal();
 	}

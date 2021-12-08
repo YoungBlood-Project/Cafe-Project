@@ -23,22 +23,30 @@ public class MileageTest {
 		mileageService = context.getBean("mileageServiceImpl", MileageServiceImpl.class);
 		customerService = context.getBean("customerServiceImpl", CustomerServiceImpl.class);
 
-		//addMileage();
-		//findMileageByUserInfo();
-		//setMileage();
-		//deleteMileage();
+		// 1. 마일리지 생성 
+		// addMileage();
+		  
+		// 2. 마일리지 조회
+		// findMileageByUserInfo();
+		// fineMileageByOrderNum();
+		  
+		// 3. 마일리지 금액 수정 
+		// setMileage();
+		  
+		// 4. 마일리지 삭제  
+		deleteMileage();
 
 		context.close();
 	}
 	
 	
 	/**
-	 * 수정 - 혜윤
+	 * 수정 - 정혜윤
 	 * 마일리지 생성하는 메소드가 없어서 마일리지 생성 메소드를 추가했습니다
 	 */
 	// 1. 마일리지 생성
 	public static void addMileage() {
-		Customer customer = customerService.findCustomerByUserInfo("example", "example");
+		Customer customer = customerService.findCustomerByUserInfo("A", "1");
 		Mileage mileage = new Mileage(customer, 201212060001l, 500);
 		mileageService.addMileage(customer, mileage);
 		System.out.println("MileageService : 저장 완료.");
@@ -46,7 +54,7 @@ public class MileageTest {
 	}
 	// 2. 마일리지 조회
 	public static void findMileageByUserInfo() {
-		Customer customer = customerService.findCustomerByUserInfo("example", "example");
+		Customer customer = customerService.findCustomerByUserInfo("A", "1");
 		List<Mileage> mileage_list = mileageService.findMileageByUserInfo(customer);
 		System.out.println("마일리지 조회 시작--------------");
 		for(Mileage m : mileage_list) {
@@ -54,22 +62,22 @@ public class MileageTest {
 		}
 	}
 	
+	
 	/**
-	 * 혜윤 - orderNum으로 마일리지 조회하는 코드 추가.
+	 * 정혜윤 - orderNum으로 마일리지 조회하는 코드 추가.
 	 * @param orderNum
 	 */
 	// 2-1. orderNum으로 마일리지 조회
-	public static void fineMileageByOrderNum(Long orderNum) {
-		List<Mileage> mileage_list = mileageService.findMileageByOrderNum(orderNum);
+	public static void fineMileageByOrderNum() {
+		List<Mileage> mileage_list = mileageService.findMileageByOrderNum(201212060001l);
 		for (Mileage mileage : mileage_list) {
 			System.out.println(mileage);
 		}
-		
 	}
 	
 	// 3. 마일리지 금액 수정(마일리지 사용)
 	public static void setMileage() {
-		Customer customer = customerService.findCustomerByUserInfo("example", "example");
+		Customer customer = customerService.findCustomerByUserInfo("A", "1");
 		mileageService.setMileage(customer, 10);
 		System.out.println("mileageService : 마일리지 가격 설정 완료.");
 		
@@ -77,7 +85,7 @@ public class MileageTest {
 	
 	// 4. 마일리지 삭제
 	public static void deleteMileage() {
-		Customer customer = customerService.findCustomerByUserInfo("example", "example");
+		Customer customer = customerService.findCustomerByUserInfo("A", "1");
 		mileageService.deleteMileage(customer);
 		System.out.println("mileageService: 삭제 완료.");
 	}

@@ -41,7 +41,7 @@ public class MileageDaoImpl implements MileageDao {
 	//1. 전체 마일리지 조회
 	@Override
 	public List<Mileage> findMileageByUserInfo(Customer customer) {
-		String sql = "SELECT mileageId, customerId, mBalance, regDate FROM Mileage"
+		String sql = "SELECT mileageId, customerId, orderNum, mBalance, regDate FROM Mileage"
 				+ " WHERE customerId = ?";
 		
 		return jdbcTemplate.query(sql, new MileageRowMapper(), customer.getCid());
