@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-+--TABLE 조회
-=======
---TABLE 조회 --
->>>>>>> branch 'master' of https://github.com/youngBlood-cafe-project/Cafe-Project.git
+--TABLE 조회
 SELECT * FROM Customer;
 SELECT * FROM Mileage;
 SELECT * FROM TotalMileage;
