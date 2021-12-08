@@ -26,7 +26,12 @@ public class TotalMileageTest {
 		customerService = context.getBean("customerServiceImpl", CustomerServiceImpl.class);
 		totalMileageService = context.getBean("totalMileageServiceImpl", TotalMileageServiceImpl.class);
 
+		//1. Total Mileage 값 변경
+		//1-1. 마일리지 적립
 		addTotalMileage();
+		//1-2. 마일리지 사용
+		//subtractTotalMileage();
+		//2. Total Mileage 조회
 		//findTotalMileage();
 		//deleteTotalMileage();
 
@@ -34,14 +39,19 @@ public class TotalMileageTest {
 		
 	}
 
-	//1. Total Mileage 값 입력
+	//1. Total Mileage 값 변경
+	//1-1. 마일리지 적립
 	public static void addTotalMileage() {
 		Customer customer = customerService.findCustomerByUserInfo("example", "example");
 		totalMileageService.addTotalMileage(customer, 500);
+		System.out.println("적립 완료");
 	}
-		
-	public static void setTotalMileage(Customer customer, Integer addMileage) {
-		
+	
+	//1-2. 마일리지 사용
+	public static void subtractTotalMileage() {
+		Customer customer = customerService.findCustomerByUserInfo("example", "example");
+		totalMileageService.subtractTotalMileage(customer, 200);
+		System.out.println("사용 완료");
 	}
 	//2. Total Mileage 조회
 	public static void findTotalMileage() {
