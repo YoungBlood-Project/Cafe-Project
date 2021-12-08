@@ -10,12 +10,15 @@ import edu.sp5.jvx330.cafe.menu.dao.impl.MenuDaoImpl;
 import edu.sp5.jvx330.cafe.menu.domain.Menu;
 import edu.sp5.jvx330.cafe.salesHistory.dao.impl.SalesHistoryDaoImpl;
 import edu.sp5.jvx330.cafe.salesHistory.domain.SalesHistory;
+import edu.sp5.jvx330.cafe.totalMileage.dao.impl.TotalMileageDaoImpl;
 
 public class MenuSerivceImpl implements MenuService {
 	@Autowired
 	private MenuDaoImpl mDao;
 	@Autowired
 	private SalesHistoryDaoImpl shDao;
+	@Autowired
+	private TotalMileageDaoImpl tmDao;
 	
 	/**
 	 * 1. 관리메뉴
@@ -49,6 +52,7 @@ public class MenuSerivceImpl implements MenuService {
 		for(SalesHistory sh : sh_list) {
 			shDao.setMenuIdFromSalesHistory(deleteId, sh);
 		}
+		
 		//제약조건 삭제
 		shDao.disableConstraintFromSH();
 		//메뉴 삭제
@@ -88,7 +92,7 @@ public class MenuSerivceImpl implements MenuService {
 	}
 	
 	/**
-	  * 3. 주문 목록
+	  * 3. 주문 목록 - 정혜윤 추가
 	  */
 	@Override
 	//1. 주문 목록에 메뉴 추가

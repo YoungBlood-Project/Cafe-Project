@@ -26,6 +26,15 @@ public interface SalesHistoryService {
 	public List<SalesHistory> findSalesHistoryByMenu(Menu menu);
 	
 	/**
+	 * 정혜윤 추가
+	 * (Integer orderNum -> Long orderNum)
+	 * @param orderNum
+	 * @return
+	 */
+	//2-4. 해당 주문 번호로 판매 내역 조회
+	public List<SalesHistory> findSalesHistoryByOrderNum(Long orderNum);
+	
+	/**
 	 * 3. 판매내역 삭제
 	 */
 	//3-1. 환불(해당 SalesHistory)

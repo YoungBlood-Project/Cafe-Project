@@ -50,12 +50,24 @@ public class SalesHistoryServiceImpl implements SalesHistoryService {
 	public List<SalesHistory> findSalesHistoryByOrderDate(Date orderDate) {
 		return shDao.findSalesHistoryByOrderDate(orderDate);
 	}
+	
 	//2-3. 해당 메뉴로 판매내역 조회(menuId 사용할 것)
 	@Override
 	public List<SalesHistory> findSalesHistoryByMenu(Menu menu) {
 		//메뉴 이름 받아서 id 조회
 		Long mid = mDao.findMidByMenu(menu.getMenuName());
 		return shDao.findSalesHistoryByMenu(mid);
+	}
+	
+	/**
+	 * 정혜윤 추가
+	 * (Integer orderNum -> Long orderNum)
+	 * @param orderNum
+	 * @return
+	 */
+	// 2-4. 해당 주문 번호로 판매내역 조회
+	public List<SalesHistory> findSalesHistoryByOrderNum(Long orderNum) {
+		return shDao.findSalesHistoryByOrderNum(orderNum);
 	}
 	
 	/**

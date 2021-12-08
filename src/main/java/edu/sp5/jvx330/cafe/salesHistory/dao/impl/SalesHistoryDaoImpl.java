@@ -51,8 +51,8 @@ public class SalesHistoryDaoImpl implements SalesHistoryDao {
 		return jdbcTemplate.query(sql, new SalesHistoryMenuRowMapper(), menuId);
 	}
 	
-	//2-4. 주문번호로 판매내역 조회
-	public List<SalesHistory> findSalesHistoryByOrderNum(Integer orderNum) {
+	//2-4. 주문번호로 판매내역 조회(Integer orderNum -> Long orderNum)
+	public List<SalesHistory> findSalesHistoryByOrderNum(Long orderNum) {
 		String sql = "SELECT sid, menuId, numOfSales, orderNum, paidPrice, orderDate"
 				+ " FROM SalesHistory WHERE orderNum = ?";
 		return jdbcTemplate.query(sql, new SalesHistoryMenuRowMapper(), orderNum);

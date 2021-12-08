@@ -1,4 +1,4 @@
---TABLE 조회 --
+--TABLE 조회
 SELECT * FROM Customer;
 SELECT * FROM Mileage;
 SELECT * FROM TotalMileage;

@@ -24,21 +24,35 @@ public class SalesHistorySerivceTest {
 		sh_service = context.getBean("salesHistoryServiceImpl", SalesHistoryServiceImpl.class);
 		m_service = context.getBean("menuServiceImpl", MenuSerivceImpl.class);
 		
+		/**
+		 * 테스트 - 정혜윤.
+		 */
+		// 1. 판매 내역 추가
 		//addSalesHistory();
-		findAllSalesHistory();
+		
+		// 2. 판매 내역 조회
+		//findAllSalesHistory()
 		//findSalesHistoryByOrderDate();
 		//findSalesHistoryByMenu();
-		//countSalesHistoryByOrderDate();
+		//findSalesHistoryByOrderNum();
 		
+		// 3. 환불
+		deleteSalesHistoryBySid();
+		//deleteAllSalesHistories();
+		
+		// 4. 날짜별 판매 내역 개수
+		//countSalesHistoryByOrderDate();
+	
 		context.close();
 	}
 	/**
 	 * 1. 판매내역 추가
 	 */
 	public static void addSalesHistory() {
-		Menu menu = m_service.findMenuByMenuName("바닐라Dao");
+		Menu menu = m_service.findMenuByMenuName("딸기Dao");
 		SalesHistory salesHistory =
 				new SalesHistory(menu, 3, menu.getMenuPrice()*3);
+		salesHistory.setOrderNum(202112070001l);
 				//new SalesHistory(menu, 1, menu.getMenuPrice()*1);
 		sh_service.addSalesHistory(menu, salesHistory);
 		//System.out.println("SalesHistorySerivceTest : 판매내역 저장 완료");
@@ -63,7 +77,7 @@ public class SalesHistorySerivceTest {
 	}
 	//2-3. 해당 메뉴로 판매내역 조회(menuId 사용)
 	public static void findSalesHistoryByMenu() {
-		Menu menu = m_service.findMenuByMenuName("바닐라Dao");
+		Menu menu = m_service.findMenuByMenuName("딸기Dao");
 		List<SalesHistory> sh_list = sh_service.findSalesHistoryByMenu(menu);
 		for(SalesHistory sh : sh_list) {
 			System.out.println(sh);
@@ -71,15 +85,32 @@ public class SalesHistorySerivceTest {
 	}
 	
 	/**
-	 * 3. 판매내역 삭제
+	 * 추가 - 혜윤
+	 * 2-4. 해당 주문 번호로 판매 내역 조회, 3. 판매 내역 삭제 부분
+	 */
+	
+	//2-4. 해당 주문 번호로 판매 내역 조회
+	public static void findSalesHistoryByOrderNum() {
+		List<SalesHistory> sh_list = sh_service.findSalesHistoryByOrderNum(202112070001l);
+		for (SalesHistory sh : sh_list) {
+			System.out.println(sh);
+		}
+	}
+	
+	/**
+	 * 3. 판매 내역 삭제
 	 */
 	//3-1. 환불
-	public static void deleteSalesHistoryByOrderDate() {
-		
+	public static void deleteSalesHistoryBySid() {
+		Menu menu = m_service.findMenuByMenuName("초코Dao");
+		List<SalesHistory> sh_list = sh_service.findSalesHistoryByMenu(menu);
 	}
+	
 	//3-2. 해당 메뉴의 판매내역 전체 삭제
 	public static void deleteAllSalesHistories() {
-		
+		Menu menu = m_service.findMenuByMenuName("초코Dao");
+		sh_service.deleteAllSalesHistories(menu);
+		System.out.println("판매 내역 전체 삭제 완료");
 	}
 	
 	/**
@@ -90,3 +121,4 @@ public class SalesHistorySerivceTest {
 	}
 	
 }
+
