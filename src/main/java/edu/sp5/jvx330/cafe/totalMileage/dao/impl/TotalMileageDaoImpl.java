@@ -1,6 +1,7 @@
 package edu.sp5.jvx330.cafe.totalMileage.dao.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
 
 import edu.sp5.jvx330.cafe.totalMileage.dao.TotalMileageDao;
@@ -12,7 +13,7 @@ public class TotalMileageDaoImpl implements TotalMileageDao {
 	private JdbcTemplate jdbcTemplate;
 	
 	//1. Total Mileage 추가
-	public void addTotalMileage(Long customerId, Integer init_mileage) {
+	public void insertTotalMileage(Long customerId, Integer init_mileage) {
 		String sql = "INSERT INTO TotalMileage(customerId, mileageTotal)"
 				+ " VALUES(?,?)";
 		jdbcTemplate.update(sql, customerId, init_mileage);
@@ -29,9 +30,13 @@ public class TotalMileageDaoImpl implements TotalMileageDao {
 	//3. Total Mileage 조회
 	@Override
 	public Integer findTotalMileage(Long customerId) {
-		String sql = "SELECT tmId, customerId, mileageTotal WHERE customerId = ?";
-		TotalMileage totalMileage = jdbcTemplate.queryForObject(sql, new TotalMileageRowMapper(), customerId);
-		return totalMileage.getMileageTotal();
+		String sql = "SELECT tmId, customerId, mileageTotal FROM TotalMileage WHERE customerId = ?";
+		try {
+			TotalMileage totalMileage = jdbcTemplate.queryForObject(sql, new TotalMileageRowMapper(), customerId);
+			return totalMileage.getMileageTotal();
+		} catch(EmptyResultDataAccessException e) {
+			return null;
+		}
 	}
 
 	//4. Total Mileage 삭제

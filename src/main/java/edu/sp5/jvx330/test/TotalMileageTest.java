@@ -26,27 +26,38 @@ public class TotalMileageTest {
 		customerService = context.getBean("customerServiceImpl", CustomerServiceImpl.class);
 		totalMileageService = context.getBean("totalMileageServiceImpl", TotalMileageServiceImpl.class);
 
-		//setTotalMileage();
+		addTotalMileage();
 		//findTotalMileage();
 		//deleteTotalMileage();
 
-		context.close();	
+		context.close();
 		
 	}
 
 	//1. Total Mileage 값 입력
-//	public static void setTotalMileage() {
-//		totalMileageService.setTotalMileage(customer, 500);
-//		
-//	}
-//		
-//		public static void setTotalMileage(Customer customer, Integer addMileage) {
-//			Integer totalMilleage = tmDao.findTotalMileage(customer.getCid());
-//			
-//		}
-		//2. Total Mileage 조회
+	public static void addTotalMileage() {
+		Customer customer = customerService.findCustomerByUserInfo("example", "example");
+		totalMileageService.addTotalMileage(customer, 500);
+	}
 		
-		//3. Total Mileage 삭제
+	public static void setTotalMileage(Customer customer, Integer addMileage) {
+		
+	}
+	//2. Total Mileage 조회
+	public static void findTotalMileage() {
+		System.out.println("------------Total Mileage 조회------------");
+		Customer customer = customerService.findCustomerByUserInfo("example", "example");
+		System.out.println(customer);
+		Integer totalMileage = totalMileageService.findTotalMileage(customer);
+		System.out.println(totalMileage);
+	}
+	
+	//3. Total Mileage 삭제
+	public static void deleteTotalMileage() {
+		Customer customer = customerService.findCustomerByUserInfo("example", "example");
+		totalMileageService.deleteTotalMileage(customer);
+		System.out.println("삭제완료");
+	}
 		
 	
 }

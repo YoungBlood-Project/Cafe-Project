@@ -18,7 +18,7 @@ public class CustomerTest {
 		
 		customerService = context.getBean("customerServiceImpl", CustomerServiceImpl.class);
 		
-		addCustomer();
+		//addCustomer();
 		//findCustomerByUserInfo();
 		//findAllCustomers();
 		//findTotalMileage();
