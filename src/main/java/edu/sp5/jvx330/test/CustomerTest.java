@@ -61,4 +61,5 @@ public class CustomerTest {
 		customerService.deleteCustomer(customer);
 		System.out.println("customerService : 삭제 완료.");
 	}
+	
 }
