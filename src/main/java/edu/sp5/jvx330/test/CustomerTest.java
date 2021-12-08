@@ -21,6 +21,7 @@ public class CustomerTest {
 		addCustomer();
 		//findCustomerByUserInfo();
 		//findAllCustomers();
+		//findTotalMileage();
 		//deleteCustomer();
 
 		context.close();
@@ -51,6 +52,12 @@ public class CustomerTest {
 		for(Customer customer : customer_list) {
 			System.out.println(customer);
 		}
+	}
+	//2-3. 고객 마일리지 조회
+	public static void findTotalMileage() {
+		Customer customer = customerService.findCustomerByUserInfo("example", "example");
+		Integer totalMileage = customerService.findTotalMileage(customer);
+		System.out.println("customerServiceTest 마일리지 조회"+totalMileage);
 	}
 	
 	/**
