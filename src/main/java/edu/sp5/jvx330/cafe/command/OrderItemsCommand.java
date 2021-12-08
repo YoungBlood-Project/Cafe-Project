@@ -1,16 +1,16 @@
 package edu.sp5.jvx330.cafe.command;
 
 //주문내역 AJAX 데이터 받을 곳
-public class OrderListCommand {
+public class OrderItemsCommand {
 	private String menuName;
 	private Integer numOfNum;
 	private Integer paidPrice;
 	
-	public OrderListCommand() {
+	public OrderItemsCommand() {
 		
 	}
-	
-	public OrderListCommand(String menuName, Integer numOfNum, Integer paidPrice) {
+
+	public OrderItemsCommand(String menuName, Integer numOfNum, Integer paidPrice) {
 		super();
 		this.menuName = menuName;
 		this.numOfNum = numOfNum;
@@ -43,6 +43,6 @@ public class OrderListCommand {
 
 	@Override
 	public String toString() {
-		return "OrderList [menuName=" + menuName + ", numOfNum=" + numOfNum + ", paidPrice=" + paidPrice + "]";
+		return "OrderItemCommand [menuName=" + menuName + ", numOfNum=" + numOfNum + ", paidPrice=" + paidPrice + "]";
 	}
 }
