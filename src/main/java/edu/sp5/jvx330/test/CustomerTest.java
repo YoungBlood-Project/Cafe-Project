@@ -19,10 +19,10 @@ public class CustomerTest {
 		customerService = context.getBean("customerServiceImpl", CustomerServiceImpl.class);
 		
 		addCustomer();
-	//	findCustomerByUserInfo();
-	//	findAllCustomers();
-	//	deleteCustomer();
-	
+		//findCustomerByUserInfo();
+		//findAllCustomers();
+		//deleteCustomer();
+
 		context.close();
 	}
 	
