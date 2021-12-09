@@ -24,34 +24,34 @@ public class ItemSerivceImpl implements ItemService {
 	/**
 	 * 1. 관리메뉴
 	 */
-	//1-1. 메뉴 추가
+	//1-1. 아이템 추가
 	@Override
 	public void addItem(Item item) {
 		iDao.addItem(item);
 	}
 	
-	//1-2. 메뉴 수정
-	//메뉴 이름 수정
+	//1-2. 아이템 수정
+	//아이템 이름 수정
 	@Override
 	public Item setItemName(Item item, String itemName) {
 		return iDao.setItemName(item, itemName);
 	}
 
-	//메뉴 가격 수정
+	//아이템 가격 수정
 	@Override
 	public Item setItemPrice(Item item, Integer itemPrice) {
 		return iDao.setItemPrice(item, itemPrice);
 	}
 	
-	//1-3. 메뉴 삭제
+	//1-3. 아이템 삭제
 	@Override
 	public void deleteItem(Item item) {	
-		//삭제할 메뉴의 id로 판매내역 조회
+		//삭제할 아이템의 id로 판매내역 조회
 		List<SalesHistory> sh_list = shDao.findSalesHistoryByMenu(item.getItemId());
 		Long deleteId = iDao.findItemIdByItemName("delete");
 		System.out.println(deleteId);
 		for(SalesHistory sh : sh_list) {
-			shDao.setMenuIdFromSalesHistory(deleteId, sh);
+			shDao.setItemIdFromSalesHistory(deleteId, sh);
 		}
 		
 		//제약조건 삭제

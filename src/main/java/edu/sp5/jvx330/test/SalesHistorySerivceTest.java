@@ -5,13 +5,13 @@ import java.util.List;
 
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
-import edu.sp5.jvx330.cafe.item.business.ItemService;
-import edu.sp5.jvx330.cafe.item.business.impl.ItemSerivceImpl;
-import edu.sp5.jvx330.cafe.item.domain.Item;
-import edu.sp5.jvx330.cafe.item.salesHistory.business.SalesHistoryService;
-import edu.sp5.jvx330.cafe.item.salesHistory.business.impl.SalesHistoryServiceImpl;
-import edu.sp5.jvx330.cafe.item.salesHistory.config.SalesHistoryConfig;
-import edu.sp5.jvx330.cafe.item.salesHistory.domain.SalesHistory;
+import edu.sp5.jvx330.cafe.category.item.business.ItemService;
+import edu.sp5.jvx330.cafe.category.item.business.impl.ItemSerivceImpl;
+import edu.sp5.jvx330.cafe.category.item.domain.Item;
+import edu.sp5.jvx330.cafe.category.item.salesHistory.business.SalesHistoryService;
+import edu.sp5.jvx330.cafe.category.item.salesHistory.business.impl.SalesHistoryServiceImpl;
+import edu.sp5.jvx330.cafe.category.item.salesHistory.config.SalesHistoryConfig;
+import edu.sp5.jvx330.cafe.category.item.salesHistory.domain.SalesHistory;
 
 public class SalesHistorySerivceTest {
 	private static SalesHistoryService sh_service;
@@ -49,9 +49,9 @@ public class SalesHistorySerivceTest {
 	 * 1. 판매내역 추가
 	 */
 	public static void addSalesHistory() {
-		Item item = m_service.findMenuByMenuName("딸기Dao");
+		Item item = m_service.findItemByItemName("딸기Dao");
 		SalesHistory salesHistory =
-				new SalesHistory(item, 3, item.getMenuPrice()*3);
+				new SalesHistory(item, 3, item.getItemPrice()*3);
 		salesHistory.setOrderNum(202112070001l);
 				//new SalesHistory(menu, 1, menu.getMenuPrice()*1);
 		sh_service.addSalesHistory(item, salesHistory);
@@ -77,7 +77,7 @@ public class SalesHistorySerivceTest {
 	}
 	//2-3. 해당 메뉴로 판매내역 조회(menuId 사용)
 	public static void findSalesHistoryByMenu() {
-		Item item = m_service.findMenuByMenuName("딸기Dao");
+		Item item = m_service.findItemByItemName("딸기Dao");
 		List<SalesHistory> sh_list = sh_service.findSalesHistoryByMenu(item);
 		for(SalesHistory sh : sh_list) {
 			System.out.println(sh);
@@ -102,14 +102,14 @@ public class SalesHistorySerivceTest {
 	 */
 	//3-1. 환불
 	public static void deleteSalesHistoryBySid() {
-		Item item = m_service.findMenuByMenuName("딸기Dao");
+		Item item = m_service.findItemByItemName("딸기Dao");
 		List<SalesHistory> sh_list = sh_service.findSalesHistoryByMenu(item);
-		System.out.println("판매 내역 삭제 완료: " + item.getMenuName());
+		System.out.println("판매 내역 삭제 완료: " + item.getItemName());
 	}
 	
 	//3-2. 해당 메뉴의 판매내역 전체 삭제
 	public static void deleteAllSalesHistories() {
-		Item item = m_service.findMenuByMenuName("초코Dao");
+		Item item = m_service.findItemByItemName("초코Dao");
 		sh_service.deleteAllSalesHistories(item);
 		System.out.println("판매 내역 전체 삭제 완료");
 	}
