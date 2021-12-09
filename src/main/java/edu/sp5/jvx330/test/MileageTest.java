@@ -30,7 +30,6 @@ public class MileageTest {
 		// deleteTotalMileage();
 
 		context.close();
-		
 	}
 
 	//1. Total Mileage °ª º¯°æ
