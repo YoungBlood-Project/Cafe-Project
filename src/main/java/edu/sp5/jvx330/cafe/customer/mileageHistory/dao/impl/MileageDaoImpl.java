@@ -20,16 +20,16 @@ public class MileageDaoImpl implements MileageDao {
 	 */
 
 	@Override
-	public void addMileage(Long customerId, MileageHistory mileage) {
-		String sql = "INSERT INTO Mileage(customerId, orderNum, mBalance)"
+	public void addMileageHistory(Long customerId, MileageHistory mileage) {
+		String sql = "INSERT INTO MileageHistory(customerId, orderNum, mBalance)"
 				+ " VALUES(?, ?, ?)";
 		
 		jdbcTemplate.update(sql, customerId, mileage.getOrderNum(), mileage.getMBalance());
 	}
 
 	@Override
-	public List<MileageHistory> findMileageByOrderNum(Long orderNum) {
-		String sql = "SELECT mileageId, customerId, orderNum, mBalance, regDate FROM Mileage"
+	public List<MileageHistory> findMileageHistoryByOrderNum(Long orderNum) {
+		String sql = "SELECT mileageId, customerId, orderNum, mBalance, regDate FROM MileageHistory"
 				+ " WHERE orderNum = ?";
 		
 		return jdbcTemplate.query(sql, new MileageRowMapper(), orderNum);

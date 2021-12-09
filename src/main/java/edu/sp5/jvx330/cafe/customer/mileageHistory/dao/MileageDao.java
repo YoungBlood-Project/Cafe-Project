@@ -11,10 +11,10 @@ public interface MileageDao {
 	 * @param customer
 	 */
 	// 1. 마일리지 생성
-	public void addMileage(Long customerId, MileageHistory mileage);
+	public void addMileageHistory(Long customerId, MileageHistory mileage);
 	
 	// 2. orderNum으로 마일리지 조회
-	public List<MileageHistory> findMileageByOrderNum(Long orderNum);
+	public List<MileageHistory> findMileageHistoryByOrderNum(Long orderNum);
 	
 	/**
 	 * 초원
