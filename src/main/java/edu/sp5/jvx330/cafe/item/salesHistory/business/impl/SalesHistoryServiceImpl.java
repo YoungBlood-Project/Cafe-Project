@@ -7,8 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import edu.sp5.jvx330.cafe.customer.mileage.business.impl.TotalMileageServiceImpl;
 import edu.sp5.jvx330.cafe.customer.mileageHistory.business.impl.MileageServiceImpl;
-import edu.sp5.jvx330.cafe.item.dao.impl.MenuDaoImpl;
-import edu.sp5.jvx330.cafe.item.domain.Menu;
+import edu.sp5.jvx330.cafe.item.dao.impl.ItemDaoImpl;
+import edu.sp5.jvx330.cafe.item.domain.Item;
 import edu.sp5.jvx330.cafe.item.salesHistory.business.SalesHistoryService;
 import edu.sp5.jvx330.cafe.item.salesHistory.dao.impl.SalesHistoryDaoImpl;
 import edu.sp5.jvx330.cafe.item.salesHistory.domain.SalesHistory;
@@ -17,7 +17,7 @@ import edu.sp5.jvx330.cafe.item.salesHistory.domain.SalesHistory;
 
 public class SalesHistoryServiceImpl implements SalesHistoryService {
 	@Autowired
-	MenuDaoImpl mDao;
+	ItemDaoImpl mDao;
 	@Autowired
 	SalesHistoryDaoImpl shDao;
 	
@@ -30,8 +30,8 @@ public class SalesHistoryServiceImpl implements SalesHistoryService {
 	 * 1. 판매내역 추가
 	 */
 	@Override
-	public void addSalesHistory(Menu menu, SalesHistory salesHistory) {
-		Long mid = mDao.findMidByMenu(menu.getMenuName());
+	public void addSalesHistory(Item item, SalesHistory salesHistory) {
+		Long mid = mDao.findMidByMenu(item.getMenuName());
 		//주문 번호는 컨트롤러에서 넣어줘야할 거 같다.  
 		shDao.addSalesHistory(mid, salesHistory);
 	}
@@ -52,9 +52,9 @@ public class SalesHistoryServiceImpl implements SalesHistoryService {
 	
 	//2-3. 해당 메뉴로 판매내역 조회(menuId 사용할 것)
 	@Override
-	public List<SalesHistory> findSalesHistoryByMenu(Menu menu) {
+	public List<SalesHistory> findSalesHistoryByMenu(Item item) {
 		//메뉴 이름 받아서 id 조회
-		Long mid = mDao.findMidByMenu(menu.getMenuName());
+		Long mid = mDao.findMidByMenu(item.getMenuName());
 		return shDao.findSalesHistoryByMenu(mid);
 	}
 	
@@ -80,8 +80,8 @@ public class SalesHistoryServiceImpl implements SalesHistoryService {
 	}
 	//3-2. 해당 메뉴의 판매내역 전체 삭제
 	@Override
-	public void deleteAllSalesHistories(Menu menu) {
-		Long mid = mDao.findMidByMenu(menu.getMenuName());
+	public void deleteAllSalesHistories(Item item) {
+		Long mid = mDao.findMidByMenu(item.getMenuName());
 		shDao.deleteAllSalesHistories(mid);
 	}
 

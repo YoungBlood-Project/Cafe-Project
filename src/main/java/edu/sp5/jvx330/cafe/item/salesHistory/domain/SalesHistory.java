@@ -2,12 +2,12 @@ package edu.sp5.jvx330.cafe.item.salesHistory.domain;
 
 import java.util.Date;
 
-import edu.sp5.jvx330.cafe.item.domain.Menu;
+import edu.sp5.jvx330.cafe.item.domain.Item;
 import edu.sp5.jvx330.cafe.item.salesHistory.util.OrderNumGenerator;
 
 public class SalesHistory {
 	private Long sid;
-	private Menu menu;
+	private Item item;
 	private Long orderNum;
 	private Integer numOfSales;
 	private Integer paidPrice;
@@ -19,9 +19,9 @@ public class SalesHistory {
 	}
 	
 	//DB에 등록할 때 사용
-	public SalesHistory(Menu menu, Integer numOfSales, Integer paidPrice) {
+	public SalesHistory(Item item, Integer numOfSales, Integer paidPrice) {
 		super();
-		this.menu = menu;
+		this.item = item;
 		this.numOfSales = numOfSales;
 		this.paidPrice = paidPrice;
 	}
@@ -34,12 +34,12 @@ public class SalesHistory {
 		this.sid = sid;
 	}
 
-	public Menu getMenu() {
-		return menu;
+	public Item getMenu() {
+		return item;
 	}
 
-	public void setMenu(Menu menu) {
-		this.menu = menu;
+	public void setMenu(Item item) {
+		this.item = item;
 	}
 
 	public Long getOrderNum() {
@@ -76,7 +76,7 @@ public class SalesHistory {
 
 	@Override
 	public String toString() {
-		return "SalesHistory [sid=" + sid + ", menu=" + menu + ", orderNum=" + orderNum + ", numOfSales=" + numOfSales
+		return "SalesHistory [sid=" + sid + ", menu=" + item + ", orderNum=" + orderNum + ", numOfSales=" + numOfSales
 				+ ", paidPrice=" + paidPrice + ", orderDate=" + orderDate + "]";
 	}
 }

@@ -7,14 +7,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import edu.sp5.jvx330.cafe.customer.mileage.dao.impl.TotalMileageDaoImpl;
 import edu.sp5.jvx330.cafe.item.business.MenuService;
-import edu.sp5.jvx330.cafe.item.dao.impl.MenuDaoImpl;
-import edu.sp5.jvx330.cafe.item.domain.Menu;
+import edu.sp5.jvx330.cafe.item.dao.impl.ItemDaoImpl;
+import edu.sp5.jvx330.cafe.item.domain.Item;
 import edu.sp5.jvx330.cafe.item.salesHistory.dao.impl.SalesHistoryDaoImpl;
 import edu.sp5.jvx330.cafe.item.salesHistory.domain.SalesHistory;
 
 public class MenuSerivceImpl implements MenuService {
 	@Autowired
-	private MenuDaoImpl mDao;
+	private ItemDaoImpl mDao;
 	@Autowired
 	private SalesHistoryDaoImpl shDao;
 	@Autowired
@@ -25,28 +25,28 @@ public class MenuSerivceImpl implements MenuService {
 	 */
 	//1-1. 메뉴 추가
 	@Override
-	public void addMenu(Menu menu) {
-		mDao.addMenu(menu);
+	public void addMenu(Item item) {
+		mDao.addMenu(item);
 	}
 	
 	//1-2. 메뉴 수정
 	//메뉴 이름 수정
 	@Override
-	public Menu setMenuName(Menu menu, String menuName) {
-		return mDao.setMenuName(menu, menuName);
+	public Item setMenuName(Item item, String menuName) {
+		return mDao.setMenuName(item, menuName);
 	}
 
 	//메뉴 가격 수정
 	@Override
-	public Menu setMenuSales(Menu menu, Integer menuPrice) {
-		return mDao.setMenuSales(menu, menuPrice);
+	public Item setMenuSales(Item item, Integer menuPrice) {
+		return mDao.setMenuSales(item, menuPrice);
 	}
 	
 	//1-3. 메뉴 삭제
 	@Override
-	public void deleteMenu(Menu menu) {	
+	public void deleteMenu(Item item) {	
 		//삭제할 메뉴의 id로 판매내역 조회
-		List<SalesHistory> sh_list = shDao.findSalesHistoryByMenu(menu.getMid());
+		List<SalesHistory> sh_list = shDao.findSalesHistoryByMenu(item.getMid());
 		Long deleteId = mDao.findMidByMenu("delete");
 		System.out.println(deleteId);
 		for(SalesHistory sh : sh_list) {
@@ -56,7 +56,7 @@ public class MenuSerivceImpl implements MenuService {
 		//제약조건 삭제
 		shDao.disableConstraintFromSH();
 		//메뉴 삭제
-		mDao.deleteMenu(menu.getMenuName());
+		mDao.deleteMenu(item.getMenuName());
 		//제약조건 추가
 		shDao.enableConstraintFromSH();
 	}
@@ -73,21 +73,21 @@ public class MenuSerivceImpl implements MenuService {
 	//2-2. 카테고리별 메뉴 id 조회
 	@Override
 	public List<Long> findMidByCategory(String category) {
-		List<Menu> menu_list = mDao.findMidByCategory(category);
+		List<Item> menu_list = mDao.findMidByCategory(category);
 		List<Long> mid_list = new ArrayList<Long>();
-		for(Menu menu : menu_list) {
-			mid_list.add(menu.getMid());
+		for(Item item : menu_list) {
+			mid_list.add(item.getMid());
 		}
 		return mid_list;
 	}
 	//2-3. 메뉴 이름으로 메뉴 조회
 	@Override
-	public Menu findMenuByMenuName(String menuName) {
+	public Item findMenuByMenuName(String menuName) {
 		return mDao.findMenuByMenuName(menuName);
 	}
 	//2-4. 전체 메뉴 조회
 	@Override
-	public List<Menu> findAllMenus() {
+	public List<Item> findAllMenus() {
 		return mDao.findAllMenus();
 	}
 	
@@ -96,15 +96,15 @@ public class MenuSerivceImpl implements MenuService {
 	  */
 	@Override
 	//1. 주문 목록에 메뉴 추가
-	public List<Menu> addOrderList(Menu menu) {
-		List<Menu> order_list = new ArrayList<Menu>();
-		order_list.add(menu);
+	public List<Item> addOrderList(Item item) {
+		List<Item> order_list = new ArrayList<Item>();
+		order_list.add(item);
 		return order_list;
 	};
 	   
 	@Override
 	//2. 주문 목록에 메뉴 삭제
-	public List<Menu> deleteOrderList(int orderNum, List<Menu> order_list){
+	public List<Item> deleteOrderList(int orderNum, List<Item> order_list){
 		order_list.remove(orderNum);
 		return order_list;
 	};

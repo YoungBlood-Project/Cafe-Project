@@ -2,21 +2,21 @@ package edu.sp5.jvx330.cafe.item.dao;
 
 import java.util.List;
 
-import edu.sp5.jvx330.cafe.item.domain.Menu;
+import edu.sp5.jvx330.cafe.item.domain.Item;
 
-public interface MenuDao {
+public interface ItemDao {
 	/**
 	 * 1. 관리메뉴
 	 */
 	//1-1. 메뉴 추가 
-	public void addMenu(Menu menu);
+	public void addMenu(Item item);
 	
 	//1-2. 메뉴 수정
 	//메뉴 이름 수정
-	public Menu setMenuName(Menu menu, String menuName);
+	public Item setMenuName(Item item, String menuName);
 	
 	//메뉴 가격 수정
-	public Menu setMenuSales(Menu menu, Integer menuPrice);
+	public Item setMenuSales(Item item, Integer menuPrice);
 	
 	//1-3. 메뉴 삭제(메뉴 이름으로 삭제)
 	public void deleteMenu(String menuName);
@@ -28,9 +28,9 @@ public interface MenuDao {
 	//SalesHistoryServiceImpl에서 사용
 	public Long findMidByMenu(String menuName);
 	//2-2. 카테고리별 메뉴 조회
-	public List<Menu> findMidByCategory(String category);
+	public List<Item> findMidByCategory(String category);
 	//2-3. 메뉴이름으로 메뉴 조회
-	public Menu findMenuByMenuName(String menuName);
+	public Item findMenuByMenuName(String menuName);
 	//2-4. 전체 메뉴 조회
-	public List<Menu> findAllMenus();
+	public List<Item> findAllMenus();
 }

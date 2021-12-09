@@ -5,11 +5,11 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 
-import edu.sp5.jvx330.cafe.item.dao.MenuDao;
-import edu.sp5.jvx330.cafe.item.dao.MenuRowMapper;
-import edu.sp5.jvx330.cafe.item.domain.Menu;
+import edu.sp5.jvx330.cafe.item.dao.ItemDao;
+import edu.sp5.jvx330.cafe.item.dao.ItemRowMapper;
+import edu.sp5.jvx330.cafe.item.domain.Item;
 
-public class MenuDaoImpl implements MenuDao {
+public class ItemDaoImpl implements ItemDao {
 	@Autowired
 	private JdbcTemplate jdbcTemplate;
 
@@ -18,34 +18,34 @@ public class MenuDaoImpl implements MenuDao {
 	 */
 	// 1-1. 메뉴 추가
 	@Override
-	public void addMenu(Menu menu) {
+	public void addMenu(Item item) {
 		String sql = "INSERT INTO Menu(category, menuName, menuPrice)" + " VALUES(?,?,?)";
 		// System.out.println(menu);
-		jdbcTemplate.update(sql, menu.getCategory(), menu.getMenuName(), menu.getMenuPrice());
+		jdbcTemplate.update(sql, item.getCategory(), item.getMenuName(), item.getMenuPrice());
 	}
 
 	// 1-2. 메뉴 수정
 	// 메뉴 이름 수정
 	@Override
-	public Menu setMenuName(Menu menu, String menuName) {
+	public Item setMenuName(Item item, String menuName) {
 		String sql = "UPDATE Menu SET menuName = ? WHERE menuName = ?";
 
-		jdbcTemplate.update(sql, menuName, menu.getMenuName());
+		jdbcTemplate.update(sql, menuName, item.getMenuName());
 
 		// return값을 void로 할지 Menu로 할지 고민했지만 변경할 menuName을 argument로 받는 게 더 직관적일 거라고 판단
-		menu.setMenuName(menuName);
-		return menu;
+		item.setMenuName(menuName);
+		return item;
 	}
 
 	// 메뉴 가격 수정
 	@Override
-	public Menu setMenuSales(Menu menu, Integer menuPrice) {
+	public Item setMenuSales(Item item, Integer menuPrice) {
 		String sql = "UPDATE Menu SET menuPrice = ? WHERE menuName = ?";
 
-		jdbcTemplate.update(sql, menuPrice, menu.getMenuName());
+		jdbcTemplate.update(sql, menuPrice, item.getMenuName());
 
-		menu.setMenuPrice(menuPrice);
-		return menu;
+		item.setMenuPrice(menuPrice);
+		return item;
 	}
 
 	// 1-3 메뉴 삭제
@@ -66,31 +66,31 @@ public class MenuDaoImpl implements MenuDao {
 		// 메뉴 이름은 중복되지 않는다는 가정
 		String sql = "SELECT mid, category, menuName, menuPrice" + " FROM Menu WHERE menuName = ?";
 
-		Menu menu = jdbcTemplate.queryForObject(sql, new MenuRowMapper(), menuName);
-		return menu.getMid();
+		Item item = jdbcTemplate.queryForObject(sql, new ItemRowMapper(), menuName);
+		return item.getMid();
 	}
 
 	// 2-2. 카테고리별 메뉴 조회
 	@Override
-	public List<Menu> findMidByCategory(String category) {
+	public List<Item> findMidByCategory(String category) {
 		String sql = "SELECT mid, category, menuName, menuPrice" + " FROM Menu WHERE category = ?";
 
-		return jdbcTemplate.query(sql, new MenuRowMapper(), category);
+		return jdbcTemplate.query(sql, new ItemRowMapper(), category);
 	}
 
 	// 2-3. 메뉴 이름으로 메뉴 조회
 	@Override
-	public Menu findMenuByMenuName(String menuName) {
+	public Item findMenuByMenuName(String menuName) {
 		String sql = "SELECT mid, category, menuName, menuPrice" + " FROM Menu WHERE menuName = ?";
 
-		return jdbcTemplate.queryForObject(sql, new MenuRowMapper(), menuName);
+		return jdbcTemplate.queryForObject(sql, new ItemRowMapper(), menuName);
 	}
 
 	// 2-4. 전체 메뉴 조회
 	@Override
-	public List<Menu> findAllMenus() {
+	public List<Item> findAllMenus() {
 		String sql = "SELECT mid, category, menuName, menuPrice FROM Menu";
-		return jdbcTemplate.query(sql, new MenuRowMapper());
+		return jdbcTemplate.query(sql, new ItemRowMapper());
 	}
 
 }

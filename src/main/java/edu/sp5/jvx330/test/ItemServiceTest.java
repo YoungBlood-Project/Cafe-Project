@@ -7,9 +7,9 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 import edu.sp5.jvx330.cafe.item.business.MenuService;
 import edu.sp5.jvx330.cafe.item.business.impl.MenuSerivceImpl;
 import edu.sp5.jvx330.cafe.item.config.MenuConfig;
-import edu.sp5.jvx330.cafe.item.domain.Menu;
+import edu.sp5.jvx330.cafe.item.domain.Item;
 
-public class MenuServiceTest {
+public class ItemServiceTest {
 	private static MenuService service;
 
 	public static void main(String[] args) {
@@ -44,33 +44,33 @@ public class MenuServiceTest {
 	 */
 	// 1-1. 메뉴 추가 테스트
 	public static void addMenu() {
-		Menu menu = new Menu("deletedMenu", "delete", 0);
+		Item item = new Item("deletedMenu", "delete", 0);
 		// Menu menu = new Menu("라떼Dao", "바닐라Dao", 5000);
 		// Menu menu = new Menu("라떼Dao", "초코Dao", 6000);
 		// System.out.println(menu.getCustomer().getCid());
-		service.addMenu(menu);
+		service.addMenu(item);
 		System.out.println("MenuServiceTest : 저장 완료");
 	}
 
 	// 1-2-1. 메뉴 이름 수정
 	public static void setMenuName() {
-		Menu menu = service.findMenuByMenuName("바닐라Dao");
-		service.setMenuName(menu, "딸기Dao");
+		Item item = service.findMenuByMenuName("바닐라Dao");
+		service.setMenuName(item, "딸기Dao");
 		System.out.println("MenuServiceTest : 이름 변경 완료");
 	}
 
 	// 1-2-2. 메뉴 가격 수정
 	public static void setMenuSales() {
-		Menu menu = service.findMenuByMenuName("딸기Dao");
-		service.setMenuSales(menu, 4000);
+		Item item = service.findMenuByMenuName("딸기Dao");
+		service.setMenuSales(item, 4000);
 		System.out.println("MenuServiceTest : 가격 변경 완료");
 	}
 
 	// 1-3. 메뉴삭제
 	public static void deleteMenu() {
-		Menu menu = service.findMenuByMenuName("초코Dao");
+		Item item = service.findMenuByMenuName("초코Dao");
 		// System.out.println("testMService :" + menu);
-		service.deleteMenu(menu);
+		service.deleteMenu(item);
 		System.out.println("MenuServiceTest : 삭제 완료");
 	}
 
@@ -79,8 +79,8 @@ public class MenuServiceTest {
 	 */
 	// 2-1. 메뉴 id 조회(메뉴 이름으로 id 조회)
 	public static void findMidByMenuName() {
-		Menu menu = service.findMenuByMenuName("딸기Dao");
-		System.out.println("MenuServiceTest : id : " + service.findMidByMenuName(menu.getMenuName()));
+		Item item = service.findMenuByMenuName("딸기Dao");
+		System.out.println("MenuServiceTest : id : " + service.findMidByMenuName(item.getMenuName()));
 	}
 
 	// 2-2. 카테고리별 메뉴 id 조회
@@ -98,9 +98,9 @@ public class MenuServiceTest {
 
 	// 2-4. 메뉴 전체 조회
 	public static void findAllMenus() {
-		List<Menu> mid_list = service.findAllMenus();
-		for (Menu menu : mid_list) {
-			System.out.println(menu);
+		List<Item> mid_list = service.findAllMenus();
+		for (Item item : mid_list) {
+			System.out.println(item);
 		}
 	}
 
@@ -109,17 +109,17 @@ public class MenuServiceTest {
 	 */
 	// 1. 주문 목록에 메뉴 추가
 	public static void addOrderList() {
-		Menu menu = service.findMenuByMenuName("초코Dao");
-		service.addOrderList(menu);
-		System.out.println("메뉴 추가: " + menu.getMenuName() + " " + menu.getMenuPrice());
+		Item item = service.findMenuByMenuName("초코Dao");
+		service.addOrderList(item);
+		System.out.println("메뉴 추가: " + item.getMenuName() + " " + item.getMenuPrice());
 	}
 
 	// 2. 주문 목록에 메뉴 삭제
 	public static void deleteOrderList() {
-		Menu menu = service.findMenuByMenuName("초코Dao");
-		List<Menu> order_list = service.findAllMenus();
+		Item item = service.findMenuByMenuName("초코Dao");
+		List<Item> order_list = service.findAllMenus();
 		service.deleteOrderList(1, order_list);
-		System.out.println("메뉴 삭제 완료, 삭제 항목: " + menu.getMenuName() + " " + menu.getMenuPrice());
+		System.out.println("메뉴 삭제 완료, 삭제 항목: " + item.getMenuName() + " " + item.getMenuPrice());
 
 	}
 }

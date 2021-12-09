@@ -6,14 +6,14 @@ import org.springframework.context.annotation.Import;
 
 import edu.sp5.jvx330.cafe.DataSourceConfig;
 import edu.sp5.jvx330.cafe.item.business.impl.MenuSerivceImpl;
-import edu.sp5.jvx330.cafe.item.dao.impl.MenuDaoImpl;
+import edu.sp5.jvx330.cafe.item.dao.impl.ItemDaoImpl;
 
 @Configuration
 @Import(DataSourceConfig.class)
 public class MenuConfig extends DataSourceConfig {
 	@Bean
-	public MenuDaoImpl menuDaoImpl() {
-		return new MenuDaoImpl();
+	public ItemDaoImpl itemDaoImpl() {
+		return new ItemDaoImpl();
 	}
 	
 	@Bean

@@ -6,19 +6,19 @@ import java.sql.SQLException;
 import org.springframework.jdbc.core.RowMapper;
 
 import edu.sp5.jvx330.cafe.customer.domain.Customer;
-import edu.sp5.jvx330.cafe.item.domain.Menu;
+import edu.sp5.jvx330.cafe.item.domain.Item;
 
-public class MenuRowMapper implements RowMapper<Menu> {
+public class ItemRowMapper implements RowMapper<Item> {
 
 	@Override
-	public Menu mapRow(ResultSet rs, int rowNum) 
+	public Item mapRow(ResultSet rs, int rowNum) 
 			throws SQLException {
 		
-		Menu menu = new Menu(rs.getString("category"), rs.getString("menuName"),
+		Item item = new Item(rs.getString("category"), rs.getString("menuName"),
 				rs.getInt("menuPrice"));
-		menu.setMid(rs.getLong("mid"));
+		item.setMid(rs.getLong("mid"));
 		
-		return menu;
+		return item;
 	}
 	
 }

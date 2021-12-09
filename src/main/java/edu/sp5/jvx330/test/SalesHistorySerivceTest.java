@@ -7,7 +7,7 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 
 import edu.sp5.jvx330.cafe.item.business.MenuService;
 import edu.sp5.jvx330.cafe.item.business.impl.MenuSerivceImpl;
-import edu.sp5.jvx330.cafe.item.domain.Menu;
+import edu.sp5.jvx330.cafe.item.domain.Item;
 import edu.sp5.jvx330.cafe.item.salesHistory.business.SalesHistoryService;
 import edu.sp5.jvx330.cafe.item.salesHistory.business.impl.SalesHistoryServiceImpl;
 import edu.sp5.jvx330.cafe.item.salesHistory.config.SalesHistoryConfig;
@@ -49,12 +49,12 @@ public class SalesHistorySerivceTest {
 	 * 1. 판매내역 추가
 	 */
 	public static void addSalesHistory() {
-		Menu menu = m_service.findMenuByMenuName("딸기Dao");
+		Item item = m_service.findMenuByMenuName("딸기Dao");
 		SalesHistory salesHistory =
-				new SalesHistory(menu, 3, menu.getMenuPrice()*3);
+				new SalesHistory(item, 3, item.getMenuPrice()*3);
 		salesHistory.setOrderNum(202112070001l);
 				//new SalesHistory(menu, 1, menu.getMenuPrice()*1);
-		sh_service.addSalesHistory(menu, salesHistory);
+		sh_service.addSalesHistory(item, salesHistory);
 		System.out.println("SalesHistorySerivceTest : 판매내역 저장 완료");
 	}
 	
@@ -77,8 +77,8 @@ public class SalesHistorySerivceTest {
 	}
 	//2-3. 해당 메뉴로 판매내역 조회(menuId 사용)
 	public static void findSalesHistoryByMenu() {
-		Menu menu = m_service.findMenuByMenuName("딸기Dao");
-		List<SalesHistory> sh_list = sh_service.findSalesHistoryByMenu(menu);
+		Item item = m_service.findMenuByMenuName("딸기Dao");
+		List<SalesHistory> sh_list = sh_service.findSalesHistoryByMenu(item);
 		for(SalesHistory sh : sh_list) {
 			System.out.println(sh);
 		}
@@ -102,15 +102,15 @@ public class SalesHistorySerivceTest {
 	 */
 	//3-1. 환불
 	public static void deleteSalesHistoryBySid() {
-		Menu menu = m_service.findMenuByMenuName("딸기Dao");
-		List<SalesHistory> sh_list = sh_service.findSalesHistoryByMenu(menu);
-		System.out.println("판매 내역 삭제 완료: " + menu.getMenuName());
+		Item item = m_service.findMenuByMenuName("딸기Dao");
+		List<SalesHistory> sh_list = sh_service.findSalesHistoryByMenu(item);
+		System.out.println("판매 내역 삭제 완료: " + item.getMenuName());
 	}
 	
 	//3-2. 해당 메뉴의 판매내역 전체 삭제
 	public static void deleteAllSalesHistories() {
-		Menu menu = m_service.findMenuByMenuName("초코Dao");
-		sh_service.deleteAllSalesHistories(menu);
+		Item item = m_service.findMenuByMenuName("초코Dao");
+		sh_service.deleteAllSalesHistories(item);
 		System.out.println("판매 내역 전체 삭제 완료");
 	}
 	

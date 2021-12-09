@@ -3,16 +3,16 @@ package edu.sp5.jvx330.cafe.item.salesHistory.business;
 import java.util.Date;
 import java.util.List;
 
-import edu.sp5.jvx330.cafe.item.domain.Menu;
+import edu.sp5.jvx330.cafe.item.domain.Item;
 import edu.sp5.jvx330.cafe.item.salesHistory.domain.SalesHistory;
 
 public interface SalesHistoryService {
 	/**
 	 * 1. 판매내역 추가(메뉴, 판매내역)
-	 * @param menu
+	 * @param item
 	 * @param numOfSales
 	 */
-	public void addSalesHistory(Menu menu, SalesHistory salesHistory);
+	public void addSalesHistory(Item item, SalesHistory salesHistory);
 	
 	/**
 	 * 2. 판매내역 조회
@@ -23,7 +23,7 @@ public interface SalesHistoryService {
 	//2-2. 해당 날짜로 판매내역 조회
 	public List<SalesHistory> findSalesHistoryByOrderDate(Date orderDate);
 	//2-3. 해당 메뉴로 판매내역 조회(menuId 사용)
-	public List<SalesHistory> findSalesHistoryByMenu(Menu menu);
+	public List<SalesHistory> findSalesHistoryByMenu(Item item);
 	
 	/**
 	 * 정혜윤 추가
@@ -40,7 +40,7 @@ public interface SalesHistoryService {
 	//3-1. 환불(해당 SalesHistory)
 	public void deleteSalesHistoryBySid(SalesHistory salesHistory);
 	//3-2. 해당 메뉴의 판매내역 전체 삭제
-	public void deleteAllSalesHistories(Menu menu);
+	public void deleteAllSalesHistories(Item item);
 	
 	/**
 	 * 4. 날짜별 판매내역 개수

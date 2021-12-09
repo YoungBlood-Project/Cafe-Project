@@ -2,17 +2,17 @@ package edu.sp5.jvx330.cafe.item.domain;
 
 import edu.sp5.jvx330.cafe.customer.domain.Customer;
 
-public class Menu {
+public class Item {
 	private Long mid;
 	private String category;
 	private String menuName;
 	private Integer menuPrice;
 	
-	public Menu() {
+	public Item() {
 		
 	}
 	//DB에 등록할 때 사용
-	public Menu(String category, String menuName, Integer menuPrice) {
+	public Item(String category, String menuName, Integer menuPrice) {
 		super();
 		this.category = category;
 		this.menuName = menuName;
