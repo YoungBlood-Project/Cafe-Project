@@ -5,8 +5,8 @@ import java.sql.SQLException;
 
 import org.springframework.jdbc.core.RowMapper;
 
+import edu.sp5.jvx330.cafe.category.domain.Category;
 import edu.sp5.jvx330.cafe.category.item.domain.Item;
-import edu.sp5.jvx330.cafe.customer.domain.Customer;
 
 public class ItemRowMapper implements RowMapper<Item> {
 
@@ -14,9 +14,11 @@ public class ItemRowMapper implements RowMapper<Item> {
 	public Item mapRow(ResultSet rs, int rowNum) 
 			throws SQLException {
 		
-		Item item = new Item(rs.getString("menuName"),
-				rs.getInt("menuPrice"));
+		Category category = new Category(rs.getString("categoryName"));
+		Item item = new Item(category, rs.getString("itemName"),
+				rs.getInt("itemPrice"));
 		item.setItemId(rs.getLong("itemId"));
+		item.setRegDate(rs.getTimestamp("regDate"));
 		
 		return item;
 	}
