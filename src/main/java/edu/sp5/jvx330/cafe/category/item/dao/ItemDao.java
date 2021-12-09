@@ -1,8 +1,8 @@
-package edu.sp5.jvx330.cafe.item.dao;
+package edu.sp5.jvx330.cafe.category.item.dao;
 
 import java.util.List;
 
-import edu.sp5.jvx330.cafe.item.domain.Item;
+import edu.sp5.jvx330.cafe.category.item.domain.Item;
 
 public interface ItemDao {
 	/**

@@ -1,4 +1,4 @@
-package edu.sp5.jvx330.cafe.item.salesHistory.util;
+package edu.sp5.jvx330.cafe.category.item.salesHistory.util;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;

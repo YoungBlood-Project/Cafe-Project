@@ -1,4 +1,4 @@
-package edu.sp5.jvx330.cafe.item.config;
+package edu.sp5.jvx330.cafe.category.item.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

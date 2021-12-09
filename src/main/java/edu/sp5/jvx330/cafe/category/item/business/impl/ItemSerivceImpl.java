@@ -1,16 +1,16 @@
-package edu.sp5.jvx330.cafe.item.business.impl;
+package edu.sp5.jvx330.cafe.category.item.business.impl;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
+import edu.sp5.jvx330.cafe.category.item.business.ItemService;
+import edu.sp5.jvx330.cafe.category.item.dao.impl.ItemDaoImpl;
+import edu.sp5.jvx330.cafe.category.item.domain.Item;
+import edu.sp5.jvx330.cafe.category.item.salesHistory.dao.impl.SalesHistoryDaoImpl;
+import edu.sp5.jvx330.cafe.category.item.salesHistory.domain.SalesHistory;
 import edu.sp5.jvx330.cafe.customer.mileage.dao.impl.MileageDaoImpl;
-import edu.sp5.jvx330.cafe.item.business.ItemService;
-import edu.sp5.jvx330.cafe.item.dao.impl.ItemDaoImpl;
-import edu.sp5.jvx330.cafe.item.domain.Item;
-import edu.sp5.jvx330.cafe.item.salesHistory.dao.impl.SalesHistoryDaoImpl;
-import edu.sp5.jvx330.cafe.item.salesHistory.domain.SalesHistory;
 
 public class ItemSerivceImpl implements ItemService {
 	@Autowired

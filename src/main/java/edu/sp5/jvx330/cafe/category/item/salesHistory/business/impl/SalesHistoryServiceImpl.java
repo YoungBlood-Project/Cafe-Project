@@ -1,19 +1,17 @@
-package edu.sp5.jvx330.cafe.item.salesHistory.business.impl;
+package edu.sp5.jvx330.cafe.category.item.salesHistory.business.impl;
 
 import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
+import edu.sp5.jvx330.cafe.category.item.dao.impl.ItemDaoImpl;
+import edu.sp5.jvx330.cafe.category.item.domain.Item;
+import edu.sp5.jvx330.cafe.category.item.salesHistory.business.SalesHistoryService;
+import edu.sp5.jvx330.cafe.category.item.salesHistory.dao.impl.SalesHistoryDaoImpl;
+import edu.sp5.jvx330.cafe.category.item.salesHistory.domain.SalesHistory;
 import edu.sp5.jvx330.cafe.customer.mileage.business.impl.MileageServiceImpl;
 import edu.sp5.jvx330.cafe.customer.mileageHistory.business.impl.MileageHistoryServiceImpl;
-import edu.sp5.jvx330.cafe.item.dao.impl.ItemDaoImpl;
-import edu.sp5.jvx330.cafe.item.domain.Item;
-import edu.sp5.jvx330.cafe.item.salesHistory.business.SalesHistoryService;
-import edu.sp5.jvx330.cafe.item.salesHistory.dao.impl.SalesHistoryDaoImpl;
-import edu.sp5.jvx330.cafe.item.salesHistory.domain.SalesHistory;
-
-
 
 public class SalesHistoryServiceImpl implements SalesHistoryService {
 	@Autowired

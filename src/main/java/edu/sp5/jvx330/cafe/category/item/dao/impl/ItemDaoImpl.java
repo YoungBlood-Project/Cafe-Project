@@ -1,13 +1,13 @@
-package edu.sp5.jvx330.cafe.item.dao.impl;
+package edu.sp5.jvx330.cafe.category.item.dao.impl;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 
-import edu.sp5.jvx330.cafe.item.dao.ItemDao;
-import edu.sp5.jvx330.cafe.item.dao.ItemRowMapper;
-import edu.sp5.jvx330.cafe.item.domain.Item;
+import edu.sp5.jvx330.cafe.category.item.dao.ItemDao;
+import edu.sp5.jvx330.cafe.category.item.domain.Item;
+
 
 public class ItemDaoImpl implements ItemDao {
 	@Autowired

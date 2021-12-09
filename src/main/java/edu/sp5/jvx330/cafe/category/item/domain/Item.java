@@ -1,7 +1,8 @@
-package edu.sp5.jvx330.cafe.item.domain;
+package edu.sp5.jvx330.cafe.category.item.domain;
 
 import java.util.Date;
 
+import edu.sp5.jvx330.cafe.category.domain.Category;
 import edu.sp5.jvx330.cafe.customer.domain.Customer;
 
 public class Item {
@@ -16,7 +17,7 @@ public class Item {
 	}
 	
 	//DB에 등록할 때 사용
-	public Item(String category, String itemName, Integer itemPrice) {
+	public Item(Category category, String itemName, Integer itemPrice) {
 		super();
 		this.category = category;
 		this.itemName = itemName;
@@ -29,10 +30,10 @@ public class Item {
 	public void setItemId(Long itemId) {
 		this.itemId = itemId;
 	}
-	public String getCategory() {
+	public Category getCategory() {
 		return category;
 	}
-	public void setCategory(String category) {
+	public void setCategory(Category category) {
 		this.category = category;
 	}
 	public String getItemName() {

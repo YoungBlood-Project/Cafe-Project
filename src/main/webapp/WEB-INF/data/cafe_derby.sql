@@ -61,7 +61,7 @@ CREATE TABLE SalesTotalPrice(
 );
 
 CREATE TABLE SalesHistory (
-	shId			BIGINT		PRIMARY	KEY	GENERATED	ALWAYS	AS	IDENTITY,					--판매내역 PK
+	shId		BIGINT		PRIMARY	KEY	GENERATED	ALWAYS	AS	IDENTITY,					--판매내역 PK
 	itemId		BIGINT		NOT NULL,															--FK(메뉴 PK)
 	orderNum	BIGINT		NOT	NULL,															--주문 번호
 	numOfSales	INT			NOT NULL	DEFAULT	0,												--수량
