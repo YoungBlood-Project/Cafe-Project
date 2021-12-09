@@ -11,7 +11,7 @@ public interface MileageHistoryDao {
 	 * @param customer
 	 */
 	// 1. 마일리지 생성
-	public void addMileageHistory(Long customerId, MileageHistory mileage);
+	public void addMileageHistory(Long customerId, MileageHistory mileageHistory);
 	
 	// 2. orderNum으로 마일리지 조회
 	public List<MileageHistory> findMHByOrderNum(Long orderNum);

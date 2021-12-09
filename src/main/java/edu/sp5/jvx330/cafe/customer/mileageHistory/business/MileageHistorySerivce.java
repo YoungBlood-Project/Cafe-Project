@@ -13,7 +13,7 @@ public interface MileageHistorySerivce {
 	 * orderNum으로 마일리지 조회하는 코드 추가.
 	 */
 	// 1. 마일리지 생성
-	public void addMileageHistory(Customer customer, MileageHistory mileage);
+	public void addMileageHistory(Customer customer, MileageHistory mileageHistory);
 	
 	// 2. orderNum으로 마일리지 조회
 	public List<MileageHistory> findMHByOrderNum(Long orderNum);

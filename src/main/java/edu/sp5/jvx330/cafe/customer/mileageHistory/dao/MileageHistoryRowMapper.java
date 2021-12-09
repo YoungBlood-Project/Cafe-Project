@@ -16,7 +16,7 @@ public class MileageHistoryRowMapper implements RowMapper<MileageHistory> {
 		
 		MileageHistory mileage = new MileageHistory(customer, rs.getLong("orderNum"), rs.getInt("mBalance"));
 		
-		mileage.setMileageId(rs.getLong("mileageId"));
+		mileage.setMhId(rs.getLong("mhId"));
 		mileage.setRegDate(rs.getTimestamp("regDate"));
 		
 		return mileage;

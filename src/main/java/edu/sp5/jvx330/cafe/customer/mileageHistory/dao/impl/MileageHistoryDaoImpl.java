@@ -20,11 +20,11 @@ public class MileageHistoryDaoImpl implements MileageHistoryDao {
 	 */
 
 	@Override
-	public void addMileageHistory(Long customerId, MileageHistory mileage) {
+	public void addMileageHistory(Long customerId, MileageHistory mileageHistory) {
 		String sql = "INSERT INTO MileageHistory(customerId, orderNum, mBalance)"
 				+ " VALUES(?, ?, ?)";
 		
-		jdbcTemplate.update(sql, customerId, mileage.getOrderNum(), mileage.getMBalance());
+		jdbcTemplate.update(sql, customerId, mileageHistory.getOrderNum(), mileageHistory.getMBalance());
 	}
 
 	@Override

@@ -22,7 +22,7 @@ public interface CustomerService {
 	//2-2. 고객 전체 조회
 	public List<Customer> findAllCustomers();
 	//2-3. 고객 마일리지 조회
-	public Integer findTotalMileage(Customer customer);
+	public Integer findMileage(Customer customer);
 	
 	/**
 	 * 3. 고객 삭제

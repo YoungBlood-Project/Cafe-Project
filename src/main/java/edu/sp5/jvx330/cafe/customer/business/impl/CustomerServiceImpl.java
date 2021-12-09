@@ -49,8 +49,8 @@ public class CustomerServiceImpl implements CustomerService {
 	
 	//2-3. 고객 마일리지 조회
 	@Override
-	public Integer findTotalMileage(Customer customer) {
-		return tmService.findTotalMileage(customer);
+	public Integer findMileage(Customer customer) {
+		return tmService.findMileage(customer);
 	}
 
 	/**
@@ -62,6 +62,6 @@ public class CustomerServiceImpl implements CustomerService {
 	public void deleteCustomer(Customer customer) {
 		mileageDao.deleteMileageHistory(customer);
 		customerDao.deleteCustomer(customer);
-		tmService.deleteTotalMileage(customer);
+		tmService.deleteMileage(customer);
 	}
 }
