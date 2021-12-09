@@ -5,9 +5,9 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 import edu.sp5.jvx330.cafe.customer.business.CustomerService;
 import edu.sp5.jvx330.cafe.customer.business.impl.CustomerServiceImpl;
 import edu.sp5.jvx330.cafe.customer.domain.Customer;
-import edu.sp5.jvx330.cafe.customer.totalMileage.business.TotalMileageService;
-import edu.sp5.jvx330.cafe.customer.totalMileage.business.impl.TotalMileageServiceImpl;
-import edu.sp5.jvx330.cafe.customer.totalMileage.config.TotalMileageConfig;
+import edu.sp5.jvx330.cafe.customer.mileage.business.TotalMileageService;
+import edu.sp5.jvx330.cafe.customer.mileage.business.impl.TotalMileageServiceImpl;
+import edu.sp5.jvx330.cafe.customer.mileage.config.TotalMileageConfig;
 
 public class TotalMileageTest {
 	private static CustomerService customerService;

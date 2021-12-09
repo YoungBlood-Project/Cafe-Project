@@ -4,10 +4,10 @@ import java.util.List;
 
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
-import edu.sp5.jvx330.cafe.menu.business.MenuService;
-import edu.sp5.jvx330.cafe.menu.business.impl.MenuSerivceImpl;
-import edu.sp5.jvx330.cafe.menu.config.MenuConfig;
-import edu.sp5.jvx330.cafe.menu.domain.Menu;
+import edu.sp5.jvx330.cafe.item.business.MenuService;
+import edu.sp5.jvx330.cafe.item.business.impl.MenuSerivceImpl;
+import edu.sp5.jvx330.cafe.item.config.MenuConfig;
+import edu.sp5.jvx330.cafe.item.domain.Menu;
 
 public class MenuServiceTest {
 	private static MenuService service;
