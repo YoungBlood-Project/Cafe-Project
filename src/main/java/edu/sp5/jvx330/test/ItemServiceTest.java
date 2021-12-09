@@ -4,6 +4,8 @@ import java.util.List;
 
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
+import edu.sp5.jvx330.cafe.category.business.CategoryService;
+import edu.sp5.jvx330.cafe.category.business.impl.CategoryServiceImpl;
 import edu.sp5.jvx330.cafe.category.domain.Category;
 import edu.sp5.jvx330.cafe.category.item.business.ItemService;
 import edu.sp5.jvx330.cafe.category.item.business.impl.ItemSerivceImpl;
@@ -14,17 +16,19 @@ import edu.sp5.jvx330.cafe.category.item.domain.Item;
 
 public class ItemServiceTest {
 	private static ItemService service;
+	private static CategoryService cService;
 
 	public static void main(String[] args) {
 		AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(ItemConfig.class);
 
-		service = context.getBean("menuServiceImpl", ItemSerivceImpl.class);
+		service = context.getBean("itemServiceImpl", ItemSerivceImpl.class);
+		cService = context.getBean("categoryServiceImpl", CategoryServiceImpl.class);
 
 		/**
-		 * 테스트 - 정헤윤.
+		 * 테스트 - 이초원.
 		 */
 		// 1. 메뉴 추가/수정/삭제
-		// addMenu();
+		addItem();
 		// setMenuName();
 		// setMenuSales();
 		// deleteMenu();
@@ -48,6 +52,7 @@ public class ItemServiceTest {
 	// 1-1. 메뉴 추가 테스트
 	public static void addItem() {
 		Category category = new Category("deletedMenu");
+		cService.findCategoryByCategoryName(null);
 		Item item = new Item(category, "delete", 0);
 		// Menu menu = new Menu("라떼Dao", "바닐라Dao", 5000);
 		// Menu menu = new Menu("라떼Dao", "초코Dao", 6000);
