@@ -12,8 +12,8 @@ public class MileageRowMapper implements RowMapper<Mileage> {
 
 	@Override
 	public Mileage mapRow(ResultSet rs, int rowNum) throws SQLException {
-		Mileage mileage = new Mileage(rs.getInt("mileageTotal"));
-		mileage.setTmId(rs.getLong("tmId"));
+		Mileage mileage = new Mileage(rs.getInt("mTotal"));
+		mileage.setmId(rs.getLong("mId"));
 		
 		Customer customer = new Customer();
 		customer.setCid(rs.getLong("customerId"));

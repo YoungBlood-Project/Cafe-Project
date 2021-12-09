@@ -66,7 +66,7 @@ public class CustomerTest {
 	// 2-3. 고객 마일리지 조회
 	public static void findTotalMileage() {
 		Customer customer = customerService.findCustomerByUserInfo("A", "1");
-		Integer totalMileage = customerService.findTotalMileage(customer);
+		Integer totalMileage = customerService.findMileage(customer);
 		System.out.println("customerServiceTest 마일리지 조회" + totalMileage);
 	}
 

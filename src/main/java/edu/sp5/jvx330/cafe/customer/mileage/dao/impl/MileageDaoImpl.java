@@ -12,57 +12,45 @@ public class MileageDaoImpl implements MileageDao {
 	@Autowired
 	private JdbcTemplate jdbcTemplate;
 	
-	//1. Total Mileage 추가
-	public void insertTotalMileage(Long customerId, Integer init_mileage) {
-		String sql = "INSERT INTO TotalMileage(customerId, mileageTotal)"
+	//1. Mileage 추가
+	public void insertMileage(Long customerId, Integer init_mileage) {
+		String sql = "INSERT INTO Mileage(customerId, mTotal)"
 				+ " VALUES(?,?)";
 		jdbcTemplate.update(sql, customerId, init_mileage);
 	}
 	
-	//2. Total Mileage 변경
+	//2. Mileage 변경
 	@Override
-	public void setTotalMileage(Long customerId, Integer mileageTotal) {
-		String sql = "UPDATE TotalMileage SET mileageTotal = ? WHERE customerId = ?";
+	public void setMileage(Long customerId, Integer mTotal) {
+		String sql = "UPDATE Mileage SET mTotal = ? WHERE customerId = ?";
 		
-		jdbcTemplate.update(sql, mileageTotal, customerId);
+		jdbcTemplate.update(sql, mTotal, customerId);
 	}
 
-	//3. Total Mileage 조회
+	//3. Mileage 조회
 	/**
 	 * 수정 - 정혜윤
-	 * SELECT tmid, customerId, mileageTotal WHERE customerId = ?
-	 * -> SELECE tmid, customerId, mileageTotal FROM TotalMileage WHERE customerId = ?
+	 * 
+	 *  SELECT tmid, customerId, mileageTotal FROM TotalMileage WHERE customerId = ?
+	 *  -> SELECT mid, customerId, mTotal FROM Mileage ";
 	 */
 	@Override
-	public Integer findTotalMileage(Long customerId) {
-		String sql = "SELECT tmId, customerId, mileageTotal FROM TotalMileage WHERE customerId = ?";
+	public Integer findMileage(Long customerId) {
+		String sql = "SELECT mId, customerId, mTotal FROM Mileage WHERE customerId = ?";
 
 		try {
 			Mileage mileage = jdbcTemplate.queryForObject(sql, new MileageRowMapper(), customerId);
-			return mileage.getMileageTotal();
+			return mileage.getMTotal();
 		} catch(EmptyResultDataAccessException e) {
 			return null;
 		}
 	}
 
-	//4. Total Mileage 삭제
+	//4. Mileage 삭제
 	@Override
-	public void deleteTotalMileage(Long customerId) {
-		String sql = "DELETE FROM TotalMileage WHERE customerId = ?";
+	public void deleteMileage(Long customerId) {
+		String sql = "DELETE FROM Mileage WHERE customerId = ?";
 		jdbcTemplate.update(sql, customerId);
 	}
 	
-	/**
-	 * 0. 제약조건 변경 - 정혜윤.
-	 */
-	//0-1. 제약조건 삭제
-	public void disableConstraintFromSH() {
-		String sql = "ALTER TABLE TotalMileage DROP CONSTRAINT TotalMileage_customerId_FK";
-		jdbcTemplate.update(sql);
-	}
-	//0-2. 제약조건 추가
-	public void enableConstraintFromSH() {
-		String sql = "ALTER TABLE TotalMileage ADD CONSTRAINT TotalMileage_customerId_FK FOREIGN KEY(menuId) REFERENCES Menu(mid)";
-		jdbcTemplate.update(sql);
-	}
 }

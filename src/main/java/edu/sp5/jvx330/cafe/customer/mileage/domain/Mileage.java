@@ -3,9 +3,9 @@ package edu.sp5.jvx330.cafe.customer.mileage.domain;
 import edu.sp5.jvx330.cafe.customer.domain.Customer;
 
 public class Mileage {
-	private Long tmId;
+	private Long mId;
 	private Customer customer;
-	private Integer mileageTotal;
+	private Integer mTotal;
 	
 	public Mileage() {
 		
@@ -13,14 +13,14 @@ public class Mileage {
 	
 	public Mileage(Integer mileageTotal) {
 		super();
-		this.mileageTotal = mileageTotal;
+		this.mTotal = mileageTotal;
 	}
 	
-	public Long getTmId() {
-		return tmId;
+	public Long getmId() {
+		return mId;
 	}
-	public void setTmId(Long tmId) {
-		this.tmId = tmId;
+	public void setmId(Long mId) {
+		this.mId = mId;
 	}
 	public Customer getCustomer() {
 		return customer;
@@ -28,15 +28,15 @@ public class Mileage {
 	public void setCustomer(Customer customer) {
 		this.customer = customer;
 	}
-	public Integer getMileageTotal() {
-		return mileageTotal;
+	public Integer getMTotal() {
+		return mTotal;
 	}
-	public void setMileageTotal(Integer mileageTotal) {
-		this.mileageTotal = mileageTotal;
+	public void setMTotal(Integer mTotal) {
+		this.mTotal = mTotal;
 	}
 
 	@Override
 	public String toString() {
-		return "TotalMileage [tmId=" + tmId + ", customer=" + customer + ", mileageTotal=" + mileageTotal + "]";
+		return "TotalMileage [mId=" + mId + ", customer=" + customer + ", mTotal=" + mTotal + "]";
 	}
 }

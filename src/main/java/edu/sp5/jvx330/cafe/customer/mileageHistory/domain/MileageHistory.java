@@ -25,8 +25,8 @@ public class MileageHistory {
 	public Long getMhId() {
 		return mhId;
 	}
-	public void setMileageId(Long mileageId) {
-		this.mhId = mileageId;
+	public void setMhId(Long mhId) {
+		this.mhId = mhId;
 	}
 	public Customer getCustomer() {
 		return customer;
