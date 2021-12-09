@@ -5,8 +5,8 @@ import java.util.List;
 
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
-import edu.sp5.jvx330.cafe.item.business.MenuService;
-import edu.sp5.jvx330.cafe.item.business.impl.MenuSerivceImpl;
+import edu.sp5.jvx330.cafe.item.business.ItemService;
+import edu.sp5.jvx330.cafe.item.business.impl.ItemSerivceImpl;
 import edu.sp5.jvx330.cafe.item.domain.Item;
 import edu.sp5.jvx330.cafe.item.salesHistory.business.SalesHistoryService;
 import edu.sp5.jvx330.cafe.item.salesHistory.business.impl.SalesHistoryServiceImpl;
@@ -15,14 +15,14 @@ import edu.sp5.jvx330.cafe.item.salesHistory.domain.SalesHistory;
 
 public class SalesHistorySerivceTest {
 	private static SalesHistoryService sh_service;
-	private static MenuService m_service;
+	private static ItemService m_service;
 	
 	public static void main(String[] args) {
 		AnnotationConfigApplicationContext context =
 				new AnnotationConfigApplicationContext(SalesHistoryConfig.class);
 		
 		sh_service = context.getBean("salesHistoryServiceImpl", SalesHistoryServiceImpl.class);
-		m_service = context.getBean("menuServiceImpl", MenuSerivceImpl.class);
+		m_service = context.getBean("menuServiceImpl", ItemSerivceImpl.class);
 		
 		/**
 		 * Å×½ºÆ® - Á¤ÇýÀ±.

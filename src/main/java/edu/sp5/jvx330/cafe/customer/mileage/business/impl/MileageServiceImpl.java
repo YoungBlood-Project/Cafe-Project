@@ -3,12 +3,12 @@ package edu.sp5.jvx330.cafe.customer.mileage.business.impl;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import edu.sp5.jvx330.cafe.customer.domain.Customer;
-import edu.sp5.jvx330.cafe.customer.mileage.business.TotalMileageService;
-import edu.sp5.jvx330.cafe.customer.mileage.dao.impl.TotalMileageDaoImpl;
+import edu.sp5.jvx330.cafe.customer.mileage.business.MileageService;
+import edu.sp5.jvx330.cafe.customer.mileage.dao.impl.MileageDaoImpl;
 
-public class TotalMileageServiceImpl implements TotalMileageService {
+public class MileageServiceImpl implements MileageService {
 	@Autowired
-	private TotalMileageDaoImpl tmDao;
+	private MileageDaoImpl tmDao;
 
 	//1. Total Mileage 값 변경
 	//1-1. 마일리지 적립

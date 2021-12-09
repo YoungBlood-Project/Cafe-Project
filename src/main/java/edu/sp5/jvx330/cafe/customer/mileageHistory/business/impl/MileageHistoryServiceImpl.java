@@ -5,14 +5,14 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import edu.sp5.jvx330.cafe.customer.domain.Customer;
-import edu.sp5.jvx330.cafe.customer.mileageHistory.business.MileageSerivce;
-import edu.sp5.jvx330.cafe.customer.mileageHistory.dao.impl.MileageDaoImpl;
+import edu.sp5.jvx330.cafe.customer.mileageHistory.business.MileageHistorySerivce;
+import edu.sp5.jvx330.cafe.customer.mileageHistory.dao.impl.MileageHistoryDaoImpl;
 import edu.sp5.jvx330.cafe.customer.mileageHistory.domain.MileageHistory;
 
 
-public class MileageServiceImpl implements MileageSerivce {
+public class MileageHistoryServiceImpl implements MileageHistorySerivce {
 	@Autowired
-	private MileageDaoImpl mileageDao;
+	private MileageHistoryDaoImpl mileageDao;
 
 	/**
 	 * ¼öÁ¤ - ÇýÀ±

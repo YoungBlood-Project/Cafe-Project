@@ -8,7 +8,7 @@ import org.springframework.jdbc.core.RowMapper;
 import edu.sp5.jvx330.cafe.customer.domain.Customer;
 import edu.sp5.jvx330.cafe.customer.mileageHistory.domain.MileageHistory;
 
-public class MileageRowMapper implements RowMapper<MileageHistory> {
+public class MileageHistoryRowMapper implements RowMapper<MileageHistory> {
 
 	public MileageHistory mapRow(ResultSet rs, int rowNum) throws SQLException {
 		Customer customer = new Customer();

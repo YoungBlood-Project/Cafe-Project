@@ -4,18 +4,18 @@ import java.util.List;
 
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
-import edu.sp5.jvx330.cafe.item.business.MenuService;
-import edu.sp5.jvx330.cafe.item.business.impl.MenuSerivceImpl;
-import edu.sp5.jvx330.cafe.item.config.MenuConfig;
+import edu.sp5.jvx330.cafe.item.business.ItemService;
+import edu.sp5.jvx330.cafe.item.business.impl.ItemSerivceImpl;
+import edu.sp5.jvx330.cafe.item.config.ItemConfig;
 import edu.sp5.jvx330.cafe.item.domain.Item;
 
 public class ItemServiceTest {
-	private static MenuService service;
+	private static ItemService service;
 
 	public static void main(String[] args) {
-		AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(MenuConfig.class);
+		AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(ItemConfig.class);
 
-		service = context.getBean("menuServiceImpl", MenuSerivceImpl.class);
+		service = context.getBean("menuServiceImpl", ItemSerivceImpl.class);
 
 		/**
 		 * 테스트 - 정헤윤.

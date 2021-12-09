@@ -4,7 +4,7 @@ import java.util.List;
 
 import edu.sp5.jvx330.cafe.item.domain.Item;
 
-public interface MenuService {
+public interface ItemService {
 	/**
 	 * 1. 관리메뉴
 	 */

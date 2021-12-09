@@ -2,7 +2,7 @@ package edu.sp5.jvx330.cafe.customer.mileage.business;
 
 import edu.sp5.jvx330.cafe.customer.domain.Customer;
 
-public interface TotalMileageService {
+public interface MileageService {
 	//1. Total Mileage 값 변경
 	//1-1. 마일리지 적립
 	public void addTotalMileage(Customer custeomr, Integer m_amount);

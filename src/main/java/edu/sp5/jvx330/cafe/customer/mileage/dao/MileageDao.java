@@ -1,6 +1,6 @@
 package edu.sp5.jvx330.cafe.customer.mileage.dao;
 
-public interface TotalMileageDao {
+public interface MileageDao {
 	//1. Total Mileage 추가
 	public void insertTotalMileage(Long customerId, Integer init_mileage);
 	//2. Total Mileage 변경

@@ -4,11 +4,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
 
-import edu.sp5.jvx330.cafe.customer.mileage.dao.TotalMileageDao;
-import edu.sp5.jvx330.cafe.customer.mileage.dao.TotalMileageRowMapper;
-import edu.sp5.jvx330.cafe.customer.mileage.domain.TotalMileage;
+import edu.sp5.jvx330.cafe.customer.mileage.dao.MileageDao;
+import edu.sp5.jvx330.cafe.customer.mileage.dao.MileageRowMapper;
+import edu.sp5.jvx330.cafe.customer.mileage.domain.Mileage;
 
-public class TotalMileageDaoImpl implements TotalMileageDao {
+public class MileageDaoImpl implements MileageDao {
 	@Autowired
 	private JdbcTemplate jdbcTemplate;
 	
@@ -38,8 +38,8 @@ public class TotalMileageDaoImpl implements TotalMileageDao {
 		String sql = "SELECT tmId, customerId, mileageTotal FROM TotalMileage WHERE customerId = ?";
 
 		try {
-			TotalMileage totalMileage = jdbcTemplate.queryForObject(sql, new TotalMileageRowMapper(), customerId);
-			return totalMileage.getMileageTotal();
+			Mileage mileage = jdbcTemplate.queryForObject(sql, new MileageRowMapper(), customerId);
+			return mileage.getMileageTotal();
 		} catch(EmptyResultDataAccessException e) {
 			return null;
 		}

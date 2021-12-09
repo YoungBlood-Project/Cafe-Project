@@ -1,20 +1,22 @@
-package edu.sp5.jvx330.cafe.customer.mileageHistory.dao;
+package edu.sp5.jvx330.cafe.customer.mileageHistory.business;
 
 import java.util.List;
 
 import edu.sp5.jvx330.cafe.customer.domain.Customer;
 import edu.sp5.jvx330.cafe.customer.mileageHistory.domain.MileageHistory;
 
-public interface MileageDao {
+public interface MileageHistorySerivce {
+	
 	/**
 	 * 수정 - 혜윤
-	 * @param customer
+	 * 마일리지 생성하는 메소드가 없어서 마일리지 생성 메소드를 추가했습니다
+	 * orderNum으로 마일리지 조회하는 코드 추가.
 	 */
 	// 1. 마일리지 생성
-	public void addMileageHistory(Long customerId, MileageHistory mileage);
+	public void addMileageHistory(Customer customer, MileageHistory mileage);
 	
 	// 2. orderNum으로 마일리지 조회
-	public List<MileageHistory> findMileageHistoryByOrderNum(Long orderNum);
+	public List<MileageHistory> findMileageByOrderNum(Long orderNum);
 	
 	/**
 	 * 초원

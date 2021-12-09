@@ -5,8 +5,8 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
-import edu.sp5.jvx330.cafe.customer.mileage.business.impl.TotalMileageServiceImpl;
-import edu.sp5.jvx330.cafe.customer.mileageHistory.business.impl.MileageServiceImpl;
+import edu.sp5.jvx330.cafe.customer.mileage.business.impl.MileageServiceImpl;
+import edu.sp5.jvx330.cafe.customer.mileageHistory.business.impl.MileageHistoryServiceImpl;
 import edu.sp5.jvx330.cafe.item.dao.impl.ItemDaoImpl;
 import edu.sp5.jvx330.cafe.item.domain.Item;
 import edu.sp5.jvx330.cafe.item.salesHistory.business.SalesHistoryService;
@@ -24,7 +24,7 @@ public class SalesHistoryServiceImpl implements SalesHistoryService {
 	@Autowired
 	MileageServiceImpl mileageService;
 	@Autowired
-	TotalMileageServiceImpl tmService;
+	MileageServiceImpl tmService;
 	
 	/**
 	 * 1. 판매내역 추가

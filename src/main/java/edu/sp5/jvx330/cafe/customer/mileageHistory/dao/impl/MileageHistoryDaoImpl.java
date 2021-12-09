@@ -6,11 +6,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 
 import edu.sp5.jvx330.cafe.customer.domain.Customer;
-import edu.sp5.jvx330.cafe.customer.mileageHistory.dao.MileageDao;
-import edu.sp5.jvx330.cafe.customer.mileageHistory.dao.MileageRowMapper;
+import edu.sp5.jvx330.cafe.customer.mileageHistory.dao.MileageHistoryDao;
+import edu.sp5.jvx330.cafe.customer.mileageHistory.dao.MileageHistoryRowMapper;
 import edu.sp5.jvx330.cafe.customer.mileageHistory.domain.MileageHistory;
 
-public class MileageDaoImpl implements MileageDao {
+public class MileageHistoryDaoImpl implements MileageHistoryDao {
 	@Autowired
 	private JdbcTemplate jdbcTemplate;
 	
@@ -33,7 +33,7 @@ public class MileageDaoImpl implements MileageDao {
 		String sql = "SELECT mileageId, customerId, orderNum, mBalance, regDate FROM MileageHistory"
 				+ " WHERE orderNum = ?";
 		
-		return jdbcTemplate.query(sql, new MileageRowMapper(), orderNum);
+		return jdbcTemplate.query(sql, new MileageHistoryRowMapper(), orderNum);
 	}
 	
 	/**
@@ -45,7 +45,7 @@ public class MileageDaoImpl implements MileageDao {
 		String sql = "SELECT mileageId, customerId, orderNum, mBalance, regDate FROM MileageHistory"
 				+ " WHERE customerId = ?";
 		
-		return jdbcTemplate.query(sql, new MileageRowMapper(), customer.getCid());
+		return jdbcTemplate.query(sql, new MileageHistoryRowMapper(), customer.getCid());
 	};
 	
 	//2. 마일리지 금액 수정(마일리지 사용)

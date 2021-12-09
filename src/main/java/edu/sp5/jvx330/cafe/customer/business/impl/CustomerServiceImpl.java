@@ -7,16 +7,16 @@ import org.springframework.beans.factory.annotation.Autowired;
 import edu.sp5.jvx330.cafe.customer.business.CustomerService;
 import edu.sp5.jvx330.cafe.customer.dao.impl.CustomerDaoImpl;
 import edu.sp5.jvx330.cafe.customer.domain.Customer;
-import edu.sp5.jvx330.cafe.customer.mileage.business.impl.TotalMileageServiceImpl;
-import edu.sp5.jvx330.cafe.customer.mileageHistory.dao.impl.MileageDaoImpl;
+import edu.sp5.jvx330.cafe.customer.mileage.business.impl.MileageServiceImpl;
+import edu.sp5.jvx330.cafe.customer.mileageHistory.dao.impl.MileageHistoryDaoImpl;
 
 public class CustomerServiceImpl implements CustomerService {
 	@Autowired
 	private CustomerDaoImpl customerDao;
 	@Autowired
-	private MileageDaoImpl mileageDao;
+	private MileageHistoryDaoImpl mileageDao;
 	@Autowired
-	private TotalMileageServiceImpl tmService;
+	private MileageServiceImpl tmService;
 
 	/**
 	 * 1. °í°´ »ý¼º

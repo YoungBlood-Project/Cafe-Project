@@ -5,20 +5,20 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
-import edu.sp5.jvx330.cafe.customer.mileage.dao.impl.TotalMileageDaoImpl;
-import edu.sp5.jvx330.cafe.item.business.MenuService;
+import edu.sp5.jvx330.cafe.customer.mileage.dao.impl.MileageDaoImpl;
+import edu.sp5.jvx330.cafe.item.business.ItemService;
 import edu.sp5.jvx330.cafe.item.dao.impl.ItemDaoImpl;
 import edu.sp5.jvx330.cafe.item.domain.Item;
 import edu.sp5.jvx330.cafe.item.salesHistory.dao.impl.SalesHistoryDaoImpl;
 import edu.sp5.jvx330.cafe.item.salesHistory.domain.SalesHistory;
 
-public class MenuSerivceImpl implements MenuService {
+public class ItemSerivceImpl implements ItemService {
 	@Autowired
 	private ItemDaoImpl mDao;
 	@Autowired
 	private SalesHistoryDaoImpl shDao;
 	@Autowired
-	private TotalMileageDaoImpl tmDao;
+	private MileageDaoImpl tmDao;
 	
 	/**
 	 * 1. 관리메뉴

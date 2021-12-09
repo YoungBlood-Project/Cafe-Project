@@ -2,16 +2,16 @@ package edu.sp5.jvx330.cafe.customer.mileage.domain;
 
 import edu.sp5.jvx330.cafe.customer.domain.Customer;
 
-public class TotalMileage {
+public class Mileage {
 	private Long tmId;
 	private Customer customer;
 	private Integer mileageTotal;
 	
-	public TotalMileage() {
+	public Mileage() {
 		
 	}
 	
-	public TotalMileage(Integer mileageTotal) {
+	public Mileage(Integer mileageTotal) {
 		super();
 		this.mileageTotal = mileageTotal;
 	}
