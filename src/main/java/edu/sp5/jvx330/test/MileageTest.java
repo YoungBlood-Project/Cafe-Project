@@ -34,7 +34,7 @@ public class MileageTest {
 		// setMileage();
 		  
 		// 4. 마일리지 삭제  
-		deleteMileage();
+		// deleteMileage();
 
 		context.close();
 	}
@@ -48,7 +48,7 @@ public class MileageTest {
 	public static void addMileage() {
 		Customer customer = customerService.findCustomerByUserInfo("A", "1");
 		MileageHistory mileage = new MileageHistory(customer, 201212060001l, 500);
-		mileageService.addMileage(customer, mileage);
+		mileageService.addMileageHistory(customer, mileage);
 		System.out.println("MileageService : 저장 완료.");
 		
 	}
@@ -78,7 +78,7 @@ public class MileageTest {
 	// 3. 마일리지 금액 수정(마일리지 사용)
 	public static void setMileage() {
 		Customer customer = customerService.findCustomerByUserInfo("A", "1");
-		mileageService.setMileage(customer, 10);
+		mileageService.setMileageHistory(customer, 10);
 		System.out.println("mileageService : 마일리지 가격 설정 완료.");
 		
 	}
@@ -86,7 +86,7 @@ public class MileageTest {
 	// 4. 마일리지 삭제
 	public static void deleteMileage() {
 		Customer customer = customerService.findCustomerByUserInfo("A", "1");
-		mileageService.deleteMileage(customer);
+		mileageService.deleteMileageHistory(customer);
 		System.out.println("mileageService: 삭제 완료.");
 	}
 }

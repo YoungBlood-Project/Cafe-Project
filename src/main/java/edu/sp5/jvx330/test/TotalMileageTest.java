@@ -22,12 +22,12 @@ public class TotalMileageTest {
 
 		//1. Total Mileage 값 변경
 		//1-1. 마일리지 적립
-		addTotalMileage();
+		// addTotalMileage();
 		//1-2. 마일리지 사용
-		//subtractTotalMileage();
+		// subtractTotalMileage();
 		//2. Total Mileage 조회
-		//findTotalMileage();
-		//deleteTotalMileage();
+		// findTotalMileage();
+		// deleteTotalMileage();
 
 		context.close();
 		

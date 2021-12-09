@@ -22,7 +22,7 @@ public class CustomerTest {
 		 */
 
 		// 1. 绊按 积己
-		// addCustomer();
+		 addCustomer();
 
 		// 2. 绊按 沥焊 炼雀
 		// findCustomerByUserInfo();
@@ -40,7 +40,7 @@ public class CustomerTest {
 	 */
 	// 1-1. 绊按 积己
 	public static void addCustomer() {
-		Customer customer = new Customer("A", "1");
+		Customer customer = new Customer("example", "example");
 		customerService.addCustomer(customer);
 		System.out.println("customerServiceTest: 历厘 肯丰.");
 	}

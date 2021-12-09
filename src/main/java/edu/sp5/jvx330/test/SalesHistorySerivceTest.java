@@ -28,17 +28,17 @@ public class SalesHistorySerivceTest {
 		 * 테스트 - 정혜윤.
 		 */
 		// 1. 판매 내역 추가
-		//addSalesHistory();
+		// addSalesHistory();
 		
 		// 2. 판매 내역 조회
-		//findAllSalesHistory()
-		//findSalesHistoryByOrderDate();
-		//findSalesHistoryByMenu();
-		//findSalesHistoryByOrderNum();
+		// findAllSalesHistory();
+		// findSalesHistoryByOrderDate();
+		// findSalesHistoryByMenu();
+		// findSalesHistoryByOrderNum();
 		
 		// 3. 환불
-		deleteSalesHistoryBySid();
-		//deleteAllSalesHistories();
+		// deleteSalesHistoryBySid();
+		// deleteAllSalesHistories();
 		
 		// 4. 날짜별 판매 내역 개수
 		//countSalesHistoryByOrderDate();
@@ -55,7 +55,7 @@ public class SalesHistorySerivceTest {
 		salesHistory.setOrderNum(202112070001l);
 				//new SalesHistory(menu, 1, menu.getMenuPrice()*1);
 		sh_service.addSalesHistory(menu, salesHistory);
-		//System.out.println("SalesHistorySerivceTest : 판매내역 저장 완료");
+		System.out.println("SalesHistorySerivceTest : 판매내역 저장 완료");
 	}
 	
 	/**
@@ -102,8 +102,9 @@ public class SalesHistorySerivceTest {
 	 */
 	//3-1. 환불
 	public static void deleteSalesHistoryBySid() {
-		Menu menu = m_service.findMenuByMenuName("초코Dao");
+		Menu menu = m_service.findMenuByMenuName("딸기Dao");
 		List<SalesHistory> sh_list = sh_service.findSalesHistoryByMenu(menu);
+		System.out.println("판매 내역 삭제 완료: " + menu.getMenuName());
 	}
 	
 	//3-2. 해당 메뉴의 판매내역 전체 삭제

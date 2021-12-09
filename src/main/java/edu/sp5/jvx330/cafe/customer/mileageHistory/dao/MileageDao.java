@@ -11,7 +11,7 @@ public interface MileageDao {
 	 * @param customer
 	 */
 	// 1. 마일리지 생성
-	public void addMileage(Long customerId, MileageHistory mileage);
+	public void addMileageHistory(Long customerId, MileageHistory mileage);
 	
 	// 2. orderNum으로 마일리지 조회
 	public List<MileageHistory> findMileageByOrderNum(Long orderNum);
@@ -23,8 +23,8 @@ public interface MileageDao {
 	public List<MileageHistory> findMileageByUserInfo(Customer customer);
 	
 	// 2. 마일리지 금액 수정(마일리지 사용)
-	public void setMileage(Customer customer, Integer mileage);
+	public void setMileageHistory(Customer customer, Integer mileage);
 	
 	// 3. 마일리지 삭제
-	public void deleteMileage(Customer customer);
+	public void deleteMileageHistory(Customer customer);
 }

@@ -60,7 +60,7 @@ public class CustomerServiceImpl implements CustomerService {
 	 */
 	@Override
 	public void deleteCustomer(Customer customer) {
-		mileageDao.deleteMileage(customer);
+		mileageDao.deleteMileageHistory(customer);
 		customerDao.deleteCustomer(customer);
 		tmService.deleteTotalMileage(customer);
 	}
