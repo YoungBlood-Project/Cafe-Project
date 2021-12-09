@@ -19,21 +19,23 @@ public class ItemDaoImpl implements ItemDao {
 	// 1-1. 메뉴 추가
 	@Override
 	public void addMenu(Item item) {
-		String sql = "INSERT INTO Menu(category, menuName, menuPrice)" + " VALUES(?,?,?)";
+		String sql = "INSERT INTO Item(categoryId, itemName, itemPrice)"
+				+ " VALUES(?,?,?)";
 		// System.out.println(menu);
-		jdbcTemplate.update(sql, item.getCategory(), item.getMenuName(), item.getMenuPrice());
+		jdbcTemplate.update(sql, item.getCategory().getCategoryId(),
+				item.getItemName(), item.getItemPrice());
 	}
 
 	// 1-2. 메뉴 수정
 	// 메뉴 이름 수정
 	@Override
-	public Item setMenuName(Item item, String menuName) {
+	public Item setMenuName(Item item, String itemName) {
 		String sql = "UPDATE Menu SET menuName = ? WHERE menuName = ?";
 
-		jdbcTemplate.update(sql, menuName, item.getMenuName());
+		jdbcTemplate.update(sql, itemName, item.getItemName());
 
 		// return값을 void로 할지 Menu로 할지 고민했지만 변경할 menuName을 argument로 받는 게 더 직관적일 거라고 판단
-		item.setMenuName(menuName);
+		item.setItemName(itemName);
 		return item;
 	}
 
