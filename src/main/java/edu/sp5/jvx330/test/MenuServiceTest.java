@@ -21,21 +21,21 @@ public class MenuServiceTest {
 		 * 테스트 - 정헤윤.
 		 */
 		// 1. 메뉴 추가/수정/삭제
-		//addMenu();
+		// addMenu();
 		// setMenuName();
 		// setMenuSales();
-		deleteMenu();
-		
+		// deleteMenu();
+
 		// 2. 메뉴 조회(이름, 카테고리, id, 전부)
 		// findMidByMenuName();
 		// findMidByCategory();
 		// findMenuByMenuName();
 		// findAllMenus();
-		
+
 		// 3. 주문 목록 추가/삭제
-		//addOrderList();
-		//deleteOrderList();
-		
+		// addOrderList();
+		// deleteOrderList();
+
 		context.close();
 	}
 
@@ -45,8 +45,8 @@ public class MenuServiceTest {
 	// 1-1. 메뉴 추가 테스트
 	public static void addMenu() {
 		Menu menu = new Menu("deletedMenu", "delete", 0);
-		//Menu menu = new Menu("라떼Dao", "바닐라Dao", 5000);
-		//Menu menu = new Menu("라떼Dao", "초코Dao", 6000);
+		// Menu menu = new Menu("라떼Dao", "바닐라Dao", 5000);
+		// Menu menu = new Menu("라떼Dao", "초코Dao", 6000);
 		// System.out.println(menu.getCustomer().getCid());
 		service.addMenu(menu);
 		System.out.println("MenuServiceTest : 저장 완료");
@@ -69,7 +69,7 @@ public class MenuServiceTest {
 	// 1-3. 메뉴삭제
 	public static void deleteMenu() {
 		Menu menu = service.findMenuByMenuName("초코Dao");
-		//System.out.println("testMService :" + menu);
+		// System.out.println("testMService :" + menu);
 		service.deleteMenu(menu);
 		System.out.println("MenuServiceTest : 삭제 완료");
 	}
@@ -119,6 +119,7 @@ public class MenuServiceTest {
 		Menu menu = service.findMenuByMenuName("초코Dao");
 		List<Menu> order_list = service.findAllMenus();
 		service.deleteOrderList(1, order_list);
+		System.out.println("메뉴 삭제 완료, 삭제 항목: " + menu.getMenuName() + " " + menu.getMenuPrice());
 
 	}
 }

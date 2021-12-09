@@ -28,7 +28,11 @@ public class MileageDaoImpl implements MileageDao {
 	}
 
 	@Override
+<<<<<<< HEAD
 	public List<MileageHistory> findMileageHistoryByOrderNum(Long orderNum) {
+=======
+	public List<MileageHistory> findMileageByOrderNum(Long orderNum) {
+>>>>>>> branch 'master' of https://github.com/youngBlood-cafe-project/Cafe-Project.git
 		String sql = "SELECT mileageId, customerId, orderNum, mBalance, regDate FROM MileageHistory"
 				+ " WHERE orderNum = ?";
 		
@@ -41,7 +45,7 @@ public class MileageDaoImpl implements MileageDao {
 	//1. 전체 마일리지 조회
 	@Override
 	public List<MileageHistory> findMileageByUserInfo(Customer customer) {
-		String sql = "SELECT mileageId, customerId, orderNum, mBalance, regDate FROM Mileage"
+		String sql = "SELECT mileageId, customerId, orderNum, mBalance, regDate FROM MileageHistory"
 				+ " WHERE customerId = ?";
 		
 		return jdbcTemplate.query(sql, new MileageRowMapper(), customer.getCid());
@@ -49,16 +53,16 @@ public class MileageDaoImpl implements MileageDao {
 	
 	//2. 마일리지 금액 수정(마일리지 사용)
 	@Override
-	public void setMileage(Customer customer, Integer mileage) {
-		String sql = "UPDATE Mileage SET mBalance = ? WHERE customerId = ?";
+	public void setMileageHistory(Customer customer, Integer mileage) {
+		String sql = "UPDATE MileageHistory SET mBalance = ? WHERE customerId = ?";
 		
 		jdbcTemplate.update(sql, mileage, customer.getCid());
 	};
 	
 	//3. 마일리지 삭제
 	@Override
-	public void deleteMileage(Customer customer) {
-		String sql = "DELETE FROM Mileage WHERE customerId = ?";
+	public void deleteMileageHistory(Customer customer) {
+		String sql = "DELETE FROM MileageHistory WHERE customerId = ?";
 		
 		jdbcTemplate.update(sql, customer.getCid());
 	}

@@ -21,8 +21,8 @@ public class MileageServiceImpl implements MileageSerivce {
 	 */
 	// 1. 마일리지 생성
 	@Override
-	public void addMileage(Customer customer, MileageHistory mileage) {
-		mileageDao.addMileage(customer.getCid(), mileage);
+	public void addMileageHistory(Customer customer, MileageHistory mileage) {
+		mileageDao.addMileageHistory(customer.getCid(), mileage);
 		
 	}
 
@@ -42,13 +42,13 @@ public class MileageServiceImpl implements MileageSerivce {
 
 	// 2. 마일리지 금액 수정(마일리지 사용)
 	@Override
-	public void setMileage(Customer customer, Integer mileage) {
-		mileageDao.setMileage(customer, mileage);
+	public void setMileageHistory(Customer customer, Integer mileage) {
+		mileageDao.setMileageHistory(customer, mileage);
 	};
 	
 	// 3. 마일리지 삭제
-	public void deleteMileage(Customer customer) {
-		mileageDao.deleteMileage(customer);
+	public void deleteMileageHistory(Customer customer) {
+		mileageDao.deleteMileageHistory(customer);
 	}
 
 
