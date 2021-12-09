@@ -21,5 +21,4 @@ public class TotalMileageRowMapper implements RowMapper<TotalMileage> {
 		
 		return totalMileage;
 	}
-
 }
