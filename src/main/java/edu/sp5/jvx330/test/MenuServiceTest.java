@@ -1,6 +1,5 @@
 package edu.sp5.jvx330.test;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
@@ -8,8 +7,6 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 import edu.sp5.jvx330.cafe.menu.business.MenuService;
 import edu.sp5.jvx330.cafe.menu.business.impl.MenuSerivceImpl;
 import edu.sp5.jvx330.cafe.menu.config.MenuConfig;
-import edu.sp5.jvx330.cafe.menu.dao.MenuDao;
-import edu.sp5.jvx330.cafe.menu.dao.impl.MenuDaoImpl;
 import edu.sp5.jvx330.cafe.menu.domain.Menu;
 
 public class MenuServiceTest {

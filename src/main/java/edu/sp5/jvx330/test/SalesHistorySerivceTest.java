@@ -8,10 +8,10 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 import edu.sp5.jvx330.cafe.menu.business.MenuService;
 import edu.sp5.jvx330.cafe.menu.business.impl.MenuSerivceImpl;
 import edu.sp5.jvx330.cafe.menu.domain.Menu;
-import edu.sp5.jvx330.cafe.salesHistory.business.SalesHistoryService;
-import edu.sp5.jvx330.cafe.salesHistory.business.impl.SalesHistoryServiceImpl;
-import edu.sp5.jvx330.cafe.salesHistory.config.SalesHistoryConfig;
-import edu.sp5.jvx330.cafe.salesHistory.domain.SalesHistory;
+import edu.sp5.jvx330.cafe.menu.salesHistory.business.SalesHistoryService;
+import edu.sp5.jvx330.cafe.menu.salesHistory.business.impl.SalesHistoryServiceImpl;
+import edu.sp5.jvx330.cafe.menu.salesHistory.config.SalesHistoryConfig;
+import edu.sp5.jvx330.cafe.menu.salesHistory.domain.SalesHistory;
 
 public class SalesHistorySerivceTest {
 	private static SalesHistoryService sh_service;

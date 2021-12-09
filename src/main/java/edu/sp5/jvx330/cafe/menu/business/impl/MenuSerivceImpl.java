@@ -5,12 +5,12 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
+import edu.sp5.jvx330.cafe.customer.totalMileage.dao.impl.TotalMileageDaoImpl;
 import edu.sp5.jvx330.cafe.menu.business.MenuService;
 import edu.sp5.jvx330.cafe.menu.dao.impl.MenuDaoImpl;
 import edu.sp5.jvx330.cafe.menu.domain.Menu;
-import edu.sp5.jvx330.cafe.salesHistory.dao.impl.SalesHistoryDaoImpl;
-import edu.sp5.jvx330.cafe.salesHistory.domain.SalesHistory;
-import edu.sp5.jvx330.cafe.totalMileage.dao.impl.TotalMileageDaoImpl;
+import edu.sp5.jvx330.cafe.menu.salesHistory.dao.impl.SalesHistoryDaoImpl;
+import edu.sp5.jvx330.cafe.menu.salesHistory.domain.SalesHistory;
 
 public class MenuSerivceImpl implements MenuService {
 	@Autowired
