@@ -46,7 +46,7 @@ CREATE TABLE Category(
 
 CREATE TABLE Item(
    itemId      	BIGINT		PRIMARY KEY GENERATED ALWAYS AS IDENTITY,							--메뉴 PK
-   categoryId	VARCHAR(30)	NOT	NULL,															--메뉴 종류
+   categoryId	BIGINT		NOT	NULL,															--메뉴 종류
    itemName		VARCHAR(30) NOT NULL,															--메뉴 이름
    itemPrice	INT			NOT NULL,															--메뉴 가격
    regDate		TIMESTAMP	NOT	NULL	DEFAULT	CURRENT_TIMESTAMP,
