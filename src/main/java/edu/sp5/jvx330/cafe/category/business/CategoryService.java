@@ -13,4 +13,11 @@ public interface CategoryService {
 	
 	//3. 카테고리 조회
 	public List<Category> findAllCategorys();
+	
+	/**
+	 * 코드 추가 - 정혜윤(develop-jhy)
+	 * @return
+	 */
+	// 4. 카테고리 이름으로 카테고리 조회
+	public Category findCategoryByCategoryName(String categoryName);
 }

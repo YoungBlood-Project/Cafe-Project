@@ -3,26 +3,35 @@ package edu.sp5.jvx330.cafe.category.business.impl;
 import java.util.List;
 
 import edu.sp5.jvx330.cafe.category.business.CategoryService;
+import edu.sp5.jvx330.cafe.category.dao.CategoryDao;
 import edu.sp5.jvx330.cafe.category.domain.Category;
 
 public class CategoryServiceImpl implements CategoryService {
+	/**
+	 * ÄÚµå ÀÛ¼º - Á¤ÇýÀ±(develop-jhy)
+	 */
+	
+	private CategoryDao cDao;
+	
 
 	@Override
 	public void addCategoryByCategoryName(String categoryName) {
-		// TODO Auto-generated method stub
-		
+		cDao.addCategoryByCategoryName(categoryName);
 	}
 
 	@Override
 	public Category setCategoryName(Category category, String categoryName) {
-		// TODO Auto-generated method stub
-		return null;
+		return cDao.setCategoryName(category, categoryName);	
 	}
 
 	@Override
 	public List<Category> findAllCategorys() {
-		// TODO Auto-generated method stub
-		return null;
+		return cDao.findAllCategorys();
+	}
+
+	@Override
+	public Category findCategoryByCategoryName(String categoryName) {
+		return cDao.findCategoryByCategoryName(categoryName);
 	}
 	
 }
