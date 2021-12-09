@@ -11,7 +11,6 @@ import edu.sp5.jvx330.cafe.category.item.salesHistory.business.SalesHistoryServi
 import edu.sp5.jvx330.cafe.category.item.salesHistory.dao.impl.SalesHistoryDaoImpl;
 import edu.sp5.jvx330.cafe.category.item.salesHistory.domain.SalesHistory;
 import edu.sp5.jvx330.cafe.customer.mileage.business.impl.MileageServiceImpl;
-import edu.sp5.jvx330.cafe.customer.mileageHistory.business.impl.MileageHistoryServiceImpl;
 
 public class SalesHistoryServiceImpl implements SalesHistoryService {
 	@Autowired

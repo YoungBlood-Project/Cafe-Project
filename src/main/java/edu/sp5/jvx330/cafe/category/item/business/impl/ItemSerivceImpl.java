@@ -11,15 +11,12 @@ import edu.sp5.jvx330.cafe.category.item.dao.impl.ItemDaoImpl;
 import edu.sp5.jvx330.cafe.category.item.domain.Item;
 import edu.sp5.jvx330.cafe.category.item.salesHistory.dao.impl.SalesHistoryDaoImpl;
 import edu.sp5.jvx330.cafe.category.item.salesHistory.domain.SalesHistory;
-import edu.sp5.jvx330.cafe.customer.mileage.dao.impl.MileageDaoImpl;
 
 public class ItemSerivceImpl implements ItemService {
 	@Autowired
 	private ItemDaoImpl iDao;
 	@Autowired
 	private SalesHistoryDaoImpl shDao;
-	@Autowired
-	private MileageDaoImpl mDao;
 	
 	/**
 	 * 1. 관리메뉴
