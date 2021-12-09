@@ -9,7 +9,7 @@ public interface CategoryDao {
 	public void addCategoryByCategoryName(String categoryName);
 	
 	//2. 카테고리 이름 변경
-	public void setCategoryName(Category category,String categoryName);
+	public Category setCategoryName(Category category,String categoryName);
 	
 	//3. 카테고리 조회
 	public List<Category> findAllCategorys();
