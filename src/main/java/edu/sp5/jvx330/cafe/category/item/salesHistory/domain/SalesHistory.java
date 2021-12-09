@@ -25,5 +25,57 @@ public class SalesHistory {
 		this.paidPrice = paidPrice;
 	}
 
-	
+	public Long getShid() {
+		return shid;
+	}
+
+	public void setShid(Long shid) {
+		this.shid = shid;
+	}
+
+	public Item getItem() {
+		return item;
+	}
+
+	public void setItem(Item item) {
+		this.item = item;
+	}
+
+	public Long getOrderNum() {
+		return orderNum;
+	}
+
+	public void setOrderNum(Long orderNum) {
+		this.orderNum = orderNum;
+	}
+
+	public Integer getNumOfSales() {
+		return numOfSales;
+	}
+
+	public void setNumOfSales(Integer numOfSales) {
+		this.numOfSales = numOfSales;
+	}
+
+	public Integer getPaidPrice() {
+		return paidPrice;
+	}
+
+	public void setPaidPrice(Integer paidPrice) {
+		this.paidPrice = paidPrice;
+	}
+
+	public Date getOrderDate() {
+		return orderDate;
+	}
+
+	public void setOrderDate(Date orderDate) {
+		this.orderDate = orderDate;
+	}
+
+	@Override
+	public String toString() {
+		return "SalesHistory [shid=" + shid + ", item=" + item + ", orderNum=" + orderNum + ", numOfSales=" + numOfSales
+				+ ", paidPrice=" + paidPrice + ", orderDate=" + orderDate + "]";
+	}	
 }

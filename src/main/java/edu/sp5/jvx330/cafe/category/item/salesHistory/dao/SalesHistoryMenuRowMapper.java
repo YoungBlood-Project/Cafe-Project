@@ -17,7 +17,7 @@ public class SalesHistoryMenuRowMapper implements RowMapper<SalesHistory> {
 		
 		SalesHistory salesHistory = new SalesHistory(item, rs.getInt("numOfSales"),
 				rs.getInt("paidPrice"));
-		salesHistory.setSid(rs.getLong("sid"));
+		salesHistory.setShid(rs.getLong("shId"));
 		salesHistory.setOrderNum(rs.getLong("orderNum"));
 		salesHistory.setOrderDate(rs.getTimestamp("orderDate"));
 		

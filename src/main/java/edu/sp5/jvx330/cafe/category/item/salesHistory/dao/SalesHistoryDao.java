@@ -37,5 +37,5 @@ public interface SalesHistoryDao {
 	/**
 	 * 4. 메뉴삭제(판매내역 메뉴 id 변경)
 	 */
-	public void setMenuIdFromSalesHistory(Long menuId, SalesHistory salesHistory);
+	public void setItemIdFromSalesHistory(Long itemId, SalesHistory salesHistory);
 }

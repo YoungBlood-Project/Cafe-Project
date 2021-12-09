@@ -5,7 +5,9 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 
+import edu.sp5.jvx330.cafe.category.domain.Category;
 import edu.sp5.jvx330.cafe.category.item.dao.ItemDao;
+import edu.sp5.jvx330.cafe.category.item.dao.ItemRowMapper;
 import edu.sp5.jvx330.cafe.category.item.domain.Item;
 
 
@@ -18,7 +20,7 @@ public class ItemDaoImpl implements ItemDao {
 	 */
 	// 1-1. 메뉴 추가
 	@Override
-	public void addMenu(Item item) {
+	public void addItem(Item item) {
 		String sql = "INSERT INTO Item(categoryId, itemName, itemPrice)"
 				+ " VALUES(?,?,?)";
 		// System.out.println(menu);
@@ -29,8 +31,8 @@ public class ItemDaoImpl implements ItemDao {
 	// 1-2. 메뉴 수정
 	// 메뉴 이름 수정
 	@Override
-	public Item setMenuName(Item item, String itemName) {
-		String sql = "UPDATE Menu SET menuName = ? WHERE menuName = ?";
+	public Item setItemName(Item item, String itemName) {
+		String sql = "UPDATE Item SET itemName = ? WHERE itemName = ?";
 
 		jdbcTemplate.update(sql, itemName, item.getItemName());
 
@@ -41,21 +43,21 @@ public class ItemDaoImpl implements ItemDao {
 
 	// 메뉴 가격 수정
 	@Override
-	public Item setMenuSales(Item item, Integer menuPrice) {
-		String sql = "UPDATE Menu SET menuPrice = ? WHERE menuName = ?";
+	public Item setItemPrice(Item item, Integer itemPrice) {
+		String sql = "UPDATE Item SET itemPrice = ? WHERE itemName = ?";
 
-		jdbcTemplate.update(sql, menuPrice, item.getMenuName());
+		jdbcTemplate.update(sql, itemPrice, item.getItemName());
 
-		item.setMenuPrice(menuPrice);
+		item.setItemPrice(itemPrice);
 		return item;
 	}
 
 	// 1-3 메뉴 삭제
 	@Override
-	public void deleteMenu(String menuName) {
-		String sql = "DELETE FROM Menu WHERE menuName = ?";
+	public void deleteItem(String itemName) {
+		String sql = "DELETE FROM Item WHERE itemName = ?";
 
-		jdbcTemplate.update(sql, menuName);
+		jdbcTemplate.update(sql, itemName);
 	}
 
 	/**
@@ -64,34 +66,38 @@ public class ItemDaoImpl implements ItemDao {
 	// 2-1. 메뉴 id 조회
 	// SalesHistoryServiceImpl에서 사용
 	@Override
-	public Long findMidByMenu(String menuName) {
+	public Long findItemIdByItemName(String itemName) {
 		// 메뉴 이름은 중복되지 않는다는 가정
-		String sql = "SELECT mid, category, menuName, menuPrice" + " FROM Menu WHERE menuName = ?";
+		String sql = "SELECT itemId, categoryId, itemName, itemPrice, regDate" 
+				+ " FROM Item WHERE itemName = ?";
 
-		Item item = jdbcTemplate.queryForObject(sql, new ItemRowMapper(), menuName);
-		return item.getMid();
+		Item item = jdbcTemplate.queryForObject(sql, new ItemRowMapper(), itemName);
+		return item.getItemId();
 	}
 
 	// 2-2. 카테고리별 메뉴 조회
 	@Override
-	public List<Item> findMidByCategory(String category) {
-		String sql = "SELECT mid, category, menuName, menuPrice" + " FROM Menu WHERE category = ?";
+	public List<Item> findItemIdByCategory(Category category) {
+		String sql = "SELECT itemId, categoryId, itemName, itemPrice, regDate" 
+				+ " FROM Item WHERE categoryId = ?";
 
-		return jdbcTemplate.query(sql, new ItemRowMapper(), category);
+		return jdbcTemplate.query(sql, new ItemRowMapper(), category.getCategoryId());
 	}
 
 	// 2-3. 메뉴 이름으로 메뉴 조회
 	@Override
-	public Item findMenuByMenuName(String menuName) {
-		String sql = "SELECT mid, category, menuName, menuPrice" + " FROM Menu WHERE menuName = ?";
+	public Item findItemByItemName(String itemName) {
+		String sql ="SELECT itemId, categoryId, itemName, itemPrice, regDate" 
+				+ " FROM Item WHERE itemName = ?";
 
-		return jdbcTemplate.queryForObject(sql, new ItemRowMapper(), menuName);
+		return jdbcTemplate.queryForObject(sql, new ItemRowMapper(), itemName);
 	}
 
 	// 2-4. 전체 메뉴 조회
 	@Override
-	public List<Item> findAllMenus() {
-		String sql = "SELECT mid, category, menuName, menuPrice FROM Menu";
+	public List<Item> findAllItems() {
+		String sql = "SELECT itemId, categoryId, itemName, itemPrice, regDate FROM Item";
+	
 		return jdbcTemplate.query(sql, new ItemRowMapper());
 	}
 

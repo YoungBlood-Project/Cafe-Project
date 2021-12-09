@@ -77,9 +77,9 @@ public class SalesHistoryDaoImpl implements SalesHistoryDao {
 	/**
 	 * 4. 메뉴삭제(판매내역 메뉴 id 변경)
 	 */
-	public void setMenuIdFromSalesHistory(Long menuId, SalesHistory salesHistory) {
-		String sql = "UPDATE SalesHistory SET menuId = ? WHERE menuId = ?";
-		jdbcTemplate.update(sql, menuId, salesHistory.getMenu().getMid());
+	public void setItemIdFromSalesHistory(Long itemId, SalesHistory salesHistory) {
+		String sql = "UPDATE SalesHistory SET itemId = ? WHERE itemId = ?";
+		jdbcTemplate.update(sql, itemId, salesHistory.getItem().getItemId());
 	};
 	
 	/**

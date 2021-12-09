@@ -15,7 +15,7 @@ import edu.sp5.jvx330.cafe.customer.mileageHistory.business.impl.MileageHistoryS
 
 public class SalesHistoryServiceImpl implements SalesHistoryService {
 	@Autowired
-	ItemDaoImpl mDao;
+	ItemDaoImpl iDao;
 	@Autowired
 	SalesHistoryDaoImpl shDao;
 	
@@ -29,7 +29,7 @@ public class SalesHistoryServiceImpl implements SalesHistoryService {
 	 */
 	@Override
 	public void addSalesHistory(Item item, SalesHistory salesHistory) {
-		Long mid = mDao.findMidByMenu(item.getMenuName());
+		Long mid = iDao.findItemIdByItemName(item.getItemName());
 		//주문 번호는 컨트롤러에서 넣어줘야할 거 같다.  
 		shDao.addSalesHistory(mid, salesHistory);
 	}
@@ -52,7 +52,7 @@ public class SalesHistoryServiceImpl implements SalesHistoryService {
 	@Override
 	public List<SalesHistory> findSalesHistoryByMenu(Item item) {
 		//메뉴 이름 받아서 id 조회
-		Long mid = mDao.findMidByMenu(item.getMenuName());
+		Long mid = iDao.findItemIdByItemName(item.getItemName());
 		return shDao.findSalesHistoryByMenu(mid);
 	}
 	
@@ -74,12 +74,12 @@ public class SalesHistoryServiceImpl implements SalesHistoryService {
 	@Override
 	//3-1. 환불(해당 SalesHistory)
 	public void deleteSalesHistoryBySid(SalesHistory salesHistory) {
-		shDao.deleteSalesHistoryBySid(salesHistory.getSid());
+		shDao.deleteSalesHistoryBySid(salesHistory.getShid());
 	}
 	//3-2. 해당 메뉴의 판매내역 전체 삭제
 	@Override
 	public void deleteAllSalesHistories(Item item) {
-		Long mid = mDao.findMidByMenu(item.getMenuName());
+		Long mid = iDao.findItemIdByItemName(item.getItemName());
 		shDao.deleteAllSalesHistories(mid);
 	}
 
@@ -90,5 +90,4 @@ public class SalesHistoryServiceImpl implements SalesHistoryService {
 	public Integer countSalesHistoryByOrderDate(Date orderDate) {
 		return findSalesHistoryByOrderDate(orderDate).size();
 	}
-
 }
