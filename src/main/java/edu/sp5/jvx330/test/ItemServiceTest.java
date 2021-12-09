@@ -28,13 +28,13 @@ public class ItemServiceTest {
 		 * 테스트 - 이초원.
 		 */
 		// 1. 메뉴 추가/수정/삭제
-		addItem();
-		// setMenuName();
-		// setMenuSales();
-		// deleteMenu();
+		//addItem();
+		//setItemName();
+		//setItemPrice();
+		deleteItem();
 
 		// 2. 메뉴 조회(이름, 카테고리, id, 전부)
-		// findMidByMenuName();
+		//findItemIdByItemName();
 		// findMidByCategory();
 		// findMenuByMenuName();
 		// findAllMenus();
@@ -51,28 +51,29 @@ public class ItemServiceTest {
 	 */
 	// 1-1. 메뉴 추가 테스트
 	public static void addItem() {
-		Category category = new Category("deletedMenu");
-		cService.findCategoryByCategoryName(null);
-		Item item = new Item(category, "delete", 0);
-		// Menu menu = new Menu("라떼Dao", "바닐라Dao", 5000);
-		// Menu menu = new Menu("라떼Dao", "초코Dao", 6000);
-		// System.out.println(menu.getCustomer().getCid());
+		//Category category = cService.findCategoryByCategoryName("deletedMenu");
+		Category category = cService.findCategoryByCategoryName("라떼Dao");
+		//Item item = new Item(category, "delete", 0); //deletedMenu 카테고리에 넣기
+		//Item item = new Item(category, "바닐라Dao", 5000);
+		Item item = new Item(category, "초코Dao", 6000);
+		//System.out.println(menu.getCustomer().getCid());
 		service.addItem(item);
-		System.out.println("MenuServiceTest : 저장 완료");
+		System.out.println("ItemServiceTest : 저장 완료");
 	}
 
 	// 1-2-1. 메뉴 이름 수정
-	public static void setMenuName() {
+	public static void setItemName() {
 		Item item = service.findItemByItemName("바닐라Dao");
+		System.out.println(item);
 		service.setItemName(item, "딸기Dao");
-		System.out.println("MenuServiceTest : 이름 변경 완료");
+		System.out.println("ItemServiceTest : 이름 변경 완료");
 	}
 
 	// 1-2-2. 메뉴 가격 수정
-	public static void setMenuSales() {
+	public static void setItemPrice() {
 		Item item = service.findItemByItemName("딸기Dao");
 		service.setItemPrice(item, 4000);
-		System.out.println("MenuServiceTest : 가격 변경 완료");
+		System.out.println("ItemServiceTest : 가격 변경 완료");
 	}
 
 	// 1-3. 메뉴삭제
@@ -80,7 +81,7 @@ public class ItemServiceTest {
 		Item item = service.findItemByItemName("초코Dao");
 		// System.out.println("testMService :" + menu);
 		service.deleteItem(item);
-		System.out.println("MenuServiceTest : 삭제 완료");
+		System.out.println("ItemServiceTest : 삭제 완료");
 	}
 
 	/**
@@ -89,15 +90,15 @@ public class ItemServiceTest {
 	// 2-1. 메뉴 id 조회(메뉴 이름으로 id 조회)
 	public static void findItemIdByItemName() {
 		Item item = service.findItemByItemName("딸기Dao");
-		System.out.println("MenuServiceTest : id : " + service.findItemIdByItemName(item.getItemName()));
+		System.out.println("ItemServiceTest : id : " + service.findItemIdByItemName(item.getItemName()));
 	}
 
 	// 2-2. 카테고리별 메뉴 id 조회
 	public static void findItemIdByCategory() {
 		Category category = new Category("라떼Dao");
-		List<Long> mid_list = service.findItemIdByCategory(category);
-		for (Long mid : mid_list) {
-			System.out.println("category's mid: " + mid);
+		List<Long> itemId_list = service.findItemIdByCategory(category);
+		for (Long itmeId : itemId_list) {
+			System.out.println("category's itemId: " + itmeId);
 		}
 	}
 

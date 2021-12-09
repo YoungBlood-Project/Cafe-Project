@@ -51,8 +51,8 @@ public class SalesHistoryServiceImpl implements SalesHistoryService {
 	@Override
 	public List<SalesHistory> findSalesHistoryByMenu(Item item) {
 		//메뉴 이름 받아서 id 조회
-		Long mid = iDao.findItemIdByItemName(item.getItemName());
-		return shDao.findSalesHistoryByMenu(mid);
+		Long itemId = iDao.findItemIdByItemName(item.getItemName());
+		return shDao.findSalesHistoryByItem(itemId);
 	}
 	
 	/**
@@ -73,13 +73,13 @@ public class SalesHistoryServiceImpl implements SalesHistoryService {
 	@Override
 	//3-1. 환불(해당 SalesHistory)
 	public void deleteSalesHistoryBySid(SalesHistory salesHistory) {
-		shDao.deleteSalesHistoryBySid(salesHistory.getShid());
+		shDao.deleteSalesHistoryBySHid(salesHistory.getShid());
 	}
 	//3-2. 해당 메뉴의 판매내역 전체 삭제
 	@Override
 	public void deleteAllSalesHistories(Item item) {
-		Long mid = iDao.findItemIdByItemName(item.getItemName());
-		shDao.deleteAllSalesHistories(mid);
+		Long itemId = iDao.findItemIdByItemName(item.getItemName());
+		shDao.deleteAllSalesHistories(itemId);
 	}
 
 	/**

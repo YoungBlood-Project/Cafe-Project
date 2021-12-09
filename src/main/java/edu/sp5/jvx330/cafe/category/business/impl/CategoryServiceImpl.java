@@ -2,6 +2,8 @@ package edu.sp5.jvx330.cafe.category.business.impl;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
 import edu.sp5.jvx330.cafe.category.business.CategoryService;
 import edu.sp5.jvx330.cafe.category.dao.CategoryDao;
 import edu.sp5.jvx330.cafe.category.domain.Category;
@@ -10,7 +12,7 @@ public class CategoryServiceImpl implements CategoryService {
 	/**
 	 * ÄÚµå ÀÛ¼º - Á¤ÇýÀ±(develop-jhy)
 	 */
-	
+	@Autowired
 	private CategoryDao cDao;
 	
 

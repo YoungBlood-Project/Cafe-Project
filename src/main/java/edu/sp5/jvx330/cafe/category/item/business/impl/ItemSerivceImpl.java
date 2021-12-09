@@ -44,8 +44,8 @@ public class ItemSerivceImpl implements ItemService {
 	@Override
 	public void deleteItem(Item item) {	
 		//삭제할 아이템의 id로 판매내역 조회
-		List<SalesHistory> sh_list = shDao.findSalesHistoryByMenu(item.getItemId());
-		Long deleteId = iDao.findItemIdByItemName("delete");
+		List<SalesHistory> sh_list = shDao.findSalesHistoryByItem(item.getItemId());
+		Long deleteId = iDao.findItemIdByItemName("delete");//delete라는 이름의 item id
 		System.out.println(deleteId);
 		for(SalesHistory sh : sh_list) {
 			shDao.setItemIdFromSalesHistory(deleteId, sh);

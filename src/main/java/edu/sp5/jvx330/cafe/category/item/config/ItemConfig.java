@@ -17,7 +17,7 @@ public class ItemConfig extends DataSourceConfig {
 	}
 	
 	@Bean
-	public ItemSerivceImpl menuServiceImpl() {
+	public ItemSerivceImpl itemServiceImpl() {
 		return new ItemSerivceImpl();
 	}
 }

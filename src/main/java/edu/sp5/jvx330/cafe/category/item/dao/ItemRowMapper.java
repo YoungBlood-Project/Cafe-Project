@@ -14,7 +14,8 @@ public class ItemRowMapper implements RowMapper<Item> {
 	public Item mapRow(ResultSet rs, int rowNum) 
 			throws SQLException {
 		
-		Category category = new Category(rs.getString("categoryName"));
+		Category category = new Category();
+		category.setCategoryId(rs.getLong("categoryId"));
 		Item item = new Item(category, rs.getString("itemName"),
 				rs.getInt("itemPrice"));
 		item.setItemId(rs.getLong("itemId"));
