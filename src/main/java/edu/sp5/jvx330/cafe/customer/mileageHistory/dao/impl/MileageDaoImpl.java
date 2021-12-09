@@ -1,4 +1,4 @@
-package edu.sp5.jvx330.cafe.customer.mileage.dao.impl;
+package edu.sp5.jvx330.cafe.customer.mileageHistory.dao.impl;
 
 import java.util.List;
 
@@ -6,11 +6,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 
 import edu.sp5.jvx330.cafe.customer.domain.Customer;
-import edu.sp5.jvx330.cafe.customer.mileage.dao.MileageDao;
-import edu.sp5.jvx330.cafe.customer.mileage.dao.MileageRowMapper;
-import edu.sp5.jvx330.cafe.customer.mileage.domain.Mileage;
-
-
+import edu.sp5.jvx330.cafe.customer.mileageHistory.dao.MileageDao;
+import edu.sp5.jvx330.cafe.customer.mileageHistory.dao.MileageRowMapper;
+import edu.sp5.jvx330.cafe.customer.mileageHistory.domain.MileageHistory;
 
 public class MileageDaoImpl implements MileageDao {
 	@Autowired
@@ -22,7 +20,7 @@ public class MileageDaoImpl implements MileageDao {
 	 */
 
 	@Override
-	public void addMileage(Long customerId, Mileage mileage) {
+	public void addMileage(Long customerId, MileageHistory mileage) {
 		String sql = "INSERT INTO Mileage(customerId, orderNum, mBalance)"
 				+ " VALUES(?, ?, ?)";
 		
@@ -30,7 +28,7 @@ public class MileageDaoImpl implements MileageDao {
 	}
 
 	@Override
-	public List<Mileage> findMileageByOrderNum(Long orderNum) {
+	public List<MileageHistory> findMileageByOrderNum(Long orderNum) {
 		String sql = "SELECT mileageId, customerId, orderNum, mBalance, regDate FROM Mileage"
 				+ " WHERE orderNum = ?";
 		
@@ -42,7 +40,7 @@ public class MileageDaoImpl implements MileageDao {
 	 */
 	//1. 전체 마일리지 조회
 	@Override
-	public List<Mileage> findMileageByUserInfo(Customer customer) {
+	public List<MileageHistory> findMileageByUserInfo(Customer customer) {
 		String sql = "SELECT mileageId, customerId, orderNum, mBalance, regDate FROM Mileage"
 				+ " WHERE customerId = ?";
 		

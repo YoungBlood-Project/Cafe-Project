@@ -5,7 +5,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
-import edu.sp5.jvx330.cafe.customer.mileage.business.impl.MileageServiceImpl;
+import edu.sp5.jvx330.cafe.customer.mileageHistory.business.impl.MileageServiceImpl;
 import edu.sp5.jvx330.cafe.customer.totalMileage.business.impl.TotalMileageServiceImpl;
 import edu.sp5.jvx330.cafe.menu.dao.impl.MenuDaoImpl;
 import edu.sp5.jvx330.cafe.menu.domain.Menu;

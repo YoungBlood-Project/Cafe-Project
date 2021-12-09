@@ -20,7 +20,7 @@ CREATE TABLE Customer(
 );
 
 CREATE TABLE MileageHistory(
-	mileageId	BIGINT		PRIMARY	KEY	GENERATED ALWAYS AS IDENTITY,							--마일리지 PK
+	mhId	BIGINT		PRIMARY	KEY	GENERATED ALWAYS AS IDENTITY,							--마일리지 PK
 	customerId	BIGINT		NOT	NULL,															--FK(고객 PK)
 	orderNum	BIGINT		NOT	NULL,															--주문 번호
 	mBalance	INT			NOT	NULL	DEFAULT	0,												--마일리지 잔액

@@ -7,10 +7,10 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 import edu.sp5.jvx330.cafe.customer.business.CustomerService;
 import edu.sp5.jvx330.cafe.customer.business.impl.CustomerServiceImpl;
 import edu.sp5.jvx330.cafe.customer.domain.Customer;
-import edu.sp5.jvx330.cafe.customer.mileage.business.MileageSerivce;
-import edu.sp5.jvx330.cafe.customer.mileage.business.impl.MileageServiceImpl;
-import edu.sp5.jvx330.cafe.customer.mileage.config.MileageConfig;
-import edu.sp5.jvx330.cafe.customer.mileage.domain.Mileage;
+import edu.sp5.jvx330.cafe.customer.mileageHistory.business.MileageSerivce;
+import edu.sp5.jvx330.cafe.customer.mileageHistory.business.impl.MileageServiceImpl;
+import edu.sp5.jvx330.cafe.customer.mileageHistory.config.MileageConfig;
+import edu.sp5.jvx330.cafe.customer.mileageHistory.domain.MileageHistory;
 
 public class MileageTest {
 	private static CustomerService customerService;
@@ -47,7 +47,7 @@ public class MileageTest {
 	// 1. 마일리지 생성
 	public static void addMileage() {
 		Customer customer = customerService.findCustomerByUserInfo("A", "1");
-		Mileage mileage = new Mileage(customer, 201212060001l, 500);
+		MileageHistory mileage = new MileageHistory(customer, 201212060001l, 500);
 		mileageService.addMileage(customer, mileage);
 		System.out.println("MileageService : 저장 완료.");
 		
@@ -55,9 +55,9 @@ public class MileageTest {
 	// 2. 마일리지 조회
 	public static void findMileageByUserInfo() {
 		Customer customer = customerService.findCustomerByUserInfo("A", "1");
-		List<Mileage> mileage_list = mileageService.findMileageByUserInfo(customer);
+		List<MileageHistory> mileage_list = mileageService.findMileageByUserInfo(customer);
 		System.out.println("마일리지 조회 시작--------------");
-		for(Mileage m : mileage_list) {
+		for(MileageHistory m : mileage_list) {
 			System.out.println(m);
 		}
 	}
@@ -69,8 +69,8 @@ public class MileageTest {
 	 */
 	// 2-1. orderNum으로 마일리지 조회
 	public static void fineMileageByOrderNum() {
-		List<Mileage> mileage_list = mileageService.findMileageByOrderNum(201212060001l);
-		for (Mileage mileage : mileage_list) {
+		List<MileageHistory> mileage_list = mileageService.findMileageByOrderNum(201212060001l);
+		for (MileageHistory mileage : mileage_list) {
 			System.out.println(mileage);
 		}
 	}

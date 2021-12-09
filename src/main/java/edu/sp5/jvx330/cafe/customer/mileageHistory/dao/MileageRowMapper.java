@@ -1,4 +1,4 @@
-	package edu.sp5.jvx330.cafe.customer.mileage.dao;
+	package edu.sp5.jvx330.cafe.customer.mileageHistory.dao;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -6,15 +6,15 @@ import java.sql.SQLException;
 import org.springframework.jdbc.core.RowMapper;
 
 import edu.sp5.jvx330.cafe.customer.domain.Customer;
-import edu.sp5.jvx330.cafe.customer.mileage.domain.Mileage;
+import edu.sp5.jvx330.cafe.customer.mileageHistory.domain.MileageHistory;
 
-public class MileageRowMapper implements RowMapper<Mileage> {
+public class MileageRowMapper implements RowMapper<MileageHistory> {
 
-	public Mileage mapRow(ResultSet rs, int rowNum) throws SQLException {
+	public MileageHistory mapRow(ResultSet rs, int rowNum) throws SQLException {
 		Customer customer = new Customer();
 		customer.setCid(rs.getLong("customerId"));
 		
-		Mileage mileage = new Mileage(customer, rs.getLong("orderNum"), rs.getInt("mBalance"));
+		MileageHistory mileage = new MileageHistory(customer, rs.getLong("orderNum"), rs.getInt("mBalance"));
 		
 		mileage.setMileageId(rs.getLong("mileageId"));
 		mileage.setRegDate(rs.getTimestamp("regDate"));

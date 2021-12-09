@@ -1,32 +1,32 @@
-package edu.sp5.jvx330.cafe.customer.mileage.domain;
+package edu.sp5.jvx330.cafe.customer.mileageHistory.domain;
 
 import java.util.Date;
 
 import edu.sp5.jvx330.cafe.customer.domain.Customer;
 
-public class Mileage {
-	private Long mileageId;
+public class MileageHistory {
+	private Long mhId;
 	private	Customer customer;
 	private Long orderNum;
 	private Integer mBalance;
 	private Date regDate;
 	
-	public Mileage() {
+	public MileageHistory() {
 		
 	}
 	
 	//DB에서 등록할 때 사용
-	public Mileage(Customer customer, Long orderNum, Integer mBalance) {
+	public MileageHistory(Customer customer, Long orderNum, Integer mBalance) {
 		super();
 		this.customer = customer;
 		this.orderNum = orderNum;
 		this.mBalance = mBalance;
 	}
-	public Long getMileageId() {
-		return mileageId;
+	public Long getMhId() {
+		return mhId;
 	}
 	public void setMileageId(Long mileageId) {
-		this.mileageId = mileageId;
+		this.mhId = mileageId;
 	}
 	public Customer getCustomer() {
 		return customer;
@@ -49,7 +49,7 @@ public class Mileage {
 	
 	@Override
 	public String toString() {
-		return "Mileage [mileageId=" + mileageId + ", customer=" + customer + ", mBalance=" + mBalance + ", regDate="
+		return "MileageHistory [mhId=" + mhId + ", customer=" + customer + ", mBalance=" + mBalance + ", regDate="
 				+ regDate + "]";
 	}
 

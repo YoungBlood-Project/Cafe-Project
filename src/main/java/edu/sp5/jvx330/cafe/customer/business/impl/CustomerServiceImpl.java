@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import edu.sp5.jvx330.cafe.customer.business.CustomerService;
 import edu.sp5.jvx330.cafe.customer.dao.impl.CustomerDaoImpl;
 import edu.sp5.jvx330.cafe.customer.domain.Customer;
-import edu.sp5.jvx330.cafe.customer.mileage.dao.impl.MileageDaoImpl;
+import edu.sp5.jvx330.cafe.customer.mileageHistory.dao.impl.MileageDaoImpl;
 import edu.sp5.jvx330.cafe.customer.totalMileage.business.impl.TotalMileageServiceImpl;
 
 public class CustomerServiceImpl implements CustomerService {
