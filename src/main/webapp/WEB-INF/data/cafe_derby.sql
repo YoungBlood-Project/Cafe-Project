@@ -1,13 +1,13 @@
 --TABLE 조회
 SELECT * FROM Customer;
-SELECT * FROM Mileage;
+SELECT * FROM MileageHistory;
 SELECT * FROM TotalMileage;
 SELECT * FROM Menu;
 SELECT * FROM SalesHistory;
 
 --TABLE 삭제 --
 DROP TABLE Customer;
-DROP TABLE Mileage;
+DROP TABLE MileageHistory;
 DROP TABLE TotalMileage;
 DROP TABLE Menu;
 DROP TABLE SalesHistory;
@@ -19,7 +19,7 @@ CREATE TABLE Customer(
    regDate	TIMESTAMP		NOT	NULL	DEFAULT	CURRENT_TIMESTAMP								--등록 날짜
 );
 
-CREATE TABLE Mileage(
+CREATE TABLE MileageHistory(
 	mileageId	BIGINT		PRIMARY	KEY	GENERATED ALWAYS AS IDENTITY,							--마일리지 PK
 	customerId	BIGINT		NOT	NULL,															--FK(고객 PK)
 	orderNum	BIGINT		NOT	NULL,															--주문 번호
