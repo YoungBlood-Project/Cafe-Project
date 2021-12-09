@@ -28,11 +28,8 @@ public class MileageDaoImpl implements MileageDao {
 	}
 
 	@Override
-<<<<<<< HEAD
+
 	public List<MileageHistory> findMileageHistoryByOrderNum(Long orderNum) {
-=======
-	public List<MileageHistory> findMileageByOrderNum(Long orderNum) {
->>>>>>> branch 'master' of https://github.com/youngBlood-cafe-project/Cafe-Project.git
 		String sql = "SELECT mileageId, customerId, orderNum, mBalance, regDate FROM MileageHistory"
 				+ " WHERE orderNum = ?";
 		

@@ -29,7 +29,7 @@ public class MileageServiceImpl implements MileageSerivce {
 	// 2. orderNum으로 마일리지 조회
 	@Override
 	public List<MileageHistory> findMileageByOrderNum(Long orderNum) {
-		return mileageDao.findMileageByOrderNum(orderNum);
+		return mileageDao.findMileageHistoryByOrderNum(orderNum);
 	}
 
 	/**
