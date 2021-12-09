@@ -47,7 +47,7 @@ public class MileageHistoryTest {
 	// 1. 마일리지 생성
 	public static void addMileage() {
 		Customer customer = customerService.findCustomerByUserInfo("A", "1");
-		MileageHistoryConfig mileage = new MileageHistoryConfig(customer, 201212060001l, 500);
+		MileageHistory mileage = new MileageHistory(customer, 201212060001l, 500);
 		mileageService.addMileageHistory(customer, mileage);
 		System.out.println("MileageService : 저장 완료.");
 		
@@ -55,9 +55,9 @@ public class MileageHistoryTest {
 	// 2. 마일리지 조회
 	public static void findMileageByUserInfo() {
 		Customer customer = customerService.findCustomerByUserInfo("A", "1");
-		List<MileageHistoryConfig> mileage_list = mileageService.findMileageByUserInfo(customer);
+		List<MileageHistory> mileage_list = mileageService.findMHByUserInfo(customer);
 		System.out.println("마일리지 조회 시작--------------");
-		for(MileageHistoryConfig m : mileage_list) {
+		for(MileageHistory m : mileage_list) {
 			System.out.println(m);
 		}
 	}
@@ -68,15 +68,15 @@ public class MileageHistoryTest {
 	 * @param orderNum
 	 */
 	// 2-1. orderNum으로 마일리지 조회
-	public static void fineMileageByOrderNum() {
-		List<MileageHistoryConfig> mileage_list = mileageService.findMileageByOrderNum(201212060001l);
-		for (MileageHistoryConfig mileage : mileage_list) {
+	public static void fineMHByOrderNum() {
+		List<MileageHistory> mileage_list = mileageService.findMHByOrderNum(201212060001l);
+		for (MileageHistory mileage : mileage_list) {
 			System.out.println(mileage);
 		}
 	}
 	
 	// 3. 마일리지 금액 수정(마일리지 사용)
-	public static void setMileage() {
+	public static void setMileageHistory() {
 		Customer customer = customerService.findCustomerByUserInfo("A", "1");
 		mileageService.setMileageHistory(customer, 10);
 		System.out.println("mileageService : 마일리지 가격 설정 완료.");
@@ -84,7 +84,7 @@ public class MileageHistoryTest {
 	}
 	
 	// 4. 마일리지 삭제
-	public static void deleteMileage() {
+	public static void deleteMileageHistory() {
 		Customer customer = customerService.findCustomerByUserInfo("A", "1");
 		mileageService.deleteMileageHistory(customer);
 		System.out.println("mileageService: 삭제 완료.");

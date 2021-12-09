@@ -28,16 +28,16 @@ public class MileageHistoryServiceImpl implements MileageHistorySerivce {
 
 	// 2. orderNum으로 마일리지 조회
 	@Override
-	public List<MileageHistory> findMileageByOrderNum(Long orderNum) {
-		return mileageDao.findMileageHistoryByOrderNum(orderNum);
+	public List<MileageHistory> findMHByOrderNum(Long orderNum) {
+		return mileageDao.findMHByOrderNum(orderNum);
 	}
 
 	/**
 	 * 초원
 	 */
 	// 1. 마일리지 조회
-	public List<MileageHistory> findMileageByUserInfo(Customer customer) {
-		return mileageDao.findMileageByUserInfo(customer);	
+	public List<MileageHistory> findMHByUserInfo(Customer customer) {
+		return mileageDao.findMHByUserInfo(customer);	
 	};
 
 	// 2. 마일리지 금액 수정(마일리지 사용)
