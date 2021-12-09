@@ -1,28 +1,33 @@
 package edu.sp5.jvx330.cafe.item.domain;
 
+import java.util.Date;
+
 import edu.sp5.jvx330.cafe.customer.domain.Customer;
 
 public class Item {
-	private Long mid;
-	private String category;
-	private String menuName;
-	private Integer menuPrice;
+	private Long itemId;
+	private Category category;
+	private String itemName;
+	private Integer itemPrice;
+	private Date regDate;
 	
 	public Item() {
 		
 	}
+	
 	//DB에 등록할 때 사용
-	public Item(String category, String menuName, Integer menuPrice) {
+	public Item(String category, String itemName, Integer itemPrice) {
 		super();
 		this.category = category;
-		this.menuName = menuName;
-		this.menuPrice = menuPrice;
+		this.itemName = itemName;
+		this.itemPrice = itemPrice;
 	}
-	public Long getMid() {
-		return mid;
+	
+	public Long getItemId() {
+		return itemId;
 	}
-	public void setMid(Long mid) {
-		this.mid = mid;
+	public void setItemId(Long itemId) {
+		this.itemId = itemId;
 	}
 	public String getCategory() {
 		return category;
@@ -30,22 +35,28 @@ public class Item {
 	public void setCategory(String category) {
 		this.category = category;
 	}
-	public String getMenuName() {
-		return menuName;
+	public String getItemName() {
+		return itemName;
 	}
-	public void setMenuName(String menuName) {
-		this.menuName = menuName;
+	public void setItemName(String itemName) {
+		this.itemName = itemName;
 	}
-	public Integer getMenuPrice() {
-		return menuPrice;
+	public Integer getItemPrice() {
+		return itemPrice;
 	}
-	public void setMenuPrice(Integer menuPrice) {
-		this.menuPrice = menuPrice;
+	public void setItemPrice(Integer itemPrice) {
+		this.itemPrice = itemPrice;
+	}
+	public Date getRegDate() {
+		return regDate;
+	}
+	public void setRegDate(Date regDate) {
+		this.regDate = regDate;
 	}
 	
 	@Override
 	public String toString() {
-		return "Menu [mid=" + mid + ", category=" + category + " , menuName=" + menuName + ", menuPrice=" + menuPrice
-				+ "]";
-	}
+		return "Item [itemId=" + itemId + ", category=" + category + ", itemName=" + itemName + ", itemPrice="
+				+ itemPrice + ", regDate=" + regDate + "]";
+	}	
 }
