@@ -14,13 +14,13 @@ public interface MileageHistoryDao {
 	public void addMileageHistory(Long customerId, MileageHistory mileage);
 	
 	// 2. orderNum으로 마일리지 조회
-	public List<MileageHistory> findMileageHistoryByOrderNum(Long orderNum);
+	public List<MileageHistory> findMHByOrderNum(Long orderNum);
 	
 	/**
 	 * 초원
 	 */
 	// 1. 전체 마일리지 조회
-	public List<MileageHistory> findMileageByUserInfo(Customer customer);
+	public List<MileageHistory> findMHByUserInfo(Customer customer);
 	
 	// 2. 마일리지 금액 수정(마일리지 사용)
 	public void setMileageHistory(Customer customer, Integer mileage);
