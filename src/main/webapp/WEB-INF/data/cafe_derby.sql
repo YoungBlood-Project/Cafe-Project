@@ -1,9 +1,9 @@
 --TABLE Á¶È¸
 SELECT * FROM Customer;
+SELECT * FROM Mileage;
 SELECT * FROM MileageHistory;
 SELECT * FROM Category;
 SELECT * FROM Item;
-SELECT * FROM Mileage;
 SELECT * FROM SalesTotalPrice;
 SELECT * FROM SalesHistory;
 
