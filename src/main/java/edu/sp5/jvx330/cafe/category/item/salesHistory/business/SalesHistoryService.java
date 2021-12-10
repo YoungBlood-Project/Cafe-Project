@@ -38,7 +38,7 @@ public interface SalesHistoryService {
 	 * 3. 판매내역 삭제
 	 */
 	//3-1. 환불(해당 SalesHistory)
-	public void deleteSalesHistoryBySid(SalesHistory salesHistory);
+	public void deleteSalesHistoryBySHid(SalesHistory salesHistory);
 	//3-2. 해당 메뉴의 판매내역 전체 삭제
 	public void deleteAllSalesHistories(Item item);
 	

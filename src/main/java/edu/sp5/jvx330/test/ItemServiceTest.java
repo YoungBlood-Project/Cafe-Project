@@ -37,7 +37,8 @@ public class ItemServiceTest {
 		//findItemIdByItemName();
 		//findItemIdByCategory();
 		//findItemByItemName();
-		findAllItems();
+		//findAllItems();
+		
 		// 3. 주문 목록 추가/삭제
 		//addOrderList();
 		//deleteOrderList();
