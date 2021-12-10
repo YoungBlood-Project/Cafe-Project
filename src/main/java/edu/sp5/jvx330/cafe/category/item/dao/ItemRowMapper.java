@@ -17,8 +17,9 @@ public class ItemRowMapper implements RowMapper<Item> {
 		Category category = new Category();
 		category.setCategoryId(rs.getLong("categoryId"));
 		Item item = new Item(category, rs.getString("itemName"),
-				rs.getInt("itemPrice"), rs.getString("itemUrl"));
+				rs.getInt("itemPrice"));
 		item.setItemId(rs.getLong("itemId"));
+		item.setItemUrl(rs.getString("itemUrl"));
 		item.setRegDate(rs.getTimestamp("regDate"));
 		
 		return item;

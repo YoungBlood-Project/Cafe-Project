@@ -37,7 +37,7 @@ CREATE TABLE MileageHistory(
 	orderNum	BIGINT		NOT	NULL,															--주문 번호
 	mBalance	INT			NOT	NULL	DEFAULT	0,												--마일리지 잔액
 	regDate		TIMESTAMP	NOT	NULL	DEFAULT	CURRENT_TIMESTAMP,								--적립 날짜
-	CONSTRAINT	Mileage_customerId_FK	FOREIGN	KEY(customerId)	REFERENCES	Customer(cid)
+	CONSTRAINT	MileageHistory_customerId_FK	FOREIGN	KEY(customerId)	REFERENCES	Customer(cid)
 );
 
 CREATE TABLE Category(

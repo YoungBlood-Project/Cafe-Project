@@ -17,12 +17,11 @@ public class Item {
 	}
 	
 	//DB에 등록할 때 사용
-	public Item(Category category, String itemName, Integer itemPrice, String itemUrl) {
+	public Item(Category category, String itemName, Integer itemPrice) {
 		super();
 		this.category = category;
 		this.itemName = itemName;
 		this.itemPrice = itemPrice;
-		this.itemUrl = itemUrl;
 	}
 
 	/**
