@@ -27,10 +27,10 @@ public class MileageTest {
 		// subtractMileage();
 		 
 		// 2. Mileage 조회
-		// findTotalMileage();
+		// findMileage();
 		 
 		// 3. Mileage 삭제 
-		// deleteTotalMileage();
+		// deleteMileage();
 
 		context.close();
 	}
@@ -45,22 +45,22 @@ public class MileageTest {
 	
 	//  1-2. 마일리지 사용
 	public static void subtractMileage() {
-		Customer customer = customerService.findCustomerByUserInfo("example", "example");
+		Customer customer = customerService.findCustomerByUserInfo("example_ex1", "example_ex1");
 		mileageService.subtractMileage(customer, 200);
 		System.out.println("마일리지 사용 완료");
 	}
 	// 2. Mileage 조회
 	public static void findMileage() {
 		System.out.println("------------ Mileage 조회------------");
-		Customer customer = customerService.findCustomerByUserInfo("example", "example");
+		Customer customer = customerService.findCustomerByUserInfo("example_ex1", "example_ex1");
 		System.out.println(customer);
-		Integer totalMileage = mileageService.findMileage(customer);
-		System.out.println(totalMileage);
+		Integer mileage = mileageService.findMileage(customer);
+		System.out.println(mileage);
 	}
 	
 	// 3. Mileage 삭제
 	public static void deleteMileage() {
-		Customer customer = customerService.findCustomerByUserInfo("example", "example");
+		Customer customer = customerService.findCustomerByUserInfo("example_ex1", "example_ex1");
 		mileageService.deleteMileage(customer);
 		System.out.println("마일리지 삭제 완료");
 	}

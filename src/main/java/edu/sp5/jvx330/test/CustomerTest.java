@@ -40,9 +40,9 @@ public class CustomerTest {
 	 */
 	// 1-1. 绊按 积己
 	public static void addCustomer() {
-		// Customer customer = new Customer("example_ex1", "example_ex1");
-		// Customer customer = new Customer("example_ex2", "example_ex2");
-		Customer customer = new Customer("example_ex3", "example_ex3");
+		 Customer customer = new Customer("example_ex1", "example_ex1");
+//		 Customer customer = new Customer("example_ex2", "example_ex2");
+//		Customer customer = new Customer("example_ex3", "example_ex3");
 		customerService.addCustomer(customer);
 		System.out.println("customerServiceTest: 历厘 肯丰.");
 	}
