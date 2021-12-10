@@ -35,12 +35,12 @@ public class ItemServiceTest {
 
 		// 2. 메뉴 조회(이름, 카테고리, id, 전부)
 		//findItemIdByItemName();
-		findItemIdByCategory();
-		// findMenuByMenuName();
-		// findAllMenus();
+		//findItemIdByCategory();
+		//findItemByItemName();
+		findAllItems();
 		// 3. 주문 목록 추가/삭제
-		// addOrderList();
-		// deleteOrderList();
+		//addOrderList();
+		//deleteOrderList();
 
 		context.close();
 	}
@@ -94,7 +94,7 @@ public class ItemServiceTest {
 
 	// 2-2. 카테고리별 메뉴 id 조회
 	public static void findItemIdByCategory() {
-		Category category = new Category("라떼Dao");
+		Category category = cService.findCategoryByCategoryName("라떼Dao");
 		List<Long> itemId_list = service.findItemIdByCategory(category);
 		for (Long itmeId : itemId_list) {
 			System.out.println("category's itemId: " + itmeId);

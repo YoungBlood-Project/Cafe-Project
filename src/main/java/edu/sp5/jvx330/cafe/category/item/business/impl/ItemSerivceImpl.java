@@ -76,7 +76,7 @@ public class ItemSerivceImpl implements ItemService {
 		List<Long> itemId_list = new ArrayList<Long>();
 		
 		for(Item item : item_list) {
-			System.out.println(item);
+			//System.out.println(item);
 			itemId_list.add(item.getItemId());
 		}
 		return itemId_list;
