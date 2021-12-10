@@ -57,9 +57,10 @@ CREATE TABLE Item(
 
 CREATE TABLE SalesTotalPrice(
 	stpId			BIGINT	PRIMARY	KEY	GENERATED	ALWAYS	AS	IDENTITY,
-	itemId			BIGINT	NOT	NULL,
+	orderNum	BIGINT		NOT	NULL,															--주문 번호
 	totalPrice		INT		NOT	NULL,
 	reducedPrice	INT		NOT	NULL	DEFAULT	0,
+	orderDate	TIMESTAMP	NOT	NULL	DEFAULT	CURRENT_TIMESTAMP,								--주문 날짜
 	CONSTRAINT	SalesTotalPrice_itemId_FK	FOREIGN	KEY(itemId) REFERENCES	Item(itemId)
 );
 
