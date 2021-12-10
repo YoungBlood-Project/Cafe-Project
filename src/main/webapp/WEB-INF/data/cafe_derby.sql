@@ -49,6 +49,7 @@ CREATE TABLE Item(
    categoryId	BIGINT		NOT	NULL,															--메뉴 종류
    itemName		VARCHAR(30) NOT NULL,															--메뉴 이름
    itemPrice	INT			NOT NULL,															--메뉴 가격
+   itemUrl		VARCHAR(100)NOT	NULL	DEFAULT	'http://placehold.it/120x120',
    regDate		TIMESTAMP	NOT	NULL	DEFAULT	CURRENT_TIMESTAMP,
    CONSTRAINT Item_categoryId_FK	FOREIGN	KEY(categoryId)	REFERENCES	Category(categoryId)
 );
