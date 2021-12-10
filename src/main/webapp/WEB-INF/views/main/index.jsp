@@ -7,8 +7,31 @@
 <title>Javac cafe</title>
 </head>
 <body>
-	<form>
-	</form>
+	${test}
+    <footer>   
+        <ul id="ownerSet">
+            <li>
+                <form method="">
+                    <input type="submit"  value="판매내역">
+                </form>
+            </li>
+            <li>
+                <form method="">
+                    <input type="submit"  value="관리메뉴">
+                </form>
+            </li>
+            <li>
+                <form method="">
+                    <input type="submit"  value="마일리지">
+                </form>
+            </li>
+            <li>
+                <form method="">
+                    <input type="submit"  value="결제하기">
+                </form>
+            </li>
+        </ul>
+    </footer> 
 	
 	<script>
 		let table = document.getElementById("table");	//테이블

@@ -27,8 +27,8 @@ public interface ItemService {
 	 */
 	//2-1. 메뉴 id 조회
 	public Long findItemIdByItemName(String itemName);
-	//2-2. 카테고리별 메뉴 id 조회
-	public List<Long> findItemIdByCategory(Category category);
+	//2-2. 카테고리별 메뉴 조회
+	public List<Item> findItemsByCategory(Category category);
 	//2-3. 메뉴 이름으로 메뉴 조회
 	public Item findItemByItemName(String itemName);
 	//2-4. 전체 메뉴 조회
