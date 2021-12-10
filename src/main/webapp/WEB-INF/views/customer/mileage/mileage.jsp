@@ -6,6 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <title>마일리지</title>
+
 </head>
 <body>
  <!-- <header></header> -->
@@ -17,16 +18,16 @@
       <h3>${errorMsg}</h3>
     </hgroup>
 
-    <form action="controller.mileageController" method="post">
+    <form action="mileageController" method="post">
       <table>
         <tr>
           <td><label for="name">이름</label></td>
-          <td><input type="text" name="name" maxlength="10" /></td>
+          <td><input type="text" name="name" maxlength="30" /></td>
         </tr>
 
         <tr>
           <td><label for="phone">번호</label></td>
-          <td><input type="text" name="phone" maxlength="4" /></td>
+          <td><input type="text" name="phone" maxlength="20" /></td>
         </tr>
 
         <tr>
