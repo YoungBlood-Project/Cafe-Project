@@ -7,6 +7,7 @@
 <title>Javac cafe</title>
 </head>
 <body>
+	${test}
     <footer>   
         <ul id="ownerSet">
             <li>

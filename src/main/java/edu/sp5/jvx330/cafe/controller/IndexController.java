@@ -42,7 +42,10 @@ public class IndexController {
 		System.out.println("<key 출력>(index) : "+ciMap.keySet());
 		System.out.println("<value 출력>(index) : "+ciMap.values());
 		
-		mav.addObject(ciMap);
+		//mav.addObject(ciMap);
+	
+		String test = "test";
+		mav.addObject(test);
 		mav.setViewName("main/index");
 		
 		return mav;
