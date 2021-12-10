@@ -30,7 +30,7 @@ public class MileageHistoryDaoImpl implements MileageHistoryDao {
 	@Override
 
 	public List<MileageHistory> findMHByOrderNum(Long orderNum) {
-		String sql = "SELECT mileageId, customerId, orderNum, mBalance, regDate FROM MileageHistory"
+		String sql = "SELECT mhId, customerId, orderNum, mBalance, regDate FROM MileageHistory"
 				+ " WHERE orderNum = ?";
 		
 		return jdbcTemplate.query(sql, new MileageHistoryRowMapper(), orderNum);
@@ -42,7 +42,7 @@ public class MileageHistoryDaoImpl implements MileageHistoryDao {
 	//1. 전체 마일리지 조회
 	@Override
 	public List<MileageHistory> findMHByUserInfo(Customer customer) {
-		String sql = "SELECT mileageId, customerId, orderNum, mBalance, regDate FROM MileageHistory"
+		String sql = "SELECT mhId, customerId, orderNum, mBalance, regDate FROM MileageHistory"
 				+ " WHERE customerId = ?";
 		
 		return jdbcTemplate.query(sql, new MileageHistoryRowMapper(), customer.getCid());
