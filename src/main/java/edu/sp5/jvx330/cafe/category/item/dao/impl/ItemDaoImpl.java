@@ -1,5 +1,6 @@
 package edu.sp5.jvx330.cafe.category.item.dao.impl;
 
+import java.net.CookieManager;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,11 +22,23 @@ public class ItemDaoImpl implements ItemDao {
 	// 1-1. 메뉴 추가
 	@Override
 	public void addItem(Item item) {
-		String sql = "INSERT INTO Item(categoryId, itemName, itemPrice, itemUrl)"
-				+ " VALUES(?,?,?)";
-		// System.out.println(menu);
-		jdbcTemplate.update(sql, item.getCategory().getCategoryId(),
-				item.getItemName(), item.getItemPrice());
+		//이미지 경로 있는 경우
+		if(item.getItemUrl()!=null) {
+			String sql = "INSERT INTO Item(categoryId, itemName, itemPrice, itemUrl)"
+					+ " VALUES(?,?,?,?)";
+			// System.out.println(menu);
+			jdbcTemplate.update(sql, item.getCategory().getCategoryId(),
+					item.getItemName(), item.getItemPrice(), item.getItemUrl());
+		}
+		//이미지 경로 없는 경우
+		else { 
+			String sql = "INSERT INTO Item(categoryId, itemName, itemPrice)"
+					+ " VALUES(?,?,?)";
+			// System.out.println(menu);
+			jdbcTemplate.update(sql, item.getCategory().getCategoryId(),
+					item.getItemName(), item.getItemPrice());
+		}
+
 	}
 
 	// 1-2. 메뉴 수정

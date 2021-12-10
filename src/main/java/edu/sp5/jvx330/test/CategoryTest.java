@@ -18,9 +18,9 @@ public class CategoryTest {
 		
 		categoryService = context.getBean("categoryServiceImpl", CategoryServiceImpl.class);
 
-		addCategoryByCategoryName();
+		//addCategoryByCategoryName();
 		//setCategoryName();
-		//findAllCategorys();
+		findAllCategorys();
 		
 	}
 	

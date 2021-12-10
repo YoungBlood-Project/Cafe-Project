@@ -31,14 +31,13 @@ public class ItemServiceTest {
 		//addItem();
 		//setItemName();
 		//setItemPrice();
-		deleteItem();
+		//deleteItem();
 
 		// 2. 메뉴 조회(이름, 카테고리, id, 전부)
 		//findItemIdByItemName();
-		// findMidByCategory();
+		findItemIdByCategory();
 		// findMenuByMenuName();
 		// findAllMenus();
-
 		// 3. 주문 목록 추가/삭제
 		// addOrderList();
 		// deleteOrderList();
@@ -79,7 +78,7 @@ public class ItemServiceTest {
 	// 1-3. 메뉴삭제
 	public static void deleteItem() {
 		Item item = service.findItemByItemName("초코Dao");
-		// System.out.println("testMService :" + menu);
+		System.out.println("deleteItem :" + item);
 		service.deleteItem(item);
 		System.out.println("ItemServiceTest : 삭제 완료");
 	}

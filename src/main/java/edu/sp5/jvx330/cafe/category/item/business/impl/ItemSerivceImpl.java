@@ -45,7 +45,8 @@ public class ItemSerivceImpl implements ItemService {
 	public void deleteItem(Item item) {	
 		//삭제할 아이템의 id로 판매내역 조회
 		List<SalesHistory> sh_list = shDao.findSalesHistoryByItem(item.getItemId());
-		Long deleteId = iDao.findItemIdByItemName("delete");//delete라는 이름의 item id
+		Long deleteId = iDao.findItemIdByItemName(item.getItemName());
+		//넣은 item의 이름으로 삭제될 itemId 조회
 		System.out.println(deleteId);
 		for(SalesHistory sh : sh_list) {
 			shDao.setItemIdFromSalesHistory(deleteId, sh);
@@ -73,7 +74,9 @@ public class ItemSerivceImpl implements ItemService {
 	public List<Long> findItemIdByCategory(Category category) {
 		List<Item> item_list = iDao.findItemIdByCategory(category);
 		List<Long> itemId_list = new ArrayList<Long>();
+		
 		for(Item item : item_list) {
+			System.out.println(item);
 			itemId_list.add(item.getItemId());
 		}
 		return itemId_list;

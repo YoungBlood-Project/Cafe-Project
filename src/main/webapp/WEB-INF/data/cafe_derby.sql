@@ -73,7 +73,7 @@ CREATE TABLE SalesHistory (
 	CONSTRAINT SalesHistory_itemId_FK FOREIGN KEY(itemId) REFERENCES Item(itemId)
 );
 
---DELETE FROM Item WHERE mid = 3;
+--DELETE FROM Item WHERE itemId = 1;
 --DELETE FROM SalesHistory WHERE itemId = 2;
 
 ALTER TABLE SalesHistory DROP CONSTRAINT SalesHistory_itemId_FK;
