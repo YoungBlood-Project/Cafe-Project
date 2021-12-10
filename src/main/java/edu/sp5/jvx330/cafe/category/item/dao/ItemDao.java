@@ -29,7 +29,7 @@ public interface ItemDao {
 	//SalesHistoryServiceImpl에서 사용
 	public Long findItemIdByItemName(String itemName);
 	//2-2. 카테고리별 메뉴 조회
-	public List<Item> findItemIdByCategory(Category category);
+	public List<Item> findItemsByCategory(Category category);
 	//2-3. 메뉴이름으로 메뉴 조회
 	public Item findItemByItemName(String itemName);
 	//2-4. 전체 메뉴 조회

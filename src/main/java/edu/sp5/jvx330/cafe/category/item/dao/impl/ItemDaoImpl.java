@@ -90,7 +90,7 @@ public class ItemDaoImpl implements ItemDao {
 
 	// 2-2. 카테고리별 메뉴 조회
 	@Override
-	public List<Item> findItemIdByCategory(Category category) {
+	public List<Item> findItemsByCategory(Category category) {
 		String sql = "SELECT itemId, categoryId, itemName, itemPrice, itemUrl, regDate" 
 				+ " FROM Item WHERE categoryId = ?";
 

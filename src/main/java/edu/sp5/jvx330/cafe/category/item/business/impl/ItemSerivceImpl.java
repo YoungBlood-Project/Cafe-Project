@@ -69,18 +69,14 @@ public class ItemSerivceImpl implements ItemService {
 		return iDao.findItemIdByItemName(itemName);
 	}
 
-	//2-2. 카테고리별 메뉴 id 조회
+	//2-2. 카테고리별 메뉴 조회
 	@Override
-	public List<Long> findItemIdByCategory(Category category) {
-		List<Item> item_list = iDao.findItemIdByCategory(category);
-		List<Long> itemId_list = new ArrayList<Long>();
-		
-		for(Item item : item_list) {
-			//System.out.println(item);
-			itemId_list.add(item.getItemId());
-		}
-		return itemId_list;
+	public List<Item> findItemsByCategory(Category category) {
+		List<Item> item_list = iDao.findItemsByCategory(category);
+
+		return item_list;
 	}
+
 	//2-3. 메뉴 이름으로 메뉴 조회
 	@Override
 	public Item findItemByItemName(String itemName) {
