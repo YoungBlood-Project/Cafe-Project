@@ -1,9 +1,9 @@
 --TABLE 조회
 SELECT * FROM Customer;
-SELECT * FROM Mileage;
 SELECT * FROM MileageHistory;
 SELECT * FROM Category;
 SELECT * FROM Item;
+SELECT * FROM Mileage;
 SELECT * FROM SalesTotalPrice;
 SELECT * FROM SalesHistory;
 
@@ -16,6 +16,7 @@ DROP TABLE Item;
 DROP TABLE SalesTotalPrice;
 DROP TABLE SalesHistory;
 
+
 CREATE TABLE Customer(
    cid      BIGINT			PRIMARY KEY GENERATED ALWAYS AS IDENTITY,							--고객 PK
    name   	VARCHAR(30) 	NOT NULL,															--이름
@@ -27,7 +28,7 @@ CREATE TABLE Mileage(
 	mId				BIGINT		PRIMARY	KEY	GENERATED	ALWAYS	AS	IDENTITY,					--총 마일리지 PK	
 	customerId		BIGINT		NOT	NULL,														--FK(고객 PK)
 	mTotal			INT			NOT	NULL	DEFAULT	0,											--총 마일리지금액
-	CONSTRAINT	TotalMileage_customerId_FK	FOREIGN	KEY(customerId)	REFERENCES	Customer(cid)	
+	CONSTRAINT	Mileage_customerId_FK	FOREIGN	KEY(customerId)	REFERENCES	Customer(cid)	
 );
 
 CREATE TABLE MileageHistory(

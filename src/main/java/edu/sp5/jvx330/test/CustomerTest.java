@@ -22,12 +22,12 @@ public class CustomerTest {
 		 */
 
 		// 1. 고객 생성
-		 addCustomer();
+		// addCustomer();
 
 		// 2. 고객 정보 조회
 		// findCustomerByUserInfo();
 		// findAllCustomers();
-		// findTotalMileage();
+		// findMileage();
 
 		// 3. 고객 삭제
 		// deleteCustomer();
@@ -40,7 +40,9 @@ public class CustomerTest {
 	 */
 	// 1-1. 고객 생성
 	public static void addCustomer() {
-		Customer customer = new Customer("example", "example");
+		// Customer customer = new Customer("example_ex1", "example_ex1");
+		// Customer customer = new Customer("example_ex2", "example_ex2");
+		Customer customer = new Customer("example_ex3", "example_ex3");
 		customerService.addCustomer(customer);
 		System.out.println("customerServiceTest: 저장 완료.");
 	}
@@ -50,8 +52,8 @@ public class CustomerTest {
 	 */
 	// 2-1. 입력받은 정보로 고객 조회
 	public static void findCustomerByUserInfo() {
-		Customer customer = customerService.findCustomerByUserInfo("A", "1");
-		System.out.println("customerServiceTest: userInfo: "
+		Customer customer = customerService.findCustomerByUserInfo("example_ex1", "example_ex1");
+		System.out.println("customerServiceTest, userInfo: "
 				+ customerService.findCustomerByUserInfo(customer.getName(), customer.getPhone()));
 	}
 
@@ -74,7 +76,7 @@ public class CustomerTest {
 	 * 3. 고객 삭제
 	 */
 	public static void deleteCustomer() {
-		Customer customer = customerService.findCustomerByUserInfo("A", "1");
+		Customer customer = customerService.findCustomerByUserInfo("example_ex1", "example_ex1");
 		customerService.deleteCustomer(customer);
 		System.out.println("customerService : 삭제 완료.");
 	}
