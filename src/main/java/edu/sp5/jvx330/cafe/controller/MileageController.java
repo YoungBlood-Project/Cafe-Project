@@ -33,7 +33,7 @@ public class MileageController {
 		String name = mileage.getCustomer().getName();
 		String phone = mileage.getCustomer().getPhone();
 		
-		if ()
+		//if ()
 		
 		return "customer/mileage/search_mileage";
 	}
