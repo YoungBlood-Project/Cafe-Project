@@ -18,48 +18,51 @@ public class MileageTest {
 				new AnnotationConfigApplicationContext(MileageConfig.class);
 		
 		customerService = context.getBean("customerServiceImpl", CustomerServiceImpl.class);
-		mileageService = context.getBean("totalMileageServiceImpl", MileageServiceImpl.class);
+		mileageService = context.getBean("mileageServiceImpl", MileageServiceImpl.class);
 
-		//1. Mileage 값 변경
-		//1-1. 마일리지 적립
-		// addTotalMileage();
-		//1-2. 마일리지 사용
-		// subtractTotalMileage();
-		//2. Mileage 조회
+		// 1. Mileage 값 변경
+		//  1-1. 마일리지 적립
+		// addMileage();
+		//  1-2. 마일리지 사용
+		// subtractMileage();
+		 
+		// 2. Mileage 조회
 		// findTotalMileage();
+		 
+		// 3. Mileage 삭제 
 		// deleteTotalMileage();
 
 		context.close();
 	}
 
-	//1. Total Mileage 값 변경
-	//1-1. 마일리지 적립
-	public static void addTotalMileage() {
-		Customer customer = customerService.findCustomerByUserInfo("example", "example");
+	// 1. Mileage 값 변경
+	//  1-1. 마일리지 적립
+	public static void addMileage() {
+		Customer customer = customerService.findCustomerByUserInfo("example_ex1", "example_ex1");
 		mileageService.addMileage(customer, 500);
-		System.out.println("적립 완료");
+		System.out.println("마일리지 적립 완료");
 	}
 	
-	//1-2. 마일리지 사용
-	public static void subtractTotalMileage() {
+	//  1-2. 마일리지 사용
+	public static void subtractMileage() {
 		Customer customer = customerService.findCustomerByUserInfo("example", "example");
 		mileageService.subtractMileage(customer, 200);
-		System.out.println("사용 완료");
+		System.out.println("마일리지 사용 완료");
 	}
-	//2. Total Mileage 조회
-	public static void findTotalMileage() {
-		System.out.println("------------Total Mileage 조회------------");
+	// 2. Mileage 조회
+	public static void findMileage() {
+		System.out.println("------------ Mileage 조회------------");
 		Customer customer = customerService.findCustomerByUserInfo("example", "example");
 		System.out.println(customer);
 		Integer totalMileage = mileageService.findMileage(customer);
 		System.out.println(totalMileage);
 	}
 	
-	//3. Total Mileage 삭제
-	public static void deleteTotalMileage() {
+	// 3. Mileage 삭제
+	public static void deleteMileage() {
 		Customer customer = customerService.findCustomerByUserInfo("example", "example");
 		mileageService.deleteMileage(customer);
-		System.out.println("삭제완료");
+		System.out.println("마일리지 삭제 완료");
 	}
 		
 	
