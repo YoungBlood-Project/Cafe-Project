@@ -1,6 +1,5 @@
 package edu.sp5.jvx330.cafe.controller;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -14,7 +13,6 @@ import org.springframework.web.servlet.ModelAndView;
 
 import edu.sp5.jvx330.cafe.category.business.impl.CategoryServiceImpl;
 import edu.sp5.jvx330.cafe.category.domain.Category;
-import edu.sp5.jvx330.cafe.category.item.business.ItemService;
 import edu.sp5.jvx330.cafe.category.item.business.impl.ItemSerivceImpl;
 import edu.sp5.jvx330.cafe.category.item.domain.Item;
 import edu.sp5.jvx330.cafe.command.OrderItemsCommand;

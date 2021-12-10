@@ -15,17 +15,17 @@ public class SalesTotalPriceRowMapper implements RowMapper<SalesTotalPrice> {
 		SalesTotalPrice stp = new SalesTotalPrice();
 		
 		
-		Item item = new Item();
-		item.setItemId(rs.getLong("itemId"));
+		//Item item = new Item();
+		//item.setItemId(rs.getLong("itemId"));
 		
-		Mileage mileage = new Mileage(rs.getInt("mTotal"));
-		mileage.setmId(rs.getLong("mId"));
+		//Mileage mileage = new Mileage(rs.getInt("mTotal"));
+		//mileage.setmId(rs.getLong("mId"));
 		
-		Customer customer = new Customer();
-		customer.setCid(rs.getLong("customerId"));
-		mileage.setCustomer(customer);
+		//Customer customer = new Customer();
+		//customer.setCid(rs.getLong("customerId"));
+		//mileage.setCustomer(customer);
 		
-		return mileage;
+		return stp;
 	}
 
 }

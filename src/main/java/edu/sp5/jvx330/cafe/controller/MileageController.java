@@ -33,11 +33,9 @@ public class MileageController {
 		String name = mileage.getCustomer().getName();
 		String phone = mileage.getCustomer().getPhone();
 		
-		
-		
-		if (customerService.findCustomerByUserInfo(name, phone) == ) {			
-			return "customer/mileage/search_mileage";
-		}
+		//if (customerService.findCustomerByUserInfo(name, phone) == ) {			
+		//	return "customer/mileage/search_mileage";
+		//}
 		
 		return "customer/mileage/mileage";
 	}

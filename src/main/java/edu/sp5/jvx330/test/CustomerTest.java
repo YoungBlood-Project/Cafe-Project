@@ -26,7 +26,7 @@ public class CustomerTest {
 
 		// 2. ∞Ì∞¥ ¡§∫∏ ¡∂»∏
 		// findCustomerByUserInfo();
-		// findAllCustomers();
+		//findAllCustomers();
 		// findMileage();
 
 		// 3. ∞Ì∞¥ ªË¡¶
