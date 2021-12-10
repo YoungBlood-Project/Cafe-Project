@@ -21,7 +21,7 @@ public class ItemDaoImpl implements ItemDao {
 	// 1-1. 메뉴 추가
 	@Override
 	public void addItem(Item item) {
-		String sql = "INSERT INTO Item(categoryId, itemName, itemPrice)"
+		String sql = "INSERT INTO Item(categoryId, itemName, itemPrice, itemUrl)"
 				+ " VALUES(?,?,?)";
 		// System.out.println(menu);
 		jdbcTemplate.update(sql, item.getCategory().getCategoryId(),
@@ -68,7 +68,7 @@ public class ItemDaoImpl implements ItemDao {
 	@Override
 	public Long findItemIdByItemName(String itemName) {
 		// 메뉴 이름은 중복되지 않는다는 가정
-		String sql = "SELECT itemId, categoryId, itemName, itemPrice, regDate" 
+		String sql = "SELECT itemId, categoryId, itemName, itemPrice, itemUrl, regDate" 
 				+ " FROM Item WHERE itemName = ?";
 
 		Item item = jdbcTemplate.queryForObject(sql, new ItemRowMapper(), itemName);
@@ -78,7 +78,7 @@ public class ItemDaoImpl implements ItemDao {
 	// 2-2. 카테고리별 메뉴 조회
 	@Override
 	public List<Item> findItemIdByCategory(Category category) {
-		String sql = "SELECT itemId, categoryId, itemName, itemPrice, regDate" 
+		String sql = "SELECT itemId, categoryId, itemName, itemPrice, itemUrl, regDate" 
 				+ " FROM Item WHERE categoryId = ?";
 
 		return jdbcTemplate.query(sql, new ItemRowMapper(), category.getCategoryId());
@@ -87,7 +87,7 @@ public class ItemDaoImpl implements ItemDao {
 	// 2-3. 메뉴 이름으로 메뉴 조회
 	@Override
 	public Item findItemByItemName(String itemName) {
-		String sql ="SELECT itemId, categoryId, itemName, itemPrice, regDate" 
+		String sql ="SELECT itemId, categoryId, itemName, itemPrice, itemUrl, regDate" 
 				+ " FROM Item WHERE itemName = ?";
 
 		return jdbcTemplate.queryForObject(sql, new ItemRowMapper(), itemName);
@@ -96,7 +96,7 @@ public class ItemDaoImpl implements ItemDao {
 	// 2-4. 전체 메뉴 조회
 	@Override
 	public List<Item> findAllItems() {
-		String sql = "SELECT itemId, categoryId, itemName, itemPrice, regDate FROM Item";
+		String sql = "SELECT itemId, categoryId, itemName, itemPrice, itemUrl, regDate FROM Item";
 	
 		return jdbcTemplate.query(sql, new ItemRowMapper());
 	}
