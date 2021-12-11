@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,33 +8,110 @@
 <title>Javac cafe</title>
 </head>
 <body>
-	${test}
+    <header>
+        <h1 class="hidden">JAVAK CAFE 자박 카페</h1>
+    </header>
+    <section id="main">
+    	<h2 class="hidden">주문내역 및 메뉴</h2>
+    	        <section id="sectionLeft" class="cont">
+            <h3 id="orderList_h3">주문 내역</h3>
+            <table id="orderList">
+            <!-- 안에 내용 넣는 자바 스크립트 사용할 것 -->
+                <tr class="gradient">
+                    <th>순번</th>
+                    <th>제품명</th>
+                    <th>수량</th>
+                    <th>단가</th>
+                    <th>금액</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td><input type="text" name="menuName" value="아메리카노" readonly="readonly"/></td>
+                    <td><button class="minus">-</button><input type="text" name="numOfNum" value="1" readonly="readonly"><button class="plus">+</button></td>
+                    <td class="orderList_right">2000</td>
+                    <td class="orderList_right"><input type="text" name="paidPrice" value="2000" readonly="readonly"/></td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td><input type="text" name="menuName" value="카페라떼"/></td>
+                    <td><button class="minus">-</button><input type="text" name="numOfNum" value="2" readonly="readonly"><button class="plus">+</button></td>
+                    <td class="orderList_right">2500</td>
+                    <td class="orderList_right"><input type="text" name="paidPrice" value="5000" readonly="readonly"/></td>
+                </tr>
+            </table>
+            <table id="count">
+            <!-- text, value에 값 넣는 자바 스크립트 사용할 것 -->
+                <tr>
+                    <td>총 수량</td>
+                    <td><input type="text" value="6" readonly="readonly"/>6</td>
+                </tr>
+                <tr>
+                    <td>총 금액</td>
+                    <td><input type="text" value="52000" readonly="readonly"/>52000</td>
+                </tr>
+                <tr>
+                    <td>할인 금액</td>
+                    <td><input type="text" value="44000" readonly="readonly"/>44000</td>
+                </tr>
+                <tr>
+                    <td class="important">받을 금액</td>
+                    <td class="important"><input type="text" value="8000" readonly="readonly"/>8000</td>
+                </tr>
+            </table>
+            
+            <!-- 마일리지 판매내역 위치 일단 이동, 결제하기 누르면 마일리지 페이지로 가야할 거 같은데 -->
+            <ul>
+            	<li>
+                	<form action="" method="post">
+                		<input type="hidden"  name="transfer_link" value=""/>
+                	    <input type="submit"  value="마일리지">
+                	</form>
+            	</li>
+            	<li>
+                	<form action="" method="post">
+                		<input type="hidden"  name="transfer_link" value=""/>
+                	    <input type="submit"  value="결제하기">
+                	</form>
+            	</li>
+            </ul>
+
+            
+        </section>
+	<c:if test="${not empty ciMap}">
+		<c:forEach var="ciMap" items="${ciMap}">
+		${ciMap.key.categoryName} = 
+		<c:forEach var="ciValue" items="${ciMap.value}" >
+			${ciValue.itemName}
+		</c:forEach>
+		<br>
+	</c:forEach>
+	</c:if>
+    </section>
+	
     <footer>   
         <ul id="ownerSet">
             <li>
-                <form method="">
+            	<!-- 관리자 로그인 컨트롤러 경로 -->
+                <form action="" method="post">
+                   	<!-- 판매내역 컨트롤러 경로 -->
+                    <input type="hidden" name="transfer_link" value=""/>
                     <input type="submit"  value="판매내역">
                 </form>
             </li>
             <li>
-                <form method="">
+            	<!-- 관리자 로그인 컨트롤러 경로 -->
+                <form action="" method="post">
+                	<!-- 관리메뉴 컨트롤러 경로 -->
                     <input type="submit"  value="관리메뉴">
                 </form>
             </li>
-            <li>
-                <form method="">
-                    <input type="submit"  value="마일리지">
-                </form>
-            </li>
-            <li>
-                <form method="">
-                    <input type="submit"  value="결제하기">
-                </form>
-            </li>
+            <!-- 마일리지, 결제하기 위치 일단 이동 -->
+            <!-- 인덱스 경로 구조 바꿔야...? 일단 JS 완성 되고 난 후에 이동...? -->
         </ul>
     </footer> 
 	
 	<script>
+		//참고용으로 banking js 일단 받아왔다.
 		let table = document.getElementById("table");	//테이블
    		let c_acct = document.getElementById("C-overdraft-acct");	//신용계좌 버튼
     	let s_acct = document.getElementById("S-saving-acct");		//입출금계좌 버튼

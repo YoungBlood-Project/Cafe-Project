@@ -1,10 +1,10 @@
 package edu.sp5.jvx330.cafe.command;
 
-//주문내역 AJAX 데이터 받을 곳
+//주문내역 데이터 받을 곳
 public class OrderItemsCommand {
-	private String menuName;
-	private Integer numOfNum;
-	private Integer paidPrice;
+	private String menuName;//메뉴 이름
+	private Integer numOfNum;//메뉴 개수
+	private Integer paidPrice;//지불 가격 저장
 	
 	public OrderItemsCommand() {
 		

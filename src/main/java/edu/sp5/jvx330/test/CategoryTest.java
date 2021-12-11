@@ -18,15 +18,15 @@ public class CategoryTest {
 		
 		categoryService = context.getBean("categoryServiceImpl", CategoryServiceImpl.class);
 
-		//addCategoryByCategoryName();
+		addCategoryByCategoryName();
 		//setCategoryName();
 		findAllCategorys();
 		
 	}
 	
 	public static void addCategoryByCategoryName() {
-		//categoryService.addCategoryByCategoryName("deletedMenu");
-		categoryService.addCategoryByCategoryName("¶ó¶¼Dao");
+		categoryService.addCategoryByCategoryName("deletedMenu");
+		//categoryService.addCategoryByCategoryName("¶ó¶¼Dao");
 	}
 	
 	public static void setCategoryName() {

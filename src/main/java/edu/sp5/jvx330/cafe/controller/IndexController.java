@@ -38,12 +38,8 @@ public class IndexController {
 		}
 		
 		System.out.println("<key 출력>(index) : "+ciMap.keySet());
-		System.out.println("<value 출력>(index) : "+ciMap.values());
-		
-		//mav.addObject(ciMap);
 	
-		String test = "test";
-		mav.addObject(test);
+		mav.addObject("ciMap", ciMap);
 		mav.setViewName("main/index");
 		
 		return mav;
@@ -51,7 +47,7 @@ public class IndexController {
 	
 	@PostMapping("main/index")
 	public String index(@ModelAttribute List<OrderItemsCommand> orderItems_list) {
-		
+		System.out.println("index(post) 판매내역 : "+orderItems_list);
 		return "main/index";
 	}
 }

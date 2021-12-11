@@ -28,7 +28,7 @@ public class ItemServiceTest {
 		 * 테스트 - 이초원.
 		 */
 		// 1. 메뉴 추가/수정/삭제
-		//addItem();
+		addItem();
 		//setItemName();
 		//setItemPrice();
 		//deleteItem();
@@ -54,8 +54,8 @@ public class ItemServiceTest {
 		//Category category = cService.findCategoryByCategoryName("deletedMenu");
 		Category category = cService.findCategoryByCategoryName("라떼Dao");
 		//Item item = new Item(category, "delete", 0); //deletedMenu 카테고리에 넣기
-		//Item item = new Item(category, "바닐라Dao", 5000);
-		Item item = new Item(category, "초코Dao", 6000);
+		Item item = new Item(category, "바닐라Dao", 5000);
+		//Item item = new Item(category, "초코Dao", 6000);
 		//System.out.println(menu.getCustomer().getCid());
 		service.addItem(item);
 		System.out.println("ItemServiceTest : 저장 완료");
