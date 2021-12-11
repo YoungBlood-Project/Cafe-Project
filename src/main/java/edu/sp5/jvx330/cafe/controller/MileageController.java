@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import edu.sp5.jvx330.cafe.DataSourceConfig;
 import edu.sp5.jvx330.cafe.command.MileageCommand;
 import edu.sp5.jvx330.cafe.customer.business.impl.CustomerServiceImpl;
-import edu.sp5.jvx330.cafe.customer.mileage.business.impl.MileageServiceImpl;
 
 @Controller("controller.mileageController")
 
