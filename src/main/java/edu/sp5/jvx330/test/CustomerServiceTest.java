@@ -9,7 +9,7 @@ import edu.sp5.jvx330.cafe.customer.business.impl.CustomerServiceImpl;
 import edu.sp5.jvx330.cafe.customer.config.CustomerConfig;
 import edu.sp5.jvx330.cafe.customer.domain.Customer;
 
-public class CustomerTest {
+public class CustomerServiceTest {
 	private static CustomerService customerService;
 
 	public static void main(String[] args) {
@@ -22,7 +22,7 @@ public class CustomerTest {
 		 */
 
 		// 1. 绊按 积己
-		// addCustomer();
+		addCustomer();
 
 		// 2. 绊按 沥焊 炼雀
 		// findCustomerByUserInfo();

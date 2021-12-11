@@ -12,7 +12,7 @@ import edu.sp5.jvx330.cafe.customer.mileageHistory.business.impl.MileageHistoryS
 import edu.sp5.jvx330.cafe.customer.mileageHistory.config.MileageHistoryConfig;
 import edu.sp5.jvx330.cafe.customer.mileageHistory.domain.MileageHistory;
 
-public class MileageHistoryTest {
+public class MileageHistoryServiceTest {
 	private static CustomerService customerService;
 	private static MileageHistorySerivce mileageService;
 	

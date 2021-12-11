@@ -9,7 +9,7 @@ import edu.sp5.jvx330.cafe.customer.mileage.business.MileageService;
 import edu.sp5.jvx330.cafe.customer.mileage.business.impl.MileageServiceImpl;
 import edu.sp5.jvx330.cafe.customer.mileage.config.MileageConfig;
 
-public class MileageTest {
+public class MileageServiceTest {
 	private static CustomerService customerService;
 	private static MileageService mileageService;
 	

@@ -41,8 +41,8 @@ CREATE TABLE MileageHistory(
 );
 
 CREATE TABLE Category(
-	categoryId		BIGINT		PRIMARY	KEY	GENERATED	ALWAYS	AS	IDENTITY,
-	categoryName	VARCHAR(30)	NOT	NULL
+	categoryId		BIGINT		PRIMARY	KEY	GENERATED	ALWAYS	AS	IDENTITY,					--카테고리 PK
+	categoryName	VARCHAR(30)	NOT	NULL														--카테고리 이름
 );
 
 CREATE TABLE Item(
@@ -50,22 +50,21 @@ CREATE TABLE Item(
    categoryId	BIGINT		NOT	NULL,															--메뉴 종류
    itemName		VARCHAR(30) NOT NULL,															--메뉴 이름
    itemPrice	INT			NOT NULL,															--메뉴 가격
-   itemUrl		VARCHAR(100)NOT	NULL	DEFAULT	'http://placehold.it/120x120',
-   regDate		TIMESTAMP	NOT	NULL	DEFAULT	CURRENT_TIMESTAMP,
+   itemUrl		VARCHAR(100)NOT	NULL	DEFAULT	'http://placehold.it/120x120',					--이미지 주소
+   regDate		TIMESTAMP	NOT	NULL	DEFAULT	CURRENT_TIMESTAMP,								--등록 날짜
    CONSTRAINT Item_categoryId_FK	FOREIGN	KEY(categoryId)	REFERENCES	Category(categoryId)
 );
 
 CREATE TABLE SalesTotalPrice(
-	stpId			BIGINT	PRIMARY	KEY	GENERATED	ALWAYS	AS	IDENTITY,
+	stpId			BIGINT	PRIMARY	KEY	GENERATED	ALWAYS	AS	IDENTITY,						--총판매가격 PK
 	orderNum	BIGINT		NOT	NULL,															--주문 번호
-	totalPrice		INT		NOT	NULL,
-	reducedPrice	INT		NOT	NULL	DEFAULT	0,
-	orderDate	TIMESTAMP	NOT	NULL	DEFAULT	CURRENT_TIMESTAMP,								--주문 날짜
-	CONSTRAINT	SalesTotalPrice_itemId_FK	FOREIGN	KEY(itemId) REFERENCES	Item(itemId)
+	totalPrice		INT		NOT	NULL,															--총판매가격
+	reducedPrice	INT		NOT	NULL	DEFAULT	0,												--지불 가격(총판매가격 - 마일리지할인가격)
+	orderDate	TIMESTAMP	NOT	NULL	DEFAULT	CURRENT_TIMESTAMP								--주문 날짜
 );
 
 CREATE TABLE SalesHistory (
-	shId		BIGINT		PRIMARY	KEY	GENERATED	ALWAYS	AS	IDENTITY,					--판매내역 PK
+	shId		BIGINT		PRIMARY	KEY	GENERATED	ALWAYS	AS	IDENTITY,						--판매내역 PK
 	itemId		BIGINT		NOT NULL,															--FK(메뉴 PK)
 	orderNum	BIGINT		NOT	NULL,															--주문 번호
 	numOfSales	INT			NOT NULL	DEFAULT	0,												--수량

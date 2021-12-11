@@ -9,7 +9,7 @@ import edu.sp5.jvx330.cafe.category.business.impl.CategoryServiceImpl;
 import edu.sp5.jvx330.cafe.category.config.CategoryConfig;
 import edu.sp5.jvx330.cafe.category.domain.Category;
 
-public class CategoryTest {
+public class CategoryServiceTest {
 	private static CategoryService categoryService;
 	
 	public static void main(String[] args) {

@@ -1,11 +1,29 @@
 package edu.sp5.jvx330.cafe.category.item.SalesTotalPrice.domain;
 
+import java.util.Date;
+
 public class SalesTotalPrice {
 
-	private long stpId;
-	private long orderNum;
-	private int totalPrice;
-	private int reducePrice;
+	private Long stpId;
+	
+	private Long orderNum;
+	private Integer totalPrice;
+	private Integer reducePrice;
+	
+	private Date orderDate;
+	
+	public SalesTotalPrice() {
+		
+	}
+	
+	public SalesTotalPrice(Long orderNum, Integer totalPrice, Integer reducePrice) {
+		super();
+		this.orderNum = orderNum;
+		this.totalPrice = totalPrice;
+		this.reducePrice = reducePrice;
+	}
+	
+	
 	public long getStpId() {
 		return stpId;
 	}
@@ -30,6 +48,17 @@ public class SalesTotalPrice {
 	public void setReducePrice(int reducePrice) {
 		this.reducePrice = reducePrice;
 	}
+	public Date getOrderDate() {
+		return orderDate;
+	}
+	public void setOrderDate(Date orderDate) {
+		this.orderDate = orderDate;
+	}
+
+	@Override
+	public String toString() {
+		return "SalesTotalPrice [stpId=" + stpId + ", orderNum=" + orderNum + ", totalPrice=" + totalPrice
+				+ ", reducePrice=" + reducePrice + ", orderDate=" + orderDate + "]";
+	}
 		
-	
 }
