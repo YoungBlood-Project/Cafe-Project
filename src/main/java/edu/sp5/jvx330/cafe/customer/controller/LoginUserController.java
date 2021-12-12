@@ -1,6 +1,8 @@
 package edu.sp5.jvx330.cafe.customer.controller;
 
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.stereotype.Controller;
