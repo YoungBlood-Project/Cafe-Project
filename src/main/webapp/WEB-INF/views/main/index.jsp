@@ -33,7 +33,7 @@
                 </tr>
                 <tr>
                     <td>2</td>
-                    <td><input type="text" name="menuName" value="카페라떼"/></td>
+                    <td><input type="text" name="menuName" value="카페라떼" readonly="readonly"/></td>
                     <td><button class="minus">-</button><input type="text" name="numOfNum" value="2" readonly="readonly"><button class="plus">+</button></td>
                     <td class="orderList_right">2500</td>
                     <td class="orderList_right"><input type="text" name="paidPrice" value="5000" readonly="readonly"/></td>

@@ -21,16 +21,16 @@ public class CustomerServiceTest {
 		 * Test - 沥驱辣(develop-jhy)
 		 */
 
-		// 1. 绊按 积己
-		addCustomer();
+		//1. 绊按 积己
+		//addCustomer();
 
-		// 2. 绊按 沥焊 炼雀
-		// findCustomerByUserInfo();
+		//2. 绊按 沥焊 炼雀
+		findCustomerByUserInfo();
 		//findAllCustomers();
-		// findMileage();
+		//findMileage();
 
-		// 3. 绊按 昏力
-		// deleteCustomer();
+		//3. 绊按 昏力
+		//deleteCustomer();
 
 		context.close();
 	}
