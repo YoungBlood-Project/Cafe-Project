@@ -22,7 +22,7 @@
       <table>
         <tr>
           <td><label for="name">이름</label></td>
-          <td><input type="text" name="name" maxlength="30" value="${customer.name}" /></td>
+          <td><input type="text" name="name" maxlength="30" value="${customer.name}"/></td>
         </tr>
 
         <tr>
