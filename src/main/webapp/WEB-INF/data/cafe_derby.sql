@@ -17,6 +17,12 @@ DROP TABLE SalesTotalPrice;
 DROP TABLE SalesHistory;
 
 
+CREATE TABLE Manager (
+	managerId		BIGINT 			PRIMARY KEY GENERATED ALWAYS AS IDENTITY,					--매니저 PK
+	managerName   	VARCHAR(30) 	NOT NULL,													--성함
+	passwd			VARCHAR(20)		NOT NULL                                                    --패스워드
+);
+
 CREATE TABLE Customer(
    cid      BIGINT			PRIMARY KEY GENERATED ALWAYS AS IDENTITY,							--고객 PK
    name   	VARCHAR(30) 	NOT NULL,															--이름
