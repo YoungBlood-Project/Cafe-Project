@@ -4,13 +4,13 @@ import java.util.List;
 
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
-import edu.sp5.jvx330.cafe.customer.business.CustomerService;
-import edu.sp5.jvx330.cafe.customer.business.impl.CustomerServiceImpl;
-import edu.sp5.jvx330.cafe.customer.domain.Customer;
-import edu.sp5.jvx330.cafe.customer.mileageHistory.business.MileageHistorySerivce;
-import edu.sp5.jvx330.cafe.customer.mileageHistory.business.impl.MileageHistoryServiceImpl;
-import edu.sp5.jvx330.cafe.customer.mileageHistory.config.MileageHistoryConfig;
-import edu.sp5.jvx330.cafe.customer.mileageHistory.domain.MileageHistory;
+import edu.sp5.jvx330.cafe.config.MileageHistoryConfig;
+import edu.sp5.jvx330.cafe.membership.business.CustomerService;
+import edu.sp5.jvx330.cafe.membership.business.MileageHistorySerivce;
+import edu.sp5.jvx330.cafe.membership.business.impl.CustomerServiceImpl;
+import edu.sp5.jvx330.cafe.membership.business.impl.MileageHistoryServiceImpl;
+import edu.sp5.jvx330.cafe.membership.domain.Customer;
+import edu.sp5.jvx330.cafe.membership.domain.MileageHistory;
 
 public class MileageHistoryServiceTest {
 	private static CustomerService customerService;

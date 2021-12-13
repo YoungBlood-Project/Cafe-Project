@@ -1,4 +1,4 @@
-package edu.sp5.jvx330.cafe.common.command;
+package edu.sp5.jvx330.cafe.menu.command;
 
 import java.util.List;
 

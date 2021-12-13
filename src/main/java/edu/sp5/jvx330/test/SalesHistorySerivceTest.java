@@ -5,13 +5,13 @@ import java.util.List;
 
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
-import edu.sp5.jvx330.cafe.category.item.business.ItemService;
-import edu.sp5.jvx330.cafe.category.item.business.impl.ItemSerivceImpl;
-import edu.sp5.jvx330.cafe.category.item.domain.Item;
 import edu.sp5.jvx330.cafe.category.item.salesHistory.business.SalesHistoryService;
 import edu.sp5.jvx330.cafe.category.item.salesHistory.business.impl.SalesHistoryServiceImpl;
 import edu.sp5.jvx330.cafe.category.item.salesHistory.config.SalesHistoryConfig;
 import edu.sp5.jvx330.cafe.category.item.salesHistory.domain.SalesHistory;
+import edu.sp5.jvx330.cafe.menu.business.ItemService;
+import edu.sp5.jvx330.cafe.menu.business.impl.ItemSerivceImpl;
+import edu.sp5.jvx330.cafe.menu.domain.Item;
 
 public class SalesHistorySerivceTest {
 	private static SalesHistoryService sh_service;

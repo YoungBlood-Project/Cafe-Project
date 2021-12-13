@@ -4,9 +4,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
 
-import edu.sp5.jvx330.cafe.customer.mileage.dao.MileageDao;
-import edu.sp5.jvx330.cafe.customer.mileage.dao.MileageRowMapper;
-import edu.sp5.jvx330.cafe.customer.mileage.domain.Mileage;
+import edu.sp5.jvx330.cafe.membership.dao.MileageDao;
+import edu.sp5.jvx330.cafe.membership.dao.MileageRowMapper;
+import edu.sp5.jvx330.cafe.membership.domain.Mileage;
 
 public class MileageDaoImpl implements MileageDao {
 	@Autowired

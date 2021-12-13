@@ -13,9 +13,10 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.servlet.ModelAndView;
 
 import edu.sp5.jvx330.cafe.category.item.salesTotalPrice.domain.SalesTotalPrice;
-import edu.sp5.jvx330.cafe.common.command.OrderItemsCommand;
+
 import edu.sp5.jvx330.cafe.menu.business.impl.CategoryServiceImpl;
 import edu.sp5.jvx330.cafe.menu.business.impl.ItemSerivceImpl;
+import edu.sp5.jvx330.cafe.menu.command.OrderItemsCommand;
 import edu.sp5.jvx330.cafe.menu.domain.Category;
 import edu.sp5.jvx330.cafe.menu.domain.Item;
 

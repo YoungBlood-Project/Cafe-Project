@@ -1,6 +1,6 @@
 package edu.sp5.jvx330.cafe.membership.business;
 
-import edu.sp5.jvx330.cafe.customer.domain.Customer;
+import edu.sp5.jvx330.cafe.membership.domain.Customer;
 
 public interface MileageService {
 	//1. Mileage °ª º¯°æ

@@ -4,10 +4,11 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
-import edu.sp5.jvx330.cafe.customer.domain.Customer;
-import edu.sp5.jvx330.cafe.customer.mileageHistory.business.MileageHistorySerivce;
-import edu.sp5.jvx330.cafe.customer.mileageHistory.dao.impl.MileageHistoryDaoImpl;
-import edu.sp5.jvx330.cafe.customer.mileageHistory.domain.MileageHistory;
+import edu.sp5.jvx330.cafe.membership.business.MileageHistorySerivce;
+import edu.sp5.jvx330.cafe.membership.dao.impl.MileageHistoryDaoImpl;
+import edu.sp5.jvx330.cafe.membership.domain.Customer;
+import edu.sp5.jvx330.cafe.membership.domain.MileageHistory;
+
 
 public class MileageHistoryServiceImpl implements MileageHistorySerivce {
 	@Autowired

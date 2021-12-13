@@ -5,8 +5,8 @@ import java.sql.SQLException;
 
 import org.springframework.jdbc.core.RowMapper;
 
-import edu.sp5.jvx330.cafe.customer.domain.Customer;
-import edu.sp5.jvx330.cafe.customer.mileageHistory.domain.MileageHistory;
+import edu.sp5.jvx330.cafe.membership.domain.Customer;
+import edu.sp5.jvx330.cafe.membership.domain.MileageHistory;
 
 public class MileageHistoryRowMapper implements RowMapper<MileageHistory> {
 

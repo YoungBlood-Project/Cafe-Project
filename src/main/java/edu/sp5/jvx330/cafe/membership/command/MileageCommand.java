@@ -1,20 +1,11 @@
-package edu.sp5.jvx330.cafe.membership.mileage.domain;
+package edu.sp5.jvx330.cafe.membership.command;
 
-import edu.sp5.jvx330.cafe.customer.domain.Customer;
+import edu.sp5.jvx330.cafe.membership.domain.Customer;
 
-public class Mileage {
+public class MileageCommand {
 	private Long mId;
 	private Customer customer;
 	private Integer mTotal;
-	
-	public Mileage() {
-		
-	}
-	
-	public Mileage(Integer mileageTotal) {
-		super();
-		this.mTotal = mileageTotal;
-	}
 	
 	public Long getmId() {
 		return mId;
@@ -33,10 +24,5 @@ public class Mileage {
 	}
 	public void setMTotal(Integer mTotal) {
 		this.mTotal = mTotal;
-	}
-
-	@Override
-	public String toString() {
-		return "TotalMileage [mId=" + mId + ", customer=" + customer + ", mTotal=" + mTotal + "]";
 	}
 }

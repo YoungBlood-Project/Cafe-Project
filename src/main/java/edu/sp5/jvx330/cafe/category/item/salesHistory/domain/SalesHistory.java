@@ -2,7 +2,7 @@ package edu.sp5.jvx330.cafe.category.item.salesHistory.domain;
 
 import java.util.Date;
 
-import edu.sp5.jvx330.cafe.category.item.domain.Item;
+import edu.sp5.jvx330.cafe.menu.domain.Item;
 
 public class SalesHistory {
 	private Long shid;

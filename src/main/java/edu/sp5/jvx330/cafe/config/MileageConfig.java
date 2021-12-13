@@ -3,8 +3,9 @@ package edu.sp5.jvx330.cafe.config;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
-import edu.sp5.jvx330.cafe.customer.mileage.business.impl.MileageServiceImpl;
-import edu.sp5.jvx330.cafe.customer.mileage.dao.impl.MileageDaoImpl;
+
+import edu.sp5.jvx330.cafe.membership.business.impl.MileageServiceImpl;
+import edu.sp5.jvx330.cafe.membership.dao.impl.MileageDaoImpl;
 
 @Configuration
 @Import(DataSourceConfig.class)

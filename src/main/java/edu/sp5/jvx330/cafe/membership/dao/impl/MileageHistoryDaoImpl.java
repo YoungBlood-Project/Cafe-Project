@@ -5,10 +5,10 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 
-import edu.sp5.jvx330.cafe.customer.domain.Customer;
-import edu.sp5.jvx330.cafe.customer.mileageHistory.dao.MileageHistoryDao;
-import edu.sp5.jvx330.cafe.customer.mileageHistory.dao.MileageHistoryRowMapper;
-import edu.sp5.jvx330.cafe.customer.mileageHistory.domain.MileageHistory;
+import edu.sp5.jvx330.cafe.membership.dao.MileageHistoryDao;
+import edu.sp5.jvx330.cafe.membership.dao.MileageHistoryRowMapper;
+import edu.sp5.jvx330.cafe.membership.domain.Customer;
+import edu.sp5.jvx330.cafe.membership.domain.MileageHistory;
 
 public class MileageHistoryDaoImpl implements MileageHistoryDao {
 	@Autowired

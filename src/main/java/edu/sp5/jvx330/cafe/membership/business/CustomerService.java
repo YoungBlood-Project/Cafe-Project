@@ -2,7 +2,7 @@ package edu.sp5.jvx330.cafe.membership.business;
 
 import java.util.List;
 
-import edu.sp5.jvx330.cafe.customer.domain.Customer;
+import edu.sp5.jvx330.cafe.membership.domain.Customer;
 
 public interface CustomerService {
 	/**

@@ -4,13 +4,14 @@ import java.util.List;
 
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
-import edu.sp5.jvx330.cafe.category.business.CategoryService;
-import edu.sp5.jvx330.cafe.category.business.impl.CategoryServiceImpl;
-import edu.sp5.jvx330.cafe.category.domain.Category;
-import edu.sp5.jvx330.cafe.category.item.business.ItemService;
-import edu.sp5.jvx330.cafe.category.item.business.impl.ItemSerivceImpl;
-import edu.sp5.jvx330.cafe.category.item.config.ItemConfig;
-import edu.sp5.jvx330.cafe.category.item.domain.Item;
+import edu.sp5.jvx330.cafe.config.ItemConfig;
+import edu.sp5.jvx330.cafe.menu.business.CategoryService;
+import edu.sp5.jvx330.cafe.menu.business.ItemService;
+import edu.sp5.jvx330.cafe.menu.business.impl.CategoryServiceImpl;
+import edu.sp5.jvx330.cafe.menu.business.impl.ItemSerivceImpl;
+import edu.sp5.jvx330.cafe.menu.domain.Category;
+import edu.sp5.jvx330.cafe.menu.domain.Item;
+
 
 
 

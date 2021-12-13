@@ -5,9 +5,9 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 
-import edu.sp5.jvx330.cafe.customer.dao.CustomerDao;
-import edu.sp5.jvx330.cafe.customer.dao.CustomerRowMapper;
-import edu.sp5.jvx330.cafe.customer.domain.Customer;
+import edu.sp5.jvx330.cafe.membership.dao.CustomerDao;
+import edu.sp5.jvx330.cafe.membership.dao.CustomerRowMapper;
+import edu.sp5.jvx330.cafe.membership.domain.Customer;
 
 public class CustomerDaoImpl implements CustomerDao {
 	@Autowired

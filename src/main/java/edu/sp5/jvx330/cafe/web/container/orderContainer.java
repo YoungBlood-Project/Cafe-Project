@@ -1,8 +1,8 @@
 package edu.sp5.jvx330.cafe.web.container;
 
-import edu.sp5.jvx330.cafe.common.command.CustomerCommand;
-import edu.sp5.jvx330.cafe.common.command.MileageCommand;
-import edu.sp5.jvx330.cafe.common.command.OrderItemsCommand;
+import edu.sp5.jvx330.cafe.membership.command.CustomerCommand;
+import edu.sp5.jvx330.cafe.membership.command.MileageCommand;
+import edu.sp5.jvx330.cafe.menu.command.OrderItemsCommand;
 
 public class orderContainer {
 	private CustomerCommand customerCommand;

@@ -2,9 +2,9 @@ package edu.sp5.jvx330.cafe.membership.business.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
-import edu.sp5.jvx330.cafe.customer.domain.Customer;
-import edu.sp5.jvx330.cafe.customer.mileage.business.MileageService;
-import edu.sp5.jvx330.cafe.customer.mileage.dao.impl.MileageDaoImpl;
+import edu.sp5.jvx330.cafe.membership.business.MileageService;
+import edu.sp5.jvx330.cafe.membership.dao.impl.MileageDaoImpl;
+import edu.sp5.jvx330.cafe.membership.domain.Customer;
 
 public class MileageServiceImpl implements MileageService {
 	@Autowired

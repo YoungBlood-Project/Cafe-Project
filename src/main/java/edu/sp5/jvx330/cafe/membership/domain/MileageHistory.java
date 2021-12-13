@@ -2,8 +2,6 @@ package edu.sp5.jvx330.cafe.membership.domain;
 
 import java.util.Date;
 
-import edu.sp5.jvx330.cafe.customer.domain.Customer;
-
 public class MileageHistory {
 	private Long mhId;
 	private	Customer customer;
