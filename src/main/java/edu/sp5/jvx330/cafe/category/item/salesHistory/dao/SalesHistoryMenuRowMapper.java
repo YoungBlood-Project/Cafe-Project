@@ -5,8 +5,8 @@ import java.sql.SQLException;
 
 import org.springframework.jdbc.core.RowMapper;
 
-import edu.sp5.jvx330.cafe.category.item.domain.Item;
 import edu.sp5.jvx330.cafe.category.item.salesHistory.domain.SalesHistory;
+import edu.sp5.jvx330.cafe.menu.domain.Item;
 
 public class SalesHistoryMenuRowMapper implements RowMapper<SalesHistory> {
 

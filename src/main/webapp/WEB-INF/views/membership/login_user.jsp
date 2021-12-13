@@ -18,7 +18,7 @@
       <h3>${errorMsg}</h3>
     </hgroup>
 
-    <form action="loginUser" method="post">
+    <form action="/jvx330/membership/loginUser" method="post">
       <table>
         <tr>
           <td><label for="name">이름</label></td>

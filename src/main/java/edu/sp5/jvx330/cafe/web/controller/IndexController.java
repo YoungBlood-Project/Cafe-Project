@@ -19,9 +19,11 @@ import edu.sp5.jvx330.cafe.menu.business.impl.ItemSerivceImpl;
 import edu.sp5.jvx330.cafe.menu.command.OrderItemsCommand;
 import edu.sp5.jvx330.cafe.menu.domain.Category;
 import edu.sp5.jvx330.cafe.menu.domain.Item;
+import edu.sp5.jvx330.cafe.web.container.OrderContainer;
 
 //@SessionAttributes(names = {"salesTotalPrice", "orderItemsCommand"}) //안되면 values로 바꾸기
-@Controller("main.index")
+@SessionAttributes("orderContainer")
+@Controller("controller.indexController")
 public class IndexController {
 	@Autowired
 	private CategoryServiceImpl categoryServiceImpl;
@@ -50,11 +52,16 @@ public class IndexController {
 	}
 	
 	@PostMapping("main/index")
-	public String index(@ModelAttribute OrderItemsCommand orderItemsCommand, 
+	public String index(@ModelAttribute("orderContainer") OrderContainer orderContainer) {
+		System.out.println("index(post) 판매내역 : "+orderContainer);
+
+		return "/membership/login_user";
+	}
+	/*public String index(@ModelAttribute OrderItemsCommand orderItemsCommand, 
 			@ModelAttribute SalesTotalPrice salesTotalPrice) {
 		System.out.println("index(post) 판매내역 : "+orderItemsCommand);
 		System.out.println("stp : "+salesTotalPrice);
 
-		return "customer/loginUser";
-	}
+		return "/jvx330/membership/login_user";
+	}*/
 }

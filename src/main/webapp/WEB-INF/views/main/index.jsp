@@ -44,11 +44,11 @@
             <!-- text, value에 값 넣는 자바 스크립트 사용할 것 -->
                 <tr>
                     <td>총 수량</td>
-                    <td><input type="text" name="orderNum" value="6" readonly="readonly"/>6</td>
+                    <td><input type="text" name="salesTotalPrice.orderNum" value="6" readonly="readonly"/>6</td>
                 </tr>
                 <tr>
                     <td>총 금액</td>
-                    <td><input type="text" name="totalPrice" value="52000" readonly="readonly"/>52000</td>
+                    <td><input type="text" name="salesTotalPrice.totalPrice" value="52000" readonly="readonly"/>52000</td>
                 </tr>
                 <tr>
                     <td>할인 금액</td>
@@ -56,7 +56,7 @@
                 </tr>
                 <tr>
                     <td class="important">받을 금액</td>
-                    <td class="important"><input type="text" name="reducePrice" value="8000" readonly="readonly"/>8000</td>
+                    <td class="important"><input type="text" name="orderContainer.salesTotalPrice.reducePrice" value="8000" readonly="readonly"/>8000</td>
                 </tr>
             </table>
            

@@ -6,15 +6,22 @@ import edu.sp5.jvx330.cafe.manager.business.ManagerService;
 import edu.sp5.jvx330.cafe.manager.dao.ManagerDao;
 import edu.sp5.jvx330.cafe.manager.domain.Manager;
 
-//public class ManagerServiceImpl implements ManagerService {
-//
-//	@Autowired
-//	private ManagerDao managerDao;
-//	
-//	@Override
-//	public Manager managerLogin(String managerName, String passwd) {
-//		Manager manager = new Manager(managerName, passwd);
-//		return managerDao.managerLogin(manager);
-//	}
-//
-//}
+public class ManagerServiceImpl implements ManagerService {
+
+	@Autowired
+	private ManagerDao managerDao;
+
+	@Override
+	public void managerLogin(String name, String passwd) {
+		// TODO Auto-generated method stub
+		
+	}
+	
+	//@Override
+	//public Manager managerLogin(String managerName, String passwd) {
+	//	Manager manager = new Manager(managerName, passwd);
+	//	return managerDao.managerLogin(manager);
+	//	return null;
+	//}
+
+}

@@ -8,7 +8,7 @@ public class OrderItemsCommand {
 	private Integer numOfNum;//메뉴 개수
 	private Integer paidPrice;//지불 가격 저장
 	
-	private List<OrderItemsCommand> orderItemsList; 
+	//private List<OrderItemsCommand> orderItemsList; 
 	
 	public OrderItemsCommand() {
 		
@@ -21,13 +21,13 @@ public class OrderItemsCommand {
 		this.paidPrice = paidPrice;
 	}
 
-	public List<OrderItemsCommand> getOrderItemsList() {
-		return orderItemsList;
-	}
+	//public List<OrderItemsCommand> getOrderItemsList() {
+	//	return orderItemsList;
+	//}
 
-	public void setOrderItemsList(List<OrderItemsCommand> orderItemsList) {
-		this.orderItemsList = orderItemsList;
-	}
+	//public void setOrderItemsList(List<OrderItemsCommand> orderItemsList) {
+	//	this.orderItemsList = orderItemsList;
+	//}
 
 	public String getMenuName() {
 		return menuName;
@@ -55,7 +55,7 @@ public class OrderItemsCommand {
 
 	@Override
 	public String toString() {
-		return "OrderItemsCommand [menuName=" + menuName + ", numOfNum=" + numOfNum + ", paidPrice=" + paidPrice
-				+ ", orderItemsList=" + orderItemsList + "]";
+		return "OrderItemsCommand [menuName=" + menuName + ", numOfNum=" + numOfNum 
+				+ ", paidPrice=" + paidPrice + "]";
 	}
 }

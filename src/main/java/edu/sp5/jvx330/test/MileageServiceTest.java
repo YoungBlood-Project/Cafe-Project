@@ -28,7 +28,7 @@ public class MileageServiceTest {
 		// subtractMileage();
 		 
 		// 2. Mileage 조회
-		// findMileage();
+		findMileage();
 		 
 		// 3. Mileage 삭제 
 		// deleteMileage();

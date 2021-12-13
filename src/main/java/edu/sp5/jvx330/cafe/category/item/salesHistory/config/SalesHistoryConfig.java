@@ -6,7 +6,7 @@ import org.springframework.context.annotation.Import;
 
 import edu.sp5.jvx330.cafe.category.item.salesHistory.business.impl.SalesHistoryServiceImpl;
 import edu.sp5.jvx330.cafe.category.item.salesHistory.dao.impl.SalesHistoryDaoImpl;
-import edu.sp5.jvx330.cafe.common.config.DataSourceConfig;
+import edu.sp5.jvx330.cafe.config.DataSourceConfig;
 
 @Configuration
 @Import(DataSourceConfig.class)

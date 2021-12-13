@@ -2,6 +2,7 @@ package edu.sp5.jvx330.test;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 import edu.sp5.jvx330.cafe.config.ItemConfig;
@@ -29,7 +30,7 @@ public class ItemServiceTest {
 		 * 테스트 - 이초원.
 		 */
 		// 1. 메뉴 추가/수정/삭제
-		addItem();
+		//addItem();
 		//setItemName();
 		//setItemPrice();
 		//deleteItem();
@@ -38,7 +39,7 @@ public class ItemServiceTest {
 		//findItemIdByItemName();
 		//findItemIdByCategory();
 		//findItemByItemName();
-		//findAllItems();
+		findAllItems();
 		
 		// 3. 주문 목록 추가/삭제
 		//addOrderList();

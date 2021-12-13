@@ -3,8 +3,8 @@ package edu.sp5.jvx330.cafe.category.item.salesHistory.business;
 import java.util.Date;
 import java.util.List;
 
-import edu.sp5.jvx330.cafe.category.item.domain.Item;
 import edu.sp5.jvx330.cafe.category.item.salesHistory.domain.SalesHistory;
+import edu.sp5.jvx330.cafe.menu.domain.Item;
 
 public interface SalesHistoryService {
 	/**

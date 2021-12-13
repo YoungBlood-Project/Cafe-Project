@@ -13,7 +13,6 @@ public class Manager {
 		this.passwd = passwd;
 	}
 	
-	
 	public Integer getManagerId() {
 		return managerId;
 	}

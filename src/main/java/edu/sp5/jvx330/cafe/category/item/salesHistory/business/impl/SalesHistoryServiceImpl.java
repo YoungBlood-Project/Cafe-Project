@@ -5,23 +5,20 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
-import edu.sp5.jvx330.cafe.category.item.dao.impl.ItemDaoImpl;
-import edu.sp5.jvx330.cafe.category.item.domain.Item;
+
 import edu.sp5.jvx330.cafe.category.item.salesHistory.business.SalesHistoryService;
 import edu.sp5.jvx330.cafe.category.item.salesHistory.dao.impl.SalesHistoryDaoImpl;
 import edu.sp5.jvx330.cafe.category.item.salesHistory.domain.SalesHistory;
-import edu.sp5.jvx330.cafe.customer.mileage.business.impl.MileageServiceImpl;
+import edu.sp5.jvx330.cafe.membership.business.impl.MileageServiceImpl;
+import edu.sp5.jvx330.cafe.menu.dao.impl.ItemDaoImpl;
+import edu.sp5.jvx330.cafe.menu.domain.Item;
+
 
 public class SalesHistoryServiceImpl implements SalesHistoryService {
 	@Autowired
 	ItemDaoImpl iDao;
 	@Autowired
 	SalesHistoryDaoImpl shDao;
-	
-	@Autowired
-	MileageServiceImpl mileageService;
-	@Autowired
-	MileageServiceImpl tmService;
 	
 	/**
 	 * 1. 판매내역 추가
