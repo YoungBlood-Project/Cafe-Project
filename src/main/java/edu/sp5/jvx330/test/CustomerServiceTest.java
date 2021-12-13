@@ -25,7 +25,7 @@ public class CustomerServiceTest {
 		//addCustomer();
 
 		//2. 고객 정보 조회
-		findCustomerByUserInfo();
+		//findCustomerByUserInfo();
 		//findAllCustomers();
 		//findMileage();
 

@@ -22,12 +22,14 @@
       <table>
         <tr>
           <td><label for="name">이름</label></td>
-          <td><input type="text" name="name" maxlength="30" value="${customer.name}"/></td>
+          <td><input type="text" name="name" maxlength="30"/></td>
+          <!-- <td><input type="text" name="name" maxlength="30" value="${customer.name}"/></td> -->
         </tr>
 
         <tr>
           <td><label for="phone">번호</label></td>
           <td><input type="text" name="phone" maxlength="20" value="${customer.phone}"/></td>
+          <!-- <td><input type="text" name="phone" maxlength="20" value="${customer.phone}"/></td> -->
         </tr>
       </table>
       <input type="submit" id="findButton" value="조회"/>
