@@ -5,8 +5,9 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.junit.jupiter.SpringJUnitConfig;
-import edu.sp5.jvx330.cafe.category.config.CategoryConfig;
-import edu.sp5.jvx330.cafe.category.dao.CategoryDao;
+
+import edu.sp5.jvx330.cafe.config.CategoryConfig;
+import edu.sp5.jvx330.cafe.menu.dao.CategoryDao;
 
 @SpringJUnitConfig(classes = {CategoryConfig.class})
 public class CategoryDaoTest {
