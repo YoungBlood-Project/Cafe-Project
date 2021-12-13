@@ -1,4 +1,4 @@
-package edu.sp5.jvx330.cafe;
+package edu.sp5.jvx330.cafe.common.config;
 
 import org.apache.tomcat.jdbc.pool.DataSource;
 import org.springframework.context.annotation.Bean;

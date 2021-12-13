@@ -1,10 +1,14 @@
-package edu.sp5.jvx330.cafe.command;
+package edu.sp5.jvx330.cafe.common.command;
+
+import java.util.List;
 
 //주문내역 데이터 받을 곳
 public class OrderItemsCommand {
 	private String menuName;//메뉴 이름
 	private Integer numOfNum;//메뉴 개수
 	private Integer paidPrice;//지불 가격 저장
+	
+	private List<OrderItemsCommand> orderItemsList; 
 	
 	public OrderItemsCommand() {
 		
@@ -15,6 +19,14 @@ public class OrderItemsCommand {
 		this.menuName = menuName;
 		this.numOfNum = numOfNum;
 		this.paidPrice = paidPrice;
+	}
+
+	public List<OrderItemsCommand> getOrderItemsList() {
+		return orderItemsList;
+	}
+
+	public void setOrderItemsList(List<OrderItemsCommand> orderItemsList) {
+		this.orderItemsList = orderItemsList;
 	}
 
 	public String getMenuName() {
@@ -43,6 +55,7 @@ public class OrderItemsCommand {
 
 	@Override
 	public String toString() {
-		return "OrderItemCommand [menuName=" + menuName + ", numOfNum=" + numOfNum + ", paidPrice=" + paidPrice + "]";
+		return "OrderItemsCommand [menuName=" + menuName + ", numOfNum=" + numOfNum + ", paidPrice=" + paidPrice
+				+ ", orderItemsList=" + orderItemsList + "]";
 	}
 }

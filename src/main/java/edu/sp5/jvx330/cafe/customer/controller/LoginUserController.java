@@ -10,9 +10,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
-import edu.sp5.jvx330.cafe.DataSourceConfig;
-import edu.sp5.jvx330.cafe.command.CustomerCommand;
-import edu.sp5.jvx330.cafe.command.MileageCommand;
+import edu.sp5.jvx330.cafe.common.command.CustomerCommand;
+import edu.sp5.jvx330.cafe.common.command.MileageCommand;
+import edu.sp5.jvx330.cafe.common.config.DataSourceConfig;
 import edu.sp5.jvx330.cafe.customer.business.impl.CustomerServiceImpl;
 
 @Controller("customer.controller.LoginUserController")

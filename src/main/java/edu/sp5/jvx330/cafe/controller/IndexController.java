@@ -9,14 +9,17 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.servlet.ModelAndView;
 
 import edu.sp5.jvx330.cafe.category.business.impl.CategoryServiceImpl;
 import edu.sp5.jvx330.cafe.category.domain.Category;
+import edu.sp5.jvx330.cafe.category.item.SalesTotalPrice.domain.SalesTotalPrice;
 import edu.sp5.jvx330.cafe.category.item.business.impl.ItemSerivceImpl;
 import edu.sp5.jvx330.cafe.category.item.domain.Item;
-import edu.sp5.jvx330.cafe.command.OrderItemsCommand;
+import edu.sp5.jvx330.cafe.common.command.OrderItemsCommand;
 
+//@SessionAttributes(names = {"salesTotalPrice", "orderItemsCommand"}) //안되면 values로 바꾸기
 @Controller("main.index")
 public class IndexController {
 	@Autowired
@@ -46,8 +49,11 @@ public class IndexController {
 	}
 	
 	@PostMapping("main/index")
-	public String index(@ModelAttribute List<OrderItemsCommand> orderItems_list) {
-		System.out.println("index(post) 판매내역 : "+orderItems_list);
-		return "main/index";
+	public String index(@ModelAttribute OrderItemsCommand orderItemsCommand, 
+			@ModelAttribute SalesTotalPrice salesTotalPrice) {
+		System.out.println("index(post) 판매내역 : "+orderItemsCommand);
+		System.out.println("stp : "+salesTotalPrice);
+
+		return "customer/loginUser";
 	}
 }

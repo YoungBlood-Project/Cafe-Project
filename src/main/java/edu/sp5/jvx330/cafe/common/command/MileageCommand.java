@@ -1,4 +1,4 @@
-package edu.sp5.jvx330.cafe.command;
+package edu.sp5.jvx330.cafe.common.command;
 
 import edu.sp5.jvx330.cafe.customer.domain.Customer;
 
