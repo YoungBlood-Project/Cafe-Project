@@ -5,13 +5,14 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.stereotype.Repository;
 
 import edu.sp5.jvx330.cafe.category.domain.Category;
 import edu.sp5.jvx330.cafe.category.item.dao.ItemDao;
 import edu.sp5.jvx330.cafe.category.item.dao.ItemRowMapper;
 import edu.sp5.jvx330.cafe.category.item.domain.Item;
 
-
+@Repository
 public class ItemDaoImpl implements ItemDao {
 	@Autowired
 	private JdbcTemplate jdbcTemplate;
