@@ -1,4 +1,4 @@
-package edu.sp5.jvx330.cafe.category.item.SalesTotalPrice.domain;
+package edu.sp5.jvx330.cafe.category.item.salesTotalPrice.domain;
 
 import java.util.Date;
 

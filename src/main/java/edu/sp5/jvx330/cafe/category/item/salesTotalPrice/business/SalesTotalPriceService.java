@@ -1,8 +1,8 @@
-package edu.sp5.jvx330.cafe.category.item.SalesTotalPrice.business;
+package edu.sp5.jvx330.cafe.category.item.salesTotalPrice.business;
 
 import java.util.List;
 
-import edu.sp5.jvx330.cafe.category.item.SalesTotalPrice.domain.SalesTotalPrice;
+import edu.sp5.jvx330.cafe.category.item.salesTotalPrice.domain.SalesTotalPrice;
 
 public interface SalesTotalPriceService {
 

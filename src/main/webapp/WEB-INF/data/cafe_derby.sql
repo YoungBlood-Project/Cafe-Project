@@ -1,4 +1,5 @@
 --TABLE 조회
+SELECT * FROM Manager;
 SELECT * FROM Customer;
 SELECT * FROM Mileage;
 SELECT * FROM MileageHistory;
@@ -16,12 +17,12 @@ DROP TABLE Item;
 DROP TABLE SalesTotalPrice;
 DROP TABLE SalesHistory;
 
-
 CREATE TABLE Manager (
 	managerId		BIGINT 			PRIMARY KEY GENERATED ALWAYS AS IDENTITY,					--매니저 PK
 	managerName   	VARCHAR(30) 	NOT NULL,													--성함
-	passwd			VARCHAR(20)		NOT NULL                                                    --패스워드
+	passwd			VARCHAR(30)		NOT NULL                                                    --패스워드
 );
+INSERT INTO Manager(managerName, passwd) VALUES('이영지', '1234'); 
 
 CREATE TABLE Customer(
    cid      BIGINT			PRIMARY KEY GENERATED ALWAYS AS IDENTITY,							--고객 PK
