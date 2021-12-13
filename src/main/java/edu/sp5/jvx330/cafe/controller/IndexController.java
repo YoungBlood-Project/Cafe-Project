@@ -14,9 +14,9 @@ import org.springframework.web.servlet.ModelAndView;
 
 import edu.sp5.jvx330.cafe.category.business.impl.CategoryServiceImpl;
 import edu.sp5.jvx330.cafe.category.domain.Category;
-import edu.sp5.jvx330.cafe.category.item.SalesTotalPrice.domain.SalesTotalPrice;
 import edu.sp5.jvx330.cafe.category.item.business.impl.ItemSerivceImpl;
 import edu.sp5.jvx330.cafe.category.item.domain.Item;
+import edu.sp5.jvx330.cafe.category.item.salesTotalPrice.domain.SalesTotalPrice;
 import edu.sp5.jvx330.cafe.common.command.OrderItemsCommand;
 
 //@SessionAttributes(names = {"salesTotalPrice", "orderItemsCommand"}) //안되면 values로 바꾸기
