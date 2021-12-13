@@ -55,6 +55,7 @@ public class ItemServiceTest {
 		Category category = cService.findCategoryByCategoryName("라떼Dao");
 		//Item item = new Item(category, "delete", 0); //deletedMenu 카테고리에 넣기
 		Item item = new Item(category, "바닐라Dao", 5000);
+		item.setItemUrl("주소");
 		//Item item = new Item(category, "초코Dao", 6000);
 		//System.out.println(menu.getCustomer().getCid());
 		service.addItem(item);

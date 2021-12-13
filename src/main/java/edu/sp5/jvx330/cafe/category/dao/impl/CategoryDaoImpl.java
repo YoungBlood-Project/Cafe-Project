@@ -4,11 +4,13 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.stereotype.Repository;
 
 import edu.sp5.jvx330.cafe.category.dao.CategoryDao;
 import edu.sp5.jvx330.cafe.category.dao.CategoryRowMapper;
 import edu.sp5.jvx330.cafe.category.domain.Category;
 
+@Repository
 public class CategoryDaoImpl implements CategoryDao {
 	/**
 	 * ÄÚµå ÀÛ¼º - Á¤ÇýÀ±(develop-jhy)
