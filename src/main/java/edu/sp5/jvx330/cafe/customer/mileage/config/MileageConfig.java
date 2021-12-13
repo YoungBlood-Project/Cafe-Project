@@ -4,7 +4,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
 
-import edu.sp5.jvx330.cafe.DataSourceConfig;
+import edu.sp5.jvx330.cafe.common.config.DataSourceConfig;
 import edu.sp5.jvx330.cafe.customer.mileage.business.impl.MileageServiceImpl;
 import edu.sp5.jvx330.cafe.customer.mileage.dao.impl.MileageDaoImpl;
 

@@ -15,7 +15,7 @@
     	<h2 class="hidden">주문내역 및 메뉴</h2>
     	        <section id="sectionLeft" class="cont">
             <h3 id="orderList_h3">주문 내역</h3>
-            <form action="">
+            <form action="index" method="post">
             	<table id="orderList">
             	<!-- 안에 내용 넣는 자바 스크립트 사용할 것 -->
                 	<tr class="gradient">
@@ -27,36 +27,36 @@
                 	</tr>
                 	<tr>
                     	<td>1</td>
-                    	<td><input type="text" name="menuName" value="아메리카노" readonly="readonly"/></td>
-                    	<td><button class="minus">-</button><input type="text" name="numOfNum" value="1" readonly="readonly"><button class="plus">+</button></td>
+                    	<td><input type="text" name="orderItemsList[0].menuName" value="아메리카노" readonly="readonly"/></td>
+                    	<td><button class="minus">-</button><input type="text" name="orderItemsList[0].numOfNum" value="1" readonly="readonly"><button class="plus">+</button></td>
                     	<td class="orderList_right">2000</td>
-                    	<td class="orderList_right"><input type="text" name="paidPrice" value="2000" readonly="readonly"/></td>
+                    	<td class="orderList_right"><input type="text" name="orderItemsList[0].paidPrice" value="2000" readonly="readonly"/></td>
                 	</tr>
                 	<tr>
                     	<td>2</td>
-                    	<td><input type="text" name="menuName" value="카페라떼" readonly="readonly"/></td>
-                    	<td><button class="minus">-</button><input type="text" name="numOfNum" value="2" readonly="readonly"><button class="plus">+</button></td>
+                    	<td><input type="text" name="orderItemsList[1].menuName" value="카페라떼" readonly="readonly"/></td>
+                    	<td><button class="minus">-</button><input type="text" name="orderItemsList[1].numOfNum" value="2" readonly="readonly"><button class="plus">+</button></td>
                     	<td class="orderList_right">2500</td>
-                    	<td class="orderList_right"><input type="text" name="paidPrice" value="5000" readonly="readonly"/></td>
+                    	<td class="orderList_right"><input type="text" name="orderItemsList[1].paidPrice" value="5000" readonly="readonly"/></td>
                 	</tr>
             	</table>
             <table id="count">
             <!-- text, value에 값 넣는 자바 스크립트 사용할 것 -->
                 <tr>
                     <td>총 수량</td>
-                    <td><input type="text" value="6" readonly="readonly"/>6</td>
+                    <td><input type="text" name="orderNum" value="6" readonly="readonly"/>6</td>
                 </tr>
                 <tr>
                     <td>총 금액</td>
-                    <td><input type="text" value="52000" readonly="readonly"/>52000</td>
+                    <td><input type="text" name="totalPrice" value="52000" readonly="readonly"/>52000</td>
                 </tr>
                 <tr>
                     <td>할인 금액</td>
-                    <td><input type="text" value="44000" readonly="readonly"/>44000</td>
+                    <td>44000</td>
                 </tr>
                 <tr>
                     <td class="important">받을 금액</td>
-                    <td class="important"><input type="text" value="8000" readonly="readonly"/>8000</td>
+                    <td class="important"><input type="text" name="reducePrice" value="8000" readonly="readonly"/>8000</td>
                 </tr>
             </table>
            

@@ -28,13 +28,14 @@
 
         <tr>
           <td><label for="phone">번호</label></td>
-          <td><input type="text" name="phone" maxlength="20" value="${customer.phone}"/></td>
+          <td><input type="text" name="phone" maxlength="20"/></td>
           <!-- <td><input type="text" name="phone" maxlength="20" value="${customer.phone}"/></td> -->
         </tr>
       </table>
       <input type="submit" id="findButton" value="조회"/>
     </form>
     <a href="addCustomer" id="addMileageButton">회원가입</a>
+    <a href="payPrice">결제하기</a>
   </main>
 
   <!-- <footer></footer> -->
