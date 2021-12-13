@@ -1,4 +1,4 @@
-package edu.sp5.jvx330.cafe.common;
+package edu.sp5.jvx330.cafe.common.container;
 
 import edu.sp5.jvx330.cafe.common.command.CustomerCommand;
 import edu.sp5.jvx330.cafe.common.command.MileageCommand;
