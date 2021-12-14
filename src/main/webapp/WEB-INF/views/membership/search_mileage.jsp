@@ -7,6 +7,11 @@
 <title>Insert title here</title>
 </head>
 <body>
-
+	<section id="search_mileage">
+		<h2>포인트 조회</h2>
+		<form>
+			
+		</form>
+	</section>
 </body>
 </html>

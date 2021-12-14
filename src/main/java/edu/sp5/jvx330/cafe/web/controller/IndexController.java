@@ -7,17 +7,14 @@ import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.servlet.ModelAndView;
 
 import edu.sp5.jvx330.cafe.menu.business.impl.CategoryServiceImpl;
 import edu.sp5.jvx330.cafe.menu.business.impl.ItemSerivceImpl;
-import edu.sp5.jvx330.cafe.menu.command.OrderItemsCommand;
 import edu.sp5.jvx330.cafe.menu.domain.Category;
 import edu.sp5.jvx330.cafe.menu.domain.Item;
-import edu.sp5.jvx330.cafe.sales.domain.SalesTotalPrice;
 import edu.sp5.jvx330.cafe.web.container.OrderContainer;
 
 //@SessionAttributes(names = {"salesTotalPrice", "orderItemsCommand"}) //안되면 values로 바꾸기
@@ -29,7 +26,7 @@ public class IndexController {
 	@Autowired
 	private ItemSerivceImpl itemSerivceImpl;
 	
-	@GetMapping("main/index")
+	@GetMapping("/main/index")
 	public ModelAndView indexForm() {
 		
 		ModelAndView mav = new ModelAndView();
@@ -50,7 +47,7 @@ public class IndexController {
 		return mav;
 	}
 	
-	@PostMapping("main/index")
+	@PostMapping("/main/index")
 	public String index(OrderContainer orderContainer) {
 		System.out.println("index(post) 판매내역 : "+orderContainer);
 

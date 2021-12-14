@@ -33,7 +33,7 @@ public class LoginUserController {
 		
 		//고객 정보가 있을 경우
 		if (customerService.findCustomerByUserInfo(name, phone) != null) {			
-			return "membership/use_mileage";
+			return "membership/search_mileage";
 		}
 		
 		return "membership/login_user";
