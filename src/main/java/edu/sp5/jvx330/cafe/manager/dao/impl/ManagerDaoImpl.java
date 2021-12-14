@@ -15,7 +15,7 @@ public class ManagerDaoImpl implements ManagerDao {
 	@Override
 	public Manager managerLogin(Manager manager) {
 		String sql = "SELECT managerId, managerName, passwd FROM Manager"
-				+ " WHERE managerName = ?, passwd = ?";
+				+ " WHERE managerName = ? AND passwd = ?";
 		return jdbcTemplate.queryForObject(sql, new ManagerRowMapper(), manager.getManagerName(), manager.getPasswd());	
 	};
 	
