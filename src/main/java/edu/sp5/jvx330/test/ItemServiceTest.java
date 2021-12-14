@@ -2,15 +2,17 @@ package edu.sp5.jvx330.test;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
-import edu.sp5.jvx330.cafe.category.business.CategoryService;
-import edu.sp5.jvx330.cafe.category.business.impl.CategoryServiceImpl;
-import edu.sp5.jvx330.cafe.category.domain.Category;
-import edu.sp5.jvx330.cafe.category.item.business.ItemService;
-import edu.sp5.jvx330.cafe.category.item.business.impl.ItemSerivceImpl;
-import edu.sp5.jvx330.cafe.category.item.config.ItemConfig;
-import edu.sp5.jvx330.cafe.category.item.domain.Item;
+import edu.sp5.jvx330.cafe.config.ItemConfig;
+import edu.sp5.jvx330.cafe.menu.business.CategoryService;
+import edu.sp5.jvx330.cafe.menu.business.ItemService;
+import edu.sp5.jvx330.cafe.menu.business.impl.CategoryServiceImpl;
+import edu.sp5.jvx330.cafe.menu.business.impl.ItemSerivceImpl;
+import edu.sp5.jvx330.cafe.menu.domain.Category;
+import edu.sp5.jvx330.cafe.menu.domain.Item;
+
 
 
 
@@ -28,7 +30,7 @@ public class ItemServiceTest {
 		 * 테스트 - 이초원.
 		 */
 		// 1. 메뉴 추가/수정/삭제
-		addItem();
+		//addItem();
 		//setItemName();
 		//setItemPrice();
 		//deleteItem();
@@ -37,7 +39,7 @@ public class ItemServiceTest {
 		//findItemIdByItemName();
 		//findItemIdByCategory();
 		//findItemByItemName();
-		//findAllItems();
+		findAllItems();
 		
 		// 3. 주문 목록 추가/삭제
 		//addOrderList();
@@ -55,6 +57,7 @@ public class ItemServiceTest {
 		Category category = cService.findCategoryByCategoryName("라떼Dao");
 		//Item item = new Item(category, "delete", 0); //deletedMenu 카테고리에 넣기
 		Item item = new Item(category, "바닐라Dao", 5000);
+		item.setItemUrl("주소");
 		//Item item = new Item(category, "초코Dao", 6000);
 		//System.out.println(menu.getCustomer().getCid());
 		service.addItem(item);

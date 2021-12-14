@@ -4,10 +4,11 @@ import java.util.List;
 
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
-import edu.sp5.jvx330.cafe.category.business.CategoryService;
-import edu.sp5.jvx330.cafe.category.business.impl.CategoryServiceImpl;
-import edu.sp5.jvx330.cafe.category.config.CategoryConfig;
-import edu.sp5.jvx330.cafe.category.domain.Category;
+import edu.sp5.jvx330.cafe.config.CategoryConfig;
+import edu.sp5.jvx330.cafe.menu.business.CategoryService;
+import edu.sp5.jvx330.cafe.menu.business.impl.CategoryServiceImpl;
+import edu.sp5.jvx330.cafe.menu.domain.Category;
+
 
 public class CategoryServiceTest {
 	private static CategoryService categoryService;
@@ -18,10 +19,11 @@ public class CategoryServiceTest {
 		
 		categoryService = context.getBean("categoryServiceImpl", CategoryServiceImpl.class);
 
-		addCategoryByCategoryName();
+		//addCategoryByCategoryName();
 		//setCategoryName();
 		findAllCategorys();
 		
+		context.close();
 	}
 	
 	public static void addCategoryByCategoryName() {

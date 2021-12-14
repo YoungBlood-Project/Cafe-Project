@@ -6,7 +6,8 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.junit.jupiter.SpringJUnitConfig;
 
-import edu.sp5.jvx330.cafe.category.item.config.ItemConfig;
+import edu.sp5.jvx330.cafe.config.ItemConfig;
+import edu.sp5.jvx330.cafe.menu.dao.ItemDao;
 
 @SpringJUnitConfig(classes = {ItemConfig.class})
 public class ItemJdbcDaoTest {

@@ -4,10 +4,11 @@ import java.util.List;
 
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
-import edu.sp5.jvx330.cafe.customer.business.CustomerService;
-import edu.sp5.jvx330.cafe.customer.business.impl.CustomerServiceImpl;
-import edu.sp5.jvx330.cafe.customer.config.CustomerConfig;
-import edu.sp5.jvx330.cafe.customer.domain.Customer;
+import edu.sp5.jvx330.cafe.config.CustomerConfig;
+import edu.sp5.jvx330.cafe.membership.business.CustomerService;
+import edu.sp5.jvx330.cafe.membership.business.impl.CustomerServiceImpl;
+import edu.sp5.jvx330.cafe.membership.domain.Customer;
+
 
 public class CustomerServiceTest {
 	private static CustomerService customerService;
@@ -26,7 +27,7 @@ public class CustomerServiceTest {
 
 		//2. ∞Ì∞¥ ¡§∫∏ ¡∂»∏
 		//findCustomerByUserInfo();
-		//findAllCustomers();
+		findAllCustomers();
 		//findMileage();
 
 		//3. ∞Ì∞¥ ªË¡¶

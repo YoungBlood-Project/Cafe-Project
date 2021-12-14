@@ -8,7 +8,6 @@ import edu.sp5.jvx330.cafe.manager.dao.ManagerRowMapper;
 import edu.sp5.jvx330.cafe.manager.domain.Manager;
 
 public class ManagerDaoImpl implements ManagerDao {
-
 	@Autowired
 	private JdbcTemplate jdbcTemplate;
 	
@@ -19,4 +18,5 @@ public class ManagerDaoImpl implements ManagerDao {
 				+ " WHERE managerName = ?, passwd = ?";
 		return jdbcTemplate.queryForObject(sql, new ManagerRowMapper(), manager.getManagerName(), manager.getPasswd());	
 	};
+	
 }

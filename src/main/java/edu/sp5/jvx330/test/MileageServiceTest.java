@@ -2,12 +2,13 @@ package edu.sp5.jvx330.test;
 
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
-import edu.sp5.jvx330.cafe.customer.business.CustomerService;
-import edu.sp5.jvx330.cafe.customer.business.impl.CustomerServiceImpl;
-import edu.sp5.jvx330.cafe.customer.domain.Customer;
-import edu.sp5.jvx330.cafe.customer.mileage.business.MileageService;
-import edu.sp5.jvx330.cafe.customer.mileage.business.impl.MileageServiceImpl;
-import edu.sp5.jvx330.cafe.customer.mileage.config.MileageConfig;
+import edu.sp5.jvx330.cafe.config.MileageConfig;
+import edu.sp5.jvx330.cafe.membership.business.CustomerService;
+import edu.sp5.jvx330.cafe.membership.business.MileageService;
+import edu.sp5.jvx330.cafe.membership.business.impl.CustomerServiceImpl;
+import edu.sp5.jvx330.cafe.membership.business.impl.MileageServiceImpl;
+import edu.sp5.jvx330.cafe.membership.domain.Customer;
+
 
 public class MileageServiceTest {
 	private static CustomerService customerService;
@@ -27,7 +28,7 @@ public class MileageServiceTest {
 		// subtractMileage();
 		 
 		// 2. Mileage 조회
-		// findMileage();
+		findMileage();
 		 
 		// 3. Mileage 삭제 
 		// deleteMileage();

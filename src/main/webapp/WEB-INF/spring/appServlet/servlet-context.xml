@@ -30,7 +30,5 @@
 	<context:component-scan
 		base-package="edu.sp5.jvx330.cafe" />
 
-
-
 </beans:beans>
 
