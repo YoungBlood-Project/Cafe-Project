@@ -6,7 +6,12 @@
 <head>
 <meta charset="UTF-8">
 <title>Javac cafe</title>
+<script src='<c:url value="/resources/js/jquery-3.6.0.min.js"/>'></script>
+<script src='<c:url value="/resources/js/common.js"/>' defer></script>
+<script src='<c:url value="/resources/js/index.js"/>' defer></script>
+<link href='<c:url value="/resources/css/index.css"/>' rel="stylesheet" type="text/css">
 </head>
+
 <body>
     <header>
         <h1 class="hidden">JAVAK CAFE 자박 카페</h1>
@@ -16,6 +21,7 @@
 		<section id="sectionLeft" class="cont">
             <h3 id="orderList_h3">주문 내역</h3>
             <form action="index" method="post">
+            
             	<table id="orderList">
             	<!-- 안에 내용 넣는 자바 스크립트 사용할 것 -->
                 	<tr class="gradient">
@@ -26,15 +32,16 @@
                     	<th>금액</th>
                 	</tr>
             	</table>
+            	
             	<table id="count">
             	<!-- text, value에 값 넣는 자바 스크립트 사용할 것 -->
                 	<tr>
                     	<td>총 수량</td>
-                    	<td><input type="text" name="salesTotalPrice.orderNum" value="6" readonly="readonly"/>6</td>
+                    	<td><input type="text" name="salesTotalPrice.orderNum" value="6" readonly="readonly"/></td>
                 	</tr>
                 	<tr>
                     	<td>총 금액</td>
-                    	<td><input type="text" name="salesTotalPrice.totalPrice" value="52000" readonly="readonly"/>52000</td>
+                    	<td><input type="text" name="salesTotalPrice.totalPrice" value="52000" readonly="readonly"/></td>
                 	</tr>
                 	<tr>
                     	<td>할인 금액</td>
@@ -42,12 +49,13 @@
                 	</tr>
                 	<tr>
                     	<td class="important">받을 금액</td>
-                    	<td class="important"><input type="text" name="orderContainer.salesTotalPrice.reducePrice" value="8000" readonly="readonly"/>8000</td>
+                    	<td class="important"><input type="text" name="orderContainer.salesTotalPrice.reducePrice" value="8000" readonly="readonly"/></td>
                 	</tr>
             	</table>
 				<input type="submit"  value="결제하기">
 			</form>    
         </section>
+        
         <section id="sectionRight" class="cont">
 		<ul id="menu">
  			<c:if test="${not empty ciMap}">
@@ -64,7 +72,8 @@
 					<li>
 					<img src="../resources/${ciValue.itemUrl}" alt="${ciValue.itemName}"><br>
 					<span>${ciValue.itemName}</span><br>
-					${ciValue.itemPrice}원</li>
+					${ciValue.itemPrice}원
+					</li>
 				</c:forEach>
 				</ul>
 			</c:forEach>
@@ -92,5 +101,7 @@
             <!-- 인덱스 경로 구조 바꿔야...? 일단 JS 완성 되고 난 후에 이동...? -->
         </ul>
     </footer> 
+    
+    <p>시계</p>
 </body>
 </html>
