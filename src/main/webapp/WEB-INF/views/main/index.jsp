@@ -61,7 +61,10 @@
 			<c:forEach var="ciMap" items="${ciMap}">
 				<ul class="sub ${ciMap.key.categoryName}"> 
 				<c:forEach var="ciValue" items="${ciMap.value}" >
-					${ciValue.itemName}
+					<li>
+					<img src="../resources/${ciValue.itemUrl}" alt="${ciValue.itemName}"><br>
+					<span>${ciValue.itemName}</span><br>
+					${ciValue.itemPrice}원</li>
 				</c:forEach>
 				</ul>
 			</c:forEach>
