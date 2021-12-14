@@ -67,6 +67,7 @@ public class ItemServiceTest {
 		// 1. 커피
 		Item coffee_item1 = new Item(coffee_category, "아메리카노", 3800);
 	      coffee_item1.setItemUrl("images/coffee/아메리카노.jpg");
+	      
 	     
 	      Item coffee_item2 = new Item(coffee_category, "롱블랙", 4300);
 	      coffee_item2.setItemUrl("images/coffee/롱블랙.jpg");
