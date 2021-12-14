@@ -1,14 +1,14 @@
-package edu.sp5.jvx330.cafe.category.item.salesTotalPrice.dao.impl;
+package edu.sp5.jvx330.cafe.sales.dao.impl;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 
-import edu.sp5.jvx330.cafe.category.item.salesHistory.dao.SalesHistoryMenuRowMapper;
-import edu.sp5.jvx330.cafe.category.item.salesTotalPrice.dao.SalesTotalPriceDao;
-import edu.sp5.jvx330.cafe.category.item.salesTotalPrice.dao.SalesTotalPriceRowMapper;
-import edu.sp5.jvx330.cafe.category.item.salesTotalPrice.domain.SalesTotalPrice;
+import edu.sp5.jvx330.cafe.sales.dao.SalesHistoryMenuRowMapper;
+import edu.sp5.jvx330.cafe.sales.dao.SalesTotalPriceDao;
+import edu.sp5.jvx330.cafe.sales.dao.SalesTotalPriceRowMapper;
+import edu.sp5.jvx330.cafe.sales.domain.SalesTotalPrice;
 
 public class SalesTotalPriceDaoImpl implements SalesTotalPriceDao  {
 	@Autowired

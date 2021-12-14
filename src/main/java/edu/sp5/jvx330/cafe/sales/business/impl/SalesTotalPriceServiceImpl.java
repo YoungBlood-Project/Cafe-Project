@@ -1,12 +1,12 @@
-package edu.sp5.jvx330.cafe.category.item.salesTotalPrice.business.impl;
+package edu.sp5.jvx330.cafe.sales.business.impl;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
-import edu.sp5.jvx330.cafe.category.item.salesTotalPrice.business.SalesTotalPriceService;
-import edu.sp5.jvx330.cafe.category.item.salesTotalPrice.dao.impl.SalesTotalPriceDaoImpl;
-import edu.sp5.jvx330.cafe.category.item.salesTotalPrice.domain.SalesTotalPrice;
+import edu.sp5.jvx330.cafe.sales.business.SalesTotalPriceService;
+import edu.sp5.jvx330.cafe.sales.dao.impl.SalesTotalPriceDaoImpl;
+import edu.sp5.jvx330.cafe.sales.domain.SalesTotalPrice;
 
 
 public class SalesTotalPriceServiceImpl implements SalesTotalPriceService {

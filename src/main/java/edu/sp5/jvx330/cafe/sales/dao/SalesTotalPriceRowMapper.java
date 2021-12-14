@@ -1,10 +1,10 @@
-package edu.sp5.jvx330.cafe.category.item.salesTotalPrice.dao;
+package edu.sp5.jvx330.cafe.sales.dao;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import org.springframework.jdbc.core.RowMapper;
 
-import edu.sp5.jvx330.cafe.category.item.salesTotalPrice.domain.SalesTotalPrice;
+import edu.sp5.jvx330.cafe.sales.domain.SalesTotalPrice;
 
 public class SalesTotalPriceRowMapper implements RowMapper<SalesTotalPrice> {
 

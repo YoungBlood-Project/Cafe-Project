@@ -1,12 +1,11 @@
-package edu.sp5.jvx330.cafe.category.item.salesTotalPrice.config;
+package edu.sp5.jvx330.cafe.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
 
-import edu.sp5.jvx330.cafe.category.item.salesTotalPrice.business.impl.SalesTotalPriceServiceImpl;
-import edu.sp5.jvx330.cafe.category.item.salesTotalPrice.dao.impl.SalesTotalPriceDaoImpl;
-import edu.sp5.jvx330.cafe.config.DataSourceConfig;
+import edu.sp5.jvx330.cafe.sales.business.impl.SalesTotalPriceServiceImpl;
+import edu.sp5.jvx330.cafe.sales.dao.impl.SalesTotalPriceDaoImpl;
 
 @Configuration
 @Import(DataSourceConfig.class)

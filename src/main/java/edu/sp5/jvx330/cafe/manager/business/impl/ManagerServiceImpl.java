@@ -10,18 +10,15 @@ public class ManagerServiceImpl implements ManagerService {
 
 	@Autowired
 	private ManagerDao managerDao;
-
-	@Override
-	public void managerLogin(String name, String passwd) {
-		// TODO Auto-generated method stub
-		
-	}
 	
-	//@Override
-	//public Manager managerLogin(String managerName, String passwd) {
-	//	Manager manager = new Manager(managerName, passwd);
-	//	return managerDao.managerLogin(manager);
-	//	return null;
-	//}
+	@Override
+	public Manager managerLogin(String managerName, String passwd) {
+		Manager manager = new Manager(managerName, passwd);
+		manager = managerDao.managerLogin(manager);
+		if ( manager != null) {
+			return manager;
+		}
+		return null;
+	}
 
 }

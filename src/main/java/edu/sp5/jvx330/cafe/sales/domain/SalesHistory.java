@@ -1,4 +1,4 @@
-package edu.sp5.jvx330.cafe.category.item.salesHistory.domain;
+package edu.sp5.jvx330.cafe.sales.domain;
 
 import java.util.Date;
 

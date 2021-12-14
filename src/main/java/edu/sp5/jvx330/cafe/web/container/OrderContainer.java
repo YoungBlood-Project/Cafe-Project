@@ -2,10 +2,10 @@ package edu.sp5.jvx330.cafe.web.container;
 
 import java.util.List;
 
-import edu.sp5.jvx330.cafe.category.item.salesTotalPrice.domain.SalesTotalPrice;
 import edu.sp5.jvx330.cafe.membership.command.CustomerCommand;
 import edu.sp5.jvx330.cafe.membership.command.MileageCommand;
 import edu.sp5.jvx330.cafe.menu.command.OrderItemsCommand;
+import edu.sp5.jvx330.cafe.sales.domain.SalesTotalPrice;
 
 public class OrderContainer {
 	private SalesTotalPrice salesTotalPrice;

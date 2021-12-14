@@ -5,12 +5,12 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
-import edu.sp5.jvx330.cafe.category.item.salesHistory.dao.impl.SalesHistoryDaoImpl;
-import edu.sp5.jvx330.cafe.category.item.salesHistory.domain.SalesHistory;
 import edu.sp5.jvx330.cafe.menu.business.ItemService;
 import edu.sp5.jvx330.cafe.menu.dao.impl.ItemDaoImpl;
 import edu.sp5.jvx330.cafe.menu.domain.Category;
 import edu.sp5.jvx330.cafe.menu.domain.Item;
+import edu.sp5.jvx330.cafe.sales.dao.impl.SalesHistoryDaoImpl;
+import edu.sp5.jvx330.cafe.sales.domain.SalesHistory;
 
 public class ItemSerivceImpl implements ItemService {
 	@Autowired

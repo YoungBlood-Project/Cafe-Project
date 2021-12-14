@@ -1,12 +1,12 @@
-package edu.sp5.jvx330.cafe.category.item.salesHistory.dao;
+package edu.sp5.jvx330.cafe.sales.dao;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import org.springframework.jdbc.core.RowMapper;
 
-import edu.sp5.jvx330.cafe.category.item.salesHistory.domain.SalesHistory;
 import edu.sp5.jvx330.cafe.menu.domain.Item;
+import edu.sp5.jvx330.cafe.sales.domain.SalesHistory;
 
 public class SalesHistoryMenuRowMapper implements RowMapper<SalesHistory> {
 

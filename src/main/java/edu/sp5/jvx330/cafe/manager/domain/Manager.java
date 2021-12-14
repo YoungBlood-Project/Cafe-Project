@@ -2,28 +2,28 @@ package edu.sp5.jvx330.cafe.manager.domain;
 
 public class Manager {
 	
-	private Integer managerId;
-	private String name;
+	private Long managerId;
+	private String managerName;
 	private String passwd;
 	
 	
-	public Manager(String name, String passwd) {
+	public Manager(String managerName, String passwd) {
 		super();
-		this.name = name;
+		this.managerName = managerName;
 		this.passwd = passwd;
 	}
 	
-	public Integer getManagerId() {
+	public Long getManagerId() {
 		return managerId;
 	}
-	public void setManagerId(Integer managerId) {
+	public void setManagerId(Long managerId) {
 		this.managerId = managerId;
 	}
-	public String getName() {
-		return name;
+	public String getManagerName() {
+		return managerName;
 	}
-	public void setName(String name) {
-		this.name = name;
+	public void setManagerName(String managerName) {
+		this.managerName = managerName;
 	}
 	public String getPasswd() {
 		return passwd;
@@ -35,7 +35,7 @@ public class Manager {
 
 	@Override
 	public String toString() {
-		return "Manager [managerId=" + managerId + ", name=" + name + ", passwd=" + passwd + "]";
+		return "Manager [managerId=" + managerId + ", managerName=" + managerName + ", passwd=" + passwd + "]";
 	}
 	
 }

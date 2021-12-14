@@ -1,9 +1,9 @@
-package edu.sp5.jvx330.cafe.category.item.salesHistory.dao;
+package edu.sp5.jvx330.cafe.sales.dao;
 
 import java.util.Date;
 import java.util.List;
 
-import edu.sp5.jvx330.cafe.category.item.salesHistory.domain.SalesHistory;
+import edu.sp5.jvx330.cafe.sales.domain.SalesHistory;
 
 public interface SalesHistoryDao {
 	/**

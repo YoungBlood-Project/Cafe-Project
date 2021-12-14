@@ -4,10 +4,10 @@ import java.util.List;
 
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
-import edu.sp5.jvx330.cafe.category.item.salesTotalPrice.business.SalesTotalPriceService;
-import edu.sp5.jvx330.cafe.category.item.salesTotalPrice.business.impl.SalesTotalPriceServiceImpl;
-import edu.sp5.jvx330.cafe.category.item.salesTotalPrice.config.SalesTotalPriceConfig;
-import edu.sp5.jvx330.cafe.category.item.salesTotalPrice.domain.SalesTotalPrice;
+import edu.sp5.jvx330.cafe.config.SalesTotalPriceConfig;
+import edu.sp5.jvx330.cafe.sales.business.SalesTotalPriceService;
+import edu.sp5.jvx330.cafe.sales.business.impl.SalesTotalPriceServiceImpl;
+import edu.sp5.jvx330.cafe.sales.domain.SalesTotalPrice;
 
 public class SalesTotalPriceServiceTest {
 	private static SalesTotalPriceService stp_service;

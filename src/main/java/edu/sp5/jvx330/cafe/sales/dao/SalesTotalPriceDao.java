@@ -1,8 +1,8 @@
-package edu.sp5.jvx330.cafe.category.item.salesTotalPrice.dao;
+package edu.sp5.jvx330.cafe.sales.dao;
 
 import java.util.List;
 
-import edu.sp5.jvx330.cafe.category.item.salesTotalPrice.domain.SalesTotalPrice;
+import edu.sp5.jvx330.cafe.sales.domain.SalesTotalPrice;
 
 public interface SalesTotalPriceDao {
 

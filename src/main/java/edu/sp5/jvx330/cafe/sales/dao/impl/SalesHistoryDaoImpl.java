@@ -1,4 +1,4 @@
-package edu.sp5.jvx330.cafe.category.item.salesHistory.dao.impl;
+package edu.sp5.jvx330.cafe.sales.dao.impl;
 
 import java.util.Date;
 import java.util.List;
@@ -6,9 +6,9 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 
-import edu.sp5.jvx330.cafe.category.item.salesHistory.dao.SalesHistoryDao;
-import edu.sp5.jvx330.cafe.category.item.salesHistory.dao.SalesHistoryMenuRowMapper;
-import edu.sp5.jvx330.cafe.category.item.salesHistory.domain.SalesHistory;
+import edu.sp5.jvx330.cafe.sales.dao.SalesHistoryDao;
+import edu.sp5.jvx330.cafe.sales.dao.SalesHistoryMenuRowMapper;
+import edu.sp5.jvx330.cafe.sales.domain.SalesHistory;
 
 public class SalesHistoryDaoImpl implements SalesHistoryDao {
 	@Autowired
