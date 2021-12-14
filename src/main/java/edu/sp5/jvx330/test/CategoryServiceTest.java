@@ -19,16 +19,23 @@ public class CategoryServiceTest {
 		
 		categoryService = context.getBean("categoryServiceImpl", CategoryServiceImpl.class);
 
-		//addCategoryByCategoryName();
+		addCategoryByCategoryName();
 		//setCategoryName();
-		findAllCategorys();
+		//findAllCategorys();
 		
 		context.close();
 	}
 	
+	//전체 카테고리 추가 메소드
 	public static void addCategoryByCategoryName() {
 		categoryService.addCategoryByCategoryName("deletedMenu");
-		//categoryService.addCategoryByCategoryName("라떼Dao");
+		categoryService.addCategoryByCategoryName("Coffee");
+		categoryService.addCategoryByCategoryName("Tea");
+		categoryService.addCategoryByCategoryName("Drink");
+		categoryService.addCategoryByCategoryName("Cake");
+		categoryService.addCategoryByCategoryName("Meal");
+		categoryService.addCategoryByCategoryName("Bread");
+		categoryService.addCategoryByCategoryName("MD");
 	}
 	
 	public static void setCategoryName() {

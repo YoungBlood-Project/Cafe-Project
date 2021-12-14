@@ -52,7 +52,7 @@ public class IndexController {
 	}
 	
 	@PostMapping("main/index")
-	public String index(@ModelAttribute("orderContainer") OrderContainer orderContainer) {
+	public String index(OrderContainer orderContainer) {
 		System.out.println("index(post) 판매내역 : "+orderContainer);
 
 		return "/membership/login_user";
