@@ -28,7 +28,9 @@ public class SalesHistorySerivceTest {
 		 * 테스트 - 정혜윤.
 		 */
 		// 1. 판매 내역 추가
-		//addSalesHistory();
+		addSalesHistory();
+		addSalesHistory2();
+		addSalesHistory3();
 		
 		// 2. 판매 내역 조회
 		//findAllSalesHistory();
@@ -38,7 +40,7 @@ public class SalesHistorySerivceTest {
 		
 		// 3. 환불
 		//deleteSalesHistoryBySHid();
-		deleteAllSalesHistories();
+		//deleteAllSalesHistories();
 		
 		// 4. 날짜별 판매 내역 개수
 		//countSalesHistoryByOrderDate();
@@ -49,10 +51,30 @@ public class SalesHistorySerivceTest {
 	 * 1. 판매내역 추가
 	 */
 	public static void addSalesHistory() {
-		Item item = item_service.findItemByItemName("딸기Dao");
+		Item item = item_service.findItemByItemName("아메리카노");
 		SalesHistory salesHistory =
 				new SalesHistory(item, 3, item.getItemPrice()*3);
-		salesHistory.setOrderNum(202112070001l);
+		salesHistory.setOrderNum(202112140001l);
+				//new SalesHistory(menu, 1, menu.getMenuPrice()*1);
+		sh_service.addSalesHistory(item, salesHistory);
+		System.out.println("SalesHistorySerivceTest : 판매내역 저장 완료");
+	}
+	
+	public static void addSalesHistory2() {
+		Item item = item_service.findItemByItemName("롱블랙");
+		SalesHistory salesHistory =
+				new SalesHistory(item, 2, item.getItemPrice()*2);
+		salesHistory.setOrderNum(202112140002l);
+				//new SalesHistory(menu, 1, menu.getMenuPrice()*1);
+		sh_service.addSalesHistory(item, salesHistory);
+		System.out.println("SalesHistorySerivceTest : 판매내역 저장 완료");
+	}
+	
+	public static void addSalesHistory3() {
+		Item item = item_service.findItemByItemName("콜드브루");
+		SalesHistory salesHistory =
+				new SalesHistory(item, 2, item.getItemPrice()*2);
+		salesHistory.setOrderNum(202112140003l);
 				//new SalesHistory(menu, 1, menu.getMenuPrice()*1);
 		sh_service.addSalesHistory(item, salesHistory);
 		System.out.println("SalesHistorySerivceTest : 판매내역 저장 완료");
