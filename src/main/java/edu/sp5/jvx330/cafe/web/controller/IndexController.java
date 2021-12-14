@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.servlet.ModelAndView;
 
+import edu.sp5.jvx330.cafe.membership.domain.MileageHistory;
 import edu.sp5.jvx330.cafe.menu.business.impl.CategoryServiceImpl;
 import edu.sp5.jvx330.cafe.menu.business.impl.ItemSerivceImpl;
 import edu.sp5.jvx330.cafe.menu.domain.Category;
@@ -49,9 +50,19 @@ public class IndexController {
 	
 	@PostMapping("/main/index")
 	public String index(OrderContainer orderContainer) {
+		Integer totalPrice = 
+				orderContainer.getSalesTotalPrice().getTotalPrice();
+		Integer mileage = (int) Math.floor(totalPrice * 0.03);
+	
+		System.out.println("mileage : "+mileage);
+		
+		//마일리지 금액 set, orderContainer에 입력
+		MileageHistory mileageHistory = new MileageHistory();
+		mileageHistory.setMBalance(mileage);
+		orderContainer.setMileageHistory(mileageHistory);
 		System.out.println("index(post) 판매내역 : "+orderContainer);
-
-		return "/membership/login_user";
+		
+		return "membership/login_user";
 	}
 	/*public String index(@ModelAttribute OrderItemsCommand orderItemsCommand, 
 			@ModelAttribute SalesTotalPrice salesTotalPrice) {

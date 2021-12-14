@@ -14,12 +14,12 @@ public class LoginUserController {
 	@Autowired
 	private CustomerServiceImpl customerService;
 	
-	@GetMapping("membership/loginUser")
+	@GetMapping("/membership/loginUser")
 	public String mileageForm() {
 		return "membership/login_user";
 	}
 
-	@PostMapping("membership/loginUser")
+	@PostMapping("/membership/loginUser")
 	public String mileageLogin(@ModelAttribute CustomerCommand customer) {
 		//AnnotationConfigApplicationContext context = 
 				//new AnnotationConfigApplicationContext(DataSourceConfig.class);

@@ -35,7 +35,7 @@
       <input type="submit" id="findButton" value="조회"/>
     </form>
     <a href="addCustomer" id="addMileageButton">회원가입</a>
-    <a href="payPrice">결제하기</a>
+    <a href="pay_price">결제하기</a>
   </main>
 
   <!-- <footer></footer> -->
