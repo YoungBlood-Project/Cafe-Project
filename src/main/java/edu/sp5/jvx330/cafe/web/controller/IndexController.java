@@ -28,8 +28,8 @@ public class IndexController {
 	private ItemSerivceImpl itemSerivceImpl;
 	
 	@GetMapping("/main/index")
-	public ModelAndView indexForm() {
-		
+	public ModelAndView indexForm(Integer use_amount) {
+		System.out.println("index use_amount : "+use_amount);
 		ModelAndView mav = new ModelAndView();
 		//카테고리, 아이템 리스트 맵 사용
 		Map<Category, List<Item>> ciMap = new HashMap<Category, List<Item>>();
@@ -43,6 +43,7 @@ public class IndexController {
 		System.out.println("<key 출력>(index) : "+ciMap.keySet());
 	
 		mav.addObject("ciMap", ciMap);
+		mav.addObject("use_amount", use_amount);
 		mav.setViewName("main/index");
 		
 		return mav;

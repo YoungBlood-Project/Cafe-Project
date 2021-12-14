@@ -45,7 +45,7 @@
                 	</tr>
                 	<tr>
                     	<td>할인 금액</td>
-                    	<td>44000</td><!-- el태그로 마일리지 넣기 -->
+                    	<td>${use_amount}</td><!-- el태그로 마일리지 넣기 -->
                 	</tr>
                 	<tr>
                     	<td class="important">받을 금액</td>

@@ -15,7 +15,7 @@
             <br>
             <input type="text" value="${orderContainer.mileageHistory.getMBalance()}" id="add_amount"/>
             <!-- 적립할 경우 -->
-            <input type="text" id="use_amount" hidden="hidden"/>
+            <input type="text" id="use_amount" name="use_amount" hidden="hidden"/>
             <!-- 사용할 경우 -->
             Points
             <input type="submit" id="submit_btn" value="적립"/>
