@@ -19,9 +19,9 @@ public class CategoryServiceTest {
 		
 		categoryService = context.getBean("categoryServiceImpl", CategoryServiceImpl.class);
 
-		addCategoryByCategoryName();
+		//addCategoryByCategoryName();
 		//setCategoryName();
-		//findAllCategorys();
+		findAllCategorys();
 		
 		context.close();
 	}
@@ -36,6 +36,8 @@ public class CategoryServiceTest {
 		categoryService.addCategoryByCategoryName("Meal");
 		categoryService.addCategoryByCategoryName("Bread");
 		categoryService.addCategoryByCategoryName("MD");
+		
+		System.out.println("CategoryServiceTest: 저장 완료.");
 	}
 	
 	public static void setCategoryName() {

@@ -87,11 +87,11 @@ public class ItemServiceTest {
 		service.addItem(coffee_item6);
 
 		Item coffee_item7 = new Item(coffee_category, "바닐라카페라떼", 5300);
-		coffee_item7.setItemUrl("images/coffee/바닐라카페라떼.jpg");
+		coffee_item7.setItemUrl("images/coffee/바닐라카페라떼.png");
 		service.addItem(coffee_item7);
 
-		Item coffee_item8 = new Item(coffee_category, "스패니쉬연유카페라떼", 5900);
-		coffee_item8.setItemUrl("images/coffee/스패니쉬연유카페라떼.jpg");
+		Item coffee_item8 = new Item(coffee_category, "스페니쉬연유카페라떼", 5900);
+		coffee_item8.setItemUrl("images/coffee/스페니쉬연유카페라떼.jpg");
 		service.addItem(coffee_item8);
 
 		Item coffee_item9 = new Item(coffee_category, "카푸치노", 5500);
@@ -402,8 +402,8 @@ public class ItemServiceTest {
 		bread_item3.setItemUrl("images/bread/뺑오커스터드.jpg");
 		service.addItem(bread_item3);
 
-		Item bread_item4 = new Item(bread_category, "소세지페이스트리", 2500);
-		bread_item4.setItemUrl("images/bread/소세지페이스트리.jpg");
+		Item bread_item4 = new Item(bread_category, "소시지페이스트리", 2500);
+		bread_item4.setItemUrl("images/bread/소시지페이스트리.jpg");
 		service.addItem(bread_item4);
 
 		Item bread_item5 = new Item(bread_category, "크루아상", 3000);
@@ -461,31 +461,31 @@ public class ItemServiceTest {
 		service.addItem(md_item1);
 
 		Item md_item2 = new Item(md_category, "투썸 베이직 스텐머그[화이트]", 25000);
-		md_item2.setItemUrl("images/md/투썸베이직스텐머그_화이트.png");
+		md_item2.setItemUrl("images/md/투썸베이직스텐머그_화이트.jpg");
 		service.addItem(md_item2);
 
 		Item md_item3 = new Item(md_category, "투썸 베이직 스텐텀블러[그레이]", 38000);
-		md_item3.setItemUrl("images/md/투썸베이직스텐템블러_그레이.png");
+		md_item3.setItemUrl("images/md/투썸베이직스텐텀블러_그레이.png");
 		service.addItem(md_item3);
 
 		Item md_item4 = new Item(md_category, "투썸베이직스텐텀블러[화이트]", 38000);
-		md_item4.setItemUrl("images/md/투썸베이직스텐텀블러_화이트.png");
+		md_item4.setItemUrl("images/md/투썸베이직스텐텀블러_화이트.jpg");
 		service.addItem(md_item4);
 
 		Item md_item5 = new Item(md_category, "투썸 그레이 롱머그", 28000);
-		md_item5.setItemUrl("images/md/투썸그레이롱머그.png");
+		md_item5.setItemUrl("images/md/투썸그레이롱머그.jpg");
 		service.addItem(md_item5);
 
 		Item md_item6 = new Item(md_category, "투썸 화이트 롱머그", 2800);
-		md_item6.setItemUrl("images/md/투썸화이트롱머그.png");
+		md_item6.setItemUrl("images/md/투썸화이트롱머그.jpg");
 		service.addItem(md_item6);
 
 		Item md_item7 = new Item(md_category, "투썸 그레이 머그", 23000);
-		md_item7.setItemUrl("images/md/투썸그레이머그.png");
+		md_item7.setItemUrl("images/md/투썸그레이머그.jpg");
 		service.addItem(md_item7);
 
 		Item md_item8 = new Item(md_category, "투썸 화이트 머그", 23000);
-		md_item8.setItemUrl("images/md/투썸화이트머그.png");
+		md_item8.setItemUrl("images/md/투썸화이트머그.jpg");
 		service.addItem(md_item8);
 
 		Item md_item9 = new Item(md_category, "미라클 디저트볼 세트", 39000);
@@ -515,6 +515,8 @@ public class ItemServiceTest {
 
 	    Item md_item16 = new Item(md_category, "투썸X미르 텀블러[옐로우]", 50000);
 	      md_item16.setItemUrl("images/md/투썸X미르텀블러_옐로우.jpg");
+	      
+	      System.out.println("ItemServiceTest: 저장 완료.");
 
 		// 옛날에 쓰던 test문
 		// Category category = cService.findCategoryByCategoryName("deletedMenu");
