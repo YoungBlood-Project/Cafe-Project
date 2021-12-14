@@ -104,7 +104,7 @@
         <ul id="ownerSet">
             <li>
             	<!-- 관리자 로그인 컨트롤러 경로 -->
-                <form action="" method="post">
+                <form action="/jvx330/manager/loginManager" method="get">
                    	<!-- 판매내역 컨트롤러 경로 -->
                     <input type="hidden" name="transfer_link" value=""/>
                     <input type="submit"  value="판매내역">
@@ -112,8 +112,9 @@
             </li>
             <li>
             	<!-- 관리자 로그인 컨트롤러 경로 -->
-                <form action="" method="post">
+                <form action="/jvx330/manager/loginManager" method="get">
                 	<!-- 관리메뉴 컨트롤러 경로 -->
+                	<input type="hidden" name="transfer_link" value=""/>
                     <input type="submit"  value="관리메뉴">
                 </form>
             </li>
