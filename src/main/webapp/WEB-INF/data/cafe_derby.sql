@@ -9,6 +9,7 @@ SELECT * FROM SalesTotalPrice;
 SELECT * FROM SalesHistory;
 
 --TABLE 삭제 --
+DROP TABLE Manager;
 DROP TABLE Customer;
 DROP TABLE Mileage;
 DROP TABLE MileageHistory;
@@ -23,6 +24,7 @@ CREATE TABLE Manager (
 	passwd			VARCHAR(30)		NOT NULL                                                    --패스워드
 );
 INSERT INTO Manager(managerName, passwd) VALUES('이영지', '1234'); 
+
 
 CREATE TABLE Customer(
    cid      BIGINT			PRIMARY KEY GENERATED ALWAYS AS IDENTITY,							--고객 PK

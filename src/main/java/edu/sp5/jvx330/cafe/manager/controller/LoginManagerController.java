@@ -15,12 +15,12 @@ public class LoginManagerController {
 		@Autowired
 		private ManagerServiceImpl managerService;
 		
-		@GetMapping("manager/loginManager")
+		@GetMapping("/manager/loginManager")
 		public String loginManagerGet() {
 			return "manager/login_manager";
 		}
 		
-		@PostMapping("manager/loginManager")
+		@PostMapping("/manager/loginManager")
 		public String loginManagerPost(@ModelAttribute Manager manager) {
 			manager = managerService.managerLogin(manager.getManagerName(), manager.getPasswd());
 			if (manager == null) {
