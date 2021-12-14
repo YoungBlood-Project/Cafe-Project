@@ -23,7 +23,7 @@ public class CustomerServiceTest {
 		 */
 
 		//1. 绊按 积己
-		//addCustomer();
+		addCustomer();
 
 		//2. 绊按 沥焊 炼雀
 		//findCustomerByUserInfo();

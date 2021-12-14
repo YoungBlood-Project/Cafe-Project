@@ -12,6 +12,8 @@ import edu.sp5.jvx330.cafe.membership.domain.MileageHistory;
 
 public class MileageHistoryServiceImpl implements MileageHistorySerivce {
 	@Autowired
+	private CustomerServiceImpl customerServiceImpl;
+	@Autowired
 	private MileageHistoryDaoImpl mhDao;
 
 	/**
@@ -20,8 +22,8 @@ public class MileageHistoryServiceImpl implements MileageHistorySerivce {
 	// 1. 마일리지 생성
 	@Override
 	public void addMileageHistory(Customer customer, MileageHistory mileageHistory) {
+		customer = customerServiceImpl.findCustomerByUserInfo(customer.getName(), customer.getPhone());
 		mhDao.addMileageHistory(customer.getCid(), mileageHistory);
-
 	}
 
 	// 2. orderNum으로 마일리지 조회

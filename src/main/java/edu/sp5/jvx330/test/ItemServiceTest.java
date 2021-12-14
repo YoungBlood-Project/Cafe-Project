@@ -51,7 +51,7 @@ public class ItemServiceTest {
 	// 1-1. 메뉴 추가 테스트
 	public static void addItem() {
 		// 존재하는 모든 카테고리
-		Category delete_category = cService.findCategoryByCategoryName("deletedMenu");
+		//Category delete_category = cService.findCategoryByCategoryName("deletedMenu");
 		Category coffee_category = cService.findCategoryByCategoryName("Coffee");
 		Category tea_category = cService.findCategoryByCategoryName("Tea");
 		Category drink_category = cService.findCategoryByCategoryName("Drink");

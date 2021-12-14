@@ -37,15 +37,15 @@
             	<!-- text, value에 값 넣는 자바 스크립트 사용할 것 -->
                 	<tr>
                     	<td>총 수량</td>
-                    	<td><input type="text" name="salesTotalPrice.orderNum" value="6" readonly="readonly"/></td>
+                    	<td><input type="text" name="salesTotalPrice.orderNum" value="6" readonly="readonly" id="total_num"/></td>
                 	</tr>
                 	<tr>
                     	<td>총 금액</td>
-                    	<td><input type="text" name="salesTotalPrice.totalPrice" value="52000" readonly="readonly"/></td>
+                    	<td><input type="text" name="salesTotalPrice.totalPrice" value="52000" readonly="readonly" id="total_amount"/></td>
                 	</tr>
                 	<tr>
                     	<td>할인 금액</td>
-                    	<td>44000</td><!-- el태그로 마일리지 넣기 -->
+                    	<td>${use_amount}</td><!-- el태그로 마일리지 넣기 -->
                 	</tr>
                 	<tr>
                     	<td class="important">받을 금액</td>
