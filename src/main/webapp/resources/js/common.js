@@ -50,9 +50,9 @@ $(".sub").children().on("click", function() {
 		//'orderItemsList['+(i-1)'].numOfNum' (수량)
 		orderList.append("<td><button class='minus'>-</button><input type='text' name='orderItemsList["+(i-1)+"].numOfNum' value='1' readonly='readonly' class='numOfNum" + i + "'><button class='plus'>+</button></td>");
 		// 메뉴 단가
-		orderList.append("<td class='orderList_right'><input type= hidden class='menu_price' value= '" + sale_price + "'></td>");
+		orderList.append("<td class='orderList_right'><input type='text' name='orderItemsList["+(i-1)+"].menuPrice' value= '" + menu_price + "' readonly='readonly' class='menu_price' ></td>");
 		//'orderItemsList['+(i-1)'].paidPrice' (총 금액)
-		orderList.append("<td class='orderList_right'><input type='text' name=''orderItemsList["+(i-1)+"].paidPrice' value='" + menu_price + "' readonly='readonly' class='paidPrice" + i + "'></td>");
+		orderList.append("<td class='orderList_right'><input type='text' name='orderItemsList["+(i-1)+"].paidPrice' value='" + menu_price + "' readonly='readonly' class='paidPrice" + i + "'></td>");
 
 		total_amount += menu_price;
 		name_list.push(menu_text);
@@ -66,16 +66,16 @@ $(".sub").children().on("click", function() {
 		total_price_num++; // 전체 수량에 반영할 변수 증가
 
 		for (let j = 1; j <= i; j++) {
-
+			//주문내역에 들어있는 value와 클릭한 메뉴 text가 같은 경우
 			if ($(".menuName" + j).val() == menu_text) {
 				
 				amount = parseInt($(".numOfNum" + j).val()) + 1;
-			//	amount = parseInt(amount) + 1;
+				//amount = parseInt(amount) + 1;
 				$(".numOfNum" + j).val(amount);
-
+				$(".paidPrice" + j).val(menu_price*amount);
 				// total_amount += menu_price * amount;
-				total_amount += menu_price;
-				$(".paidPrice" + j).val(total_amount);
+				total_amount += menu_price; //총합에 클릭된 메뉴의 가격 더하기
+
 				console.log("menu_price : " + menu_price);
 				console.log("amount : " + amount);
 			}
@@ -98,13 +98,16 @@ function total() {
 	$("#total_amount").val(total_amount);
 
 	//할인 금액
-	sale_price = parstInt($("#mileage").text());
-	// sale_price = parseInt(sale_price);
+	sale_price = $("#mileage").text();
+	if(sale_price==null){
+		sale_price = 0;
+	}else{
+		sale_price = parseInt(sale_price);
+	}
 	
 	//받을 금액
+	$("#reducedPrice").val(total_amount - sale_price);
 	console.log("total_amount : " + total_amount);
 	console.log("sale_price : " + sale_price);
 	console.log(total_amount - sale_price);
-	
-	$(".important:last").val(total_amount - sale_price);
 }

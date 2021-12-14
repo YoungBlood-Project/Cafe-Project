@@ -28,8 +28,8 @@ public class IndexController {
 	private ItemSerivceImpl itemSerivceImpl;
 	
 	@GetMapping("/main/index")
-	public ModelAndView indexForm(Integer use_amount) {
-		System.out.println("index use_amount : "+use_amount);
+	public ModelAndView indexForm() {
+
 		ModelAndView mav = new ModelAndView();
 		//카테고리, 아이템 리스트 맵 사용
 		Map<Category, List<Item>> ciMap = new HashMap<Category, List<Item>>();
@@ -40,10 +40,10 @@ public class IndexController {
 			ciMap.put(category, itemSerivceImpl.findItemsByCategory(category));
 		}
 		
-		System.out.println("<key 출력>(index) : "+ciMap.keySet());
-	
+		//System.out.println("<key 출력>(index) : "+ciMap.keySet());
+
 		mav.addObject("ciMap", ciMap);
-		mav.addObject("use_amount", use_amount);
+		mav.addObject("index_link", "index");
 		mav.setViewName("main/index");
 		
 		return mav;
@@ -55,7 +55,7 @@ public class IndexController {
 				orderContainer.getSalesTotalPrice().getTotalPrice();
 		Integer mileage = (int) Math.floor(totalPrice * 0.03);
 	
-		System.out.println("mileage : "+mileage);
+		//System.out.println("mileage : "+mileage);
 		
 		//마일리지 금액 set, orderContainer에 입력
 		MileageHistory mileageHistory = new MileageHistory();

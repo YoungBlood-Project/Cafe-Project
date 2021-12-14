@@ -1,23 +1,18 @@
 package edu.sp5.jvx330.cafe.membership.controller;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.SessionAttribute;
 import org.springframework.web.servlet.ModelAndView;
 
-import edu.sp5.jvx330.cafe.membership.business.impl.MileageHistoryServiceImpl;
 import edu.sp5.jvx330.cafe.membership.domain.Customer;
-import edu.sp5.jvx330.cafe.membership.domain.Mileage;
 import edu.sp5.jvx330.cafe.membership.domain.MileageHistory;
 import edu.sp5.jvx330.cafe.web.container.OrderContainer;
 
 @Controller("searchMileageController")
 public class SearchMileageController {
-	@Autowired
-	private MileageHistoryServiceImpl mileageHistoryServiceImpl;
+	//@Autowired
+	//private MileageHistoryServiceImpl mileageHistoryServiceImpl;
 	
 	@PostMapping("/membership/searchMileage")
 	public ModelAndView SearchMileageGet(@SessionAttribute("orderContainer") OrderContainer orderContainer 
@@ -37,14 +32,22 @@ public class SearchMileageController {
 		} else if(select_mileage.equals("use_mileage")) {
 			mileageHistory.setMBalance(-use_amount);//사용할 금액
 			orderContainer.setMileageHistory(mileageHistory);
+			
+			//현재 가지고 있는 totalprice - 사용할 마일리지
+			Integer reducedPrice = orderContainer.getSalesTotalPrice().getTotalPrice() - use_amount;
+			//orderContainer가 가진 salesTotalPrice에 reducedPrice 계산해서 입력
+			orderContainer.getSalesTotalPrice().setReducedPrice(reducedPrice);
+			
 			System.out.println("사용할 금액 : "+use_amount);
-			//get 방식으로 이동
 		} else {
 			System.out.println("searchMileageController 에러 발생");
 		}
 		
+		//post 방식으로 이동
 		mav.addObject("use_amount",use_amount);
-		mav.setViewName("redirect:/main/index");
+		//index로 보낸 뒤 submit 했을 때의 링크
+		mav.addObject("index_link", "/jvx330/main/payPrice");
+		mav.setViewName("main/index");
 		return mav;
 	}
 }

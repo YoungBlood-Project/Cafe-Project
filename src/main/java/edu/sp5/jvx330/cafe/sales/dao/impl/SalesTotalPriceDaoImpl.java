@@ -19,7 +19,7 @@ public class SalesTotalPriceDaoImpl implements SalesTotalPriceDao  {
 	public void saveSalesTotalPrice(SalesTotalPrice salesTotalPrice) {
 		String sql ="INSERT INTO SalesTotalPrice(orderNum, totalPrice, reducedPrice)"
 				+ " VALUES(?, ?, ?)";
-		jdbcTemplate.update(sql, salesTotalPrice.getOrderNum(), salesTotalPrice.getTotalPrice(), salesTotalPrice.getReducePrice());
+		jdbcTemplate.update(sql, salesTotalPrice.getOrderNum(), salesTotalPrice.getTotalPrice(), salesTotalPrice.getReducedPrice());
 	}
 
 	/**

@@ -8,7 +8,7 @@ public class SalesTotalPrice {
 
 	private Long orderNum;
 	private Integer totalPrice;
-	private Integer reducePrice;
+	private Integer reducedPrice;
 
 	private Date orderDate;
 
@@ -16,41 +16,49 @@ public class SalesTotalPrice {
 
 	}
 
-	public SalesTotalPrice(Long orderNum, Integer totalPrice, Integer reducePrice) {
+	public SalesTotalPrice(Long orderNum, Integer totalPrice, Integer reducedPrice) {
 		super();
 		this.orderNum = orderNum;
 		this.totalPrice = totalPrice;
-		this.reducePrice = reducePrice;
+		this.reducedPrice = reducedPrice;
 	}
 
-
-	public long getStpId() {
+	public Long getStpId() {
 		return stpId;
 	}
-	public void setStpId(long stpId) {
+
+	public void setStpId(Long stpId) {
 		this.stpId = stpId;
 	}
-	public long getOrderNum() {
+
+	public Long getOrderNum() {
 		return orderNum;
 	}
-	public void setOrderNum(long orderNum) {
+
+	public void setOrderNum(Long orderNum) {
 		this.orderNum = orderNum;
 	}
-	public int getTotalPrice() {
+
+	public Integer getTotalPrice() {
 		return totalPrice;
 	}
-	public void setTotalPrice(int totalPrice) {
+
+	public void setTotalPrice(Integer totalPrice) {
 		this.totalPrice = totalPrice;
 	}
-	public int getReducePrice() {
-		return reducePrice;
+
+	public Integer getReducedPrice() {
+		return reducedPrice;
 	}
-	public void setReducePrice(int reducePrice) {
-		this.reducePrice = reducePrice;
+
+	public void setReducedPrice(Integer reducedPrice) {
+		this.reducedPrice = reducedPrice;
 	}
+
 	public Date getOrderDate() {
 		return orderDate;
 	}
+
 	public void setOrderDate(Date orderDate) {
 		this.orderDate = orderDate;
 	}
@@ -58,7 +66,6 @@ public class SalesTotalPrice {
 	@Override
 	public String toString() {
 		return "SalesTotalPrice [stpId=" + stpId + ", orderNum=" + orderNum + ", totalPrice=" + totalPrice
-				+ ", reducePrice=" + reducePrice + ", orderDate=" + orderDate + "]";
+				+ ", reducedPrice=" + reducedPrice + ", orderDate=" + orderDate + "]";
 	}
-
 }

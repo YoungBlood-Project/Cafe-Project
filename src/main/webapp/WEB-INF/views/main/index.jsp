@@ -20,8 +20,7 @@
     	<h2 class="hidden">주문내역 및 메뉴</h2>
 		<section id="sectionLeft" class="cont">
             <h3 id="orderList_h3">주문 내역</h3>
-            <form action="index" method="post">
-            
+            <form action="${index_link}" method="post">
             	<table id="orderList">
             	<!-- 안에 내용 넣는 자바 스크립트 사용할 것 -->
                 	<tr class="gradient">
@@ -31,25 +30,45 @@
                     	<th>단가</th>
                     	<th>금액</th>
                 	</tr>
+                	<c:forEach var="orderItems" items="${orderContainer.orderItemsList}" varStatus="status">
+                		<tr>
+							<td>${status.count}</td>
+							<td>${orderItems.menuName}</td>
+							<td>${orderItems.numOfNum}</td>
+							<td>${orderItems.paidPrice}</td>
+							<td>${orderItems.paidPrice}</td>
+                		</tr>
+                	</c:forEach>
             	</table>
             	
             	<table id="count">
             	<!-- text, value에 값 넣는 자바 스크립트 사용할 것 -->
                 	<tr>
                     	<td>총 수량</td>
-                    	<td><input type="text" name="salesTotalPrice.orderNum" value="6" readonly="readonly" id="total_num"/></td>
+                    	<td><input type="text" name="salesTotalPrice.orderNum" value="${orderContainer.salesTotalPrice.getOrderNum()}" readonly="readonly" id="total_num"/></td>
                 	</tr>
                 	<tr>
                     	<td>총 금액</td>
-                    	<td><input type="text" name="salesTotalPrice.totalPrice" value="52000" readonly="readonly" id="total_amount"/></td>
+                    	<td><input type="text" name="salesTotalPrice.totalPrice" value="${orderContainer.salesTotalPrice.getTotalPrice()}" readonly="readonly" id="total_amount"/></td>
                 	</tr>
                 	<tr>
                     	<td>할인 금액</td>
-                    	<td>${use_amount}</td><!-- el태그로 마일리지 넣기 -->
+                    	<td id="mileage">
+                    		<c:choose>
+                    			<c:when test="${not empty use_amount}">
+                    				${use_amount}
+                    			</c:when>
+                    			<c:otherwise>
+                    				0
+                    			</c:otherwise>
+                    		</c:choose>
+                    		
+                    	
+                    	</td><!-- el태그로 마일리지 넣기 -->
                 	</tr>
                 	<tr>
-                    	<td class="important">받을 금액</td>
-                    	<td class="important"><input type="text" name="orderContainer.salesTotalPrice.reducePrice" value="8000" readonly="readonly"/></td>
+                    	<td>받을 금액</td>
+                    	<td><input type="text" name="salesTotalPrice.reducedPrice" value="${orderContainer.salesTotalPrice.getReducedPrice()}" readonly="readonly" id="reducedPrice" /></td>
                 	</tr>
             	</table>
 				<input type="submit"  value="결제하기">
@@ -57,13 +76,13 @@
         </section>
         
         <section id="sectionRight" class="cont">
-		<ul id="menu">
- 			<c:if test="${not empty ciMap}">
+		<c:if test="${not empty ciMap}">
+			<ul id="menu">
 				<c:forEach var="ciMap" items="${ciMap}" varStatus="status">
 					<li class="title">${ciMap.key.categoryName}</li>
-				</c:forEach>
-			</c:if>
-		</ul>
+				</c:forEach>		
+			</ul>
+		</c:if>
 		
 		<c:if test="${not empty ciMap}">
 			<c:forEach var="ciMap" items="${ciMap}">
@@ -78,6 +97,7 @@
 				</ul>
 			</c:forEach>
 		</c:if>
+		</section>
 	</section>
 	
     <footer>   

@@ -15,7 +15,7 @@ public class SalesTotalPriceRowMapper implements RowMapper<SalesTotalPrice> {
 		stp.setStpId(rs.getLong("stpId"));
 		stp.setOrderNum(rs.getLong("orderNum"));
 		stp.setTotalPrice(rs.getInt("totalPrice"));
-		stp.setReducePrice(rs.getInt("reducedPrice"));
+		stp.setReducedPrice(rs.getInt("reducedPrice"));
 		stp.setOrderDate(rs.getTimestamp("orderDate"));
 
 		return stp;
