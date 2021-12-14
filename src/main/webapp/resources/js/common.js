@@ -46,11 +46,11 @@ $(".sub").children().on("click", function() {
 		orderList.append("<td class='orderItemsNum'>" + i + "</td>");
 
 		//'orderItemsList['+(i-1)'].menuName' (이름)
-		orderList.append("<td><input type='text' name='orderItemsList["+(i-1)+"].menuName' value='" + coffee_text + "' readonly='readonly' class='menuName" + i + "'/></td>");
+		orderList.append("<td><input type='text' name='orderItemsList["+(i-1)+"].menuName' value='" + menu_text + "' readonly='readonly' class='menuName" + i + "'/></td>");
 		//'orderItemsList['+(i-1)'].numOfNum' (수량)
 		orderList.append("<td><button class='minus'>-</button><input type='text' name='orderItemsList["+(i-1)+"].numOfNum' value='1' readonly='readonly' class='numOfNum" + i + "'><button class='plus'>+</button></td>");
-		// (할인 금액)
-		orderList.append("<td class='orderList_right'><input type= hidden class= 'menu_price' value= '" + sale_price + "'></td>");
+		// 메뉴 단가
+		orderList.append("<td class='orderList_right'><input type= hidden class='menu_price' value= '" + sale_price + "'></td>");
 		//'orderItemsList['+(i-1)'].paidPrice' (총 금액)
 		orderList.append("<td class='orderList_right'><input type='text' name=''orderItemsList["+(i-1)+"].paidPrice' value='" + menu_price + "' readonly='readonly' class='paidPrice" + i + "'></td>");
 
