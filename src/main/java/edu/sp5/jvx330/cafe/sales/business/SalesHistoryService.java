@@ -12,7 +12,7 @@ public interface SalesHistoryService {
 	 * @param item
 	 * @param numOfSales
 	 */
-	public void addSalesHistory(Item item, SalesHistory salesHistory);
+	public void addSalesHistory(String itemName, SalesHistory salesHistory);
 	
 	/**
 	 * 2. 판매내역 조회

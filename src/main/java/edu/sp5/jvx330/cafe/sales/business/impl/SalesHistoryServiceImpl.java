@@ -23,8 +23,8 @@ public class SalesHistoryServiceImpl implements SalesHistoryService {
 	 * 1. 판매내역 추가
 	 */
 	@Override
-	public void addSalesHistory(Item item, SalesHistory salesHistory) {
-		Long mid = iDao.findItemIdByItemName(item.getItemName());
+	public void addSalesHistory(String itemName, SalesHistory salesHistory) {
+		Long mid = iDao.findItemIdByItemName(itemName);
 		//주문 번호는 컨트롤러에서 넣어줘야할 거 같다.  
 		shDao.addSalesHistory(mid, salesHistory);
 	}

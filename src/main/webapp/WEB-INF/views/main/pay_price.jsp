@@ -15,6 +15,7 @@
 				주문번호: ${orderNum}번<br>
 				결제가 완료되었습니다.
 			</p>
+			<a href="index">메인으로 돌아가기</a>
 		</div>
 	</section>
 </body>

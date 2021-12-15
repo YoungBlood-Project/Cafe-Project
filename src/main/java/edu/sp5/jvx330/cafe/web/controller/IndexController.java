@@ -51,19 +51,25 @@ public class IndexController {
 	
 	@PostMapping("/main/index")
 	public String index(OrderContainer orderContainer) {
+		System.out.println("여기서부터 에러");
+		try {
 		Integer totalPrice = 
 				orderContainer.getSalesTotalPrice().getTotalPrice();
-		Integer mileage = (int) Math.floor(totalPrice * 0.03);
-	
-		//System.out.println("mileage : "+mileage);
 		
-		//마일리지 금액 set, orderContainer에 입력
-		MileageHistory mileageHistory = new MileageHistory();
-		mileageHistory.setMBalance(mileage);
-		orderContainer.setMileageHistory(mileageHistory);
-		System.out.println("index(post) 판매내역 : "+orderContainer);
-		
-		return "redirect:/membership/loginUser";
+			Integer mileage = (int) Math.floor(totalPrice * 0.03);	
+			//System.out.println("mileage : "+mileage);
+			
+			//마일리지 금액 set, orderContainer에 입력
+			MileageHistory mileageHistory = new MileageHistory();
+			mileageHistory.setMBalance(mileage);
+			orderContainer.setMileageHistory(mileageHistory);
+			System.out.println("index(post) 판매내역 : "+orderContainer);
+			
+			return "redirect:/membership/loginUser";
+		}
+		catch(NullPointerException e) {//아무것도 선택 안하고 결제하기 눌렀을 경우
+			return "redirect:/main/index";
+		}
 	}
 	/*public String index(@ModelAttribute OrderItemsCommand orderItemsCommand, 
 			@ModelAttribute SalesTotalPrice salesTotalPrice) {
