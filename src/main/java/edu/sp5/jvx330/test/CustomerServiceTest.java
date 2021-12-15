@@ -23,11 +23,11 @@ public class CustomerServiceTest {
 		 */
 
 		//1. 고객 생성
-		addCustomer();
+		//addCustomer();
 
 		//2. 고객 정보 조회
-		//findCustomerByUserInfo();
-		findAllCustomers();
+		findCustomerByUserInfo();
+		//findAllCustomers();
 		//findMileage();
 
 		//3. 고객 삭제
@@ -53,9 +53,9 @@ public class CustomerServiceTest {
 	 */
 	// 2-1. 입력받은 정보로 고객 조회
 	public static void findCustomerByUserInfo() {
-		Customer customer = customerService.findCustomerByUserInfo("example_ex1", "example_ex1");
-		System.out.println("customerServiceTest, userInfo: "
-				+ customerService.findCustomerByUserInfo(customer.getName(), customer.getPhone()));
+		//Customer customer = customerService.findCustomerByUserInfo("example_ex1", "example_ex1");
+		Customer customer = customerService.findCustomerByUserInfo("example", "example");
+		System.out.println("findCustomerByUserInfo : "+customer);
 	}
 
 	// 2-2. 고객 전체 조회
