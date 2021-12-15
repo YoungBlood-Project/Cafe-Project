@@ -118,6 +118,11 @@
                     <input type="submit"  value="관리메뉴">
                 </form>
             </li>
+            <li>
+                <form action="/jvx330/sales/orderNumSalesHistory" method="get">
+                    <input type="submit"  value="주문번호로 조회">
+                </form>
+            </li>
             <!-- 마일리지, 결제하기 위치 일단 이동 -->
             <!-- 인덱스 경로 구조 바꿔야...? 일단 JS 완성 되고 난 후에 이동...? -->
         </ul>
