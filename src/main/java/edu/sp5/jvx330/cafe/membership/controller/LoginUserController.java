@@ -49,7 +49,7 @@ public class LoginUserController {
 		} catch(EmptyResultDataAccessException e) {
 			//고객정보가 없을 경우
 			//System.out.println("EmptyResultDataAccessException 발생");
-			customer = new Customer();
+			customer = null;
 			mav.addObject("errorMsg","고객정보가 없습니다");
 			mav.setViewName("membership/login_user");
 		}
