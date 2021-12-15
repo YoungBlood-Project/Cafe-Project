@@ -38,11 +38,8 @@ public class OrderNumGenerator {
 	}
 	
 	public static void main(String[] args) {
-		
 		System.out.println(OrderNumGenerator.countOrderNum());
 		System.out.println(OrderNumGenerator.countOrderNum());
-		
-		
 	}
 	
 	

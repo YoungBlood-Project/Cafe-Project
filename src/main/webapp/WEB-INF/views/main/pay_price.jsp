@@ -7,6 +7,15 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h2>결제하기</h2>
+	<section id="pay_price">
+		<h2>결제하기</h2>
+		<img src="../resources/images/coin3.gif" alt="coin"/>
+		<div>
+			<p>
+				주문번호: ${orderNum}번<br>
+				결제가 완료되었습니다.
+			</p>
+		</div>
+	</section>
 </body>
 </html>
