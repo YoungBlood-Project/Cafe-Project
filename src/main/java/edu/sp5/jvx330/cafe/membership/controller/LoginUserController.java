@@ -1,6 +1,7 @@
 package edu.sp5.jvx330.cafe.membership.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -39,14 +40,30 @@ public class LoginUserController {
 		String name = orderContainer.getCustomer().getName();
 		String phone = orderContainer.getCustomer().getPhone();
 
-		mav.setViewName("membership/login_user");
+		//고객 정보 담을 Customer 객체
+		Customer customer;
+		try {
+			//고객 정보가 있을 경우
+			customer = customerService.findCustomerByUserInfo(name, phone);
+			mav.setViewName("membership/search_mileage");
+		} catch(EmptyResultDataAccessException e) {
+			//고객정보가 없을 경우
+			//System.out.println("EmptyResultDataAccessException 발생");
+			customer = null;
+			mav.addObject("errorMsg","고객정보가 없습니다");
+			mav.setViewName("membership/login_user");
+		}
 		
+		orderContainer.setCustomer(customer);
+		/*
 		//고객 정보가 있을 경우
 		if (customerService.findCustomerByUserInfo(name, phone) != null) {			
 			mav.setViewName("membership/search_mileage");
 		} else {
-			orderContainer.setCustomer(new Customer());//고객 정보x
+			//고객 정보x
+			orderContainer.setCustomer(new Customer());
 		}
+		*/
 		
 		return mav;
 	}

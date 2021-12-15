@@ -18,7 +18,7 @@
       <h3>${errorMsg}</h3>
     </hgroup>
 
-    <form action="/jvx330/membership/loginUser" method="post">
+    <form action="loginUser" method="post">
       <table>
         <tr>
           <td><label for="name">이름</label></td>
@@ -35,7 +35,9 @@
       <input type="submit" id="findButton" value="조회"/>
     </form>
     <a href="addCustomer" id="addMileageButton">회원가입</a>
-    <a href="payPrice">결제하기</a>
+    <form action="/jvx330/main/payPrice" method="post">
+    	<input type="submit" value="결제하기"/>
+    </form>
   </main>
 
   <!-- <footer></footer> -->
