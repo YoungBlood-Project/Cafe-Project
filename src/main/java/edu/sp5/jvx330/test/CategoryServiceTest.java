@@ -21,12 +21,8 @@ public class CategoryServiceTest {
 
 		//addCategoryByCategoryName();
 		//setCategoryName();
-<<<<<<< HEAD
 		//findAllCategorys();
-		findCategoryByCategoryId();
-=======
-		findAllCategorys();
->>>>>>> branch 'master' of https://github.com/youngBlood-cafe-project/Cafe-Project.git
+		//findCategoryByCategoryId();
 		
 		context.close();
 	}
