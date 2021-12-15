@@ -25,7 +25,7 @@ public class LoginManagerController {
 		
 		@PostMapping("/manager/loginManager")
 		public ModelAndView loginManagerPost(@ModelAttribute Manager manager, HttpSession session) {
-			manager = managerService.managerLogin(manager.getManagerName(), manager.getPasswd());
+			manager = managerService.loginManager(manager.getManagerName(), manager.getPasswd());
 			ModelAndView mav = new ModelAndView();
 			
 			//관리자 정보 확인 후 틀리면 다시 로그인화면으로
@@ -34,7 +34,7 @@ public class LoginManagerController {
 				mav.setViewName("manager/login_manager");  
 				return mav;
 			}
-			
+			//이전에 호출한 화면으로 이동
 			session.setAttribute("manager", manager);
 			mav.setViewName((String) session.getAttribute("requestPath"));  
 

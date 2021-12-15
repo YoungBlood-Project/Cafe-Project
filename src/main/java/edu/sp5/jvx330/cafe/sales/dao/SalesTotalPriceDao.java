@@ -1,5 +1,6 @@
 package edu.sp5.jvx330.cafe.sales.dao;
 
+import java.util.Date;
 import java.util.List;
 
 import edu.sp5.jvx330.cafe.sales.domain.SalesTotalPrice;
@@ -19,7 +20,9 @@ public interface SalesTotalPriceDao {
 	// 2-2. 총판매가격 내역 주문번호로 조회
 	public SalesTotalPrice findSTPByOrderNum(Long orderNum);
 
-
+	// 2-4 총판매가격 월별 조회
+	public List<SalesTotalPrice> findSalesTotalPriceByMonth(Date date);
+		
 	// 3. 총판매가격 내역 기록 삭제 - 환불 시 사용
 	public void deleteSalesTotalPrice(Long orderNum);
 	

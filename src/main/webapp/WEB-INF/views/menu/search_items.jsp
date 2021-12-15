@@ -15,6 +15,9 @@
 	
 	<section id="searchItemsContent">
 		<h3>메뉴 조회</h3>
+		<form action="/jvx330/manager/logoutManager" method="get">
+			<input type="submit" value="메인화면으로 돌아가기">
+		</form>
 
 		<section id="itemsSettingContent">
 			<a href="add_items" id="addItems">메뉴 추가</a>

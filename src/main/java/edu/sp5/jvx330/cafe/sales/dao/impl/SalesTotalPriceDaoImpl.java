@@ -1,5 +1,6 @@
 package edu.sp5.jvx330.cafe.sales.dao.impl;
 
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -40,8 +41,15 @@ public class SalesTotalPriceDaoImpl implements SalesTotalPriceDao  {
 				+ " FROM SalesTotalPrice WHERE orderNum = ?";
 		return jdbcTemplate.queryForObject(sql, new SalesTotalPriceRowMapper(), orderNum);
 	}
-
-
+	
+	// 2-4 총판매가격 월별 조회
+	@Override
+	public List<SalesTotalPrice> findSalesTotalPriceByMonth(Date date) {
+		String sql = "SELECT stpId, orderNum, totalPrice, reducedPrice, orderDate"
+				+ " FROM SalesTotalPrice WHERE Date(orderDate) = ?";
+		return jdbcTemplate.query(sql, new SalesTotalPriceRowMapper(), date);
+	};
+	
 	// 3. 총판매가격 내역 기록 삭제 - 환불 시 사용
 	@Override
 	public void deleteSalesTotalPrice(Long orderNum) {

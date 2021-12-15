@@ -31,8 +31,10 @@
 					</tr>
 				</c:forEach>
 			</c:if>
-		
 		</table>
+	</form>
+	<form action="/jvx330/sales/mainSalesHistory" method="post">
+		<input type="submit" value="판매내역 메인으로 돌아가기">
 	</form>
 </section>
 </body>

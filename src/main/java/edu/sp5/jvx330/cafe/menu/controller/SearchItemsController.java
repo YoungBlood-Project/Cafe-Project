@@ -35,10 +35,26 @@ public class SearchItemsController {
 		//관리자로그인 확인
 		if(auth_manager == null) {
 			session.setAttribute("requestPath", request.getServletPath());
-			mav.setViewName("/manager/loginManager");
+			mav.setViewName("/manager/login_manager");
 			return mav;
 		}
 		
+		Map<Category, List<Item>> categoryItemMap = new HashMap<Category, List<Item>>();
+		List<Category> category_list = categoryServiceImpl.findAllCategorys();
+		for (Category category : category_list) {
+			categoryItemMap.put(category, itemServiceImpl.findItemsByCategory(category));
+		}
+		
+		mav.addObject("categoryItemMap", categoryItemMap);
+		mav.setViewName("/menu/search_items");
+		
+		return mav;
+	}
+	
+	@PostMapping("/menu/searchItems")
+	public ModelAndView SearchItemsPost() {	
+		ModelAndView mav = new ModelAndView();
+		//로그인 한 후 post로 불렀기때문에 세션 확인안함
 		Map<Category, List<Item>> categoryItemMap = new HashMap<Category, List<Item>>();
 		List<Category> category_list = categoryServiceImpl.findAllCategorys();
 		for (Category category : category_list) {

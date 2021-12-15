@@ -115,18 +115,12 @@
     <footer>   
         <ul id="ownerSet">
             <li>
-            	<!-- 관리자 로그인 컨트롤러 경로 -->
-                <form action="/jvx330/manager/loginManager" method="get">
-                   	<!-- 판매내역 컨트롤러 경로 -->
-                    <input type="hidden" name="transfer_link" value=""/>
+                <form action="/jvx330/sales/mainSalesHistory" method="get">
                     <input type="submit"  value="판매내역">
                 </form>
             </li>
             <li>
-            	<!-- 관리자 로그인 컨트롤러 경로 -->
-                <form action="/jvx330/manager/loginManager" method="get">
-                	<!-- 관리메뉴 컨트롤러 경로 -->
-                	<input type="hidden" name="transfer_link" value=""/>
+                <form action="/jvx330/menu/searchItems" method="get">
                     <input type="submit"  value="관리메뉴">
                 </form>
             </li>
