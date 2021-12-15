@@ -64,7 +64,7 @@ public class SalesHistorySerivceTest {
 		Item item = item_service.findItemByItemName("롱블랙");
 		SalesHistory salesHistory =
 				new SalesHistory(item, 2, item.getItemPrice()*2);
-		salesHistory.setOrderNum(202112140002l);
+		salesHistory.setOrderNum(202112140001l);
 				//new SalesHistory(menu, 1, menu.getMenuPrice()*1);
 		sh_service.addSalesHistory(item, salesHistory);
 		System.out.println("SalesHistorySerivceTest : 판매내역 저장 완료");
@@ -74,7 +74,7 @@ public class SalesHistorySerivceTest {
 		Item item = item_service.findItemByItemName("콜드브루");
 		SalesHistory salesHistory =
 				new SalesHistory(item, 2, item.getItemPrice()*2);
-		salesHistory.setOrderNum(202112140003l);
+		salesHistory.setOrderNum(202112140001l);
 				//new SalesHistory(menu, 1, menu.getMenuPrice()*1);
 		sh_service.addSalesHistory(item, salesHistory);
 		System.out.println("SalesHistorySerivceTest : 판매내역 저장 완료");

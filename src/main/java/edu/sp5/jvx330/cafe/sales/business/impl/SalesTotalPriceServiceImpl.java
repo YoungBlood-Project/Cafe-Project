@@ -30,7 +30,7 @@ public class SalesTotalPriceServiceImpl implements SalesTotalPriceService {
 
 	// 2-2. 총판매가격 내역 주문번호로 조회
 	@Override
-	public List<SalesTotalPrice> findSTPByOrderNum(Long orderNum) {
+	public SalesTotalPrice findSTPByOrderNum(Long orderNum) {
 		return stpDao.findSTPByOrderNum(orderNum);
 
 	}
