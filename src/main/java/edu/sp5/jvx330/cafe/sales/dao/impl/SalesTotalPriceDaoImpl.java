@@ -35,10 +35,10 @@ public class SalesTotalPriceDaoImpl implements SalesTotalPriceDao  {
 
 	// 2-2. 총판매가격 내역 주문번호로 조회
 	@Override
-	public List<SalesTotalPrice> findSTPByOrderNum(Long orderNum) {
+	public SalesTotalPrice findSTPByOrderNum(Long orderNum) {
 		String sql = "SELECT stpId, orderNum, totalPrice, reducedPrice, orderDate"
 				+ " FROM SalesTotalPrice WHERE orderNum = ?";
-		return jdbcTemplate.query(sql, new SalesTotalPriceRowMapper(), orderNum);
+		return jdbcTemplate.queryForObject(sql, new SalesTotalPriceRowMapper(), orderNum);
 	}
 
 

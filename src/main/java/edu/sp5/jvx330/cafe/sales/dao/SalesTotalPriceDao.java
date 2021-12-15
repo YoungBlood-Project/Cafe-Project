@@ -17,7 +17,7 @@ public interface SalesTotalPriceDao {
 	public List<SalesTotalPrice> findAllSalesTotalPrice();
 
 	// 2-2. 총판매가격 내역 주문번호로 조회
-	public List<SalesTotalPrice> findSTPByOrderNum(Long orderNum);
+	public SalesTotalPrice findSTPByOrderNum(Long orderNum);
 
 
 	// 3. 총판매가격 내역 기록 삭제 - 환불 시 사용
