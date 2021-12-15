@@ -44,10 +44,10 @@ public class SalesTotalPriceDaoImpl implements SalesTotalPriceDao  {
 	
 	// 2-4 총판매가격 월별 조회
 	@Override
-	public List<SalesTotalPrice> findSalesTotalPriceByMonth(Date date) {
+	public List<SalesTotalPrice> findSalesTotalPriceByMonth(Date date1, Date date2) {
 		String sql = "SELECT stpId, orderNum, totalPrice, reducedPrice, orderDate"
-				+ " FROM SalesTotalPrice WHERE Date(orderDate) = ?";
-		return jdbcTemplate.query(sql, new SalesTotalPriceRowMapper(), date);
+				+ " FROM SalesTotalPrice WHERE Date(orderDate)>=? AND Date(orderDate)<?";
+		return jdbcTemplate.query(sql, new SalesTotalPriceRowMapper(), date1, date2);
 	};
 	
 	// 3. 총판매가격 내역 기록 삭제 - 환불 시 사용

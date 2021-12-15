@@ -21,7 +21,7 @@ public interface SalesTotalPriceService {
 	// 2-3  총판매가격 날짜별 조회
 	
 	// 2-4 총판매가격 월별 조회
-	public List<SalesTotalPrice> findSalesTotalPriceByMonth(Date date);
+	public List<SalesTotalPrice> findSalesTotalPriceByMonth(Date date1, Date date2);
 	
 	// 2-5 총판매가격 연간 조회
 	
