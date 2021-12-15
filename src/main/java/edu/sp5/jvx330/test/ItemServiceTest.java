@@ -37,8 +37,12 @@ public class ItemServiceTest {
 		// findItemIdByItemName();
 		// findItemIdByCategory();
 		// findItemByItemName();
+<<<<<<< HEAD
 		// findAllItems();
 		findItemByItemId();
+=======
+		 findAllItems();
+>>>>>>> branch 'master' of https://github.com/youngBlood-cafe-project/Cafe-Project.git
 
 		// 3. 주문 목록 추가/삭제
 		// addOrderList();

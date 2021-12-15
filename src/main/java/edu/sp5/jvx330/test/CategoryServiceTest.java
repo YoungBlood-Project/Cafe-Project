@@ -21,8 +21,12 @@ public class CategoryServiceTest {
 
 		//addCategoryByCategoryName();
 		//setCategoryName();
+<<<<<<< HEAD
 		//findAllCategorys();
 		findCategoryByCategoryId();
+=======
+		findAllCategorys();
+>>>>>>> branch 'master' of https://github.com/youngBlood-cafe-project/Cafe-Project.git
 		
 		context.close();
 	}
@@ -54,7 +58,7 @@ public class CategoryServiceTest {
 	}
 	
 	public static void findCategoryByCategoryName() {
-		categoryService.findCategoryByCategoryName("¶ó¶¼Dao");
+		categoryService.findCategoryByCategoryName("Coffee");
 	}
 	
 	public static void findCategoryByCategoryId() {

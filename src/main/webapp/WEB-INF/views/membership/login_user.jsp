@@ -22,20 +22,20 @@
       <table>
         <tr>
           <td><label for="name">이름</label></td>
-          <td><input type="text" name="name" maxlength="30"/></td>
+          <td><input type="text" name="customer.name" maxlength="30"/></td>
           <!-- <td><input type="text" name="name" maxlength="30" value="${customer.name}"/></td> -->
         </tr>
 
         <tr>
           <td><label for="phone">번호</label></td>
-          <td><input type="text" name="phone" maxlength="20"/></td>
+          <td><input type="text" name="customer.phone" maxlength="20"/></td>
           <!-- <td><input type="text" name="phone" maxlength="20" value="${customer.phone}"/></td> -->
         </tr>
       </table>
       <input type="submit" id="findButton" value="조회"/>
     </form>
     <a href="addCustomer" id="addMileageButton">회원가입</a>
-    <a href="pay_price">결제하기</a>
+    <a href="payPrice">결제하기</a>
   </main>
 
   <!-- <footer></footer> -->
