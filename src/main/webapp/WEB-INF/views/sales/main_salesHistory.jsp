@@ -67,7 +67,6 @@
 		</form>	
 		
 		<h3>총매출 확인</h3>
-<<<<<<< HEAD
 		<form action="/jvx330/sales/monthSalesTotalPrice" method="get">
 		월별 내역:
 			<select name="year">
@@ -94,16 +93,6 @@
 				<option value="12">12</option>
 			</select>
 			<input type="submit" value="확인">
-		</form>
-=======
-		<form:form action="/jvx330/sales/monthSalesTotalPrice" method="post" modelAttribute="month">
-			<form:select path="month">
-				<form:options items="${monthList}" itemLabel="month" itemValue="month"/>
-			</form:select>
-		
-		</form:form> 
->>>>>>> branch 'master' of https://github.com/youngBlood-cafe-project/Cafe-Project.git
-		
-	
+		</form>	
 </body>
 </html>
