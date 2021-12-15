@@ -1,4 +1,4 @@
-package edu.sp5.jvx330.cafe.web.controller;
+package edu.sp5.jvx330.cafe.menu.controller;
 
 import java.util.HashMap;
 import java.util.List;
