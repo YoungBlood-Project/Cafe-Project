@@ -4,14 +4,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.SessionAttribute;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.servlet.ModelAndView;
 
 import edu.sp5.jvx330.cafe.membership.business.impl.CustomerServiceImpl;
-import edu.sp5.jvx330.cafe.membership.command.CustomerCommand;
 import edu.sp5.jvx330.cafe.membership.domain.Customer;
 import edu.sp5.jvx330.cafe.web.container.OrderContainer;
 
@@ -45,6 +42,7 @@ public class LoginUserController {
 		try {
 			//고객 정보가 있을 경우
 			customer = customerService.findCustomerByUserInfo(name, phone);
+			System.out.println("mileageLogin : "+customer);
 			mav.setViewName("membership/search_mileage");
 		} catch(EmptyResultDataAccessException e) {
 			//고객정보가 없을 경우
