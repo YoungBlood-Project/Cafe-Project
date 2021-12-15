@@ -25,6 +25,7 @@ public class SearchItemsController {
 	
 	@GetMapping("/main/menu/searchItems")
 	public ModelAndView SearchItemsForm() {
+		
 		ModelAndView mav = new ModelAndView();
 	
 		Map<Category, List<Item>> categoryItemMap = new HashMap<Category, List<Item>>();
@@ -35,15 +36,19 @@ public class SearchItemsController {
 			categoryItemMap.put(category, itemServiceImpl.findItemsByCategory(category));
 		}
 		
+		mav.addObject("categoryItemMap", categoryItemMap);
 		
+		mav.addObject("searchItems_link", "searchItems");
+		mav.setViewName("main/menu/searchItems");
 		
+		System.out.println("GET");
 		return mav;
 	}
 	
 	@PostMapping("/main/menu/searchItems")
 	public String SearchItemsPost() {
 		
-		
+		System.out.println("POST");
 		return "/main/menu/search_items";
 	}
 }
