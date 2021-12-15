@@ -76,7 +76,7 @@ public class SalesHistorySerivceTest {
 				new SalesHistory(item, 2, item.getItemPrice()*2);
 		salesHistory.setOrderNum(202112140001l);
 				//new SalesHistory(menu, 1, menu.getMenuPrice()*1);
-		sh_service.addSalesHistory(item, salesHistory);
+		sh_service.addSalesHistory(item.getItemName(), salesHistory);
 		System.out.println("SalesHistorySerivceTest : 판매내역 저장 완료");
 	}
 	
