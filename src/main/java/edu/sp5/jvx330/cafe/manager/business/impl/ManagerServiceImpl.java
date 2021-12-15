@@ -12,9 +12,9 @@ public class ManagerServiceImpl implements ManagerService {
 	private ManagerDao managerDao;
 	
 	@Override
-	public Manager managerLogin(String managerName, String passwd) {
+	public Manager loginManager(String managerName, String passwd) {
 		Manager manager = new Manager(managerName, passwd);
-		manager = managerDao.managerLogin(manager);
+		manager = managerDao.loginManager(manager);
 		if ( manager != null) {
 			return manager;
 		}

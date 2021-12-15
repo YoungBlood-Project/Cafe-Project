@@ -1,5 +1,6 @@
 package edu.sp5.jvx330.cafe.sales.business.impl;
 
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,6 +35,12 @@ public class SalesTotalPriceServiceImpl implements SalesTotalPriceService {
 		return stpDao.findSTPByOrderNum(orderNum);
 
 	}
+	
+	// 2-4 총판매가격 월별 조회
+	@Override
+	public List<SalesTotalPrice> findSalesTotalPriceByMonth(Date date){
+		return stpDao.findSalesTotalPriceByMonth(date);
+	};
 
 	// 3. 총판매가격 내역 삭제 - 환불 시 사용
 	@Override
