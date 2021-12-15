@@ -8,6 +8,7 @@
 <title>당일 판매 내역</title>
 </head>
 <body>
+<section id="today_salesHistory">
 	<h2>당일 판매 내역</h2>
 	<h3>총 매출: _______원  총 수량 : _______개</h3>
 	<form>
@@ -33,6 +34,6 @@
 		
 		</table>
 	</form>
-	
+</section>
 </body>
 </html>

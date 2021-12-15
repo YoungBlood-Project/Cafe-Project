@@ -24,7 +24,11 @@ public class SearchItemsController {
 	private CategoryServiceImpl categoryServiceImpl;
 	
 	@GetMapping("/menu/searchItems")
-	public ModelAndView SearchItemsGet() {
+	public ModelAndView SearchItemsGet(HttpSession session) {
+		
+
+		mav.addObject("requestURL", session.setRequestURL());
+		
 		
 		ModelAndView mav = new ModelAndView();
 		Map<Category, List<Item>> categoryItemMap = new HashMap<Category, List<Item>>();
