@@ -27,14 +27,16 @@ public class LoginManagerController {
 		public ModelAndView loginManagerPost(@ModelAttribute Manager manager, HttpSession session) {
 			manager = managerService.managerLogin(manager.getManagerName(), manager.getPasswd());
 			ModelAndView mav = new ModelAndView();
+			
+			//관리자 정보 확인 후 틀리면 다시 로그인화면으로
 			if (manager == null) {
 				mav.addObject("loginErrorMsg", "확인 후 다시 입력해주세요");
 				mav.setViewName("manager/login_manager");  
 				return mav;
 			}
+			
 			session.setAttribute("manager", manager);
-			mav.addObject("requestURL", session.getRequestURL());
-			mav.setViewName("sales/today_salesHistory");  
+			mav.setViewName((String) session.getAttribute("requestPath"));  
 
 			return mav;
 		}

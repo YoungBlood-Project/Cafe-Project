@@ -19,7 +19,7 @@ import edu.sp5.jvx330.cafe.sales.domain.SalesHistory;
 import edu.sp5.jvx330.cafe.sales.domain.SalesTotalPrice;
 
 @Controller
-public class orderNumSalesHistoryController {
+public class OrderNumSalesHistoryController {
 
 	@Autowired
 	private SalesHistoryServiceImpl salesHistoryService;

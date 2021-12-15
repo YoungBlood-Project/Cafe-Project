@@ -14,7 +14,7 @@ import edu.sp5.jvx330.cafe.sales.business.impl.SalesHistoryServiceImpl;
 import edu.sp5.jvx330.cafe.sales.domain.SalesHistory;
 
 @Controller
-public class todaySalesHistoryController {
+public class TodaySalesHistoryController {
 
 	@Autowired
 	private SalesHistoryServiceImpl salesHistoryService;
