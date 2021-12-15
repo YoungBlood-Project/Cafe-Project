@@ -23,32 +23,19 @@ public class SearchItemsController {
 	@Autowired
 	private CategoryServiceImpl categoryServiceImpl;
 	
-	@GetMapping("/main/menu/searchItems")
-	public ModelAndView SearchItemsForm() {
+	@GetMapping("/menu/searchItems")
+	public ModelAndView SearchItemsGet() {
 		
 		ModelAndView mav = new ModelAndView();
-	
 		Map<Category, List<Item>> categoryItemMap = new HashMap<Category, List<Item>>();
-		
 		List<Category> category_list = categoryServiceImpl.findAllCategorys();
-		
 		for (Category category : category_list) {
 			categoryItemMap.put(category, itemServiceImpl.findItemsByCategory(category));
 		}
 		
 		mav.addObject("categoryItemMap", categoryItemMap);
+		mav.setViewName("/menu/search_items");
 		
-		mav.addObject("searchItems_link", "searchItems");
-		mav.setViewName("main/menu/searchItems");
-		
-		System.out.println("GET");
 		return mav;
-	}
-	
-	@PostMapping("/main/menu/searchItems")
-	public String SearchItemsPost() {
-		
-		System.out.println("POST");
-		return "/main/menu/search_items";
 	}
 }
