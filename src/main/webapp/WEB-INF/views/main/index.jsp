@@ -32,11 +32,24 @@
                 	</tr>
                 	<c:forEach var="orderItems" items="${orderContainer.orderItemsList}" varStatus="status">
                 		<tr>
+                			<td class='orderItemsNum'>${status.count}</td>
+                			<td>
+                				<input type='text' name='orderItemsList[${status.count-1}].menuName' 
+                					value='${orderItems.menuName}' readonly='readonly' class='menuName${status.count}'/></td>
+                			<td>
+                				<input type='text' name='orderItemsList[${status.count-1}].numOfNum' 
+                					value='${orderItems.numOfNum}' readonly='readonly' class='numOfNum${status.count}'></td>
+                			<td class='orderList_right'>
+                				<input type='text' name='orderItemsList[${status.count-1}].menuPrice' value='${orderItems.menuPrice}' readonly='readonly' class='menu_price' ></td>
+                			<td class='orderList_right'>
+                				<input type='text' name='orderItemsList[${status.count-1}].paidPrice' value='${orderItems.paidPrice}' readonly='readonly' class='paidPrice" + i + "'></td>
+                		<!-- 
 							<td>${status.count}</td>
 							<td>${orderItems.menuName}</td>
 							<td>${orderItems.numOfNum}</td>
+							<td>${orderItems.menuPrice}</td>
 							<td>${orderItems.paidPrice}</td>
-							<td>${orderItems.paidPrice}</td>
+						-->
                 		</tr>
                 	</c:forEach>
             	</table>
@@ -56,14 +69,13 @@
                     	<td id="mileage">
                     		<c:choose>
                     			<c:when test="${not empty use_amount}">
-                    				${use_amount}
+                    				<input type="text" name="mileageHistory.mBalance" value="${-use_amount}" readonly="readonly"/>
                     			</c:when>
                     			<c:otherwise>
+	                    			<input type="hidden" name="mileageHistory.mBalance" value="${orderContainer.mileageHistory.getMBalance()}" readonly="readonly"/>
                     				0
                     			</c:otherwise>
-                    		</c:choose>
-                    		
-                    	
+                    		</c:choose>                    		
                     	</td><!-- el태그로 마일리지 넣기 -->
                 	</tr>
                 	<tr>
