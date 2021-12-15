@@ -35,7 +35,9 @@
       <input type="submit" id="findButton" value="조회"/>
     </form>
     <a href="addCustomer" id="addMileageButton">회원가입</a>
-    <a href="/jvx330/main/payPrice">결제하기</a>
+    <form action="/jvx330/main/payPrice" method="post">
+    	<input type="submit" value="결제하기"/>
+    </form>
   </main>
 
   <!-- <footer></footer> -->
