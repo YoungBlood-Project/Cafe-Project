@@ -38,8 +38,8 @@ public class SalesTotalPriceServiceImpl implements SalesTotalPriceService {
 	
 	// 2-4 총판매가격 월별 조회
 	@Override
-	public List<SalesTotalPrice> findSalesTotalPriceByMonth(Date date){
-		return stpDao.findSalesTotalPriceByMonth(date);
+	public List<SalesTotalPrice> findSalesTotalPriceByMonth(Date date1, Date date2){
+		return stpDao.findSalesTotalPriceByMonth(date1, date2);
 	};
 
 	// 3. 총판매가격 내역 삭제 - 환불 시 사용
