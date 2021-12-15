@@ -36,7 +36,7 @@ public class CustomerServiceImpl implements CustomerService {
 	 */
 	// 2-1. 입력받은 정보로 고객 조회
 	@Override
-	public Customer findCustomerByUserInfo(String name, String phone) {
+	public Customer findCustomerByUserInfo(String name, String phone)  {
 		return customerDao.findCustomerByUserInfo(name, phone);
 	}
 

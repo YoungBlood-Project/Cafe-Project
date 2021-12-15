@@ -63,7 +63,7 @@ public class IndexController {
 		orderContainer.setMileageHistory(mileageHistory);
 		System.out.println("index(post) 판매내역 : "+orderContainer);
 		
-		return "membership/login_user";
+		return "redirect:/membership/loginUser";
 	}
 	/*public String index(@ModelAttribute OrderItemsCommand orderItemsCommand, 
 			@ModelAttribute SalesTotalPrice salesTotalPrice) {
