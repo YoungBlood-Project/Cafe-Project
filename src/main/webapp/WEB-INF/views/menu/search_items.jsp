@@ -9,10 +9,9 @@
 <title>메뉴 조회</title>
 </head>
 <body>
+<section id="search_items">
 
-	<header>
-		<h2 class="hidden">메뉴 조회 및 메뉴 조회, 수정</h2>	
-	</header>
+	<h2 class="hidden">메뉴 조회 및 메뉴 조회, 수정</h2>	
 	
 	<section id="searchItemsContent">
 		<h3>메뉴 조회</h3>
@@ -32,17 +31,18 @@
 			
 			<c:if test="${not empty categoryItemMap}">
 				<c:forEach var="categoryItemMap" items="${categoryItemMap}" varStatus="status">
+					<c:forEach var="categoryItemValue" items="${categoryItemMap.value}" >
 					<tr>
-						<td>${categoryItemMap.value.itemId}</td>
+						<td>${categoryItemValue.itemId}</td>
 						<td>${categoryItemMap.key.categoryName}</td>
-						<td>${categoryItemMap.value.itemName}</td>
-						<td>${categoryItemMap.value.itemPrice}</td>
+						<td>${categoryItemValue.itemName}</td>
+						<td>${categoryItemValue.itemPrice}</td>
 					</tr>	
+					</c:forEach>
 				</c:forEach>
 			</c:if>
-		</table>
-		
-		
+		</table>	
 	</section>
+</section>	
 </body>
 </html>
