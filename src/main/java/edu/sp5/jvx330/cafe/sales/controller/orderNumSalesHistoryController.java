@@ -1,5 +1,6 @@
 package edu.sp5.jvx330.cafe.sales.controller;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -40,24 +41,27 @@ public class orderNumSalesHistoryController {
 		Long orderNumber = Long.parseLong(orderNum);
 		ModelAndView mav = new ModelAndView();
 		Integer totalNumOfPrice = 0;
+		List<String> categoryName_list = new ArrayList<>();
+		List<String> itemName_list = new ArrayList<>();
+
 		
 		List<SalesHistory> salesHistory_list = salesHistoryService.findSalesHistoryByOrderNum(orderNumber);
 		if(salesHistory_list != null) {
 			for(SalesHistory salesHistory : salesHistory_list) {
 				Long itemId = salesHistory.getItem().getItemId();
 				Item item = itemService.findItemByItemId(itemId);
-				String itemName = item.getItemName();	
+				String itemName = item.getItemName();
+				itemName_list.add(itemName);
 				String categoryName = categoryService.findCategoryByCategoryId(item.getCategory().getCategoryId());
-					
-				System.out.println(itemId+itemName+categoryName);
-
+				categoryName_list.add(categoryName);	
+		
 				totalNumOfPrice += salesHistory.getNumOfSales();
-				mav.addObject(itemName);
-				mav.addObject(categoryName);
-				mav.addObject(totalNumOfPrice);
+				mav.addObject("itemName_list", itemName_list);
+				mav.addObject("categoryName_list", categoryName_list);
 			}		
+			mav.addObject("totalNumOfPrice",totalNumOfPrice);
+			mav.addObject("salesHistory_list", salesHistory_list); 
 		}
-		mav.addObject("salesHistory_list", salesHistory_list); 
 		
 		SalesTotalPrice salesTotalPrice = salesTotalPriceService.findSTPByOrderNum(orderNumber);
 		mav.addObject("salesTotalPrice", salesTotalPrice); 
