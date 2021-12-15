@@ -54,5 +54,14 @@ public class CategoryDaoImpl implements CategoryDao {
 		
 		return jdbcTemplate.queryForObject(sql, new CategoryRowMapper(), categoryName);
 	}
+	
+	
+	//5. 카테고리 id로 카테고리 이름 조회
+	@Override
+	public String findCategoryByCategoryId(Long categoryId) {
+		String sql = "SELECT categoryId, categoryName FROM Category WHERE categoryId = ?";
+		
+		return jdbcTemplate.queryForObject(sql, new CategoryRowMapper(), categoryId).getCategoryName();
+	};
 
 }

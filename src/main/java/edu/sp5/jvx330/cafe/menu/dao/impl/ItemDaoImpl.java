@@ -112,5 +112,15 @@ public class ItemDaoImpl implements ItemDao {
 	
 		return jdbcTemplate.query(sql, new ItemRowMapper());
 	}
+	
+	//2-5. 메뉴아이템id로 메뉴아이템 조회
+	@Override
+	public Item findItemByItemId(Long itemId) {
+		String sql ="SELECT itemId, categoryId, itemName, itemPrice, itemUrl, regDate" 
+				+ " FROM Item WHERE itemId = ?";
+
+		return jdbcTemplate.queryForObject(sql, new ItemRowMapper(), itemId);
+	}
+		
 
 }

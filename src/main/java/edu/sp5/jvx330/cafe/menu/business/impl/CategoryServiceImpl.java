@@ -37,4 +37,9 @@ public class CategoryServiceImpl implements CategoryService {
 		return cDao.findCategoryByCategoryName(categoryName);
 	}
 	
+	@Override
+	public String findCategoryByCategoryId(Long categoryId) {
+		return cDao.findCategoryByCategoryId(categoryId);
+	};
+	
 }

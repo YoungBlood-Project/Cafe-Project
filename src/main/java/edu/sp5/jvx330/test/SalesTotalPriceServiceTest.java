@@ -22,11 +22,11 @@ public class SalesTotalPriceServiceTest {
 		 * 테스트 - 김채현
 		 */
 		// 1. 총판매가격 저장
-		saveSalesTotalPrice();
+		//saveSalesTotalPrice();
 		
 		// 2. 총판매가격 내역 조회
 		//findAllSalesTotalPrice();
-		//findSTPByOrderNum() ;
+		findSTPByOrderNum() ;
 		
 		// 3. 총판매가격 내역 삭제
 		//deleteSalesTotalPrice();		
@@ -55,7 +55,7 @@ public class SalesTotalPriceServiceTest {
 		
 	// 2-2. 총판매가격 내역 주문번호로 조회
 	public static void findSTPByOrderNum() {
-		SalesTotalPrice stp = stp_service.findSTPByOrderNum(202112110001l);
+		SalesTotalPrice stp = stp_service.findSTPByOrderNum(202112140001l);
 		System.out.println(stp);		
 	};
 

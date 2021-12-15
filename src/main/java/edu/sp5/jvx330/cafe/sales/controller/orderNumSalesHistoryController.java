@@ -9,6 +9,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import edu.sp5.jvx330.cafe.menu.business.impl.CategoryServiceImpl;
+import edu.sp5.jvx330.cafe.menu.business.impl.ItemSerivceImpl;
+import edu.sp5.jvx330.cafe.menu.domain.Item;
 import edu.sp5.jvx330.cafe.sales.business.impl.SalesHistoryServiceImpl;
 import edu.sp5.jvx330.cafe.sales.business.impl.SalesTotalPriceServiceImpl;
 import edu.sp5.jvx330.cafe.sales.domain.SalesHistory;
@@ -21,13 +24,15 @@ public class orderNumSalesHistoryController {
 	private SalesHistoryServiceImpl salesHistoryService;
 	@Autowired
 	private SalesTotalPriceServiceImpl salesTotalPriceService;
-	
+	@Autowired
+	private CategoryServiceImpl categoryService;
+	@Autowired
+	private ItemSerivceImpl itemService;
 	
 	@GetMapping("/sales/orderNumSalesHistory")
 	public String orderNumSalesHistoryGet() {
 		return "sales/orderNum_salesHistory";
 	}
-	
 	
 	
 	@PostMapping("/sales/orderNumSalesHistory")
@@ -39,11 +44,16 @@ public class orderNumSalesHistoryController {
 		List<SalesHistory> salesHistory_list = salesHistoryService.findSalesHistoryByOrderNum(orderNumber);
 		if(salesHistory_list != null) {
 			for(SalesHistory salesHistory : salesHistory_list) {
-				String itemName = salesHistory.getItem().getItemName();
-				String category = salesHistory.getItem().getCategory().getCategoryName();
+				Long itemId = salesHistory.getItem().getItemId();
+				Item item = itemService.findItemByItemId(itemId);
+				String itemName = item.getItemName();	
+				String categoryName = categoryService.findCategoryByCategoryId(item.getCategory().getCategoryId());
+					
+				System.out.println(itemId+itemName+categoryName);
+
 				totalNumOfPrice += salesHistory.getNumOfSales();
 				mav.addObject(itemName);
-				mav.addObject(category);
+				mav.addObject(categoryName);
 				mav.addObject(totalNumOfPrice);
 			}		
 		}
@@ -52,7 +62,7 @@ public class orderNumSalesHistoryController {
 		SalesTotalPrice salesTotalPrice = salesTotalPriceService.findSTPByOrderNum(orderNumber);
 		mav.addObject("salesTotalPrice", salesTotalPrice); 
 		
-		mav.setViewName("sales/today_salesHistory");  
+		mav.setViewName("sales/orderNum_salesHistory");  
 		return mav; 	
 		
 	}

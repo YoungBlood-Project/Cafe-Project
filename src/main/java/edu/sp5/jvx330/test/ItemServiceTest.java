@@ -10,6 +10,7 @@ import edu.sp5.jvx330.cafe.menu.business.CategoryService;
 import edu.sp5.jvx330.cafe.menu.business.ItemService;
 import edu.sp5.jvx330.cafe.menu.business.impl.CategoryServiceImpl;
 import edu.sp5.jvx330.cafe.menu.business.impl.ItemSerivceImpl;
+import edu.sp5.jvx330.cafe.menu.dao.ItemRowMapper;
 import edu.sp5.jvx330.cafe.menu.domain.Category;
 import edu.sp5.jvx330.cafe.menu.domain.Item;
 
@@ -27,7 +28,7 @@ public class ItemServiceTest {
 		 * 테스트 - 이초원.
 		 */
 		// 1. 메뉴 추가/수정/삭제
-		addItem();
+		//addItem();
 		// setItemName();
 		// setItemPrice();
 		// deleteItem();
@@ -37,6 +38,7 @@ public class ItemServiceTest {
 		// findItemIdByCategory();
 		// findItemByItemName();
 		// findAllItems();
+		findItemByItemId();
 
 		// 3. 주문 목록 추가/삭제
 		// addOrderList();
@@ -583,7 +585,13 @@ public class ItemServiceTest {
 			System.out.println(item);
 		}
 	}
-
+	
+	//2-5. 메뉴아이템id로 메뉴아이템 조회
+	public static void findItemByItemId() {
+		Item item = service.findItemByItemId(1l);
+		System.out.println(item.getItemName());
+	}
+	
 	/**
 	 * 3. 주문 목록 - 정혜윤
 	 */

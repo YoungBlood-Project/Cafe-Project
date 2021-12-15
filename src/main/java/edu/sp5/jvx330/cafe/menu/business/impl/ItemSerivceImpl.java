@@ -88,6 +88,13 @@ public class ItemSerivceImpl implements ItemService {
 		return iDao.findAllItems();
 	}
 	
+	//2-5. 메뉴아이템id로 메뉴아이템 조회
+	@Override
+	public Item findItemByItemId(Long itemId) {
+		return iDao.findItemByItemId(itemId);
+	};
+	
+	
 	/**
 	  * 3. 주문 목록 - 정혜윤 추가
 	  */

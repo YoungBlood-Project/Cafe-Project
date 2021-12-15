@@ -28,14 +28,16 @@
 		<c:if test="${not empty salesHistory_list}">
 			<c:forEach var="salesHistory_list" items="${salesHistory_list}" varStatus="status">
 				<c:forEach var="itemName" items="${itemName}">
+				<c:forEach var="categoryName" items="${categoryName}">
 				<tr>
 					<td>${salesHistory_list.orderNum}</td>
-					<td>${category}</td>
+					<td>${categoryName}</td>
 					<td>${itemName}</td>
 					<td>${salesHistory_list.numOfSales}</td>
 					<td>${salesHistory_list.paidPrice}</td>
 					<td>${salesHistory_list.orderDate}</td>
 				</tr>
+				</c:forEach>
 				</c:forEach>	
 			</c:forEach>
 		</c:if>

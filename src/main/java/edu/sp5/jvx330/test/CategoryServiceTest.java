@@ -19,9 +19,10 @@ public class CategoryServiceTest {
 		
 		categoryService = context.getBean("categoryServiceImpl", CategoryServiceImpl.class);
 
-		addCategoryByCategoryName();
+		//addCategoryByCategoryName();
 		//setCategoryName();
 		//findAllCategorys();
+		findCategoryByCategoryId();
 		
 		context.close();
 	}
@@ -54,5 +55,9 @@ public class CategoryServiceTest {
 	
 	public static void findCategoryByCategoryName() {
 		categoryService.findCategoryByCategoryName("¶ó¶¼Dao");
+	}
+	
+	public static void findCategoryByCategoryId() {
+		System.out.println(categoryService.findCategoryByCategoryId(2l));
 	}
 }

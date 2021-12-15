@@ -34,4 +34,7 @@ public interface ItemDao {
 	public Item findItemByItemName(String itemName);
 	//2-4. 전체 메뉴 조회
 	public List<Item> findAllItems();
+	//2-5. 메뉴아이템id로 메뉴아이템 조회
+	public Item findItemByItemId(Long itemId);
+	
 }
