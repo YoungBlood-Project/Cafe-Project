@@ -37,7 +37,7 @@ public class TodaySalesHistoryController {
 		List<String> itemName_list = new ArrayList<>();
 		
 		List<SalesHistory> salesHistory_list = salesHistoryService.findSalesHistoryByOrderDate(new Date());
-		List<SalesTotalPrice> salesTotalPrice = salesTotalPriceService.findSTPByOrderDate(new Date());
+		List<SalesTotalPrice> salesTotalPrice_list = salesTotalPriceService.findSTPByOrderDate(new Date());
 		
 		//해당 날짜의 당일 판매내역이 존재하지 않는 경우
 		if(salesHistory_list == null) {
@@ -65,11 +65,17 @@ public class TodaySalesHistoryController {
 			mav.addObject("sumNumOfsales", sumNumOfsales);
 			
 		}
-		for(SalesTotalPrice stp : )
 		
-		
-		mav.addObject("salesHistory_list", salesHistory_list); 
-		mav.addObject("salesHistory_list", salesHistory_list); 
+		Integer sumTotalPrice = 0;
+		Integer sumReducedPrice = 0;
+		for(SalesTotalPrice stp : salesTotalPrice_list) {
+			sumTotalPrice += stp.getTotalPrice();
+			sumReducedPrice += stp.getReducedPrice();
+		}
+	
+		mav.addObject("salesHistory_list", salesHistory_list);
+		mav.addObject("sumTotalPrice", sumTotalPrice);
+		mav.addObject("sumReducedPrice", sumReducedPrice);
 			
 		mav.setViewName("sales/today_salesHistory");  
 		return mav; 	

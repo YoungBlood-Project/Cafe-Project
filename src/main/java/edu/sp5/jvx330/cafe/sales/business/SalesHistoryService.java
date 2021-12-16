@@ -5,6 +5,7 @@ import java.util.List;
 
 import edu.sp5.jvx330.cafe.menu.domain.Item;
 import edu.sp5.jvx330.cafe.sales.domain.SalesHistory;
+import edu.sp5.jvx330.cafe.sales.domain.SalesTotalPrice;
 
 public interface SalesHistoryService {
 	/**
@@ -35,6 +36,10 @@ public interface SalesHistoryService {
 	public List<SalesHistory> findSalesHistoryByOrderNum(Long orderNum);
 	// 2-5. 해당 아이템 아이디와 날짜로 판매내역 조회
 	// public List<SalesHistory> findSHByItemIdAndOrderDate(Long itemId, Date orderDate);
+	
+	// 2-6 판매내역 월별 조회
+	public List<SalesHistory> findSalesHistoryByMonth(Date date1, Date date2);
+	
 	/**
 	 * 3. 판매내역 삭제
 	 */

@@ -4,6 +4,7 @@ import java.util.Date;
 import java.util.List;
 
 import edu.sp5.jvx330.cafe.sales.domain.SalesHistory;
+import edu.sp5.jvx330.cafe.sales.domain.SalesTotalPrice;
 
 public interface SalesHistoryDao {
 	/**
@@ -25,6 +26,8 @@ public interface SalesHistoryDao {
 	public List<SalesHistory> findSalesHistoryByItem(Long itemId);
 	//2-4. 주문번호로 판매내역 조회 (Integer orderNum -> Long orderNum)
 	public List<SalesHistory> findSalesHistoryByOrderNum(Long orderNum);
+	//2-5 월별 판매내역 조회
+	public List<SalesHistory> findSalesHistoryByMonth(Date date1, Date date2);
 	
 	/**
 	 * 3. 판매내역 삭제
