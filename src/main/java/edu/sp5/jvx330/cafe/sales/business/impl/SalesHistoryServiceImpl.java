@@ -4,8 +4,8 @@ import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.EmptyResultDataAccessException;
 
-import edu.sp5.jvx330.cafe.membership.business.impl.MileageServiceImpl;
 import edu.sp5.jvx330.cafe.menu.dao.impl.ItemDaoImpl;
 import edu.sp5.jvx330.cafe.menu.domain.Item;
 import edu.sp5.jvx330.cafe.sales.business.SalesHistoryService;
@@ -59,7 +59,14 @@ public class SalesHistoryServiceImpl implements SalesHistoryService {
 	 */
 	// 2-4. 해당 주문 번호로 판매내역 조회
 	public List<SalesHistory> findSalesHistoryByOrderNum(Long orderNum) {
-		return shDao.findSalesHistoryByOrderNum(orderNum);
+		try {
+		List<SalesHistory> sh_list = shDao.findSalesHistoryByOrderNum(orderNum);
+		return sh_list;
+		} catch(NumberFormatException e) {
+			return null;
+		} catch(EmptyResultDataAccessException e) {
+			return null;
+		} 
 	}
 	
 	/**

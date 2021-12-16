@@ -4,6 +4,7 @@ import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.EmptyResultDataAccessException;
 
 import edu.sp5.jvx330.cafe.sales.business.SalesTotalPriceService;
 import edu.sp5.jvx330.cafe.sales.dao.impl.SalesTotalPriceDaoImpl;
@@ -32,8 +33,14 @@ public class SalesTotalPriceServiceImpl implements SalesTotalPriceService {
 	// 2-2. 총판매가격 내역 주문번호로 조회
 	@Override
 	public SalesTotalPrice findSTPByOrderNum(Long orderNum) {
-		return stpDao.findSTPByOrderNum(orderNum);
-
+		try {
+			SalesTotalPrice stp = stpDao.findSTPByOrderNum(orderNum);
+			return stp;
+			} catch(NumberFormatException e) {
+				return null;
+			} catch(EmptyResultDataAccessException e) {
+				return null;
+			} 
 	}
 	
 	// 2-4 총판매가격 월별 조회
