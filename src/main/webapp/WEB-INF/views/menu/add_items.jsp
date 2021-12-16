@@ -8,8 +8,9 @@
 <title>메뉴 추가</title>
 </head>
 <body>
-
-	<form action="/menu/addItems" method="post">
+	<section id="addItemsContent">
+	<h2>메뉴 추가</h2>
+	<form action="/menu/add_items" method="post">
 		<table>
 			<tr>
 				<th>카테고리</th>
@@ -23,17 +24,22 @@
 						<c:if test="${not empty category_list}">
 							<c:forEach var="category_list" items="${category_list}"
 								varStatus="status">
-								<option>${category_list}</option>
+								<option>${category_list.categoryName}</option>
 							</c:forEach>
 						</c:if>
 					</select>
 				</td>
-				<td><input type="text" value="itemName"/></td>
-				<td><input type="text" value="itemPrice"/></td>
+		
+				<td><input type="text" name="itemName"/></td>
+				<td><input type="text" name="itemPrice"/></td>
+			</tr>
+			
+			<tr>
+				<td><input type="submit" value="추가 확인"/></td>
 			</tr>
 		</table>
 	</form>
-
+</section>
 
 </body>
 </html>

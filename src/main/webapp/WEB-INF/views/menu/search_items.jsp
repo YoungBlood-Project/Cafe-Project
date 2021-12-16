@@ -10,11 +10,9 @@
 </head>
 <body>
 <section id="search_items">
-
-	<h2 class="hidden">메뉴 조회 및 메뉴 조회, 수정</h2>	
 	
 	<section id="searchItemsContent">
-		<h3>메뉴 조회</h3>
+		<h2>메뉴 조회</h2>
 		<form action="/jvx330/manager/logoutManager" method="get">
 			<input type="submit" value="메인화면으로 돌아가기">
 		</form>
