@@ -18,8 +18,8 @@
 		</form>
 
 		<section id="itemsSettingContent">
-			<a href="add_items" id="addItems">메뉴 추가</a>
-			<a href="set_items" id="setItems">메뉴 수정</a>
+			<a href="addItems" id="addItems">메뉴 추가</a>
+			<a href="setItems" id="setItems">메뉴 수정</a>
 		</section>		
 		
 		<table id="itemsTable">

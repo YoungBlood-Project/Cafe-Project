@@ -1,30 +1,30 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-	pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="EUC-KR">
-<title>¸Þ´º Ãß°¡</title>
+<meta charset="UTF-8">
+<title>ë©”ë‰´ ì¶”ê°€</title>
 </head>
 <body>
 	<section id="addItemsContent">
-	<h2>¸Þ´º Ãß°¡</h2>
-	<form action="/menu/add_items" method="post">
+	<h2>ë©”ë‰´ ì¶”ê°€</h2>
+	<form action="addItems" method="post">
 		<table>
 			<tr>
-				<th>Ä«Å×°í¸®</th>
-				<th>¸Þ´º¸í</th>
-				<th>°¡°Ý</th>
+				<th>ì¹´í…Œê³ ë¦¬</th>
+				<th>ë©”ë‰´ëª…</th>
+				<th>ê°€ê²©</th>
 			</tr>
 
 			<tr>
 				<td>
-					<select>
+					<select name="categoryName">
 						<c:if test="${not empty category_list}">
 							<c:forEach var="category_list" items="${category_list}"
 								varStatus="status">
-								<option>${category_list.categoryName}</option>
+								<option value="${category_list.categoryName}">${category_list.categoryName}</option>
 							</c:forEach>
 						</c:if>
 					</select>
@@ -35,7 +35,7 @@
 			</tr>
 			
 			<tr>
-				<td><input type="submit" value="Ãß°¡ È®ÀÎ"/></td>
+				<td><input type="submit" value="ì¶”ê°€ í™•ì¸"/></td>
 			</tr>
 		</table>
 	</form>
