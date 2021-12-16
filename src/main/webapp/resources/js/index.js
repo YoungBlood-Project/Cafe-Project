@@ -1,3 +1,7 @@
+$(window).ready(function(){
+	$(".sub:eq(0)").removeClass('hidden')
+})
+
 // 메뉴 클릭 시 메뉴 항목 전환
 // 클릭한 메뉴의 테이블만 보이기
 $("#menu li.title:eq(0)").on('click', function() {

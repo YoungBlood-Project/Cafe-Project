@@ -33,11 +33,16 @@ public class IndexController {
 		ModelAndView mav = new ModelAndView();
 		//카테고리, 아이템 리스트 맵 사용
 		Map<Category, List<Item>> ciMap = new HashMap<Category, List<Item>>();
+		
 		//카테고리 전체 조회
 		List<Category> category_list = categoryServiceImpl.findAllCategorys();
+
 		for(Category category : category_list) {
+			if(!category.getCategoryName().equals("deletedMenu")) {
+				ciMap.put(category, itemSerivceImpl.findItemsByCategory(category));
+			}
 			//카테고리 마다의 아이템 리스트 ciMap에 추가
-			ciMap.put(category, itemSerivceImpl.findItemsByCategory(category));
+			
 		}
 		
 		//System.out.println("<key 출력>(index) : "+ciMap.keySet());
