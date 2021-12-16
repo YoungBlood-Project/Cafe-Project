@@ -21,6 +21,6 @@ public interface CategoryService {
 	public Category findCategoryByCategoryName(String categoryName);
 	
 	//5.(주문번호로 판매내역을 위한 추가) 카테고리 id로 카테고리 이름 조회
-	public String findCategoryByCategoryId(Long categoryId);
+	public Category findCategoryByCategoryId(Long categoryId);
 	
 }

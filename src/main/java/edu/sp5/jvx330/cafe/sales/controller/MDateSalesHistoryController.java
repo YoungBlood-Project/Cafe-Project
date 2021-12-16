@@ -2,6 +2,7 @@ package edu.sp5.jvx330.cafe.sales.controller;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
@@ -44,17 +45,26 @@ public class MDateSalesHistoryController {
 		SimpleDateFormat sf = new SimpleDateFormat("yyyy년 MM월 dd일");
 		Date dateSales = sf.parse(dayString);
 	
-		List<SalesHistory> salesHistory_list = salesHistoryServiceImpl.findSalesHistoryByOrderDate(dateSales);
+		//List<MenuSalesHistoryCommand> msh_command_list = new ArrayList<MenuSalesHistoryCommand>();
+		//List<SalesHistory> salesHistory_list = salesHistoryServiceImpl.findSalesHistoryByOrderDate(dateSales);
+	
+		//for (SalesHistory salesHistory : salesHistory_list) {
+		//	Item item = itemServiceImpl.findItemByItemId(salesHistory.getItem().getItemId());
+		//	Category category = categoryServiceImpl.findCategoryByCategoryId(item.getCategory().getCategoryId());
+		//	msh_command_list.add(new MenuSalesHistoryCommand(category.getCategoryName(), item.getItemName(), ));	
+		//}
 		
-		MenuSalesHistoryCommand salesHistoryCommand = new MenuSalesHistoryCommand();
+		// 모든 카테고리 불러오기
+		Map<Category, List<Item>> ciMap = new HashMap<Category, List<Item>>();
+		List<Category> category_list = categoryServiceImpl.findAllCategorys();
+		for(Category category : category_list) {
+			ciMap.put(category, itemServiceImpl.findItemsByCategory(category));
+		}
 		
-		
-		// command.setCategoryName();
-		// command.setMenuName();
-		// command.setOrderNum();
-		// command.setPaidPrice();
-		
-		mav.addObject("salesHistory_list", salesHistory_list);
+		// 아이템 아이디와 날짜로 saleshistory를 검색하는 메소드
+		// List<salesHistory> salesHistory_list = findSHByItemIdAndOrderDate(Item id, dateSales);
+		// Item id에는 map의 밸류값
+	
 		mav.setViewName("sales/day_salesTotalPrice");
 		return mav;
 	}

@@ -100,7 +100,7 @@ public class SalesHistorySerivceTest {
 	//2-3. 해당 메뉴로 판매내역 조회(menuId 사용)
 	public static void findSalesHistoryByMenu() {
 		Item item = item_service.findItemByItemName("딸기Dao");
-		List<SalesHistory> sh_list = sh_service.findSalesHistoryByMenu(item);
+		List<SalesHistory> sh_list = sh_service.findSalesHistoryByItem(item);
 		for(SalesHistory sh : sh_list) {
 			System.out.println(sh);
 		}
@@ -125,7 +125,7 @@ public class SalesHistorySerivceTest {
 	//3-1. 환불
 	public static void deleteSalesHistoryBySHid() {
 		Item item = item_service.findItemByItemName("딸기Dao");
-		List<SalesHistory> sh_list = sh_service.findSalesHistoryByMenu(item);
+		List<SalesHistory> sh_list = sh_service.findSalesHistoryByItem(item);
 		System.out.println("판매 내역 삭제 완료: " + item.getItemName() + "의 첫번째 판매내역");
 		sh_service.deleteSalesHistoryBySHid(sh_list.get(0));
 	}

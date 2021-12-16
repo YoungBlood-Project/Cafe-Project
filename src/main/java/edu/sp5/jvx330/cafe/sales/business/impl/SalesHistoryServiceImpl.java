@@ -43,9 +43,9 @@ public class SalesHistoryServiceImpl implements SalesHistoryService {
 		return shDao.findSalesHistoryByOrderDate(orderDate);
 	}
 	
-	//2-3. 해당 메뉴로 판매내역 조회(menuId 사용할 것)
+	//2-3. 해당 메뉴로 판매내역 조회(ItemId 사용할 것)
 	@Override
-	public List<SalesHistory> findSalesHistoryByMenu(Item item) {
+	public List<SalesHistory> findSalesHistoryByItem(Item item) {
 		//메뉴 이름 받아서 id 조회
 		Long itemId = iDao.findItemIdByItemName(item.getItemName());
 		return shDao.findSalesHistoryByItem(itemId);

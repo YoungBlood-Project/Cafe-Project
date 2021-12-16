@@ -48,11 +48,15 @@ public class OrderNumSalesHistoryController {
 		List<SalesHistory> salesHistory_list = salesHistoryService.findSalesHistoryByOrderNum(orderNumber);
 		if(salesHistory_list != null) {
 			for(SalesHistory salesHistory : salesHistory_list) {
+				
+				//itemId로 item 생성 후 item 이름 찾기
 				Long itemId = salesHistory.getItem().getItemId();
 				Item item = itemService.findItemByItemId(itemId);
 				String itemName = item.getItemName();
 				itemName_list.add(itemName);
-				String categoryName = categoryService.findCategoryByCategoryId(item.getCategory().getCategoryId());
+				
+				//item으로 categoryId 찾은 후 category 이름 찾기
+				String categoryName = categoryService.findCategoryByCategoryId(item.getCategory().getCategoryId()).getCategoryName();
 				categoryName_list.add(categoryName);	
 		
 				totalNumOfPrice += salesHistory.getNumOfSales();
@@ -61,14 +65,17 @@ public class OrderNumSalesHistoryController {
 			}		
 			mav.addObject("totalNumOfPrice",totalNumOfPrice);
 			mav.addObject("salesHistory_list", salesHistory_list); 
+			
+			SalesTotalPrice salesTotalPrice = salesTotalPriceService.findSTPByOrderNum(orderNumber);
+			mav.addObject("salesTotalPrice", salesTotalPrice); 
+			
+			mav.setViewName("sales/orderNum_salesHistory");  
+			return mav; 	
 		}
-		
-		SalesTotalPrice salesTotalPrice = salesTotalPriceService.findSTPByOrderNum(orderNumber);
-		mav.addObject("salesTotalPrice", salesTotalPrice); 
-		
-		mav.setViewName("sales/orderNum_salesHistory");  
-		return mav; 	
-		
+		//해당되는 주문번호의 판매내역이 없을 경우
+		mav.addObject("errorMsg", "해당되는 주문번호 판매내역이 존재하지 않습니다");
+		mav.setViewName("sales/orderNumSalesHistory");
+		return mav;
 	}
 	
 	
