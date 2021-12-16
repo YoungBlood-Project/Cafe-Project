@@ -23,15 +23,18 @@
             <form action="${index_link}" method="post">
             	<table id="orderList">
             	<!-- 안에 내용 넣는 자바 스크립트 사용할 것 -->
-                	<tr class="gradient">
-                    	<th>순번</th>
-                    	<th>제품명</th>
-                    	<th>수량</th>
-                    	<th>단가</th>
-                    	<th>금액</th>
-                	</tr>
-                	<c:forEach var="orderItems" items="${orderContainer.orderItemsList}" varStatus="status">
-                		<tr>
+					<thead>
+						<tr class="gradient">
+                    		<th>순번</th>
+                    		<th>제품명</th>
+                    		<th>수량</th>
+                    		<th>단가</th>
+                    		<th>금액</th>
+                		</tr>
+					</thead>
+					<tbody>
+					<c:forEach var="orderItems" items="${orderContainer.orderItemsList}" varStatus="status">
+                		<tr class="orderItems">
                 			<td class='orderItemsNum'>${status.count}</td>
                 			<td>
                 				<input type='text' name='orderItemsList[${status.count-1}].menuName' 
@@ -52,6 +55,7 @@
 						-->
                 		</tr>
                 	</c:forEach>
+					</tbody>
             	</table>
             	
             	<table id="count">
@@ -121,7 +125,7 @@
             </li>
             <li>
                 <form action="/jvx330/menu/searchItems" method="get">
-                    <input type="submit"  value="관리메뉴">
+                    <input type="submit"  value="메뉴관리">
                 </form>
             </li>
             <li>

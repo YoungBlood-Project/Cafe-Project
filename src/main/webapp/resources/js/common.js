@@ -36,12 +36,11 @@ $(".sub").children().on("click", function() {
 
 	// state == 0, 배열에 이름이 들어가 있지 않을 때(클릭한 적 없는 요소)
 	if (state == 0) {
-		
 		i++;
 
 		total_price_num++;
 
-		$("#orderList").append("<tr class='orderItems" + i + "'>");
+		$("#orderList").append("<tr class='orderItems orderItems" + i + "'>");
 		let orderList = $("#orderList").find(".orderItems" + i);
 		orderList.append("<td class='orderItemsNum'>" + i + "</td>");
 
