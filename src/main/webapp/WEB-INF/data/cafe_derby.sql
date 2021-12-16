@@ -85,5 +85,7 @@ CREATE TABLE SalesHistory (
 --DELETE FROM Item WHERE itemId = 1;
 --DELETE FROM SalesHistory WHERE itemId = 2;
 
+SELECT categoryId, categoryName FROM Category ORDER BY 2;
+
 ALTER TABLE SalesHistory DROP CONSTRAINT SalesHistory_itemId_FK;
 ALTER TABLE SalesHistory ADD CONSTRAINT SalesHistory_itemId_FK FOREIGN KEY(itemId) REFERENCES Item(itemId);
