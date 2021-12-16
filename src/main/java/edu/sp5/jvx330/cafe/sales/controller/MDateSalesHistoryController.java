@@ -43,10 +43,13 @@ public class MDateSalesHistoryController {
 		SimpleDateFormat sf = new SimpleDateFormat("yyyy³â MM¿ù ddÀÏ");
 		Date dateSales = sf.parse(dayString);
 	
-//		Map<Category, List<Item>> ciMap = new HashMap<Category, List<Item>>();
-		
 		List<SalesHistory> salesHistory_list = salesHistoryServiceImpl.findSalesHistoryByOrderDate(dateSales);
 		
+		
+		// command.setCategoryName();
+		// command.setMenuName();
+		// command.setOrderNum();
+		// command.setPaidPrice();
 		
 		mav.addObject("salesHistory_list", salesHistory_list);
 		mav.setViewName("sales/day_salesTotalPrice");
