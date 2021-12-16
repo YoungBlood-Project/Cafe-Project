@@ -116,7 +116,7 @@
 		</c:if>
 		</section>
 		
-		<a href="index">취소</a>
+		<a href="/jvx330/main/index?cancel=true">취소</a>
 	</section>
 	
     <footer>   

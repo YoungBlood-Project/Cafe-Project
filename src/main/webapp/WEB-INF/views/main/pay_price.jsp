@@ -5,8 +5,8 @@
 <head>
 <meta charset="UTF-8">
 <title>결제하기</title>
-<link href='<c:url value="/resources/css/common.css"/>' rel="stylesheet" type="text/css">
-
+<link href="${pageContext.request.contextPath}/resources/css/common.css" rel="stylesheet" type="text/css">
+<link href="${pageContext.request.contextPath}/resources/css/pay_price.css" rel="stylesheet" type="text/css">
 </head>
 <body>
 	<section id="pay_price">
