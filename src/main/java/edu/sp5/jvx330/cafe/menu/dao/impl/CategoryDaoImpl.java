@@ -56,12 +56,12 @@ public class CategoryDaoImpl implements CategoryDao {
 	}
 	
 	
-	//5. 카테고리 id로 카테고리 이름 조회
+	//5. 카테고리 id로 카테고리 조회
 	@Override
-	public String findCategoryByCategoryId(Long categoryId) {
+	public Category findCategoryByCategoryId(Long categoryId) {
 		String sql = "SELECT categoryId, categoryName FROM Category WHERE categoryId = ?";
 		
-		return jdbcTemplate.queryForObject(sql, new CategoryRowMapper(), categoryId).getCategoryName();
+		return jdbcTemplate.queryForObject(sql, new CategoryRowMapper(), categoryId);
 	};
 
 }

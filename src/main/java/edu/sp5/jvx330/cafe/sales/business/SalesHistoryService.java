@@ -23,7 +23,7 @@ public interface SalesHistoryService {
 	//2-2. 해당 날짜로 판매내역 조회
 	public List<SalesHistory> findSalesHistoryByOrderDate(Date orderDate);
 	//2-3. 해당 메뉴로 판매내역 조회(menuId 사용)
-	public List<SalesHistory> findSalesHistoryByMenu(Item item);
+	public List<SalesHistory> findSalesHistoryByItem(Item item);
 	
 	/**
 	 * 정혜윤 추가
@@ -33,7 +33,8 @@ public interface SalesHistoryService {
 	 */
 	//2-4. 해당 주문 번호로 판매 내역 조회
 	public List<SalesHistory> findSalesHistoryByOrderNum(Long orderNum);
-	
+	// 2-5. 해당 아이템 아이디와 날짜로 판매내역 조회
+	// public List<SalesHistory> findSHByItemIdAndOrderDate(Long itemId, Date orderDate);
 	/**
 	 * 3. 판매내역 삭제
 	 */
