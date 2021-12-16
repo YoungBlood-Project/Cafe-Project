@@ -8,7 +8,9 @@ import org.springframework.jdbc.core.JdbcTemplate;
 
 import edu.sp5.jvx330.cafe.sales.dao.SalesHistoryDao;
 import edu.sp5.jvx330.cafe.sales.dao.SalesHistoryMenuRowMapper;
+import edu.sp5.jvx330.cafe.sales.dao.SalesTotalPriceRowMapper;
 import edu.sp5.jvx330.cafe.sales.domain.SalesHistory;
+import edu.sp5.jvx330.cafe.sales.domain.SalesTotalPrice;
 
 public class SalesHistoryDaoImpl implements SalesHistoryDao {
 	@Autowired
@@ -56,6 +58,13 @@ public class SalesHistoryDaoImpl implements SalesHistoryDao {
 		String sql = "SELECT shId, itemId, orderNum, numOfSales, paidPrice, orderDate"
 				+ " FROM SalesHistory WHERE orderNum = ?";
 		return jdbcTemplate.query(sql, new SalesHistoryMenuRowMapper(), orderNum); 
+	}
+	//2-5 월별 판매내역 조회
+	public List<SalesHistory> findSalesHistoryByMonth(Date date1, Date date2) {
+		String sql = "SELECT shId, itemId, orderNum, numOfSales, paidPrice, orderDate"
+				+ " FROM SalesHistory WHERE Date(orderDate)>=? AND Date(orderDate)<?";
+		
+		return jdbcTemplate.query(sql, new SalesHistoryMenuRowMapper(), date1, date2);
 	}
 	
 	/**

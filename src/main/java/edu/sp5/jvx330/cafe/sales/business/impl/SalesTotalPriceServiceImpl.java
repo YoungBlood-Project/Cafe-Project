@@ -43,6 +43,7 @@ public class SalesTotalPriceServiceImpl implements SalesTotalPriceService {
 			} 
 	}
 	// 2-3  총판매가격 날짜별 조회
+	@Override
 	public List<SalesTotalPrice> findSTPByOrderDate(Date date) {
 		return stpDao.findSTPByOrderDate(date);
 	};

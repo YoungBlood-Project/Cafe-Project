@@ -13,7 +13,7 @@
 	<c:if test="${not empty errorMsg}">
 		<h3>${errorMsg}</h3>
 	</c:if>
-	<h3>총 판매가격: _______원  총 매출:_________원 총 수량 : ${sumNumOfsales}개</h3>
+	<h3>총 판매가격: ${sumTotalPrice}원  총 매출: ${sumReducedPrice}원  총 수량 : ${sumNumOfsales}개</h3>
 	<form>
 		<table>
 			<tr>

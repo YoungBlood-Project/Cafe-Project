@@ -11,6 +11,7 @@ import edu.sp5.jvx330.cafe.menu.domain.Item;
 import edu.sp5.jvx330.cafe.sales.business.SalesHistoryService;
 import edu.sp5.jvx330.cafe.sales.dao.impl.SalesHistoryDaoImpl;
 import edu.sp5.jvx330.cafe.sales.domain.SalesHistory;
+import edu.sp5.jvx330.cafe.sales.domain.SalesTotalPrice;
 
 
 public class SalesHistoryServiceImpl implements SalesHistoryService {
@@ -58,6 +59,7 @@ public class SalesHistoryServiceImpl implements SalesHistoryService {
 	 * @return
 	 */
 	// 2-4. 해당 주문 번호로 판매내역 조회
+	@Override
 	public List<SalesHistory> findSalesHistoryByOrderNum(Long orderNum) {
 		try {
 		List<SalesHistory> sh_list = shDao.findSalesHistoryByOrderNum(orderNum);
@@ -68,6 +70,11 @@ public class SalesHistoryServiceImpl implements SalesHistoryService {
 			return null;
 		} 
 	}
+	// 2-6 판매내역 월별 조회
+	@Override
+	public List<SalesHistory> findSalesHistoryByMonth(Date date1, Date date2) {
+		return shDao.findSalesHistoryByMonth(date1, date2);
+	};
 	
 	/**
 	 * 3. 판매내역 삭제
