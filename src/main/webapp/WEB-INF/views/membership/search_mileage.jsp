@@ -20,7 +20,7 @@
             <label><input type="radio" name="select_mileage" id="add_btn" value="add_mileage" checked/>적립</label>
             <label><input type="radio" name="select_mileage" id="use_btn" value="use_mileage"/>사용</label>
             <br>
-            <input type="text" value="${orderContainer.mileageHistory.getMBalance()}" id="add_amount"/>
+            <input type="text" value="${orderContainer.mileageHistory.getMBalance()}" id="add_amount" readonly="readonly" />
             <!-- 적립할 경우 -->
             <input type="text" id="use_amount" name="use_amount" hidden="hidden"/>
             <!-- 사용할 경우 -->
