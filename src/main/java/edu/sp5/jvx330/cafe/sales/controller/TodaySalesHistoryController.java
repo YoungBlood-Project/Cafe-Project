@@ -65,7 +65,9 @@ public class TodaySalesHistoryController {
 			mav.addObject("sumNumOfsales", sumNumOfsales);
 			
 		}
-
+		for(SalesTotalPrice stp : )
+		
+		
 		mav.addObject("salesHistory_list", salesHistory_list); 
 		mav.addObject("salesHistory_list", salesHistory_list); 
 			
