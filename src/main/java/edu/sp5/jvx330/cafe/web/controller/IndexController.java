@@ -9,6 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.SessionAttributes;
+import org.springframework.web.bind.support.SessionStatus;
 import org.springframework.web.servlet.ModelAndView;
 
 import edu.sp5.jvx330.cafe.membership.domain.MileageHistory;
@@ -28,7 +29,7 @@ public class IndexController {
 	private ItemSerivceImpl itemSerivceImpl;
 	
 	@GetMapping("/main/index")
-	public ModelAndView indexForm() {
+	public ModelAndView indexForm(boolean cancel, SessionStatus sessionStatus) {
 
 		ModelAndView mav = new ModelAndView();
 		//카테고리, 아이템 리스트 맵 사용
@@ -50,6 +51,12 @@ public class IndexController {
 		mav.addObject("ciMap", ciMap);
 		mav.addObject("index_link", "index");
 		mav.setViewName("main/index");
+		
+		//System.out.println(cancel);
+		if(cancel==true) {//취소 버튼 눌렀을 때
+			sessionStatus.setComplete();
+			mav.setViewName("redirect:/main/index");
+		}
 		
 		return mav;
 	}

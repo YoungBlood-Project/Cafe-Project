@@ -1,6 +1,22 @@
 @charset "UTF-8";
+#pay_price {
+	padding-bottom: 50px;
+}
 
-#add_user img{
-	width: 100px;
-	height: 100px;
+#pay_price h2 {
+	margin-bottom: 20px;
+}
+
+#pay_price img {
+	width: 300px;
+	height: 300px;
+}
+
+#pay_price p {
+	padding: 10px;
+}
+
+#pay_price a {
+	width: 150px;
+	padding-top: 7px;
 }

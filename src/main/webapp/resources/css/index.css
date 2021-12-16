@@ -27,7 +27,7 @@
    left : -9999px;
 }
 li {list-style: none;}
-a {text-decoration: none; color:#000;}
+a {text-decoration: none; color:#fff;}
 body {
     font-family: 'OTWelcomeBA', Tahoma, Geneva, Verdana, sans-serif;
    margin: 0 auto;
@@ -42,6 +42,7 @@ table {
 } 
 /* main 전체 영역 가로정렬 */
 #index {
+	position: relative;
     width: 1503px;
     margin: 0px auto;
 }
@@ -326,6 +327,24 @@ img {
     transition: 0.5s;
     cursor: pointer;
 }
+/*취소 버튼*/
+#index a {
+	position: absolute;
+    top: 127px;
+    left: 550px;
+    width: 80px;
+    height: 40px;
+    line-height: 40px;
+    padding-top: 6px;
+    text-align: center;
+    background-color: #656565;
+    transition: 0.3s;
+}
+
+#index a:hover {
+	background-color: #526fb0;
+}
+
 /* 디지털 시계 */
 p {
 	padding: 40px 0 0 100px;

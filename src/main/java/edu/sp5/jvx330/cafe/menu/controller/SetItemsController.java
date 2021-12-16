@@ -23,7 +23,6 @@ public class SetItemsController {
 	@Autowired
 	private ItemSerivceImpl itemServiceImpl;
 	
-	
 	@GetMapping("/menu/setItems")
 	public ModelAndView setItemsGet() {
 		ModelAndView mav = new ModelAndView();
@@ -31,7 +30,9 @@ public class SetItemsController {
 		Map<Category, List<Item>> ciMap = new HashMap<Category, List<Item>>();
 		List<Category> category_list = categoryServiceImpl.findAllCategorys();
 		for (Category category : category_list) {
-			ciMap.put(category, itemServiceImpl.findItemsByCategory(category));
+			if(!category.getCategoryName().equals("deletedMenu")) {
+				ciMap.put(category, itemServiceImpl.findItemsByCategory(category));
+			}
 		}
 		
 		mav.addObject("ciMap", ciMap);

@@ -9,51 +9,30 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>메뉴 수정</title>
-    <script src="js/jquery-3.6.0.min.js"></script>
-
+    <script src='<c:url value="/resources/js/jquery-3.6.0.min.js"/>'></script>
 </head>
 
 <body>
-    <!-- <form>
-        <select>
-            <option value="1"><input type="text" value="1"/></option>
-            <option value="2"><input type="text" value="2"/></option>
-            <option value="3"><input type="text" value="3"/></option>
-            <option value="4"><input type="text" value="4"/></option>
-            <option value="5"><input type="text" value="5"/></option>
-        </select>
-    </form> -->
-
-    <form>
-        <label><input type="radio" name="categoryName" class="radio_btn" value="coffee"/>coffee</label>
-        <label><input type="radio" name="categoryName" class="radio_btn" value="tea"/>tea</label>
-        <label><input type="radio" name="categoryName" class="radio_btn" value="smoothie"/>smoothie</label>
+	<section id="set_itmes">
+	    <form>
+		<c:if test="${not empty ciMap}">
+			<c:forEach var="ciKey" items="${ciMap.key}">
+	    		<label><input type="radio" name="categoryName" class="radio_btn" value="${ciKey.categoryName}"/>${ci_key.categoryName}</label>
+	    	</c:forEach>
+		</c:if> 
         <br>
-
-        <select name="itemName" id="coffee" class="itemName" hidden="hidden">
-            <option selected></option>
-            <option>2</option>
-            <option>3</option>
-            <option>4</option>
-            <option>5</option>
-        </select>
-        <select name="itemName" id="tea" class="itemName" hidden="hidden">
-            <option>차</option>
-            <option>2</option>
-            <option>3</option>
-            <option>4</option>
-            <option>5</option>
-        </select>
-
-        <select name="itemName" id="smoothie" class="itemName" hidden="hidden">
-            <option>딸기스무디</option>
-            <option>2</option>
-            <option>3</option>
-            <option>4</option>
-            <option>5</option>
-        </select>
-    </form>
-
+        
+        <c:if test="${not empty ciMap}">
+        	<c:forEach var="ciKey" items="${ciMap.key}">
+        		<select name="itemName" id="${ciKey.categoryName}" class="itemName" hidden="hidden">
+					<c:forEach var="ciValue" items="${ciMap.value}">
+						<option value="${ciValue.itemName}">${ciValue.itemName}</option>		
+					</c:forEach>
+				</select>        	
+        	</c:forEach>
+        </c:if>
+        </form>
+	</section>
 
     <script>
         let category_list = $(".itemName");

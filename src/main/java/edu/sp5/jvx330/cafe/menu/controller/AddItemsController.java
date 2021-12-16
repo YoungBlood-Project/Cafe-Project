@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
@@ -32,6 +33,7 @@ public class AddItemsController {
 		return mav;
 	}
 	
+	@Transactional
 	@PostMapping("/menu/addItems")
 	public ModelAndView addItemsPost(String categoryName, String itemName, Integer itemPrice) {
 		
@@ -48,7 +50,9 @@ public class AddItemsController {
 		
 		System.out.println("Post success.");
 		
-		mav.setViewName("menu/search_items");
+		//get으로 이동해야 해서 경로 변경 - 초
+		mav.setViewName("redirect:/menu/searchItems");
+		//mav.setViewName("menu/searchItems");
 		
 		return mav;
 	}

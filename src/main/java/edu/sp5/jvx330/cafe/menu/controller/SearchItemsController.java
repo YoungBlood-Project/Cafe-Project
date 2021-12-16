@@ -38,17 +38,18 @@ public class SearchItemsController {
 			mav.setViewName("/manager/login_manager");
 			return mav;
 		}
-		
-		Map<Category, List<Item>> categoryItemMap = new HashMap<Category, List<Item>>();
-		List<Category> category_list = categoryServiceImpl.findAllCategorys();
-		for (Category category : category_list) {
-			categoryItemMap.put(category, itemServiceImpl.findItemsByCategory(category));
+		else {
+			Map<Category, List<Item>> categoryItemMap = new HashMap<Category, List<Item>>();
+			List<Category> category_list = categoryServiceImpl.findAllCategorys();
+			for (Category category : category_list) {
+				categoryItemMap.put(category, itemServiceImpl.findItemsByCategory(category));
+			}
+			
+			mav.addObject("categoryItemMap", categoryItemMap);
+			mav.setViewName("/menu/search_items");
+			
+			return mav;				
 		}
-		
-		mav.addObject("categoryItemMap", categoryItemMap);
-		mav.setViewName("/menu/search_items");
-		
-		return mav;
 	}
 	
 	@PostMapping("/menu/searchItems")
