@@ -53,47 +53,26 @@ public class MMonthSalesHistoryController {
 			str_yyyyMM2 = Integer.toString(nextYear)+"-"+firstMonth;
 			yyyyMM2 = format.parse(str_yyyyMM2);
 		}
-		
 		List<SalesHistory> save_sh_list = salesHistoryService.sumNumOfSalesAndSumPaidPriceByMonth(yyyyMM, yyyyMM2);
-
-		List<Item> item_list = itemService.findAllItems();
-		List<Long> itemId_list = new ArrayList<>();
+		
 		List<String> itemName_list = new ArrayList<>();
 		List<String> categoryName_list = new ArrayList<>();
-		
-		for(Item item: item_list) {
-			Long itemId = item.getItemId();
-			itemId_list.add(itemId);
-			
-			String itemName = item.getItemName();
-			itemName_list.add(itemName);
-			
-			String categoryName = categoryService.findCategoryByCategoryId(item.getCategory().getCategoryId()).getCategoryName();
-			categoryName_list.add(categoryName);
-		}
-		
-		List<SalesHistory> sh_list = new ArrayList<>();
-		for(int i=0; i < itemId_list.size(); i++) {
-			Item item = new Item();
-			item.setItemId(itemId_list.get(i));
-			sh_list.get(i).setItem(item);
-		}
-		
-		//Map<Long, Integer> itemId_numOfSales = new HashMap<>();
-		int sumNumOfSales = 0;
-		int sumPaidPrice = 0;
+		Integer totalNumOfSales = 0;
+		Integer totalPaidPrice = 0;
 		for(SalesHistory sh : save_sh_list) {
-			sumNumOfSales += sh.getNumOfSales();
-			sumPaidPrice += sh.getPaidPrice();
+			Item item = itemService.findItemByItemId(sh.getItem().getItemId());
+			itemName_list.add(item.getItemName());
+			Category category = categoryService.findCategoryByCategoryId(item.getCategory().getCategoryId());
+			categoryName_list.add(category.getCategoryName());
+			
+			totalNumOfSales += sh.getNumOfSales();
+			totalPaidPrice += sh.getPaidPrice();
 		}
-		
-		SalesHistory salesHistory = new SalesHistory();
-		
-		salesHistory.setNumOfSales(sumNumOfSales);
-		salesHistory.setPaidPrice(sumPaidPrice);
-		
-		//itemId_numOfSales.put(itemId_list.get(0), salesHistory.getNumOfSales());
-		
+		mav.addObject("save_sh_list", save_sh_list);
+		mav.addObject("totalNumOfSales", totalNumOfSales);
+		mav.addObject("totalPaidPrice", totalPaidPrice);		
+		mav.addObject("itemName_list", itemName_list);
+		mav.addObject("categoryName_list", categoryName_list);	
 		mav.addObject("date", date);
 		mav.setViewName("sales/m_month_salesHistory");
 		

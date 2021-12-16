@@ -1,11 +1,15 @@
 package edu.sp5.jvx330.cafe.sales.dao.impl;
 
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.RowMapper;
 
+import edu.sp5.jvx330.cafe.menu.domain.Item;
 import edu.sp5.jvx330.cafe.sales.dao.SalesHistoryDao;
 import edu.sp5.jvx330.cafe.sales.dao.SalesHistoryMenuRowMapper;
 import edu.sp5.jvx330.cafe.sales.dao.SalesTotalPriceRowMapper;
@@ -93,9 +97,21 @@ public class SalesHistoryDaoImpl implements SalesHistoryDao {
 	//2 test 월별 아이템별 총 수량, 총 지불금액 조회
 	@Override
 	public List<SalesHistory> sumNumOfSalesAndSumPaidPriceByMonth(Date date1, Date date2) {
-		String sql = "SELECT itemId, SUM(numOfSales), SUM(paidPrice)"
-				+ " FROM SalesHistory WHERE Date(orderDate)>=? AND Date(orderDate)<?";
-		return jdbcTemplate.query(sql, new SalesHistoryMenuRowMapper(), date1, date2);
+		String sql = "SELECT itemId, SUM(numOfSales) AS numOfSales, SUM(paidPrice) AS paidPrice"
+				+ " FROM SalesHistory WHERE Date(orderDate)>=? AND Date(orderDate)<?"
+				+ " GROUP BY itemId ORDER BY SUM(numOfSales) DESC";
+		return jdbcTemplate.query(sql, new RowMapper<SalesHistory>() {
+
+			@Override
+			public SalesHistory mapRow(ResultSet rs, int rowNum) throws SQLException {
+				Item item = new Item();
+				item.setItemId(rs.getLong("itemId"));//mid를 가진 Menu 객체 생성
+				SalesHistory salesHistory = new SalesHistory(item, rs.getInt("numOfSales"),
+						rs.getInt("paidPrice"));
+				return salesHistory;
+			}
+			
+		}, date1, date2);
 	}
 		
 	
