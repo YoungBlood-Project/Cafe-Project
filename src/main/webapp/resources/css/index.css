@@ -265,15 +265,15 @@ input[type="submit"]:hover {
 
 /* sub ¸Þ´º */
 .sub {
-    width: 700px;
+    width: 800px;
     margin: 20px auto;
 }
 .sub li {
     float: left;
-    width: 19.2%;
+    width: 160px;
     background-color: #303038;
     text-align: center;
-    padding: 20px 20px 0 20px;
+    padding: 20px 20px 0;
     transition: 0.5s;
     color: #ffffff;
     font-size: 12px;
