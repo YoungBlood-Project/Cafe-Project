@@ -47,4 +47,9 @@ public interface SalesHistoryService {
 	 * 4. 날짜별 판매내역 개수
 	 */
 	public Integer countSalesHistoryByOrderDate(Date orderDate);
+	
+	/**
+	 * 5. 해당 날짜의 판매내역별 수량의 총 수량
+	 */
+	public Integer sumNumOfSalesByOrderNum(Long orderNum);
 }

@@ -10,7 +10,10 @@
 <body>
 <section id="today_salesHistory">
 	<h2>당일 판매 내역</h2>
-	<h3>총 매출: _______원  총 수량 : _______개</h3>
+	<c:if test="${not empty errorMsg}">
+		<h3>${errorMsg}</h3>
+	</c:if>
+	<h3>총 판매가격: _______원  총 매출:_________원 총 수량 : ${sumNumOfsales}개</h3>
 	<form>
 		<table>
 			<tr>
@@ -24,7 +27,7 @@
 				<c:forEach var="salesHistory_list" items="${salesHistory_list}" varStatus="status">
 					<tr>
 						<td>${salesHistory_list.orderNum}</td>
-						<td>${salesHistory_list.item.getItemName()}</td>
+						<td>${salesHistory_list.item.itemName}</td>
 						<td>${salesHistory_list.numOfSales}</td>
 						<td>${salesHistory_list.paidPrice}</td>
 						<td>${salesHistory_list.orderDate}</td>

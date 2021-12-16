@@ -42,6 +42,13 @@ public class SalesTotalPriceDaoImpl implements SalesTotalPriceDao  {
 		return jdbcTemplate.queryForObject(sql, new SalesTotalPriceRowMapper(), orderNum);
 	}
 	
+	// 2-3  총판매가격 날짜별 조회
+	public List<SalesTotalPrice> findSTPByOrderDate(Date date) {
+		String sql = "SELECT stpId, orderNum, totalPrice, reducedPrice, orderDate"
+				+ " FROM SalesTotalPrice WHERE Date(orderDate) = ?";
+		return jdbcTemplate.query(sql, new SalesTotalPriceRowMapper(), date);
+	};
+	
 	// 2-4 총판매가격 월별 조회
 	@Override
 	public List<SalesTotalPrice> findSalesTotalPriceByMonth(Date date1, Date date2) {

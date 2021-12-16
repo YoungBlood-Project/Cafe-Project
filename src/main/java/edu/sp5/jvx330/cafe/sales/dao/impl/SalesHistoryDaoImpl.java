@@ -83,6 +83,15 @@ public class SalesHistoryDaoImpl implements SalesHistoryDao {
 	};
 	
 	/**
+	 * 5. 해당 날짜의 판매내역별 수량의 총 수량
+	 */
+	public Integer sumNumOfSalesByOrderNum(Long orderNum) {
+		String sql = "SELECT SUM(numOfSales) AS totalNumOfSales "
+				+ " FROM SalesHistory WHERE orderNum = ?";
+		return jdbcTemplate.queryForObject(sql, Integer.class, orderNum);
+	};
+	
+	/**
 	 * 0. 제약조건 변경
 	 */
 	//에러 발생(후에 고치기)

@@ -38,4 +38,10 @@ public interface SalesHistoryDao {
 	 * 4. 메뉴삭제(판매내역 메뉴 id 변경)
 	 */
 	public void setItemIdFromSalesHistory(Long itemId, SalesHistory salesHistory);
+	
+	/**
+	 * 5. 해당 날짜의 판매내역별 수량의 총 수량
+	 */
+	public Integer sumNumOfSalesByOrderNum(Long orderNum);
+	
 }

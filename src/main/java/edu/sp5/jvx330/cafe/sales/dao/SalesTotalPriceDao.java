@@ -20,6 +20,9 @@ public interface SalesTotalPriceDao {
 	// 2-2. 총판매가격 내역 주문번호로 조회
 	public SalesTotalPrice findSTPByOrderNum(Long orderNum);
 
+	// 2-3  총판매가격 날짜별 조회
+	public List<SalesTotalPrice> findSTPByOrderDate(Date date);
+		
 	// 2-4 총판매가격 월별 조회
 	public List<SalesTotalPrice> findSalesTotalPriceByMonth(Date date1, Date date2);
 		

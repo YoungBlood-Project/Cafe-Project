@@ -92,4 +92,12 @@ public class SalesHistoryServiceImpl implements SalesHistoryService {
 	public Integer countSalesHistoryByOrderDate(Date orderDate) {
 		return findSalesHistoryByOrderDate(orderDate).size();
 	}
+	
+	/**
+	 * 5. 해당 주문번호의 판매내역별 수량의 총 수량
+	 */
+	@Override
+	public Integer sumNumOfSalesByOrderNum(Long orderNum) {
+		return shDao.sumNumOfSalesByOrderNum(orderNum);
+	};
 }
