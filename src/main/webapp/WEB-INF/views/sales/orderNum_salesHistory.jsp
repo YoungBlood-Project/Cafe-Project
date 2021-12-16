@@ -14,7 +14,7 @@
 		주문번호: <input type="text" name="orderNum"/>
 		<input type="submit" value="검색"/> 
 	</form>
-	
+	<h3>${errorMsg}</h3>
 		
 	<c:if test="${not empty salesHistory_list}">
 		<p>총 수량:  ${totalNumOfPrice}

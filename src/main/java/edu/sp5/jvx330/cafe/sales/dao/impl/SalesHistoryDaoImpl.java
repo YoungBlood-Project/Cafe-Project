@@ -55,7 +55,11 @@ public class SalesHistoryDaoImpl implements SalesHistoryDao {
 	public List<SalesHistory> findSalesHistoryByOrderNum(Long orderNum) {
 		String sql = "SELECT shId, itemId, orderNum, numOfSales, paidPrice, orderDate"
 				+ " FROM SalesHistory WHERE orderNum = ?";
-		return jdbcTemplate.query(sql, new SalesHistoryMenuRowMapper(), orderNum);
+		List<SalesHistory> salesHistory_list = jdbcTemplate.query(sql, new SalesHistoryMenuRowMapper(), orderNum); 
+		if(salesHistory_list != null) {
+		return salesHistory_list;
+		}
+		return null;
 	}
 	
 	/**
