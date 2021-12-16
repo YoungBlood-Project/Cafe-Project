@@ -74,7 +74,28 @@ public class SalesHistoryServiceImpl implements SalesHistoryService {
 	@Override
 	public List<SalesHistory> findSalesHistoryByMonth(Date date1, Date date2) {
 		return shDao.findSalesHistoryByMonth(date1, date2);
-	};
+	}
+	
+	//2-7 월별 아이템별 총 수량 조회
+	@Override
+	public List<SalesHistory> sumNumOfSalesByMonth(Date date1, Date date2) {
+		return shDao.sumNumOfSalesByMonth(date1, date2);
+	}
+		
+	//2-8 월별 아이템별 총 지불금액 조회
+	@Override
+	public List<SalesHistory> sumPaidPriceByMonth(Date date1, Date date2) {
+		return shDao.sumPaidPriceByMonth(date1, date2);
+	}
+	
+	//2 test 월별 아이템별 총 수량, 총 지불금액 조회
+	@Override
+	public List<SalesHistory> sumNumOfSalesAndSumPaidPriceByMonth(Date date1, Date date2) {
+		return shDao.sumNumOfSalesAndSumPaidPriceByMonth(date1, date2);
+	}
+	
+	
+	
 	
 	/**
 	 * 3. 판매내역 삭제

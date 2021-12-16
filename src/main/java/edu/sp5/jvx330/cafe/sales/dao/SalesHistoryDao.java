@@ -28,6 +28,14 @@ public interface SalesHistoryDao {
 	public List<SalesHistory> findSalesHistoryByOrderNum(Long orderNum);
 	//2-5 월별 판매내역 조회
 	public List<SalesHistory> findSalesHistoryByMonth(Date date1, Date date2);
+	//2-6 월별 아이템별 총 수량, 총 지불금액 조회
+	public List<SalesHistory> sumSalesHistoryByMonth(Date date1, Date date2);
+	//2-7 월별 아이템별 총 수량 조회
+	public List<SalesHistory> sumNumOfSalesByMonth(Date date1, Date date2);
+	//2-8 월별 아이템별 총 지불금액 조회
+	public List<SalesHistory> sumPaidPriceByMonth(Date date1, Date date2);
+	//2 test 월별 아이템별 총 수량, 총 지불금액 조회
+	public List<SalesHistory> sumNumOfSalesAndSumPaidPriceByMonth(Date date1, Date date2);
 	
 	/**
 	 * 3. 판매내역 삭제

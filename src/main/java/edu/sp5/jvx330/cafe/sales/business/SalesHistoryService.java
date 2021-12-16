@@ -4,6 +4,7 @@ import java.util.Date;
 import java.util.List;
 
 import edu.sp5.jvx330.cafe.menu.domain.Item;
+import edu.sp5.jvx330.cafe.sales.dao.SalesHistoryMenuRowMapper;
 import edu.sp5.jvx330.cafe.sales.domain.SalesHistory;
 import edu.sp5.jvx330.cafe.sales.domain.SalesTotalPrice;
 
@@ -39,6 +40,16 @@ public interface SalesHistoryService {
 	
 	// 2-6 판매내역 월별 조회
 	public List<SalesHistory> findSalesHistoryByMonth(Date date1, Date date2);
+	
+	//2-7 월별 아이템별 총 수량 조회
+	public List<SalesHistory> sumNumOfSalesByMonth(Date date1, Date date2);
+	
+	//2-8 월별 아이템별 총 지불금액 조회
+	public List<SalesHistory> sumPaidPriceByMonth(Date date1, Date date2);
+	
+	//2 test 월별 아이템별 총 수량, 총 지불금액 조회
+	public List<SalesHistory> sumNumOfSalesAndSumPaidPriceByMonth(Date date1, Date date2);
+		
 	
 	/**
 	 * 3. 판매내역 삭제
