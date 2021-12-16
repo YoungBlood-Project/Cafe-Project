@@ -102,7 +102,7 @@
 		
 		<c:if test="${not empty ciMap}">
 			<c:forEach var="ciMap" items="${ciMap}">
-				<ul class="sub ${ciMap.key.categoryName}"> 
+				<ul class="sub ${ciMap.key.categoryName} hidden"> 
 				<c:forEach var="ciValue" items="${ciMap.value}" >
 					<li>
 					<img src="../resources/${ciValue.itemUrl}" alt="${ciValue.itemName}"><br>
