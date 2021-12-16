@@ -506,18 +506,22 @@ public class ItemServiceTest {
 		service.addItem(md_item12);
 
 		Item md_item13 = new Item(md_category, "Åõ½æX¹Ì¸£ Ä·ÇÁÄÅ[±×¸°]", 35000);
-	      md_item13.setItemUrl("images/md/Åõ½æX¹Ì¸£Ä·ÇÁÄÅ_±×¸°.jpg");
+		md_item13.setItemUrl("images/md/Åõ½æX¹Ì¸£Ä·ÇÁÄÅ_±×¸°.jpg");
+		service.addItem(md_item13);
 
-	    Item md_item14 = new Item(md_category, "Åõ½æX¹Ì¸£ Ä·ÇÁÄÅ[¿»·Î¿ì]", 35000);
-	      md_item14.setItemUrl("images/md/Åõ½æX¹Ì¸£Ä·ÇÁÄÅ_¿»·Î¿ì.jpg");
+		Item md_item14 = new Item(md_category, "Åõ½æX¹Ì¸£ Ä·ÇÁÄÅ[¿»·Î¿ì]", 35000);
+		md_item14.setItemUrl("images/md/Åõ½æX¹Ì¸£Ä·ÇÁÄÅ_¿»·Î¿ì.jpg");
+		service.addItem(md_item14);
 
-	    Item md_item15 = new Item(md_category, "Åõ½æX¹Ì¸£ ÅÒºí·¯[±×¸°]", 50000);
-	      md_item15.setItemUrl("images/md/Åõ½æX¹Ì¸£ÅÒºí·¯_±×¸°.jpg");
+		Item md_item15 = new Item(md_category, "Åõ½æX¹Ì¸£ ÅÒºí·¯[±×¸°]", 50000);
+		md_item15.setItemUrl("images/md/Åõ½æX¹Ì¸£ÅÒºí·¯_±×¸°.jpg");
+		service.addItem(md_item15);
 
-	    Item md_item16 = new Item(md_category, "Åõ½æX¹Ì¸£ ÅÒºí·¯[¿»·Î¿ì]", 50000);
-	      md_item16.setItemUrl("images/md/Åõ½æX¹Ì¸£ÅÒºí·¯_¿»·Î¿ì.jpg");
+		Item md_item16 = new Item(md_category, "Åõ½æX¹Ì¸£ ÅÒºí·¯[¿»·Î¿ì]", 50000);
+		md_item16.setItemUrl("images/md/Åõ½æX¹Ì¸£ÅÒºí·¯_¿»·Î¿ì.jpg");
+		service.addItem(md_item16);
 	      
-	      System.out.println("ItemServiceTest: ÀúÀå ¿Ï·á.");
+		System.out.println("ItemServiceTest: ÀúÀå ¿Ï·á.");
 
 		// ¿¾³¯¿¡ ¾²´ø test¹®
 		// Category category = cService.findCategoryByCategoryName("deletedMenu");

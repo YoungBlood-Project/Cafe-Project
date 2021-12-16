@@ -42,7 +42,7 @@ public class CategoryDaoImpl implements CategoryDao {
 	// 3. 카테고리 조회
 	@Override
 	public List<Category> findAllCategorys() {
-		String sql = "SELECT categoryId, categoryName FROM Category";
+		String sql = "SELECT categoryId, categoryName FROM Category ORDER BY 2";
 		
 		return jdbcTemplate.query(sql, new CategoryRowMapper());
 	}
