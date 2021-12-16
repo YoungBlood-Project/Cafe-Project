@@ -51,7 +51,6 @@ public class IndexController {
 	
 	@PostMapping("/main/index")
 	public String index(OrderContainer orderContainer) {
-		System.out.println("여기서부터 에러");
 		try {
 		Integer totalPrice = 
 				orderContainer.getSalesTotalPrice().getTotalPrice();

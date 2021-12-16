@@ -11,7 +11,7 @@ import edu.sp5.jvx330.cafe.sales.domain.SalesTotalPrice;
 public class OrderContainer {
 	private SalesTotalPrice salesTotalPrice;
 	private Customer customer;
-	private Mileage mileage;
+	private Integer mileage;
 	private MileageHistory mileageHistory;
 	private List<OrderItemsCommand> orderItemsList;
 	
@@ -27,10 +27,10 @@ public class OrderContainer {
 	public void setCustomer(Customer customer) {
 		this.customer = customer;
 	}
-	public Mileage getMileage() {
+	public Integer getMileage() {
 		return mileage;
 	}
-	public void setMileage(Mileage mileage) {
+	public void setMileage(Integer mileage) {
 		this.mileage = mileage;
 	}
 	public MileageHistory getMileageHistory() {

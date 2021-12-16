@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,6 +10,12 @@
 <body>
     <section id="search_mileage">
         <h2>포인트 조회</h2>
+		<c:if test="${not empty errorMsg}">
+        	<h3>${errorMsg}</h3>
+		</c:if>
+		<c:if test="${not empty orderContainer.mileage}">
+			<p>현재 보유한 마일리지 : ${orderContainer.mileage}</p>
+		</c:if>	
         <form id="radio_btn" action="searchMileage" method="post">
             <label><input type="radio" name="select_mileage" id="add_btn" value="add_mileage" checked/>적립</label>
             <label><input type="radio" name="select_mileage" id="use_btn" value="use_mileage"/>사용</label>
