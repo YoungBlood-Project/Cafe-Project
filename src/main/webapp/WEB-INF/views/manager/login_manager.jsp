@@ -10,7 +10,7 @@
 <body>
 	<h2>관리자 로그인</h2>
 	<h3>${loginErrorMsg}</h3>
-	<form action="" method="post">
+	<form action="/jvx330/manager/loginManager" method="post">
 		이름 : <input type="text" name="managerName"><br>
 		패스워드 : <input type="password" name="passwd"><br>
 		<input type="submit" value="확인">
