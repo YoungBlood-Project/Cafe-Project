@@ -4,7 +4,9 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>결제하기</title>
+<link href='<c:url value="/resources/css/common.css"/>' rel="stylesheet" type="text/css">
+
 </head>
 <body>
 	<section id="pay_price">

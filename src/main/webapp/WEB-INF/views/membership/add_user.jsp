@@ -6,12 +6,14 @@
 <head>
 <meta charset="UTF-8">
 <title>회원가입</title>
+<!-- <link href='<c:url value="/resources/css/membership/add_user.css"/>' rel="stylesheet" type="text/css"> -->
+<link href='<c:url value="/resources/css/common.css"/>' rel="stylesheet" type="text/css">
 </head>
 <body>
 	<section id="add_user">
 	<h2>회원가입</h2>
 	<c:if test="${not empty errorMsg}">
-		${errorMsg}
+		<h3>${errorMsg}</h3>
 	</c:if>
 		<form action="addUser" method="post">
 			이름: <input type="text" name="name" placeholder="이름 입력"/><br>

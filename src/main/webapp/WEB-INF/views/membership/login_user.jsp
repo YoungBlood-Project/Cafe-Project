@@ -6,13 +6,13 @@
 <head>
 <meta charset="UTF-8">
 <title>마일리지</title>
-
+<!-- <link href='<c:url value="/resources/css/membership/login_user.css"/>' rel="stylesheet" type="text/css"> -->
+<link href='<c:url value="/resources/css/common.css"/>' rel="stylesheet" type="text/css">
 </head>
 <body>
  <!-- <header></header> -->
 
-  <main>
-
+  <section id="login_user">
     <hgroup>
       <h2>마일리지</h2>
       <h3>${errorMsg}</h3>
@@ -38,7 +38,7 @@
     <form action="/jvx330/main/payPrice" method="post">
     	<input type="submit" value="결제하기"/>
     </form>
-  </main>
+  </section>
 
   <!-- <footer></footer> -->
 </body>
