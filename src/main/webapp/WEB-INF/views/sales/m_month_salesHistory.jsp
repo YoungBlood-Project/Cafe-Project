@@ -14,11 +14,15 @@
 	<table>
 		<tr>
 			<td>카테고리</td>
-			<td>메뉴별</td>
+			<td>메뉴</td>
 			<td>수량</td>
 			<td>매출액</td>
 		</tr>
-		
+		<c:if test=${not empty salesHistory_list}>
+			<c:forEach var="salesHistory_list" items="${salesHistory_list}" varStatus="status">
+			
+			</c:forEach>
+		</c:if>
 	</table>
 </section>
 </body>

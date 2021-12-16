@@ -66,6 +66,38 @@ public class SalesHistoryDaoImpl implements SalesHistoryDao {
 		
 		return jdbcTemplate.query(sql, new SalesHistoryMenuRowMapper(), date1, date2);
 	}
+	//2-6 월별 아이템별 총 수량, 총 지불금액 조회
+	@Override
+	public List<SalesHistory> sumSalesHistoryByMonth(Date date1, Date date2) {
+		String sql = "SELECT itemId, SUM(numOfSales), SUM(paidPrice) "
+				+ " FROM SalesHistory WHERE Date(orderDate)>=? AND Date(orderDate)<?";
+		return jdbcTemplate.query(sql, new SalesHistoryMenuRowMapper(), date1, date2);
+	}
+	
+	//2-7 월별 아이템별 총 수량 조회
+	@Override
+	public List<SalesHistory> sumNumOfSalesByMonth(Date date1, Date date2) {
+		String sql = "SELECT itemId, SUM(numOfSales)"
+				+ " FROM SalesHistory WHERE Date(orderDate)>=? AND Date(orderDate)<?";
+		return jdbcTemplate.query(sql, new SalesHistoryMenuRowMapper(), date1, date2);
+	}
+		
+	//2-8 월별 아이템별 총 지불금액 조회
+	@Override
+	public List<SalesHistory> sumPaidPriceByMonth(Date date1, Date date2) {
+		String sql = "SELECT itemId, SUM(paidPrice)"
+				+ " FROM SalesHistory WHERE Date(orderDate)>=? AND Date(orderDate)<?";
+		return jdbcTemplate.query(sql, new SalesHistoryMenuRowMapper(), date1, date2);
+	}
+	
+	//2 test 월별 아이템별 총 수량, 총 지불금액 조회
+	@Override
+	public List<SalesHistory> sumNumOfSalesAndSumPaidPriceByMonth(Date date1, Date date2) {
+		String sql = "SELECT itemId, SUM(numOfSales), SUM(paidPrice)"
+				+ " FROM SalesHistory WHERE Date(orderDate)>=? AND Date(orderDate)<?";
+		return jdbcTemplate.query(sql, new SalesHistoryMenuRowMapper(), date1, date2);
+	}
+		
 	
 	/**
 	 * 3. 판매내역 삭제
