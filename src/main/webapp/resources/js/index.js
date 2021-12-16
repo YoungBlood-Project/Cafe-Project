@@ -28,6 +28,10 @@ $("#menu li.title:eq(6)").on('click', function() {
     $(".sub").addClass('hidden')
     $(".sub:eq(6)").removeClass('hidden')
 })
+$("#menu li.title:eq(7)").on('click', function() {
+    $(".sub").addClass('hidden')
+    $(".sub:eq(7)").removeClass('hidden')
+})
 
 // 온라인 시계
 function clock() {

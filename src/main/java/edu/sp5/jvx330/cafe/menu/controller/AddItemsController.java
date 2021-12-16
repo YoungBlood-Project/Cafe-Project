@@ -17,28 +17,30 @@ import edu.sp5.jvx330.cafe.menu.domain.Item;
 public class AddItemsController {
 	@Autowired
 	private CategoryServiceImpl categoryServiceImpl;
-	
 	@Autowired
 	private ItemSerivceImpl itemServiceImpl;
 	
 	@GetMapping("/menu/addItems")
-	public ModelAndView addItemGet() {
+	public ModelAndView addItemsGet() {
 		ModelAndView mav = new ModelAndView();
 		
 		List<Category> category_list = categoryServiceImpl.findAllCategorys();
 
 		mav.addObject("category_list", category_list);
-		mav.setViewName("/menu/add_items");
+		mav.setViewName("menu/add_items");
 		
 		return mav;
 	}
 	
 	@PostMapping("/menu/addItems")
-	public ModelAndView addItemsPost(String itemName, Integer itemPrice) {
+	public ModelAndView addItemsPost(String categoryName, String itemName, Integer itemPrice) {
 		
 		ModelAndView mav = new ModelAndView();
 		
+		Category category = categoryServiceImpl.findCategoryByCategoryName(categoryName);
+		
 		Item item = new Item();
+		item.setCategory(category);
 		item.setItemName(itemName);
 		item.setItemPrice(itemPrice);
 		
@@ -46,9 +48,7 @@ public class AddItemsController {
 		
 		System.out.println("Post success.");
 		
-		mav.addObject("itemName", item.getItemName());
-		mav.addObject("itemPrice", item.getItemPrice());
-		mav.setViewName("/menu/searchItems");
+		mav.setViewName("menu/search_items");
 		
 		return mav;
 	}

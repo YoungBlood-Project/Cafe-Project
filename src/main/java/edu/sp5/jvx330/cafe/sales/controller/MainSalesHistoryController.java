@@ -53,8 +53,8 @@ public class MainSalesHistoryController {
 			mav.addObject("year_list", year_list);
 			mav.addObject("month_list", month_list);
 			mav.addObject("day_list", day_list);
-			mav.setViewName("sales/main_salesHistory");
 			
+			mav.setViewName("sales/main_salesHistory");
 			return mav;
 		}
 }

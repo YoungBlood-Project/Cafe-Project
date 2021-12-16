@@ -16,7 +16,7 @@
     <header>
         <h1 class="hidden">JAVAK CAFE 자박 카페</h1>
     </header>
-    <section id="main">
+    <section id="index">
     	<h2 class="hidden">주문내역 및 메뉴</h2>
 		<section id="sectionLeft" class="cont">
             <h3 id="orderList_h3">주문 내역</h3>
@@ -102,7 +102,7 @@
 		
 		<c:if test="${not empty ciMap}">
 			<c:forEach var="ciMap" items="${ciMap}">
-				<ul class="sub ${ciMap.key.categoryName}"> 
+				<ul class="sub ${ciMap.key.categoryName} hidden"> 
 				<c:forEach var="ciValue" items="${ciMap.value}" >
 					<li>
 					<img src="../resources/${ciValue.itemUrl}" alt="${ciValue.itemName}"><br>

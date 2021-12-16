@@ -28,7 +28,11 @@ public class ItemServiceTest {
 		 * 테스트 - 이초원.
 		 */
 		// 1. 메뉴 추가/수정/삭제
+<<<<<<< HEAD
 		// addItem();
+=======
+		addItem();
+>>>>>>> branch 'master' of https://github.com/youngBlood-cafe-project/Cafe-Project.git
 		// setItemName();
 		// setItemPrice();
 		// deleteItem();
@@ -506,18 +510,22 @@ public class ItemServiceTest {
 		service.addItem(md_item12);
 
 		Item md_item13 = new Item(md_category, "투썸X미르 캠프컵[그린]", 35000);
-	      md_item13.setItemUrl("images/md/투썸X미르캠프컵_그린.jpg");
+		md_item13.setItemUrl("images/md/투썸X미르캠프컵_그린.jpg");
+		service.addItem(md_item13);
 
-	    Item md_item14 = new Item(md_category, "투썸X미르 캠프컵[옐로우]", 35000);
-	      md_item14.setItemUrl("images/md/투썸X미르캠프컵_옐로우.jpg");
+		Item md_item14 = new Item(md_category, "투썸X미르 캠프컵[옐로우]", 35000);
+		md_item14.setItemUrl("images/md/투썸X미르캠프컵_옐로우.jpg");
+		service.addItem(md_item14);
 
-	    Item md_item15 = new Item(md_category, "투썸X미르 텀블러[그린]", 50000);
-	      md_item15.setItemUrl("images/md/투썸X미르텀블러_그린.jpg");
+		Item md_item15 = new Item(md_category, "투썸X미르 텀블러[그린]", 50000);
+		md_item15.setItemUrl("images/md/투썸X미르텀블러_그린.jpg");
+		service.addItem(md_item15);
 
-	    Item md_item16 = new Item(md_category, "투썸X미르 텀블러[옐로우]", 50000);
-	      md_item16.setItemUrl("images/md/투썸X미르텀블러_옐로우.jpg");
+		Item md_item16 = new Item(md_category, "투썸X미르 텀블러[옐로우]", 50000);
+		md_item16.setItemUrl("images/md/투썸X미르텀블러_옐로우.jpg");
+		service.addItem(md_item16);
 	      
-	      System.out.println("ItemServiceTest: 저장 완료.");
+		System.out.println("ItemServiceTest: 저장 완료.");
 
 		// 옛날에 쓰던 test문
 		// Category category = cService.findCategoryByCategoryName("deletedMenu");
