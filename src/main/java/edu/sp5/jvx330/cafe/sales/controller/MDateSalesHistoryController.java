@@ -18,6 +18,7 @@ import edu.sp5.jvx330.cafe.menu.domain.Category;
 import edu.sp5.jvx330.cafe.menu.domain.Item;
 import edu.sp5.jvx330.cafe.sales.business.impl.SalesHistoryServiceImpl;
 import edu.sp5.jvx330.cafe.sales.business.impl.SalesTotalPriceServiceImpl;
+import edu.sp5.jvx330.cafe.sales.command.MenuSalesHistoryCommand;
 import edu.sp5.jvx330.cafe.sales.domain.SalesHistory;
 
 @Controller
@@ -44,6 +45,8 @@ public class MDateSalesHistoryController {
 		Date dateSales = sf.parse(dayString);
 	
 		List<SalesHistory> salesHistory_list = salesHistoryServiceImpl.findSalesHistoryByOrderDate(dateSales);
+		
+		MenuSalesHistoryCommand salesHistoryCommand = new MenuSalesHistoryCommand();
 		
 		
 		// command.setCategoryName();

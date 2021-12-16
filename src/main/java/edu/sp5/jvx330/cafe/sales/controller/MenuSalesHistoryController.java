@@ -9,7 +9,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 @Controller("menuSalesHistoryController")
 public class MenuSalesHistoryController {
-	@GetMapping("/sales/menu_salesHistory")
+	@GetMapping("/sales/menuSalesHistory")
 	public ModelAndView salesHistory() {
 		
 		ModelAndView mav = new ModelAndView();

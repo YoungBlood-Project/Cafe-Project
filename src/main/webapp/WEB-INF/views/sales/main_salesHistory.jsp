@@ -62,7 +62,7 @@
 			<input type="submit" value="당일 판매내역">
 		</form>
 		
-		<form action="/jvx330/sales/menu_salesHistory" method="get">
+		<form action="/jvx330/sales/menuSalesHistory" method="get">
 			<input type="submit" value="메뉴별 판매내역">
 		</form>	
 		
