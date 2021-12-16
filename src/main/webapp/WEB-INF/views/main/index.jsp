@@ -18,6 +18,7 @@
     </header>
     <section id="index">
     	<h2 class="hidden">주문내역 및 메뉴</h2>
+    	<p>시계</p>
 		<section id="sectionLeft" class="cont">
             <h3 id="orderList_h3">주문 내역</h3>
             <form action="${index_link}" method="post">
@@ -114,6 +115,8 @@
 			</c:forEach>
 		</c:if>
 		</section>
+		
+		<a href="index">취소</a>
 	</section>
 	
     <footer>   
@@ -137,7 +140,5 @@
             <!-- 인덱스 경로 구조 바꿔야...? 일단 JS 완성 되고 난 후에 이동...? -->
         </ul>
     </footer> 
-    
-    <p>시계</p>
 </body>
 </html>

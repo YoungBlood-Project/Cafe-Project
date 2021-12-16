@@ -8,12 +8,16 @@ import edu.sp5.jvx330.cafe.membership.domain.Customer;
 
 public class MileageServiceImpl implements MileageService {
 	@Autowired
+	private CustomerServiceImpl customerServiceImpl;
+	@Autowired
 	private MileageDaoImpl mDao;
 
 	// 1. Mileage 값 변경
 	// 1-1. 마일리지 적립
 	@Override
 	public void addMileage(Customer customer, Integer m_amount) {
+		// 고객 정보 받아오기
+		customer = customerServiceImpl.findCustomerByUserInfo(customer.getName(), customer.getPhone());
 		// 해당 고객의 전체 마일리지 조회
 		Integer milleage = mDao.findMileage(customer.getCid());
 		if (milleage == null) {
@@ -29,6 +33,8 @@ public class MileageServiceImpl implements MileageService {
 	// 1-2. 마일리지 사용
 	@Override
 	public void subtractMileage(Customer customer, Integer m_amount) {
+		// 고객 정보 받아오기
+		customer = customerServiceImpl.findCustomerByUserInfo(customer.getName(), customer.getPhone());
 		// 해당 고객의 전체 마일리지 조회
 		Integer mileage = mDao.findMileage(customer.getCid());
 		if (mileage == null || mileage < m_amount) {
@@ -43,6 +49,8 @@ public class MileageServiceImpl implements MileageService {
 	// 2. Mileage 조회
 	@Override
 	public Integer findMileage(Customer customer) {
+		// 고객 정보 받아오기
+		customer = customerServiceImpl.findCustomerByUserInfo(customer.getName(), customer.getPhone());
 		if (mDao.findMileage(customer.getCid()) == null) {
 			return null;
 		}
@@ -52,6 +60,8 @@ public class MileageServiceImpl implements MileageService {
 	// 3. Mileage 삭제
 	@Override
 	public void deleteMileage(Customer customer) {
+		// 고객 정보 받아오기
+		customer = customerServiceImpl.findCustomerByUserInfo(customer.getName(), customer.getPhone());
 		mDao.deleteMileage(customer.getCid());
 	}
 

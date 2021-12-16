@@ -95,9 +95,10 @@ table {
 }
 
 #orderList tbody {
-    height: 400px;
+    /*height: 400px;*/
     background-color: #303038;
 }
+
 #orderList tbody .orderItems > td {
     border-bottom: 3px solid #cccccc;
     text-align: center;
@@ -106,12 +107,17 @@ table {
 
 }
 /* 순번 orderItemsNum */
+
 #orderList tbody .orderItems .orderItemsNum {
-    width: 50px;
-    height: 50px;
+    /*width: 50px;
+    height: 50px;*/
     background-color: #303038;
     border: none;
     border-bottom: 3px solid #cccccc;
+}
+
+#orderList tr.orderItems {
+	/*display: block;*/
 }
 /* 제품명 menuName */
 #orderList tbody .orderItems td:nth-child(2) input {
@@ -130,7 +136,6 @@ table {
     color: #ffffff;
     text-align: center;
     font-size: 15px;
-
 }
 
 /* 단가 menu_price */
@@ -265,15 +270,15 @@ input[type="submit"]:hover {
 
 /* sub 메뉴 */
 .sub {
-    width: 700px;
+    width: 800px;
     margin: 20px auto;
 }
 .sub li {
     float: left;
-    width: 19.2%;
+    width: 160px;
     background-color: #303038;
     text-align: center;
-    padding: 20px 20px 0 20px;
+    padding: 20px 20px 0;
     transition: 0.5s;
     color: #ffffff;
     font-size: 12px;
@@ -323,5 +328,7 @@ img {
 }
 /* 디지털 시계 */
 p {
-    text-align: center; font-size: 15px; color: #ffffff;
+	padding: 40px 0 0 100px;
+    text-align: left; font-size: 15px; color: #ffffff; 
+    height: 50px; line-height: 50px;
 }
