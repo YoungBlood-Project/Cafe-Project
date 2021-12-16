@@ -1,6 +1,8 @@
 package edu.sp5.jvx330.cafe.menu.controller;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -26,26 +28,25 @@ public class SetItemsController {
 	public ModelAndView setItemsGet() {
 		ModelAndView mav = new ModelAndView();
 		
-		// select - option에 값을 넣기 위한 category List 생성
+		Map<Category, List<Item>> ciMap = new HashMap<Category, List<Item>>();
 		List<Category> category_list = categoryServiceImpl.findAllCategorys();
+		for (Category category : category_list) {
+			ciMap.put(category, itemServiceImpl.findItemsByCategory(category));
+		}
 		
-		mav.addObject("category_list", category_list);
+		mav.addObject("ciMap", ciMap);
 		mav.setViewName("menu/set_items");
 		
 		return mav;
 	}
 	
 	@PostMapping("/menu/setItems")
-	public ModelAndView setItemsPost(String categoryName, String itemName, Integer itemPrice) {
+	public ModelAndView setItemsPost(String itemName, String newItemName) {
 		ModelAndView mav = new ModelAndView();
 		
-		Category category = categoryServiceImpl.findCategoryByCategoryName(categoryName);
+		Item item = itemServiceImpl.findItemByItemName(itemName);
+		itemServiceImpl.setItemName(item, newItemName);
 		
-		Item item = new Item();
-		itemServiceImpl.setItemName(item, itemName);
-		itemServiceImpl.setItemPrice(item, itemPrice);
-		
-		// 수정 확인 클릭했을 때 삭제에 체크박스되어 있으면 삭제되는 기능
 		
 		mav.setViewName("menu/search_items");
 		return mav;
