@@ -21,7 +21,7 @@ public class AddItemsController {
 	private ItemSerivceImpl itemServiceImpl;
 	
 	@GetMapping("/menu/addItems")
-	public ModelAndView addItemGet() {
+	public ModelAndView addItemsGet() {
 		ModelAndView mav = new ModelAndView();
 		
 		List<Category> category_list = categoryServiceImpl.findAllCategorys();
