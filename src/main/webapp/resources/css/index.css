@@ -19,53 +19,52 @@
 }
 /* 초기화 */
 * {
-	margin : 0;
-	padding : 0;
+   margin : 0;
+   padding : 0;
 }
 .hidden {
-	position : absolute;
-	left : -9999px;
+   position : absolute;
+   left : -9999px;
 }
 li {list-style: none;}
 a {text-decoration: none; color:#000;}
 body {
     font-family: 'OTWelcomeBA', Tahoma, Geneva, Verdana, sans-serif;
-	margin: 0 auto;
-	min-width: 1500px;
+   margin: 0 auto;
+   min-width: 1500px;
     background-color: #18191d;
 }
-/* input { 
-
-    -webkit-appearance : none;
-    
-    -moz-appearance:none;
-    
-    appearance:none;
-    
-    } */
-    
-    
+input { 
+    font-family: 'OTWelcomeBA', Tahoma, Geneva, Verdana, sans-serif;
+    }
 table {
-	border-collapse: collapse;
-}
-/* main */
-#main {
+   border-collapse: collapse;
+} 
+/* main 전체 영역 가로정렬 */
+#index {
     width: 1503px;
     margin: 0px auto;
 }
-#main section.cont {
+#index .cont {
     float: left;    
 }
+
 /* main-Left */
 #sectionLeft {
     width: 700px;
     height: 1000px;
 }
-/* #sectionLeft div { 나중에 가운데선 넣는 거 생각해보기
+
+/* 가운데 구분 선 */
+/* #sectionLeft form:first-child {
+    width: 600px;
     margin-top: 40px;
     border-right: 2px solid #cccccc;
     height: 900px;
 } */
+
+/* --------------------------------------- */
+
 /* 주문내역 리스트 */
 #orderList_h3 {
     width: 600px;
@@ -78,6 +77,7 @@ table {
     top: 27px;
     position: relative;
 }
+
 #orderList {
     width: 600px;
     height: 500px;
@@ -86,65 +86,79 @@ table {
     background-color: #303038;
     overflow: hidden;
 }
-#orderList tr.gradient {
-    background: #526fb0;
-}
-#orderList th {
+
+#orderList thead {
     border-bottom: 3px solid #cccccc;
     height: 50px;
     color: #ffffff;
-    
+    background: #526fb0;
 }
-#orderList td {
+
+#orderList tbody {
+    height: 400px;
+    background-color: #303038;
+}
+#orderList tbody .orderItems > td {
     border-bottom: 3px solid #cccccc;
     text-align: center;
     height: 50px;
     color: #ffffff;
 
 }
-#orderList td > input[type='button'] {
-    background-color: #526fb0;
-    border: 3px solid #526fb0;
-    border-radius: 50%;
-    overflow: hidden;
-    color: #ffffff;
-    width: 30px;
-    height: 30px;
-    text-align: center;
-    text-decoration: none;
-    font-size: 16px;
-    margin: 4px 10px;
-    cursor: pointer;
-}
-#orderList td > input[type='button']:hover {
-    background-color: #374b75;
-    border: 3px solid #374b75;
-}
-#orderList td > input[name="amount"] {
+/* 순번 orderItemsNum */
+#orderList tbody .orderItems .orderItemsNum {
+    width: 50px;
+    height: 50px;
+    background-color: #303038;
     border: none;
-    /* background-color: #303038; */
+    border-bottom: 3px solid #cccccc;
 }
-/* #orderList td > .plus {
-    background-color: #526fb0;
-    border: 3px solid #526fb0;
-    border-radius: 50%;
-    overflow: hidden;
+/* 제품명 menuName */
+#orderList tbody .orderItems td:nth-child(2) input {
+    width: 130px; 
+    background-color: #303038;
+    border: none;
     color: #ffffff;
-    width: 30px;
-    height: 30px;
     text-align: center;
-    text-decoration: none;
-    font-size: 16px;
-    margin: 4px 10px;
-    cursor: pointer;
+    font-size: 15px;
 }
-#orderList td > .plus:hover {
-    background-color: #374b75;
-    border: 3px solid #374b75;
-} */
+/* 수량 numOfNum */
+#orderList tbody .orderItems td:nth-child(3) input {
+    width: 50px; 
+    background-color: #303038;
+    border: none;
+    color: #ffffff;
+    text-align: center;
+    font-size: 15px;
+
+}
+
+/* 단가 menu_price */
+#orderList tbody .orderItems .menu_price {
+    width: 60px; 
+    background-color: #303038;
+    border: none;
+    color: #ffffff;
+    text-align: center;
+    font-size: 15px;
+
+}
+/* 금액 paidPrice */
+#orderList tbody .orderItems td:nth-child(5) input {
+    width: 50px; 
+    background-color: #303038;
+    border: none;
+    color: #ffffff;
+    text-align: center;
+    font-size: 15px;
+
+}
+
+/* --------------------------------------- */
+
 /* 계산서 */
 #count {
-    margin: 77px auto 0;
+    margin: 27px auto 0;
     width: 600px;
     background-color: #303038;
 }
@@ -154,267 +168,155 @@ table {
     padding: 20px 30px 20px 0;
     text-align: center;
 }
-#count .important {
-    font-size: larger;
+/* 총 수량 */
+#count td input[name="salesTotalPrice.orderNum"] {
+    width: 100px; 
+    background-color: #303038;
+    border: none;
+    color: #ffffff;
+    text-align: center;
+    font-size: 15px;
 }
+/* 총 금액 */
+#count td input[name="salesTotalPrice.totalPrice"] {
+    width: 100px; 
+    background-color: #303038;
+    border: none;
+    color: #ffffff;
+    text-align: center;
+    font-size: 15px;
+}
+/* 할인 금액 */
+#count td input[name="mileageHistory.mBalance"] {
+    width: 100px; 
+    background-color: #303038;
+    border: none;
+    color: #ffffff;
+    text-align: center;
+    font-size: 15px;
+}
+/* 받을 금액 */
+#count td input[name="salesTotalPrice.reducedPrice"] {
+    width: 100px; 
+    background-color: #303038;
+    border: none;
+    color: #ffffff;
+    text-align: center;
+    font-size: 15px;
+}
+/* 결제하기 button */
+input[type="submit"] {
+    width: 170px;
+    height: 50px;
+    margin: 30px auto 0;
+    background-color: #303038;
+    border: none;
+    color: #ffffff;
+    text-align: center;
+    font-size: 15px;
+    position: relative;
+    left: 250px;
+}
+input[type="submit"]:hover {
+    background-color: #526fb0;
+}
+
+/* --------------------------------- */
+
 /* main-right */
 #sectionRight{
     width: 800px;
     height: 1000px;
 }
-/* 메뉴 카테고리 테이블 */
+
+/* 상세 메뉴 카테고리 */
 #menu {
-    width: 650px;
+    width: 700px;
+    height: 150px;
     margin: 20px auto;
     border-radius: 30px;
-    overflow: hidden;
-    border-collapse: separate;
-    border-spacing: 0;
     border: 5px solid #526fb0;
-    table-layout: fixed;
 }
-#menu tr {
-    height: 50px;
-}
-#menu td {
+#menu .title {
+    padding-top: 25px;
+    width: 24.62%;
+    height: 47.5px;
+    float: left;
     text-align: center;
     border: 1px solid #526fb0;
     background-color: #303038;
-}
-#menu td:hover {
-    background-color: #526fb0;
-}
-#menu td>a {
     color: #ffffff;
 }
-.btn_left {
+#menu .title:first-child {
+    border-radius: 23px 0 0 0;
+}
+#menu .title:nth-child(4) {
+    border-radius: 0 23px 0 0;
+}
+#menu .title:nth-child(5) {
+    border-radius: 0 0 0 23px;
+}
+#menu .title:last-child {
+    border-radius: 0 0 23px 0;
+}
+#menu .title:hover {
     background-color: #526fb0;
-    border: 3px solid #526fb0;
-    border-radius: 50%;
-    overflow: hidden;
-    border-spacing: 0;
-    color: #ffffff;
-    width: 30px;
-    height: 30px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 10px;
-    cursor: pointer;
 }
-.btn_right {
-    background-color: #526fb0;
-    border: 3px solid #526fb0;
-    border-radius: 50%;
-    overflow: hidden;
-    border-spacing: 0;
-    color: #ffffff;
-    width: 30px;
-    height: 30px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 10px;
-    cursor: pointer;
-}
-.btn_left:hover {
-    background-color: #ffffff;
-    border: 3px solid #ffffff;
-    color: #526fb0;
-}
-.btn_right:hover {
-    background-color: #ffffff;
-    border: 3px solid #ffffff;
-    color: #526fb0;
-}
-/* 메뉴별 테이블 */
 
-/* Coffee */
-#coffee_menu {
+/* sub 메뉴 */
+.sub {
     width: 700px;
-    margin: 35px auto;
+    margin: 20px auto;
 }
-#coffee_menu td {
-    width: 25%;
+.sub li {
+    float: left;
+    width: 19.2%;
     background-color: #303038;
     text-align: center;
     padding: 20px 20px 0 20px;
     transition: 0.5s;
-}
-#coffee_menu td:hover {
-    background-color: #526fb0;
-}
-
-/* 정혜윤 - 수정(coffee_menu의 a태그가 삭제됨). */
-.coffee_list td {
     color: #ffffff;
-    font-size: 13px;
+    font-size: 12px;
 }
+.sub li:hover {
+    background-color: #526fb0;
 
+}
+.sub li span {
+    color: #ffffff;
+    
+}
 img {
     width: 120px;
     height: 120px;
-    margin-bottom: 10px; /* 라벨과의 거리를 띄움. - 정혜윤*/
-}
-
-
-/* Tea */
-#tea_menu {
-    width: 700px;
-    margin: 35px auto;
-}
-#tea_menu td {
-    width: 25%;
-    background-color: #303038;
-    text-align: center;
-    padding: 20px 20px 0 20px;
-    transition: 0.5s;
-    
-}
-#tea_menu td:hover {
-    background-color: #526fb0;
-    
-}
-#tea_menu td > a {
-    color: #ffffff;
-    font-size: 12px;
-}
-
-/* Drink */
-#drink_menu {
-    width: 700px;
-    margin: 35px auto;
-}
-#drink_menu td {
-    width: 25%;
-    background-color: #303038;
-    text-align: center;
-    padding: 20px 20px 0 20px;
-    transition: 0.5s;
-    
-}
-#drink_menu td:hover {
-    background-color: #526fb0;
-}
-#drink_menu td > a {
-    color: #ffffff;
-    font-size: 12px;
-}
-/* Cake */
-#cake_menu {
-    width: 700px;
-    margin: 35px auto;
-}
-#cake_menu td {
-    width: 25%;
-    background-color: #303038;
-    text-align: center;
-    padding: 20px 20px 0 20px;
-    transition: 0.5s;
-    
-}
-#cake_menu td:hover {
-    background-color: #526fb0;
-}
-#cake_menu td > a {
-    color: #ffffff;
-    font-size: 12px;
-}
-/* Meal */
-#meal_menu {
-    width: 700px;
-    margin: 35px auto;
-}
-#meal_menu td {
-    width: 25%;
-    background-color: #303038;
-    text-align: center;
-    padding: 20px 20px 0 20px;
-    transition: 0.5s;
-
-}
-#meal_menu td:hover {
-    background-color: #526fb0;
-}
-#meal_menu td > a {
-    color: #ffffff;
-    font-size: 12px;
-}
-/* Bread */
-#bread_menu {
-    width: 700px;
-    margin: 35px auto;
-}
-#bread_menu td {
-    width: 25%;
-    background-color: #303038;
-    text-align: center;
-    padding: 20px 20px 0 20px;
-    transition: 0.5s;
-    
-}
-#bread_menu td:hover {
-    background-color: #526fb0;
-}
-#bread_menu td > a {
-    color: #ffffff;
-    font-size: 12px;
-}
-/* MD */
-#md_menu {
-    width: 700px;
-    margin: 35px auto;
-}
-#md_menu td {
-    width: 25%;
-    background-color: #303038;
-    text-align: center;
-    padding: 20px 20px 0 20px;
-    transition: 0.5s;
-    
-}
-#md_menu td:hover {
-    background-color: #526fb0;
-}
-#md_menu td > a {
-    color: #ffffff;
-    font-size: 12px;
 }
 
 /* footer - ownerSet */
-input[type='submit'] {
-    font-family: 'OTWelcomeBA', Tahoma, Geneva, Verdana, sans-serif;
 
-}
 #ownerSet {
     width: 100%;
-    /* overflow: hidden; */
 }
 #ownerSet li {
     list-style: none;
+    position: relative;
+    left: -15%;
 }
-#ownerSet li > form {
+
+#ownerSet li > form > input[type="submit"] {
     text-align: center;
-    background-color: #303038;width: 24.85%;
+    background-color: #303038;
+    width: 33.3333%;
     float: left;
     border-right: 2.3px solid #cccccc;
-}
-#ownerSet li > form > input {
     height: 100px;
     line-height: 100px;
-    border: 0px;
     font-size: 20px;
     color: #ffffff;
     background-color: #303038;
+    
 }
-#ownerSet li > form:hover {
-    background-color: #526fb0;
-    transition: 0.5s;
-    cursor: pointer;
-}
-#ownerSet li > form > input:hover {
+
+#ownerSet li > form > input[type="submit"]:hover {
     background-color: #526fb0;
     transition: 0.5s;
     cursor: pointer;

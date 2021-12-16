@@ -9,45 +9,51 @@
 </head>
 <body>
 <section id="main_m_salesHistory">
-
-	<form>
-		<table id="salesHistoryTable">
-			<tr>
-				<td><label>날짜별 내역</label></td>
-				<td id="historyByDate_year">
-				<select>
-				<c:if test="${not empty historyByDate_year}">
-				<c:forEach var="year" items="${historyByDate_year}" varStatus="status">
-					<option>${year}</option>
+	<h2>메뉴별 판매내역</h2>
+	<form action="mDateSalesHistory" method="get">
+		날짜별 내역:
+			<select name="year">
+				<c:forEach var="year" items="${year_list}">
+					<option value="${year}">${year}</option>
 				</c:forEach>
-				</c:if>
-				</select>
-				</td>
-				
-				<td id="historyByDate_month">
-				<select>
-				<c:if test="${not empty historyByDate_month}">
-				<c:forEach var="month" items="${historyByDate_month}" varStatus="status">
-					<option>${month}</option>
+			</select>
+			<select name="month">
+				<c:forEach var="month" items="${month_list}">
+					<option value="${month}">${month}</option>
 				</c:forEach>
-				</c:if>
-				</select>
-				</td>
-
-				<td id="historyByDate_day">
-				<select>
-				<c:if test="${not empty historyByDate_day}">
-				<c:forEach var="day" items="${historyByDate_day}" varStatus="status">
-					<option>${day}</option>
+			</select>
+			<select name="day">
+				<c:forEach var="day" items="${day_list}">
+					<option value="${day}">${day}</option>
 				</c:forEach>
-				</c:if>
-				</select>
-				</td>
-
-				<td><input type="submit" value="확인"></td>
-			</tr>
-		</table>
-	</form>
-</section>
+			</select>
+			<input type="submit" value="확인">
+		</form>	
+		
+		<form action="mMonthSalesHistory" method="get">
+		월별 내역:
+			<select name="year">
+				<c:forEach var="year" items="${year_list}">
+					<option value="${year}">${year}</option>
+				</c:forEach>
+			</select>
+			<select name="month">
+				<c:forEach var="month" items="${month_list}">
+					<option value="${month}">${month}</option>
+				</c:forEach>
+			</select>
+			<input type="submit" value="확인">
+		</form>	
+		
+		<form action="mYearSalesHistory" method="get">
+		연간 내역:
+			<select name="year">
+				<c:forEach var="year" items="${year_list}">
+					<option value="${year}">${year}</option>
+				</c:forEach>
+			</select>
+			<input type="submit" value="확인">
+		</form>	
+	</section>	
 </body>
 </html>

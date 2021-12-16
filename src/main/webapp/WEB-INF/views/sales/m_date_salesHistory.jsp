@@ -1,28 +1,28 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="EUC-KR">
-<title>³¯Â¥º° ÆÇ¸Å ³»¿ª</title>
+<meta charset="UTF-8">
+<title>ë‚ ì§œë³„ íŒë§¤ ë‚´ì—­</title>
 </head>
 <body>
 	<section id="day_salesHistory">
-		<h2>³¯Â¥º° ÆÇ¸Å³»¿ª</h2>
+		<h2>ë‚ ì§œë³„ íŒë§¤ë‚´ì—­</h2>
 		
 		<table>
 		
 			<tr>
-				<td>³¯Â¥</td>
-				<td>ÃÑ ¼ö·®</td>
-				<td>ÃÑ ¸ÅÃâ</td>
+				<td>ë‚ ì§œ</td>
+				<td>ì´ ìˆ˜ëŸ‰</td>
+				<td>ì´ ë§¤ì¶œ</td>
 			</tr>
 			
 			<tr>
-				<th>Ä«Å×°í¸®</th>
-				<th>¸Þ´º¸í</th>
-				<th>¼ö·®</th>
-				<th>¸ÅÃâ¾×</th>
+				<th>ì¹´í…Œê³ ë¦¬</th>
+				<th>ë©”ë‰´ëª…</th>
+				<th>ìˆ˜ëŸ‰</th>
+				<th>ë§¤ì¶œì•¡</th>
 			</tr>
 			
 			

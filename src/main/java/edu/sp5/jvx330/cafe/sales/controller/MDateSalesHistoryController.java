@@ -10,6 +10,7 @@ import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -24,23 +25,19 @@ import edu.sp5.jvx330.cafe.sales.domain.SalesHistory;
 
 @Controller
 public class MDateSalesHistoryController {
-	
 	@Autowired
 	private CategoryServiceImpl categoryServiceImpl;
-	
 	@Autowired
 	private ItemSerivceImpl itemServiceImpl;
-	
 	@Autowired
 	private SalesHistoryServiceImpl salesHistoryServiceImpl;
 	
-	
-	@PostMapping("/sales/daySalesTotalPrice")
-	public ModelAndView daySalesTotalPost(String year, String month, String date) throws ParseException {
+	@GetMapping("/sales/mDateSalesHistory")
+	public ModelAndView mDateSalesHistoryPost(String year, String month, String day) throws ParseException {
 		
 		ModelAndView mav = new ModelAndView();
 		
-		String dayString = year+"년 "+month+"월 "+date+"일";
+		String dayString = year+"년 "+month+"월 "+day+"일";
 		
 		SimpleDateFormat sf = new SimpleDateFormat("yyyy년 MM월 dd일");
 		Date dateSales = sf.parse(dayString);
@@ -65,7 +62,7 @@ public class MDateSalesHistoryController {
 		// List<salesHistory> salesHistory_list = findSHByItemIdAndOrderDate(Item id, dateSales);
 		// Item id에는 map의 밸류값
 	
-		mav.setViewName("sales/day_salesTotalPrice");
+		mav.setViewName("sales/m_date_salesHistory");
 		return mav;
 	}
 }
