@@ -19,15 +19,40 @@ import edu.sp5.jvx330.cafe.manager.domain.Manager;
 public class MainSalesHistoryController {
 
 		@GetMapping("/sales/mainSalesHistory")
-		public String mainSalesHistoryGet(HttpServletRequest request, HttpSession session) {	
+		public ModelAndView mainSalesHistoryGet(HttpServletRequest request, HttpSession session) {
+			ModelAndView mav = new ModelAndView();
+
 			Manager auth_manager = (Manager)session.getAttribute("manager");
 			
 			//관리자로그인 확인
 			if(auth_manager == null) {
 				session.setAttribute("requestPath", request.getServletPath());
-				return "/manager/login_manager";
+				mav.setViewName("/manager/login_manager");
+				return mav;
 			}
-			return "sales/main_salesHistory";
+			
+			List<Integer> year_list = new ArrayList<>();
+			List<Integer> month_list = new ArrayList<>();
+			List<Integer> day_list = new ArrayList<>();
+			
+			SimpleDateFormat format = new SimpleDateFormat("yyyy");
+			String thisYear = format.format(new Date());
+			for(Integer year=2010; year<=Integer.parseInt(thisYear); year++) {
+				year_list.add(year);
+			}
+			for(int month=1; month<=12; month++) {
+				month_list.add(month);
+			}
+			for(int day=1; day<=31; day++) {
+				day_list.add(day);
+			}
+			
+			mav.addObject("year_list", year_list);
+			mav.addObject("month_list", month_list);
+			mav.addObject("day_list", day_list);
+			
+			mav.setViewName("sales/main_salesHistory");
+			return mav;
 		}
 		
 		@PostMapping("/sales/mainSalesHistory") 

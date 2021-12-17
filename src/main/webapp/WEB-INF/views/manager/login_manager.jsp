@@ -13,7 +13,9 @@
 <body>
 	<section id="login_manager">
 	<h2>관리자 로그인</h2>
-	<h3>${loginErrorMsg}</h3>
+	<c:if test="${not empty loginErrorMsg}">
+		<h3>${loginErrorMsg}</h3>	
+	</c:if>
 	<form action="/jvx330/manager/loginManager" method="post">
 		<span>이름 :</span> <input type="text" name="managerName"><br>
 		<span>패스워드 :</span> <input type="password" name="passwd"><br>
