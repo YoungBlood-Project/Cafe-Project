@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -106,7 +107,15 @@
 				<ul class="sub ${ciMap.key.categoryName} hidden"> 
 				<c:forEach var="ciValue" items="${ciMap.value}" >
 					<li>
-					<img src="../resources/${ciValue.itemUrl}" alt="${ciValue.itemName}"><br>
+					<c:choose>
+						<c:when test="${ciValue.itemUrl.contains(placehold)}">
+							<img src="${ciValue.itemUrl}" alt="${ciValue.itemName}">
+						</c:when>
+						<c:otherwise>
+							<img src="../resources/${ciValue.itemUrl}" alt="${ciValue.itemName}">
+						</c:otherwise>
+					</c:choose>
+					<br>
 					<span>${ciValue.itemName}</span><br>
 					${ciValue.itemPrice}원
 					</li>

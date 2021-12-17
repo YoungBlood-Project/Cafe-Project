@@ -50,6 +50,7 @@ public class IndexController {
 
 		mav.addObject("ciMap", ciMap);
 		mav.addObject("index_link", "index");
+		mav.addObject("placehold","placehold");
 		mav.setViewName("main/index");
 		
 		//System.out.println(cancel);
