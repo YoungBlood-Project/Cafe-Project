@@ -16,8 +16,8 @@
 	<h3>${yyyyMM}</h3>
 	
 	<ul>
-		<li>판매액 총합 : </li>
-		<li>매출액 총합 : </li>
+		<li>판매액 총합 : ${all_total}</li>
+		<li>매출액 총합 : ${add_reduced}</li>
 	</ul>
 	
 	<table>

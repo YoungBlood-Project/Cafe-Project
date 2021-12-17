@@ -46,6 +46,9 @@ public class DateSalesTotalPriceController {
 		}
 		
 		mav.addObject("yyyyMMdd", year+"³â "+month+"¿ù"+day+"ÀÏ");
+		mav.addObject("all_total",all_total);
+		mav.addObject("add_reduced",add_reduced);
+		
 		mav.addObject("stp_list", stp_list);
 
 		mav.setViewName("sales/date_salesTotalPrice");

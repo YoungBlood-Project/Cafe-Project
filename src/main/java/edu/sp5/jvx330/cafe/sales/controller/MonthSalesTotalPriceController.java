@@ -44,9 +44,21 @@ public class MonthSalesTotalPriceController {
 		str_yyyyMM2 = Integer.toString(nextYear)+"-"+firstMonth;
 		yyyyMM2 = format.parse(str_yyyyMM2);//2022-01-01
 	}
+	
+	Integer all_total = 0;
+	Integer add_reduced = 0;
+	
 	//비즈니스서비스 호출
 	List<SalesTotalPrice> stp_list = salesTotalPriceService.findSalesTotalPriceByMonth(yyyyMM, yyyyMM2);
+	for(SalesTotalPrice stp : stp_list) {
+		all_total += stp.getTotalPrice();
+		add_reduced += stp.getReducedPrice();
+	}
+	
 	mav.addObject("yyyyMM",year+"년 "+month+"월");
+	mav.addObject("all_total",all_total);
+	mav.addObject("add_reduced",add_reduced);
+	
 	mav.addObject("stp_list", stp_list);
 
 	mav.setViewName("sales/month_salesTotalPrice");
