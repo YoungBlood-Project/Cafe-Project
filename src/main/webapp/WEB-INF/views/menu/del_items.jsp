@@ -8,6 +8,7 @@
 <title>메뉴 삭제</title>
 <script src='<c:url value="/resources/js/jquery-3.6.0.min.js"/>'></script>
 <link href='<c:url value="/resources/css/common.css"/>' rel="stylesheet" type="text/css">
+<link href='<c:url value="/resources/css/menu/del_items.css"/>' rel="stylesheet" type="text/css">
 </head>
 <body>
 	<section id="del_items">
@@ -19,7 +20,8 @@
 	    	</c:forEach>
 		</c:if> 
         <br>
-         
+        
+        <div id="delItemsWrap">
         <c:if test="${not empty ciMap}">
         	<c:forEach var="ciMap" items="${ciMap}" varStatus="status">
         		<c:choose>
@@ -40,6 +42,8 @@
         		</c:choose>   	
         	</c:forEach>
         </c:if>
+        </div>
+        
         <input type="submit" value="삭제 확인">
        </form>
 	</section>
