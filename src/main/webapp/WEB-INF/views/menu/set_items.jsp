@@ -15,26 +15,35 @@
 
 <body>
 	<section id="set_itmes">
-	    <form action="setItems">
+	    <form action="setItems" method="post">
 		<c:if test="${not empty ciMap}">
-			<c:forEach var="ciKey" items="${ciMap.key}" varStatus="status">
-	    		<label><input type="radio" name="categoryName" class="radio_btn" value="${ciKey.categoryName}"/>${cikey.categoryName}</label>
+			<c:forEach var="ciKey" items="${ciMap.keySet()}" varStatus="status">
+	    		<label><input type="radio" name="categoryName" class="radio_btn" value="${ciKey.categoryName}"/>${ciKey.categoryName}</label>
 	    	</c:forEach>
 		</c:if> 
         <br>
          
         <c:if test="${not empty ciMap}">
-        	<c:forEach var="ciKey" items="${ciMap.key}" varStatus="status">
-        		<select name="itemName" id="${ciKey.categoryName}" class="itemName" hidden="hidden">
-					<c:forEach var="ciValue" items="${ciMap.value}" varStatus="status">
-						<option value="${ciValue.itemName}">${ciValue.itemName}</option>		
-					</c:forEach>
-				</select>        	
+        	<c:forEach var="ciMap" items="${ciMap}" varStatus="status">
+        		<c:choose>
+        			<c:when test="${status.count eq 1}">
+        				<select name="itemName" id="${ciMap.key.categoryName}" class="itemName">
+							<c:forEach var="ciValue" items="${ciMap.value}" varStatus="status">
+								<option value="${ciValue.itemName}">${ciValue.itemName}</option>		
+							</c:forEach>
+						</select>       
+        			</c:when>
+        			<c:otherwise>
+        				<select name="hide_itemName" id="${ciMap.key.categoryName}" class="itemName" hidden="hidden">
+							<c:forEach var="ciValue" items="${ciMap.value}" varStatus="status">
+								<option value="${ciValue.itemName}">${ciValue.itemName}</option>		
+							</c:forEach>
+						</select>     
+        			</c:otherwise>
+        		</c:choose>   	
         	</c:forEach>
         </c:if>
-       </form>
-       
-       <form action="setItems" method="post">
+        
         <input type="text" name="newItemName" placeholder="바꿀 메뉴명을 입력하세요">
         <input type="submit" value="수정 확인">
        </form>
@@ -43,6 +52,11 @@
 
     <script>
         let category_list = $(".itemName");
+        
+        $(window).ready(function(){
+        	$(".radio_btn:eq(0)").attr("checked",true);
+        	$(".itemName").removeClass('hidden');
+        })
 
         $(".radio_btn").on("click",function(){
             //console.log($(this).val());
@@ -53,6 +67,8 @@
                     console.log($(this).val())
                     $(".itemName").hide();
                     $("#"+$(this).val()).show();
+                    $("#"+$(this).val()).attr("name","itemName");
+                    $(".itemName").not($("#"+$(this).val())).attr("name","hide_itemName");
                     //$("."+category_list[i].className).show;
                 }
             }
