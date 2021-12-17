@@ -35,12 +35,11 @@ public interface SalesHistoryService {
 	 */
 	//2-4. 해당 주문 번호로 판매 내역 조회
 	public List<SalesHistory> findSalesHistoryByOrderNum(Long orderNum);
-	// 2-5. 해당 아이템 아이디와 날짜로 판매내역 조회
-	// public List<SalesHistory> findSHByItemIdAndOrderDate(Long itemId, Date orderDate);
+	// 2-5. 해당 날짜로 월별 아이템별 총 수량, 총 지불금액 조회
+	public List<SalesHistory> sumNumOfSalesAndSumPaidPriceByDate(Date date);
 	
 	//2-6 월별 아이템별 총 수량, 총 지불금액 조회
 	public List<SalesHistory> sumNumOfSalesAndSumPaidPriceByMonth(Date date1, Date date2);
-		
 	
 	/**
 	 * 3. 판매내역 삭제

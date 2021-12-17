@@ -30,6 +30,8 @@ public interface SalesHistoryDao {
 	public List<SalesHistory> findSalesHistoryByMonth(Date date1, Date date2);
 	//2-6 월별 아이템별 총 수량, 총 지불금액 조회
 	public List<SalesHistory> sumNumOfSalesAndSumPaidPriceByMonth(Date date1, Date date2);
+	//2-7. 해당 날짜로 월별 아이템별 총 수량, 총 지불금액 조회
+	public List<SalesHistory> sumNumOfSalesAndSumPaidPriceByDate(Date date);
 	
 	/**
 	 * 3. 판매내역 삭제
