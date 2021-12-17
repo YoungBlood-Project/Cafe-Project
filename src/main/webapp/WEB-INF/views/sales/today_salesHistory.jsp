@@ -47,12 +47,6 @@
 			</c:if>
 		</table>
 	</form>
-<<<<<<< HEAD
-=======
-	<form action="/jvx330/sales/mainSalesHistory" method="post">
-		<input type="submit" id="submit" value="판매내역 메인으로 돌아가기">
-	</form>
->>>>>>> branch 'master' of https://github.com/youngBlood-cafe-project/Cafe-Project.git
 </section>
 </body>
 </html>
