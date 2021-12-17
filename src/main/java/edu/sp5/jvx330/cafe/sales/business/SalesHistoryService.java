@@ -38,16 +38,7 @@ public interface SalesHistoryService {
 	// 2-5. 해당 아이템 아이디와 날짜로 판매내역 조회
 	// public List<SalesHistory> findSHByItemIdAndOrderDate(Long itemId, Date orderDate);
 	
-	// 2-6 판매내역 월별 조회
-	public List<SalesHistory> findSalesHistoryByMonth(Date date1, Date date2);
-	
-	//2-7 월별 아이템별 총 수량 조회
-	public List<SalesHistory> sumNumOfSalesByMonth(Date date1, Date date2);
-	
-	//2-8 월별 아이템별 총 지불금액 조회
-	public List<SalesHistory> sumPaidPriceByMonth(Date date1, Date date2);
-	
-	//2 test 월별 아이템별 총 수량, 총 지불금액 조회
+	//2-6 월별 아이템별 총 수량, 총 지불금액 조회
 	public List<SalesHistory> sumNumOfSalesAndSumPaidPriceByMonth(Date date1, Date date2);
 		
 	
@@ -58,6 +49,8 @@ public interface SalesHistoryService {
 	public void deleteSalesHistoryBySHid(SalesHistory salesHistory);
 	//3-2. 해당 메뉴의 판매내역 전체 삭제
 	public void deleteAllSalesHistories(Item item);
+	//3-3. 해당 메뉴의 주문번호로 삭제
+	public void deleteSalesHistoryByOrderNum(Long orderNum);
 	
 	/**
 	 * 4. 날짜별 판매내역 개수

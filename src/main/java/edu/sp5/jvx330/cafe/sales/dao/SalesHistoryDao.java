@@ -29,12 +29,6 @@ public interface SalesHistoryDao {
 	//2-5 월별 판매내역 조회
 	public List<SalesHistory> findSalesHistoryByMonth(Date date1, Date date2);
 	//2-6 월별 아이템별 총 수량, 총 지불금액 조회
-	public List<SalesHistory> sumSalesHistoryByMonth(Date date1, Date date2);
-	//2-7 월별 아이템별 총 수량 조회
-	public List<SalesHistory> sumNumOfSalesByMonth(Date date1, Date date2);
-	//2-8 월별 아이템별 총 지불금액 조회
-	public List<SalesHistory> sumPaidPriceByMonth(Date date1, Date date2);
-	//2 test 월별 아이템별 총 수량, 총 지불금액 조회
 	public List<SalesHistory> sumNumOfSalesAndSumPaidPriceByMonth(Date date1, Date date2);
 	
 	/**
@@ -44,7 +38,9 @@ public interface SalesHistoryDao {
 	public void deleteSalesHistoryBySHid(Long shid);
 	//3-2. 해당 메뉴의 판매내역 전체 삭제
 	public void deleteAllSalesHistories(Long itemId);
-	
+	//3-3. 해당 메뉴의 주문번호로 삭제
+	public void deleteSalesHistoryByOrderNum(Long orderNum);
+		
 	/**
 	 * 4. 메뉴삭제(판매내역 메뉴 id 변경)
 	 */
