@@ -14,7 +14,7 @@
 <section id="month_salesTotalPrice">
 	<h2>월별 총매출</h2>
 	<h3>${yyyyMM}</h3>
-	
+		
 	<ul>
 		<li>판매액 총합 : ${all_total}</li>
 		<li>매출액 총합 : ${add_reduced}</li>

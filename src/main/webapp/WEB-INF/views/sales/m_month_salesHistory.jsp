@@ -7,6 +7,7 @@
 <head>
 <meta charset="UTF-8">
 <title>월간 메뉴별 판매내역</title>
+<link href='<c:url value="/resources/sales/m_month_salesHistory.css"/>' rel="stylesheet" type="text/css">
 </head>
 <body>
 <section id="m_month_salesHistory">
