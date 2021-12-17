@@ -6,6 +6,8 @@
 <head>
 <meta charset="UTF-8">
 <title>판매 내역</title>
+<link href='<c:url value="/resources/css/common.css"/>' rel="stylesheet" type="text/css">
+<link href='<c:url value="/resources/css/sales/main_salesHistory.css"/>' rel="stylesheet" type="text/css">
 </head>
 <body>
 	<section id="main_salesHistory">
@@ -21,6 +23,7 @@
 		
 		<a href="mainMSalesHistory">메뉴별 판매내역</a>
 		
+		<section id="salesHistoryMain">
 		<h3>총매출 확인</h3>
 		<form action="/jvx330/sales/dateSalesTotalPrice" method="get">
 		날짜별 내역:
@@ -66,6 +69,7 @@
 			</select>
 			<input type="submit" value="확인">
 		</form>	
+		</section>
 	</section>	
 </body>
 </html>

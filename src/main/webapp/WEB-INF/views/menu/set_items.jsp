@@ -11,6 +11,7 @@
     <title>메뉴 수정</title>
     <script src='<c:url value="/resources/js/jquery-3.6.0.min.js"/>'></script>
     <link href='<c:url value="/resources/css/common.css"/>' rel="stylesheet" type="text/css">
+    <link href='<c:url value="/resources/css/menu/set_items.css"/>' rel="stylesheet" type="text/css">
 </head>
 
 <body>
@@ -23,7 +24,8 @@
 	    	</c:forEach>
 		</c:if> 
         <br>
-         
+        
+        <div id="setItemsWrap">
         <c:if test="${not empty ciMap}">
         	<c:forEach var="ciMap" items="${ciMap}" varStatus="status">
         		<c:choose>
@@ -44,8 +46,9 @@
         		</c:choose>   	
         	</c:forEach>
         </c:if>
-        
         <input type="text" name="newItemName" placeholder="바꿀 메뉴명을 입력하세요">
+        </div> 
+        
         <input type="submit" value="수정 확인">
        </form>
 	</section>

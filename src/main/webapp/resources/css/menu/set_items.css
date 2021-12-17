@@ -1,0 +1,28 @@
+@charset "UTF-8";
+
+#set_itmes label {
+	font-size: 12px; 
+	width: 20px;
+}
+
+.radio_btn {
+ 	width: 11px;
+}
+
+.itemName {
+  width: 150px;
+  margin: 5px 5px 0 0;
+}
+
+.itemName option {
+	width: 150px;
+}
+
+#setItemsWrap {
+	width: 500px;
+	margin-left: -90px;
+}
+
+input[type="text"] {
+	font-size: 14px;
+}

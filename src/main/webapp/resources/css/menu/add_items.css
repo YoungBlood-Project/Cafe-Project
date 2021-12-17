@@ -1,13 +1,38 @@
 @charset "UTF-8";
 
-#addItemsContent form table tr {
-	width: 100px;
+#addItemsContent form {
+  width: 400px;
+  margin: 0 auto;
+}
+
+#titleWrap {
+	width: 400px;
+  
 }
 
 .title {
-	margin-right: 20px;
+  width: calc(400px / 3);
+  margin-right: 20px;
+  padding-top: 15px;
 }
 
-#addItemsContent form table select {
-	
+#categoryName {
+  width: 120px;
+  margin: 5px 5px 0 0;
 }
+
+#categoryName option {}
+
+#submitWrap {
+  width: 110px;
+  margin: 0 auto;
+}
+
+#submit {
+  margin: 0;
+}
+
+.itemInfo {
+  width: 130px;
+}
+
