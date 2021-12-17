@@ -6,6 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <title>관리자 로그인</title>
+<!-- <link href='<c:url value="/resources/css/common.css"/>' rel="stylesheet" type="text/css"> -->
 </head>
 <body>
 	<h2>관리자 로그인</h2>
