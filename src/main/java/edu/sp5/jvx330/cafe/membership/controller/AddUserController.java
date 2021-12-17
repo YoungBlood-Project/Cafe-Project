@@ -15,7 +15,7 @@ import edu.sp5.jvx330.cafe.util.Validator;
 import edu.sp5.jvx330.cafe.web.container.OrderContainer;
 
 @SessionAttributes("orderContainer")
-@Controller("controller.AddUserController")
+@Controller("controller.addUserController")
 public class AddUserController {
 	@Autowired
 	CustomerServiceImpl cService;
