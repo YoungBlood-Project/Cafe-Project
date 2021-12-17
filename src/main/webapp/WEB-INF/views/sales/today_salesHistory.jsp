@@ -6,6 +6,8 @@
 <head>
 <meta charset="UTF-8">
 <title>당일 판매 내역</title>
+<link href='<c:url value="/resources/css/common.css"/>' rel="stylesheet" type="text/css">
+<link href='<c:url value="/resources/css/sales/today_salesHistory.css"/>' rel="stylesheet" type="text/css">
 </head>
 <body>
 <section id="today_salesHistory">
