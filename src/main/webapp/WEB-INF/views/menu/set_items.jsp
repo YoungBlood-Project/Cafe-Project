@@ -14,7 +14,8 @@
 
 <body>
 	<section id="set_itmes">
-	    <form action="setItems">
+	    <form action="setItems" method="post">
+	    
 		<c:if test="${not empty ciMap}">
 			<c:forEach var="ciKey" items="${ciMap.key}" varStatus="status">
 	    		<label><input type="radio" name="categoryName" class="radio_btn" value="${ciKey.categoryName}"/>${cikey.categoryName}</label>
@@ -31,9 +32,8 @@
 				</select>        	
         	</c:forEach>
         </c:if>
-       </form>
+ 
        
-       <form action="setItems" method="post">
         <input type="text" name="newItemName" placeholder="바꿀 메뉴명을 입력하세요">
         <input type="submit" value="수정 확인">
        </form>
