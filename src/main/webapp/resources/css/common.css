@@ -69,6 +69,10 @@ input {
     margin: 5px;
 }
 
+input[type=text] {
+	text-indent: 10px;
+}
+
 input[type=submit] {
     width: 100px;
     height: 25px; line-height: 25px;
@@ -85,4 +89,13 @@ a {
     padding-top: 3px;
     margin: 0 auto;
     background-color: #526fb0;
+}
+
+span {
+  display:inline-block;
+  width: 80px;
+}
+
+label {
+	margin-right: 15px;
 }
