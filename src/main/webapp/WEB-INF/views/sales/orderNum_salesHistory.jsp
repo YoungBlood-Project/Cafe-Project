@@ -6,6 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <title>주문번호별 판매내역</title>
+<link href='<c:url value="/resources/css/sales/orderNum_salesHistory.css"/>' rel="stylesheet" type="text/css">
 </head>
 <body>
 <section id="orNum_salesHistory">
@@ -17,11 +18,12 @@
 	<h3>${errorMsg}</h3>
 		
 	<c:if test="${not empty salesHistory_list}">
-		<p>총 수량:  ${totalNumOfPrice}개  
-		    총 판매가격: ${salesTotalPrice.totalPrice}원      
-		    지불가격: ${salesTotalPrice.reducedPrice}원  </p>	
-		  
 		<table>
+			<tr>
+				<td>총 수량: ${totalNumOfPrice}개</td>
+				<td>총 판매가격: ${salesTotalPrice.totalPrice}원</td>
+				<td>지불가격: ${salesTotalPrice.reducedPrice}원</td>
+			</tr>
 			<tr>
 				<td>주문번호</td>
 				<td>순번</td>
