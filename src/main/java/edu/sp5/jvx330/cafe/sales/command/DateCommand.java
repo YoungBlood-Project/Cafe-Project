@@ -40,5 +40,9 @@ public class DateCommand {
 	public void setDay(String day) {
 		this.day = day;
 	}
-	
+
+	@Override
+	public String toString() {
+		return "DateCommand [year=" + year + ", month=" + month + ", day=" + day + "]";
+	}
 }
