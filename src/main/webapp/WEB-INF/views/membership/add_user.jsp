@@ -16,8 +16,8 @@
 		<h3>${errorMsg}</h3>
 	</c:if>
 		<form action="addUser" method="post">
-			이름: <input type="text" name="name" placeholder="이름 입력"/><br>
-			휴대폰 번호: <input type="text" name="phone" maxlength="11" placeholder="휴대폰 번호 입력"/><br>
+			<span>이름:</span> <input type="text" name="name" placeholder="이름 입력"/><br>
+			<span>휴대폰 번호:</span> <input type="text" name="phone" maxlength="11" placeholder="휴대폰 번호 입력"/><br>
 			<input type="submit" name="가입하기"/>
 		</form>
 	</section>

@@ -1,0 +1,60 @@
+@charset "UTF-8";
+
+@font-face {
+  font-family: 'OTWelcomeBA';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2110@1.0/OTWelcomeBA.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  font-family: 'OTWelcomeBA', Tahoma, Geneva, Verdana, sans-serif;
+ margin: 0 auto;
+ /* min-width: 1500px; */
+ color: #fff;
+  background-color: #18191d;
+}
+
+#login_manager {
+  width: 500px;
+  margin: 50px auto;
+  padding: 50px 0 30px;
+  text-align: center;
+  background-color: #303038;
+}
+
+#login_manager > h2 {font-size: 35px;}
+#login_manager > h3 {font-size: 20px;}
+
+/* Input type CSS */
+#login_manager form input {
+  width: 200px;
+  height: 25px;
+  font-size: 16px;
+  padding-top: 3px;
+  margin: 5px
+}
+
+#login_manager form span {
+  display:inline-block;
+  width: 70px;
+}
+
+#login_manager form input[type="text"] {
+
+}
+
+#login_manager form input[type="password"] {
+  margin-bottom: 20px;
+}
+
+input[type="submit"] {
+  width: 100px;
+  height: 25px; 
+  line-height: 25px;
+  padding-top: 3px;
+  margin: 10px;
+  background-color: #526fb0;
+  border: none;
+  font-family:'OTWelcomeBA', Tahoma, Geneva, Verdana, sans-serif;
+}
