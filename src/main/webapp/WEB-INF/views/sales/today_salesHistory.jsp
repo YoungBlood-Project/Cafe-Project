@@ -16,13 +16,13 @@
 		<h3>${errorMsg}</h3>
 	</c:if>
 	<form>
-		<table>
-			<tr>
+		<table id="t_salesHistoryTable">
+			<tr id="t_salesHistoryTable_totalPrice">
 				<td>총 판매가격: ${sumTotalPrice}원</td>
 				<td>총 매출액: ${sumReducedPrice}원</td>
 				<td>총 수량: ${sumNumOfsales}개</td>
 			</tr>
-			<tr>
+			<tr id="t_salesHistoryTitle">
 				<td>주문번호</td>
 				<td>카테고리명</td>
 				<td>메뉴명</td>
@@ -32,20 +32,20 @@
 			</tr>
 			<c:if test="${not empty salesHistory_list}">
 				<c:forEach var="salesHistory_list" items="${salesHistory_list}" varStatus="status">
-					<tr>
-						<td>${salesHistory_list.orderNum}</td>
-						<td>${categoryName_list[status.index]}</td>
-						<td>${itemName_list[status.index]}</td>
-						<td>${salesHistory_list.numOfSales}</td>
-						<td>${salesHistory_list.paidPrice}</td>
-						<td>${salesHistory_list.orderDate}</td>
+					<tr id="t_salesHistoryWrap">
+						<td class="t_salesHistoryList">${salesHistory_list.orderNum}</td>
+						<td class="t_salesHistoryList">${categoryName_list[status.index]}</td>
+						<td class="t_salesHistoryList">${itemName_list[status.index]}</td>
+						<td class="t_salesHistoryList">${salesHistory_list.numOfSales}</td>
+						<td class="t_salesHistoryList">${salesHistory_list.paidPrice}</td>
+						<td class="t_salesHistoryList">${salesHistory_list.orderDate}</td>
 					</tr>
 				</c:forEach>
 			</c:if>
 		</table>
 	</form>
 	<form action="/jvx330/sales/mainSalesHistory" method="post">
-		<input type="submit" value="판매내역 메인으로 돌아가기">
+		<input type="submit" id="submit" value="판매내역 메인으로 돌아가기">
 	</form>
 </section>
 </body>
