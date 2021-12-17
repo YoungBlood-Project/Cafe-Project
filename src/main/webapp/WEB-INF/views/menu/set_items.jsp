@@ -10,6 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>메뉴 수정</title>
     <script src='<c:url value="/resources/js/jquery-3.6.0.min.js"/>'></script>
+    <link href='<c:url value="/resources/css/common.css"/>' rel="stylesheet" type="text/css">
 </head>
 
 <body>
