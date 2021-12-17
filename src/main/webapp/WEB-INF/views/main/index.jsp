@@ -14,7 +14,7 @@
 
 <body>
     <header>
-        <h1 class="hidden">JAVAK CAFE 자박 카페</h1>
+        <h1 class="hidden">JATARVAKS CAFE 자박 카페</h1>
     </header>
     <section id="index">
     	<h2 class="hidden">주문내역 및 메뉴</h2>

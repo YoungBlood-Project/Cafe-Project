@@ -28,7 +28,7 @@ public class ItemServiceTest {
 		 * 테스트 - 이초원.
 		 */
 		// 1. 메뉴 추가/수정/삭제
-		addItem();
+		// addItem();
 		// setItemName();
 		// setItemPrice();
 		// deleteItem();
@@ -52,7 +52,7 @@ public class ItemServiceTest {
 	// 1-1. 메뉴 추가 테스트
 	public static void addItem() {
 		// 존재하는 모든 카테고리
-		//Category delete_category = cService.findCategoryByCategoryName("deletedMenu");
+		Category delete_category = cService.findCategoryByCategoryName("deletedMenu");
 		Category coffee_category = cService.findCategoryByCategoryName("Coffee");
 		Category tea_category = cService.findCategoryByCategoryName("Tea");
 		Category drink_category = cService.findCategoryByCategoryName("Drink");
@@ -60,6 +60,9 @@ public class ItemServiceTest {
 		Category meal_category = cService.findCategoryByCategoryName("Meal");
 		Category bread_category = cService.findCategoryByCategoryName("Bread");
 		Category md_category = cService.findCategoryByCategoryName("MD");
+		
+		Item deleted_item = new Item(delete_category, "deletedItem", 0);
+		service.addItem(deleted_item);
 
 		// item 생성
 		// 1. 커피
