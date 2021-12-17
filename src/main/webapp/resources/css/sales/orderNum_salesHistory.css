@@ -1,0 +1,115 @@
+@charset "utf-8";
+@font-face {
+    font-family: 'OTWelcomeBA';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2110@1.0/OTWelcomeBA.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+/* 초기화 */
+* {
+   margin : 0;
+   padding : 0;
+}
+.hidden {
+   position : absolute;
+   left : -9999px;
+}
+li {list-style: none;}
+a {text-decoration: none; color:#000;}
+body {
+    font-family: 'OTWelcomeBA', Tahoma, Geneva, Verdana, sans-serif;
+   margin: 0 auto;
+   /* min-width: 1500px; */
+   color: #fff;
+    background-color: #18191d;
+}
+input { 
+    font-family: 'OTWelcomeBA', Tahoma, Geneva, Verdana, sans-serif;
+    }
+table {
+   border-collapse: collapse;
+} 
+
+/*섹션 login_user 시작*/
+section {
+    width: 800px;
+    height: 600px;
+    margin: 50px auto;
+    padding: 50px 0 30px;
+    text-align: center;
+    background-color: #303038;
+}
+
+h2 {
+    font-size: 35px;
+}
+
+h3 {
+    font-size: 20px;
+}
+
+table {
+    margin: 30px auto;
+}
+
+table tr:first-child td {
+    width: 260px;
+    border: none;
+}
+tr {
+    display: block;
+    margin: 10px;
+}
+
+td {
+    width: 110px;
+    line-height: 25px;
+    border-bottom: 2px solid #fff;
+}
+
+form {
+    width: 500px;
+    margin: 20px auto;
+}
+
+input {
+    width: 200px;
+    height: 25px;
+    font-size: 16px;
+    padding-top: 3px;
+    margin: 5px;
+}
+
+input[type=text] {
+	text-indent: 10px;
+}
+
+input[type=submit] {
+    width: 100px;
+    height: 25px; line-height: 25px;
+    padding-top: 3px;
+    margin: 10px;
+    background-color: #526fb0;
+    border: none;
+    float: right;
+    position: relative;
+    right: 50px;
+}
+
+a {
+    display: block;
+    width: 100px;
+    height: 25px; line-height: 25px;
+    padding-top: 3px;
+    margin: 0 auto;
+    background-color: #526fb0;
+}
+
+span {
+  display:inline-block;
+  width: 80px;
+}
+
+label {
+	margin-right: 15px;
+}

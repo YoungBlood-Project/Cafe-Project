@@ -37,7 +37,7 @@ public class MainSalesHistoryController {
 			
 			SimpleDateFormat format = new SimpleDateFormat("yyyy");
 			String thisYear = format.format(new Date());
-			for(Integer year=2010; year<=Integer.parseInt(thisYear); year++) {
+			for(Integer year=Integer.parseInt(thisYear); year>=2010; year--) {
 				year_list.add(year);
 			}
 			for(int month=1; month<=12; month++) {
