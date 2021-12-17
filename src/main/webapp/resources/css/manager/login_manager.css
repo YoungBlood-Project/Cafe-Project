@@ -41,11 +41,14 @@ body {
 }
 
 #login_manager form input[type="text"] {
-
+	text-indent: 10px;
+	font-size: 14px;
 }
 
 #login_manager form input[type="password"] {
-  margin-bottom: 20px;
+	text-indent: 10px;
+	font-family: sans-serif;
+  	margin-bottom: 20px;
 }
 
 input[type="submit"] {

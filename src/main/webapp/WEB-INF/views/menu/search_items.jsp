@@ -21,6 +21,7 @@
 		<section id="itemsSettingContent">
 			<a href="addItems" id="addItems">메뉴 추가</a>
 			<a href="setItems" id="setItems">메뉴 수정</a>
+			<a href="delItems" id="delItems">메뉴 삭제</a>
 		</section>		
 		
 		<table id="itemsTable">

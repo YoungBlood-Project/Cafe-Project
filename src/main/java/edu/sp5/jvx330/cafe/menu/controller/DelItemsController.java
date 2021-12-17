@@ -16,16 +16,17 @@ import edu.sp5.jvx330.cafe.menu.business.impl.ItemSerivceImpl;
 import edu.sp5.jvx330.cafe.menu.domain.Category;
 import edu.sp5.jvx330.cafe.menu.domain.Item;
 
-@Controller("setItemsController")
-public class SetItemsController {
+@Controller
+public class DelItemsController {
+	
 	@Autowired
 	private CategoryServiceImpl categoryServiceImpl;
 
 	@Autowired
 	private ItemSerivceImpl itemServiceImpl;
 
-	@GetMapping("/menu/setItems")
-	public ModelAndView setItemsGet() {
+	@GetMapping("/menu/delItems")
+	public ModelAndView delItemsGet() {
 		ModelAndView mav = new ModelAndView();
 
 		Map<Category, List<Item>> ciMap = new HashMap<Category, List<Item>>();
@@ -41,26 +42,28 @@ public class SetItemsController {
 		//System.out.println(ciMap);
 		//System.out.println("setItemsController : "+ciMap.keySet());
 		//System.out.println("setItemsController : "+ciMap.values());
-		mav.setViewName("menu/set_items");
+		mav.setViewName("menu/del_items");
 
 		return mav;
 	}
 
 	@Transactional
-	@PostMapping("/menu/setItems")
-	public ModelAndView setItemsPost(String categoryName, String itemName, String newItemName) {
+	@PostMapping("/menu/delItems")
+	public ModelAndView delItemsPost(String itemName) {
 		ModelAndView mav = new ModelAndView();
-		
-		System.out.println("카테고리 이름 : "+categoryName);
-		System.out.println("원래 이름 : "+itemName);
-		System.out.println("바뀔 이름 : "+newItemName);
+
+		//System.out.println("삭제할 아이템 이름 : "+itemName);
+
 		
 		Item item = itemServiceImpl.findItemByItemName(itemName);
-		itemServiceImpl.setItemName(item, newItemName);
-		System.out.println("아이템이름 변경 완료");
+		//System.out.println("삭제할 아이템 : "+item);
+		itemServiceImpl.deleteItem(item);
+		
+		System.out.println("아이템 삭제 완료");
 
 		//get으로 이동해야 해서 경로 변경 - 초
 		mav.setViewName("redirect:/menu/searchItems");
 		return mav;
 	}
+
 }

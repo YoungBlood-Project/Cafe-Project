@@ -1,0 +1,38 @@
+@charset "UTF-8";
+
+#addItemsContent form {
+  width: 400px;
+  margin: 0 auto;
+}
+
+#titleWrap {
+	width: 400px;
+  
+}
+
+.title {
+  width: calc(400px / 3);
+  margin-right: 20px;
+  padding-top: 15px;
+}
+
+#categoryName {
+  width: 120px;
+  margin: 5px 5px 0 0;
+}
+
+#categoryName option {}
+
+#submitWrap {
+  width: 110px;
+  margin: 0 auto;
+}
+
+#submit {
+  margin: 0;
+}
+
+.itemInfo {
+  width: 130px;
+}
+
