@@ -34,10 +34,10 @@
 			</tr>
 			
 			<c:if test="${not empty categoryItemMap}">
-				<c:forEach var="categoryItemMap" items="${categoryItemMap}" varStatus="status">
-					<c:forEach var="categoryItemValue" items="${categoryItemMap.value}" >
+				<c:forEach var="categoryItemMap" items="${categoryItemMap}">
+					<c:forEach var="categoryItemValue" items="${categoryItemMap.value}" varStatus="status">
 					<tr id="itemsTableWrap">
-						<td class="itemsTableList">${categoryItemValue.itemId}</td>
+						<td class="itemsTableList">${status.count}</td>
 						<td class="itemsTableList">${categoryItemMap.key.categoryName}</td>
 						<td class="itemsTableList">${categoryItemValue.itemName}</td>
 						<td class="itemsTableList">${categoryItemValue.itemPrice}</td>
