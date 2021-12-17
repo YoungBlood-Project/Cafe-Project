@@ -89,7 +89,26 @@ public class SalesHistoryDaoImpl implements SalesHistoryDao {
 			
 		}, date1, date2);
 	}
-		
+	
+	//2-7. 해당 날짜로 월별 아이템별 총 수량, 총 지불금액 조회
+		public List<SalesHistory> sumNumOfSalesAndSumPaidPriceByDate(Date date) {
+			String sql = "SELECT itemId, SUM(numOfSales) AS numOfSales, SUM(paidPrice) AS paidPrice"
+					+ " FROM SalesHistory WHERE Date(orderDate)=?"
+					+ " GROUP BY itemId ORDER BY SUM(numOfSales) DESC";
+			return jdbcTemplate.query(sql, new RowMapper<SalesHistory>() {
+
+				@Override
+				public SalesHistory mapRow(ResultSet rs, int rowNum) throws SQLException {
+					Item item = new Item();
+					item.setItemId(rs.getLong("itemId"));//mid를 가진 Menu 객체 생성
+					SalesHistory salesHistory = new SalesHistory(item, rs.getInt("numOfSales"),
+							rs.getInt("paidPrice"));
+					return salesHistory;
+				}
+				
+			}, date);
+			
+		}
 	
 	/**
 	 * 3. 판매내역 삭제

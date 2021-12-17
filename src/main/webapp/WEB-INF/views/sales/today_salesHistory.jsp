@@ -13,11 +13,16 @@
 	<c:if test="${not empty errorMsg}">
 		<h3>${errorMsg}</h3>
 	</c:if>
-	<h3>총 판매가격: ${sumTotalPrice}원  총 매출: ${sumReducedPrice}원  총 수량 : ${sumNumOfsales}개</h3>
 	<form>
 		<table>
 			<tr>
+				<td>총 판매가격: ${sumTotalPrice}원</td>
+				<td>총 매출액: ${sumReducedPrice}원</td>
+				<td>총 수량: ${sumNumOfsales}개</td>
+			</tr>
+			<tr>
 				<td>주문번호</td>
+				<td>카테고리명</td>
 				<td>메뉴명</td>
 				<td>수량</td>
 				<td>판매가격</td>
@@ -27,7 +32,8 @@
 				<c:forEach var="salesHistory_list" items="${salesHistory_list}" varStatus="status">
 					<tr>
 						<td>${salesHistory_list.orderNum}</td>
-						<td>${salesHistory_list.item.itemName}</td>
+						<td>${categoryName_list[status.index]}</td>
+						<td>${itemName_list[status.index]}</td>
 						<td>${salesHistory_list.numOfSales}</td>
 						<td>${salesHistory_list.paidPrice}</td>
 						<td>${salesHistory_list.orderDate}</td>

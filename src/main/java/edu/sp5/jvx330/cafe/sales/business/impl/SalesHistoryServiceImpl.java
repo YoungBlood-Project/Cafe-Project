@@ -71,6 +71,12 @@ public class SalesHistoryServiceImpl implements SalesHistoryService {
 		} 
 	}
 	
+	// 2-5. 해당 아이템 아이디와 날짜로 판매내역 조회
+	@Override
+	public List<SalesHistory> sumNumOfSalesAndSumPaidPriceByDate(Date date){
+		return shDao.sumNumOfSalesAndSumPaidPriceByDate(date);
+	};
+	
 	//2-6  월별 아이템별 총 수량, 총 지불금액 조회
 	@Override
 	public List<SalesHistory> sumNumOfSalesAndSumPaidPriceByMonth(Date date1, Date date2) {
