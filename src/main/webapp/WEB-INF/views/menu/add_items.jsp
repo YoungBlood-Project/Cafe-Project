@@ -12,6 +12,7 @@
 <body>
 	<section id="addItemsContent">
 	<h2>메뉴 추가</h2>
+	<h3>${errorMsgs}</h3>
 	<form action="addItems" method="post">
 		<table>
 			<tr id="titleWrap">

@@ -13,6 +13,7 @@ import edu.sp5.jvx330.cafe.menu.business.impl.CategoryServiceImpl;
 import edu.sp5.jvx330.cafe.menu.business.impl.ItemSerivceImpl;
 import edu.sp5.jvx330.cafe.menu.domain.Category;
 import edu.sp5.jvx330.cafe.menu.domain.Item;
+import edu.sp5.jvx330.cafe.util.Validator;
 
 @Controller("addItemsContoller")
 public class AddItemsController {
@@ -40,6 +41,21 @@ public class AddItemsController {
 		ModelAndView mav = new ModelAndView();
 		
 		Category category = categoryServiceImpl.findCategoryByCategoryName(categoryName);
+		
+		//System.out.println("itemName : "+itemName);
+		//System.out.println("itemPrice : "+itemPrice);
+		
+		//유효성 검사
+		if(Validator.isEmpty(itemName)||Validator.isEmpty(itemPrice)) {
+			mav.addObject("errorMsgs", "정보를 모두 입력해주십시오.");
+			
+			List<Category> category_list = categoryServiceImpl.findAllCategorys();
+			
+			mav.addObject("category_list", category_list);
+			mav.setViewName("menu/add_items");
+			
+			return mav;
+		}
 		
 		Item item = new Item();
 		item.setCategory(category);
