@@ -8,6 +8,7 @@
 <meta charset="UTF-8">
 <title>메뉴 조회</title>
 <link href='<c:url value="/resources/css/common.css"/>' rel="stylesheet" type="text/css">
+<link href='<c:url value="/resources/css/menu/search_items.css"/>' rel="stylesheet" type="text/css">
 </head>
 <body>
 <section id="search_items">
@@ -35,11 +36,11 @@
 			<c:if test="${not empty categoryItemMap}">
 				<c:forEach var="categoryItemMap" items="${categoryItemMap}" varStatus="status">
 					<c:forEach var="categoryItemValue" items="${categoryItemMap.value}" >
-					<tr>
-						<td>${categoryItemValue.itemId}</td>
-						<td>${categoryItemMap.key.categoryName}</td>
-						<td>${categoryItemValue.itemName}</td>
-						<td>${categoryItemValue.itemPrice}</td>
+					<tr id="itemsTableWrap">
+						<td class="itemsTableList">${categoryItemValue.itemId}</td>
+						<td class="itemsTableList">${categoryItemMap.key.categoryName}</td>
+						<td class="itemsTableList">${categoryItemValue.itemName}</td>
+						<td class="itemsTableList">${categoryItemValue.itemPrice}</td>
 					</tr>	
 					</c:forEach>
 				</c:forEach>
