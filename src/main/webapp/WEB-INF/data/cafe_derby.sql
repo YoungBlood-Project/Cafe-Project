@@ -1,4 +1,4 @@
---TABLE 조회
+	--TABLE 조회
 SELECT * FROM Manager;
 SELECT * FROM Customer;
 SELECT * FROM Mileage;
@@ -23,7 +23,7 @@ CREATE TABLE Manager (
 	managerName   	VARCHAR(30) 	NOT NULL,													--성함
 	passwd			VARCHAR(30)		NOT NULL                                                    --패스워드
 );
-INSERT INTO Manager(managerName, passwd) VALUES('이영지', '1234'); 
+INSERT INTO Manager(managerName, passwd) VALUES('이영지', 'young1234'); 
 
 
 CREATE TABLE Customer(
