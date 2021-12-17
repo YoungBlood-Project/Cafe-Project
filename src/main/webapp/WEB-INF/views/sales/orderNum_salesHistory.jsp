@@ -17,9 +17,9 @@
 	<h3>${errorMsg}</h3>
 		
 	<c:if test="${not empty salesHistory_list}">
-		<p>총 수량:  ${totalNumOfPrice}
-		  총 판매가격: ${salesTotalPrice.totalPrice}
-		  지불가격: ${salesTotalPrice.reducedPrice} </p>	
+		<p>총 수량:  ${totalNumOfPrice}개  
+		    총 판매가격: ${salesTotalPrice.totalPrice}원      
+		    지불가격: ${salesTotalPrice.reducedPrice}원  </p>	
 		  
 		<table>
 			<tr>
@@ -43,7 +43,17 @@
 				</tr>
 			</c:forEach>
 		</table>
+		
+		<form action="/jvx330/main/index" method="get">
+			<input type="submit" value="취소하기">
+		</form>
+		<form action="/jvx330/sales/deleteOrderNumSalesHistory" method="get">
+			<input type="submit" value="삭제하기">
+		</form>
+		
 	</c:if>
+	
+	
 </section>
 </body>
 </html>

@@ -14,7 +14,7 @@ import edu.sp5.jvx330.cafe.membership.domain.Customer;
 import edu.sp5.jvx330.cafe.web.container.OrderContainer;
 
 @SessionAttributes("orderContainer")
-@Controller("controller.LoginUserController")
+@Controller("controller.loginUserController")
 public class LoginUserController {
 	@Autowired
 	private CustomerServiceImpl customerService;

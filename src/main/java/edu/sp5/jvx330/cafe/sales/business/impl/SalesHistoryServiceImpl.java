@@ -70,25 +70,8 @@ public class SalesHistoryServiceImpl implements SalesHistoryService {
 			return null;
 		} 
 	}
-	// 2-6 판매내역 월별 조회
-	@Override
-	public List<SalesHistory> findSalesHistoryByMonth(Date date1, Date date2) {
-		return shDao.findSalesHistoryByMonth(date1, date2);
-	}
 	
-	//2-7 월별 아이템별 총 수량 조회
-	@Override
-	public List<SalesHistory> sumNumOfSalesByMonth(Date date1, Date date2) {
-		return shDao.sumNumOfSalesByMonth(date1, date2);
-	}
-		
-	//2-8 월별 아이템별 총 지불금액 조회
-	@Override
-	public List<SalesHistory> sumPaidPriceByMonth(Date date1, Date date2) {
-		return shDao.sumPaidPriceByMonth(date1, date2);
-	}
-	
-	//2 test 월별 아이템별 총 수량, 총 지불금액 조회
+	//2-6  월별 아이템별 총 수량, 총 지불금액 조회
 	@Override
 	public List<SalesHistory> sumNumOfSalesAndSumPaidPriceByMonth(Date date1, Date date2) {
 		return shDao.sumNumOfSalesAndSumPaidPriceByMonth(date1, date2);
@@ -111,6 +94,11 @@ public class SalesHistoryServiceImpl implements SalesHistoryService {
 	public void deleteAllSalesHistories(Item item) {
 		Long itemId = iDao.findItemIdByItemName(item.getItemName());
 		shDao.deleteAllSalesHistories(itemId);
+	}
+	//3-3. 해당 메뉴의 주문번호로 삭제
+	@Override
+	public void deleteSalesHistoryByOrderNum(Long orderNum) {
+		shDao.deleteSalesHistoryByOrderNum(orderNum);
 	}
 
 	/**

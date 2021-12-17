@@ -21,7 +21,7 @@ import edu.sp5.jvx330.cafe.sales.business.impl.SalesHistoryServiceImpl;
 import edu.sp5.jvx330.cafe.sales.command.DateCommand;
 import edu.sp5.jvx330.cafe.sales.domain.SalesHistory;
 
-@Controller("MMonthSalesHistoryController")
+@Controller("mMonthSalesHistoryController")
 public class MMonthSalesHistoryController {
 	@Autowired
 	private SalesHistoryServiceImpl salesHistoryService;
