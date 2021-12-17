@@ -45,6 +45,7 @@ public class OrderNumSalesHistoryController {
 			return mav;
 		}
 		Long orderNumber = Long.parseLong(orderNum);
+		mav.addObject("orderNum", orderNum);
 		
 		Integer totalNumOfPrice = 0;
 		List<String> categoryName_list = new ArrayList<>();

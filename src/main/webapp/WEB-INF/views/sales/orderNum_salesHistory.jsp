@@ -48,7 +48,9 @@
 			<input type="submit" value="취소하기">
 		</form>
 		<form action="/jvx330/sales/deleteOrderNumSalesHistory" method="get">
-			<input type="submit" value="삭제하기">
+			<input type="hidden" value="${orderNum}" name="orderNum" />
+			<input type="submit" value="삭제하기"/
+			>
 		</form>
 		
 	</c:if>

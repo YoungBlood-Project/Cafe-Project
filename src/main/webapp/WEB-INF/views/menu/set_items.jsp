@@ -16,6 +16,7 @@
 <body>
 	<section id="set_itmes">
 	    <form action="setItems" method="post">
+	    
 		<c:if test="${not empty ciMap}">
 			<c:forEach var="ciKey" items="${ciMap.keySet()}" varStatus="status">
 	    		<label><input type="radio" name="categoryName" class="radio_btn" value="${ciKey.categoryName}"/>${ciKey.categoryName}</label>
