@@ -7,7 +7,7 @@
 <meta charset="UTF-8">
 <title>메뉴 추가</title>
 <link href='<c:url value="/resources/css/common.css"/>' rel="stylesheet" type="text/css">
-<link href='<c:url value="/resources/css/menu/addItems.css"/>' rel="stylesheet" type="text/css">
+<link href='<c:url value="/resources/css/menu/add_items.css"/>' rel="stylesheet" type="text/css">
 </head>
 <body>
 	<section id="addItemsContent">
@@ -15,9 +15,9 @@
 	<form action="addItems" method="post">
 		<table>
 			<tr>
-				<th>카테고리</th>
-				<th>메뉴명</th>
-				<th>가격</th>
+				<th class="title">카테고리</th>
+				<th class="title">메뉴명</th>
+				<th class="title">가격</th>
 			</tr>
 
 			<tr>
