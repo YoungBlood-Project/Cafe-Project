@@ -1,0 +1,36 @@
+@charset "UTF-8";
+
+#main_salesHistory {
+	position: relative;
+	padding: 50px 0 10px;
+}
+
+#main_salesHistory h2 {
+	margin-bottom: 10px;	
+}
+
+#main_salesHistory form {
+	
+}
+
+#main_salesHistory a {
+	width: 160px;
+	font-size: 16px;
+}
+#main_salesHistory input[type="submit"] {
+	width: 160px;
+}
+
+#salesHistoryMain {
+	margin-bottom: -20px;
+	margin: 15px auto;
+	
+}
+
+#salesHistoryMain form {
+	padding: 10px 0;
+}
+
+#salesHistoryMain form:nth-of-type(1) {
+	margin: 15px auto 0;
+}
