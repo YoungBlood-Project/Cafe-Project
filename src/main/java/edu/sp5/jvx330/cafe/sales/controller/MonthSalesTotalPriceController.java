@@ -46,10 +46,10 @@ public class MonthSalesTotalPriceController {
 	}
 	//비즈니스서비스 호출
 	List<SalesTotalPrice> stp_list = salesTotalPriceService.findSalesTotalPriceByMonth(yyyyMM, yyyyMM2);
+	mav.addObject("yyyyMM",year+"년 "+month+"월");
 	mav.addObject("stp_list", stp_list);
 
 	mav.setViewName("sales/month_salesTotalPrice");
 	return mav;
-}
-	
+	}
 }
