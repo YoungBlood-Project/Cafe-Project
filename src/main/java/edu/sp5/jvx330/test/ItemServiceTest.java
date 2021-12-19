@@ -28,7 +28,7 @@ public class ItemServiceTest {
 		 * 테스트 - 이초원.
 		 */
 		// 1. 메뉴 추가/수정/삭제
-		// addItem();
+		addItem();
 		// setItemName();
 		// setItemPrice();
 		// deleteItem();

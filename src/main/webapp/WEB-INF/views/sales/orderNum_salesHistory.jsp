@@ -12,7 +12,7 @@
 <section id="orNum_salesHistory">
 	<h2>주문 번호별 판매내역</h2>
 	<form action="/jvx330/sales/orderNumSalesHistory" method="post">
-		주문번호: <input type="text" name="orderNum"/>
+		주문번호: <input type="text" name="orderNum" placeholder="주문번호를 입력해주세요"/>
 		<input type="submit" value="검색"/> 
 	</form>
 	<h3>${errorMsg}</h3>
