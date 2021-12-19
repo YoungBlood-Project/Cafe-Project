@@ -6,7 +6,6 @@
 <head>
 <meta charset="UTF-8">
 <title>당일 판매 내역</title>
-<link href='<c:url value="/resources/css/common.css"/>' rel="stylesheet" type="text/css">
 <link href='<c:url value="/resources/css/sales/today_salesHistory.css"/>' rel="stylesheet" type="text/css">
 </head>
 <body>
@@ -22,16 +21,16 @@
 		<table id="t_salesHistoryTable">
 			<tr id="t_salesHistoryTable_totalPrice">
 				<td>총 판매가격: ${sumTotalPrice}원</td>
-				<td>총 매출액: ${sumReducedPrice}원</td>
-				<td>총 수량: ${sumNumOfsales}개</td>
+				<td>총 매출액:<strong>${sumReducedPrice}원 </strong></td>
+				<td>총 수량: <strong>${sumNumOfsales}개</strong></td>
 			</tr>
 			<tr id="t_salesHistoryTitle">
-				<td>주문번호</td>
-				<td>카테고리명</td>
-				<td>메뉴명</td>
-				<td>수량</td>
-				<td>판매가격</td>
-				<td>구매일자</td>
+				<th>주문번호</th>
+				<th>카테고리명</th>
+				<th>메뉴명</th>
+				<th>수량</th>
+				<th>판매가격</th>
+				<th>구매일자</th>
 			</tr>
 			<c:if test="${not empty salesHistory_list}">
 				<c:forEach var="salesHistory_list" items="${salesHistory_list}" varStatus="status">

@@ -35,22 +35,30 @@ public class MDateSalesHistoryController {
 	private SalesHistoryServiceImpl salesHistoryService;
 	
 	@GetMapping("/sales/mDateSalesHistory")
-	public ModelAndView mDateSalesHistoryGet(DateCommand date) throws ParseException {
+	public ModelAndView mDateSalesHistoryGet(String date) throws ParseException {
 			ModelAndView mav = new ModelAndView();
-			String day = date.getDay();
-			String year = date.getYear();
-			String month = date.getMonth();
-			String str_yyyyMMdd = year+"-"+month+"-"+day;
+//			String day = date.getDay();
+//			String year = date.getYear();
+//			String month = date.getMonth();
+//			String str_yyyyMMdd = year+"-"+month+"-"+day;
+//			
+//			SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+//			Date yyyyMMdd = format.parse(str_yyyyMMdd);
+			if(date == "") {
+				mav.addObject("errorMsg", "날짜를 선택해주세요");
+				mav.setViewName("sales/main_m_salesHistory");  
+				return mav;
+			}
+			
 			
 			SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
-			Date yyyyMMdd = format.parse(str_yyyyMMdd);
+			Date yyyyMMdd = format.parse(date);
 			
 			List<SalesHistory> save_sh_list = salesHistoryService.sumNumOfSalesAndSumPaidPriceByDate(yyyyMMdd);
 			//해당 날짜의 판매내역이 존재하지 않는 경우
 			
 			if(save_sh_list == null || save_sh_list.size() == 0) {
 				mav.addObject("errorMsg", "해당 날짜의 판매내역이 존재하지 않습니다");
-				System.out.println("에러메시지 출력");
 				mav.setViewName("sales/m_date_salesHistory");  
 				return mav;
 			}

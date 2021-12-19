@@ -13,23 +13,32 @@
 <body>
 <section id="main_m_salesHistory">
 	<h2>메뉴별 판매내역</h2>
+	
+	<c:if test="${not empty errorMsg}">
+			<h3>${errorMsg}</h3>
+	</c:if>
+		
 	<form action="mDateSalesHistory" method="get">
 		날짜별 내역:
-			<select name="year" class="year">
+		<input type="date" name="date">
+			<!--  <select name="year" class="year">
 				<c:forEach var="year" items="${year_list}">
 					<option value="${year}">${year}</option>
 				</c:forEach>
 			</select>
+			
 			<select name="month">
 				<c:forEach var="month" items="${month_list}">
 					<option value="${month}">${month}</option>
 				</c:forEach>
 			</select>
+			
 			<select name="day">
 				<c:forEach var="day" items="${day_list}">
 					<option value="${day}">${day}</option>
 				</c:forEach>
 			</select>
+			-->
 			<input type="submit" value="확인">
 		</form>	
 		
@@ -45,6 +54,7 @@
 					<option value="${month}">${month}</option>
 				</c:forEach>
 			</select>
+		 	
 			<input type="submit" value="확인">
 		</form>	
 		
@@ -58,8 +68,8 @@
 			<input type="submit" value="확인">
 		</form>	
 		
-		<form action="/jvx330/sales/mainSalesHistory" method="post">
-			<input type="submit" value="판매내역 메인으로 돌아가기">
+		<form action="/jvx330/sales/mainSalesHistory" method="post" >
+			<input type="submit" value="판매내역 메인으로 돌아가기" id="salesHistory_link">
 		</form>
 	</section>	
 	

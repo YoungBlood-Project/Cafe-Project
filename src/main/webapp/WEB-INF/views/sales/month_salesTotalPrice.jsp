@@ -8,11 +8,15 @@
 <head>
 <meta charset="UTF-8">
 <title>월별 총매출</title>
-<link href='<c:url value="/resources/css/common.css"/>' rel="stylesheet" type="text/css">
+<link href='<c:url value="/resources/css/sales/month_salesTotalPrice.css"/>' rel="stylesheet" type="text/css">
 </head>
 <body>
 <section id="month_salesTotalPrice">
 	<h2>월별 총매출</h2>
+	<form action="/jvx330/sales/mainSalesHistory" method="post">
+		<input type="submit" value="판매내역 메인으로 돌아가기">
+	</form>
+	
 	<h3>${yyyyMM}</h3>
 		
 	<ul>
@@ -35,15 +39,8 @@
 				</tr>	
 			</c:forEach>
 		</c:if>
-		
-		
 	</table>
 	
-
-
-	<form action="/jvx330/sales/mainSalesHistory" method="post">
-		<input type="submit" value="판매내역 메인으로 돌아가기">
-	</form>
 </section>
 	
 </body>

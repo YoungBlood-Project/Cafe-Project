@@ -1,4 +1,4 @@
-@charset "UTF-8";
+@charset "utf-8";
 @font-face {
     font-family: 'OTWelcomeBA';
     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2110@1.0/OTWelcomeBA.woff2') format('woff2');
@@ -46,6 +46,7 @@ h2 {
 
 h3 {
     font-size: 20px;
+    margin: 20px;
 }
 
 table {
@@ -55,7 +56,6 @@ table {
 table tr:first-child td {
     width: 260px;
     border: none;
-    font-size: 20px;
 }
 tr {
     display: block;
@@ -63,54 +63,54 @@ tr {
 }
 
 td {
-    width: 200px;
+    width: 260px;
     line-height: 25px;
     border-bottom: 2px solid #fff;
 }
 
-
-#t_salesHistoryTable td {
-  text-align: center;
+form {
+    width: 500px;
+    margin: 20px auto;
 }
 
-#t_salesHistoryTitle > td {
-	
-	height: 50px;
-	line-height: 50px;
-	padding: 0 10px;	box-sizing: border-box;
-}
-
-
-#t_salesHistoryTitle th:nth-of-type(1) {
-	width: 170px;
-}
-
-#t_salesHistoryTitle th:nth-of-type(2) {
-	width: 110px;
-}
-
-#t_salesHistoryTitle th:nth-of-type(3) {
-	width: 135px;
-}
-
-#t_salesHistoryTitle th:nth-of-type(4) {
-	width: 70px;
-}
-
-#t_salesHistoryTitle th:nth-of-type(5) {
-	width: 155px;
-}
-
-#t_salesHistoryTitle th:nth-of-type(6) {
-	width: 135px;
-}
-
-#today_salesHistory input[type=submit] {
-  	width: 200px;
-  	height: 25px; line-height: 25px;
-	margin-top: 20px;
-    padding-top: 3px;
-	background-color: #526fb0;
-    border: none;
+input {
+    width: 200px;
+    height: 25px;
     font-size: 16px;
+    padding-top: 3px;
+    margin: 5px;
+}
+
+input[type=text] {
+	text-indent: 10px;
+}
+
+input[type=submit] {
+    width: 200px;
+    height: 25px; line-height: 25px;
+    padding-top: 3px;
+    margin: 10px;
+    background-color: #526fb0;
+    border: none;
+    /* float: right;
+    position: relative;
+    right: 50px; */
+}
+
+a {
+    display: block;
+    width: 100px;
+    height: 25px; line-height: 25px;
+    padding-top: 3px;
+    margin: 0 auto;
+    background-color: #526fb0;
+}
+
+span {
+  display:inline-block;
+  width: 80px;
+}
+
+label {
+	margin-right: 15px;
 }

@@ -6,7 +6,8 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>날짜별 총 매출</title>
+<link href='<c:url value="/resources/css/sales/date_salesTotalPrice.css"/>' rel="stylesheet" type="text/css">
 </head>
 <body>
 <section id="date_salesTotalPrice">

@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Javac cafe</title>
+<title>Jatavaks cafe</title>
 <script src='<c:url value="/resources/js/jquery-3.6.0.min.js"/>'></script>
 <script src='<c:url value="/resources/js/common.js"/>' defer></script>
 <script src='<c:url value="/resources/js/index.js"/>' defer></script>
