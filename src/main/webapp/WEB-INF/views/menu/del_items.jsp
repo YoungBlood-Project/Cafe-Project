@@ -17,6 +17,9 @@
 		<c:if test="${not empty ciMap}">
 			<c:forEach var="ciKey" items="${ciMap.keySet()}" varStatus="status">
 	    		<label><input type="radio" name="categoryName" class="radio_btn" value="${ciKey.categoryName}"/>${ciKey.categoryName}</label>
+	    		<c:if test="${status.count eq 3}">
+	    			<br>
+	    		</c:if>
 	    	</c:forEach>
 		</c:if> 
         <br>
