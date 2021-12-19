@@ -33,8 +33,8 @@
 					</select>
 				</td>
 		
-				<td><input type="text" name="itemName" class="itemInfo"/></td>
-				<td><input type="text" name="itemPrice" class="itemInfo"/></td>
+				<td><input type="text" name="itemName" id="itemName" class="itemInfo"/></td>
+				<td><input type="text" name="itemPrice" id="itemPrice" class="itemInfo"/></td>
 			</tr>
 			
 			<tr id="submitWrap">
@@ -43,6 +43,19 @@
 		</table>
 	</form>
 </section>
+
+<script> 
+	let submit = document.getElementById("submit");
+	let itemPrice = document.getElementById("itemPrice");
+
+    //submit 버튼 클릭
+    submit.addEventListener("click", function(e) {
+        if(itemPrice.value!=''){
+        	itemPrice.value = parseInt(itemPrice.value);
+        	console.log(itemPrice.value);
+        }
+    })
+</script>
 
 </body>
 </html>

@@ -24,7 +24,7 @@ public class SearchMileageController {
 	
 	@PostMapping("/membership/searchMileage")
 	public ModelAndView SearchMileagePost(OrderContainer orderContainer 
-			,String select_mileage, Integer use_amount) {
+			,String select_mileage, Integer use_amount) {	
 		
 		ModelAndView mav = new ModelAndView();
 		
@@ -45,16 +45,36 @@ public class SearchMileageController {
 			//System.out.println("보유한 마일리지 : "+orderContainer.getMileage());
 			
 			//아무 값도 입력하지 않았을 경우
-			if(use_amount==null || use_amount==0) {
-				mav.addObject("errorMsg","사용할 값을 입력해주십시오!");
+			if(use_amount==null || use_amount<=0) {
+				return addErrorMsg(mav, "사용할 값을 입력해주십시오.");
+				
+				/*
+				mav.addObject("errorMsg", "사용할 값을 입력해주십시오!.");
 				mav.setViewName("membership/search_mileage");
+				
 				return mav;
+				*/
 			}
 			//보유한 마일리지보다 사용금액이 클 경우
-			if(orderContainer.getMileage() < use_amount) {
-				mav.addObject("errorMsg","보유한 마일리지가 부족합니다");
+			else if(orderContainer.getMileage() < use_amount) {
+				return addErrorMsg(mav, "보유한 마일리지가 부족합니다.");
+				
+				/*
+				mav.addObject("errorMsg", "보유한 마일리지가 부족합니다.");
 				mav.setViewName("membership/search_mileage");
+				
 				return mav;
+				*/
+			}
+			else if((use_amount%10) != 0) {
+				return addErrorMsg(mav, "10원 이하의 단위는 입력할 수 없습니다.");
+				
+				/*
+				mav.addObject("errorMsg", "10원 이하의 단위는 입력할 수 없습니다.");
+				mav.setViewName("membership/search_mileage");
+				
+				return mav;
+				*/
 			}
 			
 			mileageHistory.setMBalance(-use_amount);//사용할 금액
@@ -74,6 +94,13 @@ public class SearchMileageController {
 		//index로 보낸 뒤 submit 했을 때의 링크
 		mav.addObject("index_link", "/jvx330/main/payPrice");
 		mav.setViewName("main/index");
+		return mav;
+	}
+	
+	public ModelAndView addErrorMsg(ModelAndView mav, String msg) {
+		mav.addObject("errorMsg", msg);
+		mav.setViewName("membership/search_mileage");
+		
 		return mav;
 	}
 }

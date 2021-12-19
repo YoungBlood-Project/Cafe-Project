@@ -55,6 +55,15 @@ public class AddItemsController {
 			mav.setViewName("menu/add_items");
 			
 			return mav;
+		} else if((itemPrice%10) != 0) {
+			mav.addObject("errorMsgs", "10원 이하의 단위는 입력할 수 없습니다.");
+			
+			List<Category> category_list = categoryServiceImpl.findAllCategorys();
+			
+			mav.addObject("category_list", category_list);
+			mav.setViewName("menu/add_items");
+			
+			return mav;
 		}
 		
 		Item item = new Item();

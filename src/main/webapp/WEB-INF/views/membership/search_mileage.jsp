@@ -39,8 +39,17 @@
             let add_amount = document.getElementById("add_amount");
             let use_amount = document.getElementById("use_amount");
             let submit_btn = document.getElementById("submit_btn");
-
-            radio_btn.addEventListener("click",function(){
+            
+            //submit 버튼 클릭
+            submit_btn.addEventListener("click", function(e) {
+                if(use_amount.value!=''){
+                    use_amount.value = parseInt(use_amount.value);
+                	console.log(use_amount.value);
+                }
+            })
+	
+	        //라디오 버튼 클릭
+            radio_btn.addEventListener("click", function(){
                 if(add_btn.checked == true){//적립
                     use_amount.setAttribute("hidden",true);
                     add_amount.removeAttribute("hidden");
