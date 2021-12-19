@@ -7,7 +7,7 @@ SELECT * FROM Category;
 SELECT * FROM Item;
 SELECT * FROM SalesTotalPrice;
 SELECT * FROM SalesHistory;
-sd
+
 --TABLE ªË¡¶ --
 DROP TABLE Manager;
 DROP TABLE Customer;

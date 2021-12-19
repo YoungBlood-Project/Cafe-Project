@@ -43,7 +43,10 @@
 							</c:forEach>
 						</select>     
         			</c:otherwise>
-        		</c:choose>   	
+        		</c:choose>
+        		<c:if test="${status.count eq 3}">
+        			<br>
+        		</c:if>
         	</c:forEach>
         </c:if>
         <input type="text" name="newItemName" placeholder="바꿀 메뉴명을 입력하세요">
